@@ -3,6 +3,50 @@ productivity software - combining the Eisenhower Matrix and Kanban methodologies
 
 Simple app for managing time
 
+Considering a model something like:
+
+'''
+{
+     {
+         task: {id: "", 
+                title: "", 
+                description: "", 
+                creationTimestamp: "", 
+                initialTargetCompletionTimestamp: ""
+                }
+     }
+     {
+         state: {task: {id: "", title: ""}, 
+                notes: "", 
+                priority: {}, 
+                kanbanColumns: [backLog, inProgress, done, hold, delegated], 
+                holdUntil: "", 
+                holdNotes: "", 
+                targetCompletionTimestamp: ""
+                }
+     }
+     {
+         priority: {niceLvl: "", 
+                    urgent: bool, 
+                    important: bool,
+                    priorityNotes: ""
+                    }
+     }
+     {
+         move: {task: {id: "", 
+                       title: ""
+                       }, 
+                fromState: {}, 
+                toState: {}, 
+                moveTimestamp: ""
+                }
+     }
+
+}
+'''
+
+parent template to be created that will provide default handlers for each piece of data for whether that data is included in processing or not.
+
 # References:
 
 ## References describing the Eisenhower Matrix:
