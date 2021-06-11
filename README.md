@@ -21,7 +21,7 @@ Simple app for managing time
 
 ## a few other github kanban projects
 
-## a few other eiwenhower matrix projects
+## a few other eisenhower matrix projects
 
 * [https://github.com/LakithKarunaratne/Eisenhower](https://github.com/LakithKarunaratne/Eisenhower)
 * [https://github.com/Lleafll/eisenhower](https://github.com/Lleafll/eisenhower)
