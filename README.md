@@ -5,7 +5,7 @@ Simple app for managing time
 
 Considering a model something like:
 
-'''
+```
 {
      {
          task: {id: "", 
@@ -43,7 +43,7 @@ Considering a model something like:
      }
 
 }
-'''
+```
 
 parent template to be created that will provide default handlers for each piece of data for whether that data is included in processing or not.
 
