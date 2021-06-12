@@ -63,9 +63,16 @@ parent template to be created that will provide default handlers for each piece 
 * [Introduction to Kanban](https://www.planview.com/resources/guide/introduction-to-kanban/)
 
 
-## a few other github kanban projects
+## a few other github personal kanban projects
 
-## a few other eisenhower matrix projects
+* [https://github.com/MrChuckomo/kanban_tkinter](https://github.com/MrChuckomo/kanban_tkinter)
+* [https://github.com/zacrogers/KanbanFlask](https://github.com/zacrogers/KanbanFlask)
+* [https://github.com/kitplummer/clikan](https://github.com/kitplummer/clikan)
+* [https://github.com/timhemel/clikb](https://github.com/timhemel/clikb)
+* [https://github.com/WesleyWWhelan/KanbanBoard](https://github.com/WesleyWWhelan/KanbanBoard)
+* [https://github.com/Saizzou/Kanban_PyQt5](https://github.com/Saizzou/Kanban_PyQt5)
+
+## a few other personal eisenhower matrix projects
 
 * [https://github.com/LakithKarunaratne/Eisenhower](https://github.com/LakithKarunaratne/Eisenhower)
 * [https://github.com/Lleafll/eisenhower](https://github.com/Lleafll/eisenhower)
