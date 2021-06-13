@@ -9,7 +9,7 @@
 | Tool | Description | Project link | Tutorials | Windows package sources | macOS package sources | Linux package sources | Source code Repository |
 ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----
 | Umbrello  | KDE hosted UML project | https://umbrello.kde.org/  | https://umbrello.kde.org/documentation.php  | https://community.chocolatey.org/packages/umbrello | https://invent.kde.org/packaging/homebrew-kdebrew | https://snapcraft.io/umbrello | https://github.com/KDE/umbrello |
-| drawio |  |  |  |
+| drawio | diagram builder | https://www.diagrams.net/ | https://drawio-app.com/tutorials/ | https://community.chocolatey.org/packages/drawio | https://formulae.brew.sh/cask/drawio | https://snapcraft.io/drawio | https://github.com/jgraph/drawio-desktop |
 
 ### .md files
 
@@ -22,7 +22,7 @@
 
 | Tool | Description | Project link | Tutorials | Windows package sources | macOS package sources | Linux package sources |
 ----- | ----- | ----- | ----- | ----- | ----- | -----
-| drawio |  |  |  |
+| drawio | diagram builder | https://www.diagrams.net/ | https://drawio-app.com/tutorials/ | https://community.chocolatey.org/packages/drawio | https://formulae.brew.sh/cask/drawio | https://snapcraft.io/drawio | https://github.com/jgraph/drawio-desktop |
 
 ### 
 
