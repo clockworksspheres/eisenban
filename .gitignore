@@ -128,11 +128,12 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# intellij idea editor
-.idea
-
 # macOS file stream
 .DS_Store
 
 # vym lock files
 *.vym.lock
+
+# Intellij Idea
+.idea
+*.iml
