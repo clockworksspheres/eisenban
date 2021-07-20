@@ -17,8 +17,8 @@ from optparse import OptionParser, SUPPRESS_HELP, OptionValueError, Option
 
 testdir = "./tests"
 
-from lib.loggers import CyLogger
-from lib.loggers import LogPriority as lp
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority as lp
 
 ###############################################################################
 

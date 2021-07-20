@@ -20,6 +20,7 @@ Considering a model something like:
                 notes: "", 
                 priority: {}, 
                 kanbanColumns: [backLog, inProgress, done, hold, delegated], 
+                currentState: ""
                 holdUntil: "", 
                 holdNotes: "", 
                 targetCompletionTimestamp: ""

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI xmi.version="1.2" timestamp="2021-06-21T07:31:02" verified="false" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
+<XMI xmi.version="1.2" timestamp="2021-07-19T20:23:30" verified="false" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller 2.32.1 http://umbrello.kde.org</XMI.exporter>
@@ -50,18 +50,88 @@
         <UML:Attribute isSpecification="false" xmi.id="uQiz46uVXXeXw" name="creationTimeStamp" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
         <UML:Attribute isSpecification="false" xmi.id="uJTgVtGr0w2he" name="initialTargetCompletionTimestamp" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
         <UML:Attribute isSpecification="false" xmi.id="usaeUbz7PpuuL" name="currentState" visibility="private" type="uNo2OoEA2iEMd" initialValue="{}"/>
+        <UML:Attribute isSpecification="false" xmi.id="urFv7w8hrAtSA" name="description" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
+        <UML:Attribute isSpecification="false" xmi.id="uAe6jbSX4sYBz" name="currentTargetCompletionTimestamp" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uFexJlnhD8BaY" name="__init__" comment="Class initialization method" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uh3FeO8YYdZ64" name="title" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+          <UML:Parameter isSpecification="false" xmi.id="u0yM6f5HE6F2L" name="taskId" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+          <UML:Parameter isSpecification="false" xmi.id="ucxQr7gL5Jpz3" name="creationTimeStamp" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+          <UML:Parameter isSpecification="false" xmi.id="uxZnU2qWDLZaT" name="initialTargetCompletionTimestamp" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+          <UML:Parameter isSpecification="false" xmi.id="uO4MhrMTVXjqM" name="currentState" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+          <UML:Parameter isSpecification="false" xmi.id="uH11mk9xLW7oS" name="description" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uhKbY478RLSSr" name="setTitle" comment="Set the title to a passed in value" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="ukGihbUTO5WIs" name="title" visibility="private" type="uhDmNFTURdUpp" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uMGbmGQBmXl5C" name="setTaskId" comment="Setter for the task id" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="u35fynNmfyphi" type="uhDmNFTURdUpp" kind="return"/>
+          <UML:Parameter isSpecification="false" xmi.id="uUldi5B5QpXDE" name="taskId" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="ulT36XvnblTUo" name="setDescription" comment="Set the description to a passed in value" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="ukYUhCiB7bD7j" name="description" visibility="private" type="uhDmNFTURdUpp" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uM96M3yV2LMbk" name="setInitialCompletionTimestamp" comment="Set the initial completion timestamp - for when the intended target completion time is." visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uVCfSPjRh8USx" name="initialCompletionTimestamp" visibility="private" type="uhDmNFTURdUpp" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uOgXkjfMwBub7" name="setCurrentCompletionTimestamp" comment="Setter for the current completion timestamp attribute of the class" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uQiiEDuyPQ1V7" type="uhDmNFTURdUpp" kind="return"/>
+          <UML:Parameter isSpecification="false" xmi.id="ueYLQgKnNhwy0" name="currentCompletionTimestamp" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="ua9ehUWQ0rh0P" name="getTaskId" comment="Return the current value of the task id" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uNE3d2b7iC3dB" type="uhDmNFTURdUpp" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="u1OwFPofXr97e" name="getTitle" comment="Getter for the title attribute of the class" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="upIFHq483FPLp" type="uhDmNFTURdUpp" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="um7GNDhV6JXqf" name="getDescription" comment="Getter for the description attribute of the class" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uRoFsUQSnqt59" type="uhDmNFTURdUpp" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="u1XmQ94NFWOCG" name="getCreationTimestamp" comment="Getter for the creation timestamp attribute of the class" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="ufjPK5LuvwM0b" type="uhDmNFTURdUpp" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uQ0Q1013Uym7S" name="getInitialTargetCompletionTimestamp" comment="Getter for the initial Target Completion Timestamp" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uCgwgm9VlGzKU" type="uhDmNFTURdUpp" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="unVu73I6K7qqD" name="getCurrentCompletionTimestamp" comment="Getter for the current completion timestamp attribute of the class" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uSmaGEqZGC1Kd" type="uhDmNFTURdUpp" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
        </UML:Classifier.feature>
       </UML:Class>
       <UML:Class isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uNo2OoEA2iEMd" name="state" namespace="Logical_View" visibility="public">
        <UML:Classifier.feature>
         <UML:Attribute isSpecification="false" xmi.id="uCynh5ZDy6dEa" name="taskId" visibility="private" type="uN6ec8HtYrvpZ" initialValue="0"/>
         <UML:Attribute isSpecification="false" xmi.id="u7eCYKayovWUI" name="notesOnThisState" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
-        <UML:Attribute isSpecification="false" xmi.id="u3TE8px5Ex8LL" name="kanbanColumn" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
+        <UML:Attribute isSpecification="false" xmi.id="u3TE8px5Ex8LL" name="kanbanColumn" visibility="private" type="u8WINY0L4kOJN" initialValue="[&quot;Back Log&quot;, &quot;In Progress&quot;, &quot;done&quot; &quot;hold&quot;, &quot;delegated&quot;, &quot;vendor hold&quot;, &quot;support hold&quot;]"/>
         <UML:Attribute isSpecification="false" xmi.id="u1fgURXALiilD" name="holdUntil" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
         <UML:Attribute isSpecification="false" xmi.id="uEDfm2zLGqtX3" name="holdNotes" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
         <UML:Attribute isSpecification="false" xmi.id="uXh7ZQvZ2JcsI" name="enteredThisStateTimestamp" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
         <UML:Attribute isSpecification="false" xmi.id="ujE1GR5u0oXeV" name="targetCompletionTimestamp" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
         <UML:Attribute isSpecification="false" xmi.id="uWLDwMx9c8x60" name="currentPriority" visibility="private" type="uVMBrsqwT6gFu" initialValue="{}"/>
+        <UML:Attribute isSpecification="false" xmi.id="ugoEHikERSQfz" name="currentKanbanColumn" comment="index into array indicating which named column is the current state." visibility="private" type="uN6ec8HtYrvpZ" initialValue="0"/>
        </UML:Classifier.feature>
       </UML:Class>
       <UML:Class isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uVMBrsqwT6gFu" name="priority" namespace="Logical_View" visibility="public">
@@ -69,54 +139,183 @@
         <UML:Attribute isSpecification="false" xmi.id="uGpEJWPvcXgD9" name="niceLvl" visibility="private" type="uGJjDx5558UMP" initialValue="0"/>
         <UML:Attribute isSpecification="false" xmi.id="uloFERz7UyaRn" name="urgent" visibility="private" type="u4BGcLK12DT4i" initialValue="False"/>
         <UML:Attribute isSpecification="false" xmi.id="uxUEEW8mgRCiD" name="important" visibility="private" type="u4BGcLK12DT4i" initialValue="False"/>
+        <UML:Attribute isSpecification="false" xmi.id="u3o3ofxrW5YJ4" name="priorityNotes" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uuUIEapbswsBz" name="__init__" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uWtGfOpzQ0LAx" name="niceLevel" visibility="private" type="uAK7GU4RScgba" value="0"/>
+          <UML:Parameter isSpecification="false" xmi.id="u5geGGujkerOd" name="urgent" visibility="private" type="u4BGcLK12DT4i" value="True"/>
+          <UML:Parameter isSpecification="false" xmi.id="uht5hrSKd2dfP" name="important" visibility="private" type="u4BGcLK12DT4i" value="True"/>
+          <UML:Parameter isSpecification="false" xmi.id="u3weRoUESf2qX" name="priorityNotes" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="usD7qkW8tBqWi" name="setNiceLevel" comment="Acts as unix &quot;nice&quot; levels for processes, range -20 to 20.  Using that as it is familiar to systems programmers and *nix admins, and any student that has operated in a unix environment." visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uE5hMqTlXeaYa" name="newNiceLevel" visibility="private" type="utxz5U4mvEvcm" value="0"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uakKj3UAzo1YH" name="setImportant" comment="Set the Eisenhower matrix &quot;important&quot; attribute to the priority.  Default &quot;True&quot;" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="ucAaZYQDBklmt" name="important" visibility="private" type="u4BGcLK12DT4i" value="True"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uhNWfpoz7qaLT" name="setUrgent" comment="Set the Eisenhower matrix attribute &quot;Urgent&quot;.  Bool, default True" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="u3soOT957LMot" name="urgent" visibility="private" type="u4BGcLK12DT4i" value="True"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uQcsdoyKVCLmm" name="setPrioityNotes" comment="Not required - notes on why the current priority was chosen.  Default is an empty string." visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uR1NmYpsgjMZH" name="priorityNotes" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uOVFUCBVvViPF" name="getNiceLevel" comment="Return the nice level of this priority." visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uXgLJppF7wc2Y" type="uhDmNFTURdUpp" kind="return"/>
+          <UML:Parameter isSpecification="false" xmi.id="ukgnUJb0j1bjB" name="niceLevel" visibility="private" type="uAK7GU4RScgba" value="0" kind="out"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uIawr5CZ3J5bY" name="getImportant" comment="Return the Esienhower matrix &quot;Important&quot; value." visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uEa1pMUjMJK8A" type="u4BGcLK12DT4i" kind="return"/>
+          <UML:Parameter isSpecification="false" xmi.id="uBmOxIcOKkGvR" name="important" visibility="private" type="u4BGcLK12DT4i" value="True" kind="out"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uCdfZyEfCU29V" name="getUrgent" comment="Return the Eisenhower matrix value bool." visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uCOuSR9XfS4IV" type="u4BGcLK12DT4i" kind="return"/>
+          <UML:Parameter isSpecification="false" xmi.id="uWownHdnnC9is" name="urgent" visibility="private" type="u4BGcLK12DT4i" value="True" kind="out"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uzjUDFBaNMDck" name="getPriorityNotes" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uGLZ7gfC7fHQg" type="uhDmNFTURdUpp" kind="return"/>
+          <UML:Parameter isSpecification="false" xmi.id="uZ3qVuoeNELeQ" name="priorityNotes" visibility="private" type="uhDmNFTURdUpp" value="&quot;&quot;" kind="out"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
        </UML:Classifier.feature>
       </UML:Class>
-      <UML:Class isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="ulbu9Ug9pzJGW" name="move" namespace="Logical_View" visibility="public">
+      <UML:Class isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="ulbu9Ug9pzJGW" name="stateChange" namespace="Logical_View" visibility="public">
        <UML:Classifier.feature>
         <UML:Attribute isSpecification="false" xmi.id="uF9wryiL2mtKX" name="taskId" visibility="private" type="uBujWdOWQtA7N" initialValue="0"/>
         <UML:Attribute isSpecification="false" xmi.id="u0WodYlhEpEsr" name="fromState" visibility="private" type="uNo2OoEA2iEMd" initialValue="{}"/>
-        <UML:Attribute isSpecification="false" xmi.id="uQBMncAVxrTz7" name="moveTimestamp" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
+        <UML:Attribute isSpecification="false" xmi.id="uQBMncAVxrTz7" name="changeTimeStamp" visibility="private" type="uhDmNFTURdUpp" initialValue="&quot;&quot;"/>
         <UML:Attribute isSpecification="false" xmi.id="u3xEaX4w5vmtW" name="toState" visibility="private" type="uNo2OoEA2iEMd" initialValue="{}"/>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uST8yvW9Td6w3" name="getCurrentState" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uYGFd9tMiuMM5" type="uNo2OoEA2iEMd" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uqVso7gjrNrDs" name="getStateRange" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="ubB1iZYmAUF3S" type="u8WINY0L4kOJN" kind="return"/>
+          <UML:Parameter isSpecification="false" xmi.id="uQGgTb3SUYgr2" name="from" visibility="private" type="uwcMtsZT6oYJA" value="0"/>
+          <UML:Parameter isSpecification="false" xmi.id="uS8asyXuoiQmq" name="toState" visibility="private" type="uwcMtsZT6oYJA" value="0"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="u8ujrJLYezouj" name="getCompleteStateRange" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="uWT4iVifXeuDm" type="u8WINY0L4kOJN" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uF6aPDkaIFE92" name="getLastState" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="u9e2znL0cqADz" type="uNo2OoEA2iEMd" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uUh1q5SUdfezL" name="getStateMinusN" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uiidOQTbYgQDk" name="stateNumber" visibility="private" type="uBujWdOWQtA7N" value="0"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uxEFwlrac6xmJ" name="getFirstState" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter xmi.id="ugxxS4kDvSYB4" type="uNo2OoEA2iEMd" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="ujXH79lg43Hsr" name="setNewState" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uDTt7wqZOgA6d" name="taskId" visibility="private" type="uBujWdOWQtA7N" value="0"/>
+          <UML:Parameter isSpecification="false" xmi.id="u76m2hh6DUCjo" name="fromState" visibility="private" type="u4CBPdLxOq67b" value="{}"/>
+          <UML:Parameter isSpecification="false" xmi.id="uxEB1nThHKnb4" name="toState" visibility="private" type="u4CBPdLxOq67b" value="{}"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uq62Qlm0zVvxy" name="getChangeTimeStamp" visibility="public" isQuery="false" isOverride="false" isVirtual="false" isInline="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" xmi.id="uUoqWaCgXzDwx" name="taskId" visibility="private" type="uBujWdOWQtA7N" value="0"/>
+          <UML:Parameter isSpecification="false" xmi.id="u8695Bu9YBs5C" name="fromState" visibility="private" type="u4CBPdLxOq67b" value="{}"/>
+          <UML:Parameter isSpecification="false" xmi.id="uBla1cwcit9Yt" name="toState" visibility="private" type="u4CBPdLxOq67b" value="{}"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Class isSpecification="false" isLeaf="false" isRoot="false" isAbstract="false" xmi.id="uwIdngbESnd4c" name="priorityChange" namespace="Logical_View" visibility="public">
+       <UML:Classifier.feature>
+        <UML:Attribute isSpecification="false" xmi.id="uNKHjiB5AypQS" name="taskId" visibility="private" type="uBujWdOWQtA7N" initialValue="0"/>
+        <UML:Attribute isSpecification="false" xmi.id="uYK2iLK2HvkD6" name="fromPriority" visibility="public" type="uVMBrsqwT6gFu" initialValue="&quot;&quot;"/>
+        <UML:Attribute isSpecification="false" xmi.id="udy3fsIZai7bd" name="toPriority" visibility="private" type="uVMBrsqwT6gFu" initialValue="&quot;&quot;"/>
+        <UML:Attribute isSpecification="false" xmi.id="u67VXmO0TIoDw" name="changeTimeStamp" visibility="private" type="uVMBrsqwT6gFu" initialValue="&quot;&quot;"/>
        </UML:Classifier.feature>
       </UML:Class>
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams resolution="72">
-       <diagram xmi.id="u0t5X7bD1ODeI" name="class diagram" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#ff0000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="100" canvasheight="453" canvaswidth="599" isopen="1">
+       <diagram xmi.id="u0t5X7bD1ODeI" name="class diagram" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#ff0000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="121" canvasheight="1001.27" canvaswidth="1353.97" isopen="1">
         <widgets>
-         <classwidget xmi.id="uVMBrsqwT6gFu" localid="uTC8WsuyFpp3t" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-695" y="-123" width="189" height="72" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
-         <classwidget xmi.id="ulbu9Ug9pzJGW" localid="uGJEZ6frb6r5Y" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-1054" y="-307" width="190" height="88" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
-         <classwidget xmi.id="uWQ9pb2mrCBY7" localid="uV0P1dEButOKd" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-750" y="-504" width="295" height="104" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
-         <classwidget xmi.id="uNo2OoEA2iEMd" localid="uzUYfqZqR5gn5" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-732" y="-335" width="261" height="152" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
+         <classwidget xmi.id="uWQ9pb2mrCBY7" localid="uV0P1dEButOKd" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-1050.78" y="-858.846" width="1000" height="320" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
+         <classwidget xmi.id="uNo2OoEA2iEMd" localid="uzUYfqZqR5gn5" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-732" y="-335" width="671" height="168" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
+         <classwidget xmi.id="uVMBrsqwT6gFu" localid="uTC8WsuyFpp3t" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-697.143" y="-81.5714" width="650" height="224" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
+         <classwidget xmi.id="uwIdngbESnd4c" localid="u9zDXyj79kmOf" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-1116.2" y="-28.0851" width="211" height="88" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
+         <classwidget xmi.id="ulbu9Ug9pzJGW" localid="uGJEZ6frb6r5Y" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffff00" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-1401.11" y="-354.934" width="509" height="208" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601" showstereotype="2"/>
         </widgets>
         <messages/>
         <associations>
-         <assocwidget xmi.id="usaeUbz7PpuuL" localid="ujs2bGc5g6jY7" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="usaeUbz7PpuuL" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="uWQ9pb2mrCBY7" widgetbid="uNo2OoEA2iEMd" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
-          <floatingtext xmi.id="umOoSYRMhXDGQ" localid="u1P1IXGsc751j" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-649" y="-381" width="89" height="20" isinstance="0" showstereotype="2" text="currentState" pretext="-" posttext="" role="710"/>
-          <linepath layout="Direct">
-           <startpoint startx="-597" starty="-400"/>
-           <endpoint endx="-597" endy="-335"/>
-          </linepath>
-         </assocwidget>
          <assocwidget xmi.id="u0WodYlhEpEsr" localid="uJLf6Vj95Wz4Q" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="u0WodYlhEpEsr" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="ulbu9Ug9pzJGW" widgetbid="uNo2OoEA2iEMd" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
           <floatingtext xmi.id="uJGcH5SlEvzbT" localid="uonb8adLljmpF" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-823" y="-319" width="74" height="20" isinstance="0" showstereotype="2" text="fromState" pretext="-" posttext="" role="710"/>
           <linepath layout="Direct">
-           <startpoint startx="-864" starty="-294"/>
+           <startpoint startx="-892.111" starty="-294"/>
            <endpoint endx="-732" endy="-294"/>
           </linepath>
          </assocwidget>
-         <assocwidget xmi.id="uWLDwMx9c8x60" localid="u8WmhgtDFbspN" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="uWLDwMx9c8x60" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="uNo2OoEA2iEMd" widgetbid="uVMBrsqwT6gFu" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
-          <floatingtext xmi.id="uOzCMHbirYDlN" localid="uKoEXPBjvXdIx" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-648" y="-161" width="101" height="20" isinstance="0" showstereotype="2" text="currentPriority" pretext="-" posttext="" role="710"/>
+         <assocwidget xmi.id="usaeUbz7PpuuL" localid="ujs2bGc5g6jY7" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="usaeUbz7PpuuL" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="uWQ9pb2mrCBY7" widgetbid="uNo2OoEA2iEMd" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
+          <floatingtext xmi.id="umOoSYRMhXDGQ" localid="u1P1IXGsc751j" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-628.143" y="-407.429" width="89" height="20" isinstance="0" showstereotype="2" text="currentState" pretext="-" posttext="" role="710"/>
           <linepath layout="Direct">
-           <startpoint startx="-596" starty="-183"/>
-           <endpoint endx="-596" endy="-123"/>
+           <startpoint startx="-579" starty="-538.846"/>
+           <endpoint endx="-579" endy="-335"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget xmi.id="uYK2iLK2HvkD6" localid="u1AI8Gc79abPE" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="uYK2iLK2HvkD6" type="510" visibilityA="0" visibilityB="0" changeabilityA="900" changeabilityB="900" widgetaid="uwIdngbESnd4c" widgetbid="uVMBrsqwT6gFu" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
+          <floatingtext xmi.id="uQlq567AumhRa" localid="uKddFenh7ggUQ" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-787.143" y="8.4286" width="88" height="20" isinstance="0" showstereotype="2" text="fromPriority" pretext="+" posttext="" role="710"/>
+          <linepath layout="Direct">
+           <startpoint startx="-905.198" starty="-10.333"/>
+           <endpoint endx="-697.143" endy="-10.333"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget xmi.id="u67VXmO0TIoDw" localid="ufciuYQ6ykBoy" textcolor="#000000" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="u67VXmO0TIoDw" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="uwIdngbESnd4c" widgetbid="uVMBrsqwT6gFu" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
+          <floatingtext xmi.id="uBXMrdl1C7sYY" localid="uNtIyC0xKtIuk" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-818.143" y="8.4286" width="125" height="20" isinstance="0" showstereotype="2" text="changeTimeStamp" pretext="-" posttext="" role="710"/>
+          <linepath layout="Direct">
+           <startpoint startx="-905.198" starty="-10.333"/>
+           <endpoint endx="-697.143" endy="-10.333"/>
           </linepath>
          </assocwidget>
          <assocwidget xmi.id="u3xEaX4w5vmtW" localid="usIA4jhyWX9eG" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="u3xEaX4w5vmtW" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="ulbu9Ug9pzJGW" widgetbid="uNo2OoEA2iEMd" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
           <floatingtext xmi.id="u5H4GsK9odZob" localid="uqpLmbl1ZWskJ" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-816" y="-255" width="58" height="20" isinstance="0" showstereotype="2" text="toState" pretext="-" posttext="" role="710"/>
           <linepath layout="Direct">
-           <startpoint startx="-864" starty="-259"/>
+           <startpoint startx="-892.111" starty="-259"/>
            <endpoint endx="-732" endy="-259"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget xmi.id="udy3fsIZai7bd" localid="uRCyA65rFV5Ou" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="udy3fsIZai7bd" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="uwIdngbESnd4c" widgetbid="uVMBrsqwT6gFu" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
+          <floatingtext xmi.id="uI0lyVmyNlV9c" localid="uOff5FWQMk2V8" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-762.143" y="8.4286" width="70" height="20" isinstance="0" showstereotype="2" text="toPriority" pretext="-" posttext="" role="710"/>
+          <linepath layout="Direct">
+           <startpoint startx="-905.198" starty="-10.333"/>
+           <endpoint endx="-697.143" endy="-10.333"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget xmi.id="uWLDwMx9c8x60" localid="u8WmhgtDFbspN" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" xmi.id="uWLDwMx9c8x60" type="510" visibilityA="1" visibilityB="1" changeabilityA="900" changeabilityB="900" widgetaid="uNo2OoEA2iEMd" widgetbid="uVMBrsqwT6gFu" indexa="1" totalcounta="2" indexb="1" totalcountb="2">
+          <floatingtext xmi.id="uOzCMHbirYDlN" localid="uKoEXPBjvXdIx" textcolor="none" linecolor="#ff0000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" autoresize="1" x="-647.286" y="-134" width="101" height="20" isinstance="0" showstereotype="2" text="currentPriority" pretext="-" posttext="" role="710"/>
+          <linepath layout="Direct">
+           <startpoint startx="-596" starty="-167"/>
+           <endpoint endx="-596" endy="-81.5714"/>
           </linepath>
          </assocwidget>
         </associations>
@@ -140,7 +339,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="u0t5X7bD1ODeI" documentation="" uniqueid="uyZkxiy3Tbqsn"/>
+  <docsettings viewid="u0t5X7bD1ODeI" documentation="" uniqueid="uoWDg4iXf774F"/>
   <listview>
    <listitem id="Views" type="800" open="1">
     <listitem id="Component_View" type="821" open="1"/>
@@ -161,18 +360,29 @@
       <listitem id="uhDmNFTURdUpp" type="829" open="1"/>
       <listitem id="uLdYp8hqnrjbf" type="829" open="1"/>
      </listitem>
-     <listitem id="ulbu9Ug9pzJGW" type="813" open="1">
-      <listitem id="u0WodYlhEpEsr" type="814" open="0"/>
-      <listitem id="uQBMncAVxrTz7" type="814" open="0"/>
-      <listitem id="uF9wryiL2mtKX" type="814" open="0"/>
-      <listitem id="u3xEaX4w5vmtW" type="814" open="0"/>
-     </listitem>
-     <listitem id="uVMBrsqwT6gFu" type="813" open="1">
+     <listitem id="uVMBrsqwT6gFu" type="813" open="0">
+      <listitem id="uuUIEapbswsBz" type="815" open="0"/>
+      <listitem id="uIawr5CZ3J5bY" type="815" open="0"/>
+      <listitem id="uOVFUCBVvViPF" type="815" open="0"/>
+      <listitem id="uzjUDFBaNMDck" type="815" open="0"/>
+      <listitem id="uCdfZyEfCU29V" type="815" open="0"/>
       <listitem id="uxUEEW8mgRCiD" type="814" open="0"/>
       <listitem id="uGpEJWPvcXgD9" type="814" open="0"/>
+      <listitem id="u3o3ofxrW5YJ4" type="814" open="0"/>
+      <listitem id="uakKj3UAzo1YH" type="815" open="0"/>
+      <listitem id="usD7qkW8tBqWi" type="815" open="0"/>
+      <listitem id="uQcsdoyKVCLmm" type="815" open="0"/>
+      <listitem id="uhNWfpoz7qaLT" type="815" open="0"/>
       <listitem id="uloFERz7UyaRn" type="814" open="0"/>
      </listitem>
-     <listitem id="uNo2OoEA2iEMd" type="813" open="1">
+     <listitem id="uwIdngbESnd4c" type="813" open="0">
+      <listitem id="u67VXmO0TIoDw" type="814" open="0"/>
+      <listitem id="uYK2iLK2HvkD6" type="814" open="0"/>
+      <listitem id="uNKHjiB5AypQS" type="814" open="0"/>
+      <listitem id="udy3fsIZai7bd" type="814" open="0"/>
+     </listitem>
+     <listitem id="uNo2OoEA2iEMd" type="813" open="0">
+      <listitem id="ugoEHikERSQfz" type="814" open="0"/>
       <listitem id="uWLDwMx9c8x60" type="814" open="0"/>
       <listitem id="uXh7ZQvZ2JcsI" type="814" open="0"/>
       <listitem id="uEDfm2zLGqtX3" type="814" open="0"/>
@@ -182,11 +392,39 @@
       <listitem id="ujE1GR5u0oXeV" type="814" open="0"/>
       <listitem id="uCynh5ZDy6dEa" type="814" open="0"/>
      </listitem>
-     <listitem id="uWQ9pb2mrCBY7" type="813" open="1">
+     <listitem id="ulbu9Ug9pzJGW" type="813" open="0">
+      <listitem id="uQBMncAVxrTz7" type="814" open="0"/>
+      <listitem id="u0WodYlhEpEsr" type="814" open="0"/>
+      <listitem id="uq62Qlm0zVvxy" type="815" open="0"/>
+      <listitem id="u8ujrJLYezouj" type="815" open="0"/>
+      <listitem id="uST8yvW9Td6w3" type="815" open="0"/>
+      <listitem id="uxEFwlrac6xmJ" type="815" open="0"/>
+      <listitem id="uF6aPDkaIFE92" type="815" open="0"/>
+      <listitem id="uUh1q5SUdfezL" type="815" open="0"/>
+      <listitem id="uqVso7gjrNrDs" type="815" open="0"/>
+      <listitem id="ujXH79lg43Hsr" type="815" open="0"/>
+      <listitem id="uF9wryiL2mtKX" type="814" open="0"/>
+      <listitem id="u3xEaX4w5vmtW" type="814" open="0"/>
+     </listitem>
+     <listitem id="uWQ9pb2mrCBY7" type="813" open="0">
+      <listitem id="uFexJlnhD8BaY" type="815" open="0"/>
       <listitem id="uQiz46uVXXeXw" type="814" open="0"/>
       <listitem id="usaeUbz7PpuuL" type="814" open="0"/>
+      <listitem id="uAe6jbSX4sYBz" type="814" open="0"/>
+      <listitem id="urFv7w8hrAtSA" type="814" open="0"/>
+      <listitem id="u1XmQ94NFWOCG" type="815" open="0"/>
+      <listitem id="unVu73I6K7qqD" type="815" open="0"/>
+      <listitem id="um7GNDhV6JXqf" type="815" open="0"/>
+      <listitem id="uQ0Q1013Uym7S" type="815" open="0"/>
+      <listitem id="ua9ehUWQ0rh0P" type="815" open="0"/>
+      <listitem id="u1OwFPofXr97e" type="815" open="0"/>
       <listitem id="udzJmUtZPjwWf" type="814" open="0"/>
       <listitem id="uJTgVtGr0w2he" type="814" open="0"/>
+      <listitem id="uOgXkjfMwBub7" type="815" open="0"/>
+      <listitem id="ulT36XvnblTUo" type="815" open="0"/>
+      <listitem id="uM96M3yV2LMbk" type="815" open="0"/>
+      <listitem id="uMGbmGQBmXl5C" type="815" open="0"/>
+      <listitem id="uhKbY478RLSSr" type="815" open="0"/>
       <listitem id="upEmm5BumPpla" type="814" open="0"/>
      </listitem>
     </listitem>
@@ -194,7 +432,20 @@
    </listitem>
   </listview>
   <codegeneration>
-   <codegenerator language="Python"/>
+   <codegenerator language="Python">
+    <sourcecode id="uFexJlnhD8BaY" value="self.title = title&#10;self.taskid = taskid&#10;self.creationTimestamp = creationTimestamp&#10;self.initialTargetCompletionTimestamp = initialTargetCompletionTimestamp&#10;self.currentTargetCompletionTimestamp = initialTargetCompletionTimestamp&#10;self.currentState = currentState&#10;self.description = description&#10;"/>
+    <sourcecode id="uhKbY478RLSSr" value="self.title = title"/>
+    <sourcecode id="uMGbmGQBmXl5C" value="self.taskId = taskId"/>
+    <sourcecode id="ulT36XvnblTUo" value="self.description = description"/>
+    <sourcecode id="uM96M3yV2LMbk" value="self.initialCompletionTimestamp = initialCompletionTimestamp"/>
+    <sourcecode id="uOgXkjfMwBub7" value="self.currentCompletionTimestamp = currentCompletionTimestamp"/>
+    <sourcecode id="ua9ehUWQ0rh0P" value="return self.taskid"/>
+    <sourcecode id="u1OwFPofXr97e" value="return self.title"/>
+    <sourcecode id="um7GNDhV6JXqf" value="return self.description"/>
+    <sourcecode id="u1XmQ94NFWOCG" value="return self.creationTimestamp"/>
+    <sourcecode id="uQ0Q1013Uym7S" value="return self.initialTargetCompletionTimestamp"/>
+    <sourcecode id="unVu73I6K7qqD" value="return self.currentCompletionTimestamp"/>
+   </codegenerator>
   </codegeneration>
  </XMI.extensions>
 </XMI>
