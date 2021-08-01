@@ -13,7 +13,7 @@ Considering a model something like:
                 description: "", 
                 creationTimestamp: "", 
                 initialTargetCompletionTimestamp: ""
-                }
+                },
      }
      {
          state: {task: {id: "", title: ""}, 
