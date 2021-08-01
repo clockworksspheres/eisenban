@@ -68,6 +68,7 @@ parent template to be created that will provide default handlers for each piece 
 
 * [https://github.com/MrChuckomo/kanban_tkinter](https://github.com/MrChuckomo/kanban_tkinter)
 * [https://github.com/kitplummer/clikan](https://github.com/kitplummer/clikan)
+* [https://github.com/piooca/cli-kanban1.git](https://github.com/piooca/cli-kanban1.git)
 * [https://github.com/timhemel/clikb](https://github.com/timhemel/clikb)
 * [https://github.com/WesleyWWhelan/KanbanBoard](https://github.com/WesleyWWhelan/KanbanBoard)
 * [https://github.com/Saizzou/Kanban_PyQt5](https://github.com/Saizzou/Kanban_PyQt5)
