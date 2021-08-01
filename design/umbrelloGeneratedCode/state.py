@@ -25,6 +25,11 @@ class state(object):
 
   currentPriority  (private)
 
+   index into array indicating which named column is the current state.
+
+
+  currentKanbanColumn  (private)
+
   """
 
 
