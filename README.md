@@ -67,7 +67,6 @@ parent template to be created that will provide default handlers for each piece 
 ## a few other github personal kanban projects
 
 * [https://github.com/MrChuckomo/kanban_tkinter](https://github.com/MrChuckomo/kanban_tkinter)
-* [https://github.com/zacrogers/KanbanFlask](https://github.com/zacrogers/KanbanFlask)
 * [https://github.com/kitplummer/clikan](https://github.com/kitplummer/clikan)
 * [https://github.com/timhemel/clikb](https://github.com/timhemel/clikb)
 * [https://github.com/WesleyWWhelan/KanbanBoard](https://github.com/WesleyWWhelan/KanbanBoard)
