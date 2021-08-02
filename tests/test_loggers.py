@@ -13,8 +13,8 @@ from datetime import datetime
 sys.path.append("..")
 
 # --- Non-native python libraries in this source tree
-from lib.loggers import CyLogger
-from lib.loggers import LogPriority
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority
 
 class test_CyLogger(unittest.TestCase):
     """

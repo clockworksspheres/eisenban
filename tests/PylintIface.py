@@ -15,8 +15,8 @@ from pylint.lint import Run
 from pylint.reporters import JSONReporter
 #####
 # cds libraries
-from lib.loggers import CyLogger
-from lib.loggers import LogPriority as lp
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority as lp
 
 @contextlib.contextmanager
 def _patch_streams(out):

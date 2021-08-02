@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S python -u
 """
 Test harness creating a test suite, and running it.
 
@@ -119,15 +119,21 @@ class BuildAndRunSuite(object):
                 # Test class needs to be named the same as the
                 #   filename for this to work.
                 # import the file named in "test_name" variable
+                # Python 3.9
                 module_to_run = importlib.import_module(test_name_import_path)
-                # getattr(x, 'foobar') is equivalent to x.foobar
+                # Python 2.7
+                # module_to_run = __import__(test_name_import_path, 
+                #                            fromlist=test_name, level=-1)
+                # Python 3.9
                 test_to_run = getattr(module_to_run, test_name)
+                # Python 2.7
+                # getattr(x, 'foobar') is equivalent to x.foobar
+                # test_to_run = getattr(module_to_run, test_name)
                 # Add the test class to the test suite
                 self.test_suite.addTest(unittest.makeSuite(test_to_run))
             except AttributeError as err:
                 self.logger.log(lp.ERROR, traceback.format_exc())
                 self.logger.log(lp.ERROR, "WTF homeslice!")
-                pass
         #####
         # calll the run_action to execute the test suite
         self.run_action()
@@ -240,7 +246,14 @@ if __name__ == "__main__":
 
     if os.geteuid != 0:
         print("\n\nNote - Some tests will fail if not run with superuser privilege.")
-        input("Press any key to continue...")
+        print("\n")
+        try:
+          stmpval = input("Press any key to continue... ")
+          stmpval = str(tmpval)
+        except:
+          pass
+
+    logger.log(lp.INFO, "Before attempt to build and run the suite....")
 
     bars = BuildAndRunSuite(logger)
     bars.setPrefix(prefix)

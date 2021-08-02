@@ -38,7 +38,7 @@ import sys
 import unittest
 
 sys.path.append("..")
-import lib.environment as environment
+import eisenban.lib.environment as environment
 
 
 class test_environment(unittest.TestCase):

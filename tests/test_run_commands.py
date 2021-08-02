@@ -10,9 +10,9 @@ sys.path.append(appendDir)
 
 # sys.path.append("..")
 
-from lib.loggers import CyLogger
-from lib.loggers import LogPriority as lp
-from lib.run_commands import RunWith, SetCommandTypeError
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority as lp
+from eisenban.lib.run_commands import RunWith, SetCommandTypeError
 
 
 class test_run_commands(unittest.TestCase):

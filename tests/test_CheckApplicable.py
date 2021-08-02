@@ -14,10 +14,10 @@ from datetime import datetime
 sys.path.append("..")
 
 # --- Non-native python libraries in this source tree
-from lib.loggers import CyLogger
-from lib.loggers import LogPriority as lp
-from lib.environment import Environment
-from lib.CheckApplicable import CheckApplicable
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority as lp
+from eisenban.lib.environment import Environment
+from eisenban.lib.CheckApplicable import CheckApplicable
 
 LOGGER = CyLogger()
 #LOGGER.setInitialLoggingLevel(30)

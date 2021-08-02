@@ -16,8 +16,8 @@ parentdir = "/" + "/".join(mydir.split("/")[:-1])
 print(parentdir)
 sys.path.append(parentdir)
 
-from lib.loggers import CyLogger
-from lib.loggers import LogPriority as lp
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority as lp
 from tests.PylintIface import PylintIface, processFile
 
 from pylint import epylint
