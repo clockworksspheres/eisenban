@@ -16,7 +16,7 @@ sys.path.append("..")
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority
 
-class test_CyLogger(unittest.TestCase):
+class test_loggers(unittest.TestCase):
     """
     Test for the CyLogger class, based on the STONIX project's test
     for it's logdispatcher.
