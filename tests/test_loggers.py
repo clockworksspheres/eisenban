@@ -1,18 +1,22 @@
-#!/usr/bin/python
+#!/usr/bin/env -S python -u
 """
 Testing logging functionality via CyLogger
 
 @author: Roy Nielsen
 """
 # --- Native python libraries
-import sys
 import unittest
-
+import time
+import sys
+import os
+import traceback
+import tracemalloc
 from datetime import datetime
 
 sys.path.append("..")
 
 # --- Non-native python libraries in this source tree
+from eisenban.lib.environment as environment
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority
 
@@ -40,6 +44,24 @@ class test_loggers(unittest.TestCase):
         self.metaVars['setupDone'] = True
         self.logger.initializeLogs()
 
+    @classmethod
+    def setUpClass(self):
+        """
+        """
+        #####
+        # Set up logging
+        self.logger = CyLogger(debug_mode=True)
+        self.logger.initializeLogs()
+        self.rw = RunWith(self.logger)
+        #####
+        # Start timer in miliseconds
+        self.test_start_time = datetime.now()
+
+    @classmethod
+    def tearDownClass(self):
+        """
+        """
+        pass
 
     def testLogCritical(self):
         try:
@@ -71,6 +93,9 @@ class test_loggers(unittest.TestCase):
         except:
             self.fail("Failed to write DEBUG to log file")
 
+###############################################################################
+
 
 if __name__ == "__main__":
     unittest.main()
+

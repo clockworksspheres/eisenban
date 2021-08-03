@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env -S python -u
 """
 Test for basic functionality of the basic libc
 functionality provided by getLibc
@@ -16,6 +16,11 @@ import platform
 import unittest
 import ctypes as C
 from datetime import datetime
+
+#####
+# Include the parent project directory in the PYTHONPATH
+# appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
+# sys.path.append(appendDir)
 
 sys.path.append("..")
 
