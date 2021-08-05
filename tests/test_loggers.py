@@ -16,7 +16,7 @@ from datetime import datetime
 sys.path.append("..")
 
 # --- Non-native python libraries in this source tree
-from eisenban.lib.environment as environment
+from eisenban.lib.environment import Environment
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority
 
