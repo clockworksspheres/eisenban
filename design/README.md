@@ -28,6 +28,15 @@ to be avoided at all costs.
 * Delete Task
 * Archive Task
 * Start New Task List/DB/File
+* Return Dict to View
+  - entire list
+  - task
+  - list of tasks in kanban column
+  - list of tasks in eisenhower matrix section
+  - few more combinations of the above
+  - table data struct for kanban view
+  - table data struct for Eisenhower Matrix view
+  - by DateTime
 * Print/Send/Notify/timer/calendar Task (provide middleware interface that plugins providers can butt up to)
   - Task History
   - Current State
