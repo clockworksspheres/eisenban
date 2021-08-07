@@ -3,7 +3,13 @@ productivity software - combining the Eisenhower Matrix and Kanban methodologies
 
 Simple app for managing time
 
-Considering a model something like:
+## Intended Design notes, thoughts, diagrams, etc
+
+[eisenban design documentation](https://github.com/clockworksspheres/eisenban/blob/main/design/README.md)
+
+## Data Model
+
+Considering a data structure model something like:
 
 ```
 {

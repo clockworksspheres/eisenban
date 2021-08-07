@@ -8,11 +8,38 @@
 
 ## Purpose
 
+## State Management Engine
+
+The intention is to record all state changes and actions, so the data can be mined for future planning
+improvements by the user.  Tasks can be either archived, or deleted, but messing with a "revert"
+function is against the purpose of working on continuous improvement as well as transparency, therefore
+to be avoided at all costs.
+
+### Wish List of Actions to be implemented by the State Management System
+
+* New Task + New State + New Priorty + Target DateTime
+* New State + New Priority + Target DateTime
+* New Priority + Target DateTime
+* Change State
+* Change Priority
+* Change State and Priority
+* Change State and Priority and TargetDateTime
+* Change Target DateTime
+* Delete Task
+* Archive Task
+* Start New Task List/DB/File
+* Print/Send/Notify/timer/calendar Task (provide middleware interface that plugins providers can butt up to)
+  - Task History
+  - Current State
+  - Task History Range
+  - iCal Target Dates, Meetings, 
+  - Timer/Timer Schedule
+  - Reminders/Reminders Schedule
 
 
 ## Utilities used:
 
-My personal preferance is to use locally installed apps for design works, as I take my dev machine with me places, and do not always have internet to access internet based web applications for design work.  These applications can all be installed locally, although some can be available via internet services.
+My personal preference is to use locally installed apps for design works, as I take my dev machine with me places, and do not always have internet to access internet based web applications for design work.  These applications can all be installed locally, although some can be available via internet services.
 
 ### UML
 
