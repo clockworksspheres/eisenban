@@ -8,6 +8,17 @@
 
 ## Purpose
 
+Purpose of this directory is to record design decisions, backround perspectives, editors and tools used throughout the
+design, architecture, implementation, test, promotion, production, documentation and maintenance of this software system.
+
+## Model View Controller(MVC) conversion to Model View State Machine(MVSM)
+
+This project, in combination with the learning-and-research-accellerator projects helped morph the design method or
+terminoligy used for new clockworksspheres projects re-defining the "controller" as a "state manager".  The "state
+manager" includes what I call an Interface, Queue, Dispatcher(IQD).  The "state Management" section will manage the
+state of the model as well as recording state changes, while the IQD provides a code or object interface and control
+of the software system.
+
 ## State Management Engine
 
 The intention is to record all state changes and actions, so the data can be mined for future planning
@@ -15,20 +26,31 @@ improvements by the user.  Tasks can be either archived, or deleted, but messing
 function is against the purpose of working on continuous improvement as well as transparency, therefore
 to be avoided at all costs.
 
-### Wish List of Actions to be implemented by the State Management System
+### Wish List of Actions to be implemented by the State Management System and IQD
+
+#### Create
 
 * New Task + New State + New Priorty + Target DateTime
 * New State + New Priority + Target DateTime
 * New Priority + Target DateTime
+* Start New Task List/DB/File
+
+#### Change
+
 * Change State
 * Change Priority
 * Change State and Priority
 * Change State and Priority and TargetDateTime
 * Change Target DateTime
+
+#### Retire
+
 * Delete Task
 * Archive Task
-* Start New Task List/DB/File
-* Return Dict to View
+
+#### Present Model info in Dict form to Software Interface (could be view, could be plugin, could be inter-app comms) 
+
+* Return Dict to View interface
   - entire list
   - task
   - list of tasks in kanban column
@@ -37,13 +59,18 @@ to be avoided at all costs.
   - table data struct for kanban view
   - table data struct for Eisenhower Matrix view
   - by DateTime
-* Print/Send/Notify/timer/calendar Task (provide middleware interface that plugins providers can butt up to)
+
+#### Potential Plugins, or interactions with other apps
+
+* Plugin or I/O interface 
+  - Print/Send/Notify/timer/calendar Task (provide middleware interface that plugins providers can butt up to)
   - Task History
   - Current State
   - Task History Range
   - iCal Target Dates, Meetings, 
   - Timer/Timer Schedule
   - Reminders/Reminders Schedule
+  - send a view dict to one of the Plugin or I/O mechanisms 
 
 
 ## Utilities used:
