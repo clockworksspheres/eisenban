@@ -43,10 +43,16 @@ to be avoided at all costs.
 * Change State and Priority and TargetDateTime
 * Change Target DateTime
 
+#### Backup
+
 #### Retire
 
 * Delete Task
 * Archive Task
+* Delete File
+* Archive File
+* Delete Db
+* Archive Db
 
 #### Present Model info in Dict form to Software Interface (could be view, could be plugin, could be inter-app comms) 
 
@@ -71,8 +77,7 @@ to be avoided at all costs.
   - Timer/Timer Schedule
   - Reminders/Reminders Schedule
   - send a view dict to one of the Plugin or I/O mechanisms 
-
-
+  
 ## Utilities used:
 
 My personal preference is to use locally installed apps for design works, as I take my dev machine with me places, and do not always have internet to access internet based web applications for design work.  These applications can all be installed locally, although some can be available via internet services.
@@ -83,6 +88,13 @@ My personal preference is to use locally installed apps for design works, as I t
 ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----
 | Umbrello  | KDE hosted UML project | https://umbrello.kde.org/  | https://umbrello.kde.org/documentation.php  | https://community.chocolatey.org/packages/umbrello | https://invent.kde.org/packaging/homebrew-kdebrew | https://snapcraft.io/umbrello | https://github.com/KDE/umbrello |
 | drawio | diagram builder | https://www.diagrams.net/ | https://drawio-app.com/tutorials/ | https://community.chocolatey.org/packages/drawio | https://formulae.brew.sh/cask/drawio | https://snapcraft.io/drawio | https://github.com/jgraph/drawio-desktop |
+
+### Python editors
+| Tool | Description | Project link | Tutorials | Windows package sources | macOS package sources | Linux package sources |
+----- | ----- | ----- | ----- | ----- | ----- | -----
+| pycharm  |  |  | 
+| geany |  |  |  |
+| eclipse |  |  |  |
 
 ### .md files
 
