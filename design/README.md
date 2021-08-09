@@ -92,8 +92,8 @@ My personal preference is to use locally installed apps for design works, as I t
 ### Python editors
 | Tool | Description | Project link | Tutorials | Windows package sources | macOS package sources | Linux package sources |
 ----- | ----- | ----- | ----- | ----- | ----- | -----
-| pycharm  |  |  | 
-| geany |  |  |  |
+| pycharm  | IDE for Python programming | https://www.jetbrains.com/pycharm/ |  | choco install pycharm-community | https://formulae.brew.sh/cask/pycharm-ce | | | 
+| geany | Geany is a powerful, stable and lightweight programmer's text editor that provides tons of useful features without bogging down your workflow. | https://www.geany.org/ |  | https://community.chocolatey.org/packages/geany | https://formulae.brew.sh/cask/geany |  |
 | eclipse |  |  |  |
 
 ### .md files
