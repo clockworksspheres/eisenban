@@ -14,7 +14,7 @@ class state(priority):
 
   taskId  (private)
 
-  notesOnThisState  (private)
+  notesOnThisNewState  (private)
 
   kanbanColumn  (private)
 
@@ -34,7 +34,6 @@ class state(priority):
   currentKanbanColumn  (private)
 
   """
-
   def __init__(self, config={}, notesOnThisNewState=0, kanbanColumn=True, holdUntil=True, holdNotes="", targetCompletionTimestamp="", currentPriority="", holdNotes=""):
     """
 
@@ -65,9 +64,9 @@ class state(priority):
       self.taskId = 1
 
     if isinstance(notesOnThisNewState, str):
-      self.notesOnThisNewState = notesOnThisNewState
+      self.notesOnThisState = notesOnThisNewState
     else:
-      self.notesOnThisNewState = ""
+      self.notesOnThisState = ""
 
     #####
     #  kanbanColumn or current State at task resides in
@@ -89,7 +88,7 @@ class state(priority):
     else:
       self.holdUntil = ""
 
-    self.enteredThisStateTimestamp = getCurrentDateTimeStamp()
+    self.enteredThisStateTimestamp = self.config.getCurrentDateTimeStamp()
 
     if isinstance(targetCompletionTimestamp, str):
       self.targetCompletionTimestamp = targetCompletionTimestamp
@@ -102,123 +101,205 @@ class state(priority):
       # TODO: implement defaulting this branch to highest nice level, urgent=True, important=True, place in the backlog
       #       to make sure this issue gets immediate triage to the right priority and state.
 
-
-
-
-
-# TODO: use below as templates for getters and setters, etc of the state object's class properties.
-
-  def setNiceLevel(self, newNiceLevel=0):
+  def __str__(self):
     """
-     Acts as unix "nice" levels for processes, range -20 to 20.  Using that as it is
-     familiar to systems programmers and *nix admins, and any student that has
-     operated in a unix environment.
-
-    @param short int newNiceLevel :
-    @return  :
-    @author : Roy Nielsen
+    :return: Return a string representation of the class data
     """
-    if isinstance(newNiceLevel, int) and newNiceLevel < 20 and newNiceLevel > -20:
-      self.niceLevel = newNiceLevel
+    state = "taskId: {}, " \
+            "currentKanbanColumn: {}, " \
+            "currentKanbanColumns: {}, " \
+            "priority: {}, " \
+            "onHold: {}, " \
+            "holdUntil: {}, " \
+            "internalState: {}, " \
+            "notesOnThisState: {}, " \
+            "enteredThisStateTimestamp: {}, " \
+            "targetCompletionTimestamp: {}, ".format(self.taskId,
+                                                     self.currentKanbanColumn,
+                                                     self.currentKanbanColumns,
+                                                     self.priority,
+                                                     self.onHold,
+                                                     self.holdUntil,
+                                                     self.notesOnThisState,
+                                                     self.enteredThisStateTimestamp,
+                                                     self.targetCompletionTimestamp)
+      return state
+
+  def __repr__(self):
+    """
+    :return: Return the data structure represented by this class
+    """
+    return {state:
+              {"taskId": self.taskId,
+               "currentKanbanColumn": self.currentKanbanColumn,
+               "currentKanbanColumns": self.currentKanbanColumns,
+               "priority": self.priority,
+               "onHold": self.onHold,
+               "holdUntil": self.holdUntil,
+               "notesOnThisState": self.notesOnThisState,
+               "enteredThisStateTimestamp": self.enteredThisStateTimestamp,
+               "targetCompletionTimestamp": self.targetCompletionTimestamp}
+            }
+
+  def setTaskId(self, taskId=1):
+    """
+    :param taskId:
+    :return:
+    """
+    # TODO: figure out how to set up autoindexing of task ID's in the state manager
+    self.taskId = taskId
+
+  def addKanbanColumn(self, kanbanColumn=""):
+    """
+
+    :param kanbanColumn:
+    :return:
+    """
+    if isinstance(kanbanColumn, str):
+      self.kanbanColumns.append(kanbanColumn)
     else:
-      self.niceLevel = 0
+      self.logger.log(lp.ERROR, "Type Error, this won't work...")
+      self.logger.log(lp.ERROR, traceback.format_exc())
+      raise TypeError
 
-  def setImportant(self, important=True):
+  def addKanbanColumns(self, kanbanColumns=[]):
     """
-     Set the Eisenhower matrix "important" attribute to the priority.  Default "True"
 
-    @param bool important :
-    @return  :
-    @author : Roy Nielsen
+    :param kanbanColumns:
+    :return:
     """
-    if isinstance(important, bool):
-      self.important = important
+    if isinstance(kanbanColumn, str):
+      self.kanbanColumns + kanbanColumns
     else:
-      self.important = True
+      self.logger.log(lp.ERROR, "Type Error, this won't work...")
+      self.logger.log(lp.ERROR, traceback.format_exc())
+      raise TypeError
 
-  def setUrgent(self, urgent=True):
+  def setKanbanColumns(self, kanbanColumns=[]):
     """
-     Set the Eisenhower matrix attribute "Urgent".  Bool, default True
 
-    @param bool urgent :
-    @return  :
-    @author : Roy Nielsen
+    :param kanbanColumns:
+    :return:
     """
-    if isinstance(urgent, bool):
-      self.urgent = urgent
+    if isinstance(kanbanColumn, str):
+      self.kanbanColumns = kanbanColumns
     else:
-      self.urgent = True
+      self.logger.log(lp.ERROR, "Type Error, this won't work...")
+      self.logger.log(lp.ERROR, traceback.format_exc())
+      raise TypeError
 
-  def setPrioityNotes(self, priorityNotes=""):
-    """
-     Not required - notes on why the current priority was chosen.  Default is an
-     empty string.
-
-    @param string priorityNotes :
-    @return  :
-    @author : Roy Nielsen
-    """
-    if isinstance(priorityNotes, str):
-      self.priorityNotes = priorityNotes
-    else:
-      priorityNotes = ""
-
-  def getNiceLevel(self, niceLevel=0):
-    """
-     Return the nice level of this priority.
-
-    @param signed int niceLevel :
-    @return string :
-    @author : Roy Nielsen
-    """
-    return self.niceLevel
-
-  def getImportant(self, important=True):
-    """
-     Return the Esienhower matrix "Important" value.
-
-    @param bool important :
-    @return bool :
-    @author : Roy Nielsen
-    """
-    return self.important
-
-  def getUrgent(self, urgent=True):
-    """
-     Return the Eisenhower matrix value bool.
-
-    @param bool urgent :
-    @return bool :
-    @author : Roy Nielsen
-    """
-    return self.urgent
-
-  def getPriorityNotes(self, priorityNotes=""):
+  def setNewCurrentPriority(self, newPriority={}):
     """
 
-
-    @param string priorityNotes :
-    @return string :
-    @author : Roy Nielsen
+    :param currentPriority:
+    :return:
     """
-    return self.priorityNotes
+    self.currentPriority.setPriority(newPriority)
 
-    def __str__(self):
-      """
-      :return: Return a string representation of the class data
-      """
-      return "niceLvl: {}, urgent: {}, important: {}, priorityNotes: {}".format(self.niceLevel, self.urgent,
-                                                                                self.important, self.priorityNotes)
+  def setOnHold(self, onHold=False):
 
-    def __repr__(self):
-      """
-      :return: Return the data structure represented by this class
-      """
-      return {priority:
-                {"niceLvl": self.niceLevel,
-                 "urgent": self.urgent,
-                 "important": self.important,
-                 "priorityNotes": self.priorityNotes}
-              }
+    """
 
+    :param onHold:
+    :return:
+    """
+    self.onHold = onHold
+
+  def setHoldUntil(self, holdUntil=""):
+    """
+
+    :param holdUntil:  Initial format of the DateTime string will be CCYY-MM-DD_HH-MM-SS, easily parseable
+    :return:
+    """
+    self.holdUntil = holdUntil
+
+  def setNotesOnThisState(self, notes=""):
+    """
+
+    :param notes:
+    :return:
+    """
+    self.notesOnThisState = notes
+
+  def setTargetCompletionTimestamp(self, targetCompletionTimestamp=""):
+    """
+
+    :param targetCompletionTimestamp:
+    :return:
+    """
+    self.targetCompletionTimestamp = targetCompletionTimestamp
+
+  def deleteKanbanColumn(self, kanbanColumn=""):
+    """
+
+    :param kanbanColumn:
+    :return:
+    """
+    # TODO:
+    pass
+
+  def deleteKanbanColumns(self, kanbanColumns=[]):
+    """
+
+    :param kanbanColumns:
+    :return:
+    """
+    # TODO:
+    pass
+
+  def getTaskId(self):
+    """
+
+    :return:
+    """
+    return self.taskId
+
+  def getKanbanColumn(self):
+    """
+
+    :return:
+    """
+    return self.kanbanColumn
+
+  def getKanbanColumns(self):
+    """
+
+    :return:
+    """
+    return self.kanbanColumns
+
+  def getCurrentPriority(self):
+    """
+
+    :return:
+    """
+    return self.currentPriority
+
+  def getOnHold(self):
+    """
+
+    :return:
+    """
+    return self.onHold
+
+  def getHoldUntil(self):
+    """
+
+    :return:  Initial format of the DateTime string will be CCYY-MM-DD_HH-MM-SS, easily parseable
+    """
+    return self.holdUntil
+
+  def getNotesOnThisState(self):
+    """
+
+    :return:
+    """
+    return self.notesOnThisState
+
+  def getTargetCompletionTimestamp(self):
+    """
+
+    :return:  Initial format of the DateTime string will be CCYY-MM-DD_HH-MM-SS, easily parseable
+    """
+    return self.targetCompletionTimestamp
 
