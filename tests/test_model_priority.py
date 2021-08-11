@@ -17,10 +17,9 @@ from datetime import datetime
 #--- non-native python libraries in this source tree
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority as lp
-from eisenban.lib.libHelperExceptions import NotValidForThisOS
 
 
-class test_model_priority(unittest.TestCase):
+class test_model_priorityChange(unittest.TestCase):
     """
 
     """
@@ -49,14 +48,14 @@ class test_model_priority(unittest.TestCase):
     def test_one(self):
         """
         """
-        pass
+        self.assertTrue(True, "False is not True...")
 
     ##################################
 
     def test_two(self):
         """
         """
-        pass
+        self.assertTrue(True, "False is not True...")
 
 ###############################################################################
 ##### unittest Tear down
@@ -69,3 +68,5 @@ class test_model_priority(unittest.TestCase):
 
 ###############################################################################
 
+if __name__ == "__main__":
+    unittest.main()
