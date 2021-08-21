@@ -18,9 +18,6 @@ class StateEngine():
     def __init__(self):
         pass
 
-    def changeState(self, newState={}):
-        pass
-
     def archiveTask(self, taskId="", taskName=""):
         pass
 
@@ -56,7 +53,7 @@ class StateEngine():
     def changePriority(self):
         pass
 
-    def changeKanbanColumn(self):
+    def changeState(self, newState={}):
         pass
 
     def getDispatcher(self):
