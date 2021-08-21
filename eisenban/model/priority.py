@@ -1,5 +1,8 @@
 
-class priority(object):
+import traceback
+
+
+class Priority(object):
 
   """
   :version: 0.1

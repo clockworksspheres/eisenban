@@ -1,9 +1,9 @@
 import copy
 import traceback
 
-from priority import *
+from priority import Priority
 
-class state(priority):
+class State(priority):
 
   """
   :version:
