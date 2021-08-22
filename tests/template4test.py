@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/env -S python -u
 """
 Template for tests
 
@@ -14,10 +14,14 @@ import tempfile
 import ctypes as C
 from datetime import datetime
 
+#####
+# Include the parent project directory in the PYTHONPATH
+appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
+sys.path.append(appendDir)
+
 #--- non-native python libraries in this source tree
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority as lp
-from eisenban.lib.libHelperExceptions import NotValidForThisOS
 
 
 class test_template4tests(unittest.TestCase):
@@ -25,12 +29,14 @@ class test_template4tests(unittest.TestCase):
 
     """
 
+    ###############################################################################
+    ##### unittest Set Up
     @classmethod
     def setUpClass(self):
         """
-        Initializer
+        This method runs before all test cases
         """
-        # self.libc = self.getLibc()
+        pass
      
     ##################################
 
@@ -41,31 +47,43 @@ class test_template4tests(unittest.TestCase):
         pass
 
 
-###############################################################################
-##### Method Tests
+    ###############################################################################
+    ##### Method Tests
 
     ##################################
 
     def test_one(self):
         """
         """
-        pass
+        self.assertTrue(False, "False is not True...")
 
     ##################################
 
     def test_two(self):
         """
         """
+        self.assertTrue(False, "False is not True...")
+
+    ###############################################################################
+    ##### unittest Tear Down
+
+    def tearDown(self):
+        """
+        teardown tasks
+        """
         pass
 
-###############################################################################
-##### unittest Tear down
+    ##################################
     @classmethod
-    def tearDownClassInstanceSpecifics(self):
+    def tearDownClass(self):
         """
         teardown tasks
         """
         pass
 
 ###############################################################################
+
+
+if __name__ == "__main__":
+    unittest.main()
 

@@ -24,7 +24,7 @@ from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority as lp
 
 
-class test_model_stateChange(unittest.TestCase):
+class test_stateEngine(unittest.TestCase):
     """
 
     """

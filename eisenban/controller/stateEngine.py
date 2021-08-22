@@ -21,7 +21,7 @@ class StateEngine():
     def archiveTask(self, taskId="", taskName=""):
         pass
 
-    def deleteTask(self taskId="", taskName=""):
+    def deleteTask(self, taskId="", taskName=""):
         pass
 
     def loadTasks(self, taskFileToLoad=""):
