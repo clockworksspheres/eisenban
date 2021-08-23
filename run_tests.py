@@ -246,6 +246,11 @@ if __name__ == "__main__":
     else:
         prefix = ["test_", "Test_"]
 
+    """
+    #####
+    # todo: Need to figure out a different way to do this that doesn't require interaction -
+    # Perhaps a unittest needs to do this check as part of its tests rather than in the
+    # test runner....
     if os.geteuid != 0:
         print("\n\nNote - Some tests will fail if not run with superuser privilege.")
         print("\n")
@@ -254,6 +259,7 @@ if __name__ == "__main__":
           stmpval = str(tmpval)
         except:
           pass
+    """
 
     logger.log(lp.INFO, "Before attempt to build and run the suite....")
 
