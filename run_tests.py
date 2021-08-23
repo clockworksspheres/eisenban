@@ -75,6 +75,8 @@ class BuildAndRunSuite(object):
                     os.unlink(pycfile)
                 for item in self.prefix:
                     if re.match("^%s.+\.py$"%item, check_file):
+                        if re.match("^__init__.py$", check_file):
+                            continue
                         print("Loading test: " + str(check_file))
                         test_list.append(os.path.join("./tests/", check_file))
             print(str(test_list))

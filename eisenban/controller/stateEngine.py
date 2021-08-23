@@ -12,48 +12,94 @@ from priority import Priority
 
 
 class StateEngine():
+    """
+
+    """
 
     kanbanColumns=["backlog", "in progress", "done", "on hold indefinitely", "on hold until", "archive"]
 
     def __init__(self):
+        """
+
+        """
         pass
 
     def archiveTask(self, taskId="", taskName=""):
+        """
+
+        """
         pass
 
     def deleteTask(self, taskId="", taskName=""):
+        """
+
+        """
         pass
 
     def loadTasks(self, taskFileToLoad=""):
+        """
+
+        """
         pass
 
     def saveTasks(self, taskFileToSave=""):
+        """
+
+        """
         pass
 
     def listLoadedTasks(self, ):
+        """
+
+        """
         pass
 
     def listTasksFromFile(self, taskFileToLoadAndList=""):
+        """
+
+        """
+        pass
 
     def printLoadedTasks(self):
+        """
+
+        """
         pass
 
     def printTasksFromFile(self, taskFileToLoadAndPrint=""):
+        """
+
+        """
         pass
 
     def newTask(self):
+        """
+
+        """
         pass
 
     def newKanbanColumn(self):
+        """
+
+        """
         pass
 
     def changeKanbanColumn(self):
+        """
+
+        """
         pass
 
     def changePriority(self):
+        """
+
+        """
         pass
 
     def changeState(self, newState={}):
+        """
+
+        """
         pass
 
     def getDispatcher(self):
