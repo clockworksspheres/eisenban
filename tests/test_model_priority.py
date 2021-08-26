@@ -24,7 +24,7 @@ from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority as lp
 
 
-class test_model_priorityChange(unittest.TestCase):
+class test_model_priority(unittest.TestCase):
     """
 
     """
@@ -86,3 +86,4 @@ class test_model_priorityChange(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
