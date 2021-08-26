@@ -15,10 +15,14 @@ import unittest
 
 from optparse import OptionParser, SUPPRESS_HELP, OptionValueError, Option
 
-testdir = "./tests"
+#--- program specific libs
 
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority as lp
+
+#--- Globals
+
+testdir = "./tests"
 
 ###############################################################################
 
