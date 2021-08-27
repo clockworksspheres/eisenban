@@ -19,23 +19,6 @@ manager" includes what I call an Interface, Queue, Dispatcher(IQD).  The "state 
 state of the model as well as recording state changes, while the IQD provides a code or object interface and control
 of the software system.
 
-## State Management Engine
-
-The intention is to record all state changes and actions, so the data can be mined for future planning
-improvements by the user.  Tasks can be either archived, or deleted, but messing with a "revert"
-function is against the purpose of working on continuous improvement as well as transparency, therefore
-to be avoided at all costs.
-
-The State Management Engine will attempt to abstract the idea of state change, so it can be replicated for multiple 
-projects.
-
-The State Management Engine will abstract the notion of state such that an instruction to change state can be given to
-the state management engine, without actually changing the data in a dynamic model.  If this framework is successful,
-it can be pulled out and plopped down in other projects, and used directly without any required modification to the
-project it is plopped down into.
-
-Possibly considering a factory object, but likely going to approach a simpler object or pattern first.
-
 ## CRUD Store Engine
 
 CRUD is an old computer science term to abstract the following storage paradigm:
@@ -69,8 +52,27 @@ in future projects like the learning-and-research-accellerator project.
 | Update | PUT |
 | Delete | DELETE |
 
+### crudInMemInstanceEngine.py 
 
+This inherits the crudStoreEngine.py, and is specific to modifying the instance data store in memory, that has already
+been loaded, or is being created.  
 
+## State Management Engine
+
+The intention is to record all state changes and actions, so the data can be mined for future planning
+improvements by the user.  Tasks can be either archived, or deleted, but messing with a "revert"
+function is against the purpose of working on continuous improvement as well as transparency, therefore
+to be avoided at all costs.
+
+The State Management Engine will attempt to abstract the idea of state change, so it can be replicated for multiple 
+projects.
+
+The State Management Engine will abstract the notion of state such that an instruction to change state can be given to
+the state management engine, without actually changing the data in a dynamic model.  If this framework is successful,
+it can be pulled out and plopped down in other projects, and used directly without any required modification to the
+project it is plopped down into.
+
+Possibly considering a factory object, but likely going to approach a simpler object or pattern first.
 
 ### Wish List of Actions to be implemented by the State Management System and IQD
 
