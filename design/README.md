@@ -26,6 +26,52 @@ improvements by the user.  Tasks can be either archived, or deleted, but messing
 function is against the purpose of working on continuous improvement as well as transparency, therefore
 to be avoided at all costs.
 
+The State Management Engine will attempt to abstract the idea of state change, so it can be replicated for multiple 
+projects.
+
+The State Management Engine will abstract the notion of state such that an instruction to change state can be given to
+the state management engine, without actually changing the data in a dynamic model.  If this framework is successful,
+it can be pulled out and plopped down in other projects, and used directly without any required modification to the
+project it is plopped down into.
+
+Possibly considering a factory object, but likely going to approach a simpler object or pattern first.
+
+## CRUD Store Engine
+
+CRUD is an old computer science term to abstract the following storage paradigm:
+
+* Create
+* Read
+* Update
+* Delete
+
+This can be applied to both SQL databases and REST web interfaces.  One can consider CSV and plain text files
+as well.
+
+The eisenban project will prototype this kind of factory based model to be duplicated and re-used
+in future projects like the learning-and-research-accellerator project.
+
+### Comparing CRUD to SQL terminology
+
+| CRUD | SQL |
+|---|---|
+| Create | Insert |
+| Read | Select |
+| Update | Update |
+| Delete | Delete |
+
+### Comparing CRUD to REST technology
+
+| CRUD | REST |
+|---|---|
+| Create | POST |
+| Read | GET |
+| Update | PUT |
+| Delete | DELETE |
+
+
+
+
 ### Wish List of Actions to be implemented by the State Management System and IQD
 
 #### Create
