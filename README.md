@@ -24,7 +24,12 @@ Considering a data structure model something like:
      {
          state: {task: {id: "", title: ""}, 
                 notes: "", 
-                priority: {}, 
+                priority: {
+                     niceLvl: "", 
+                    urgent: bool, 
+                    important: bool,
+                    priorityNotes: ""
+                    }, 
                 kanbanColumns: [backLog, inProgress, done, hold, delegated], 
                 currentState: ""
                 holdUntil: "", 

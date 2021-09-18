@@ -19,7 +19,75 @@ manager" includes what I call an Interface, Queue, Dispatcher(IQD).  The "state 
 state of the model as well as recording state changes, while the IQD provides a code or object interface and control
 of the software system.
 
-## CRUD Store Engine
+### Controller core
+
+For this app, the controller/state engine tells the model to change state, passes in the current state and the "next"
+state, sends the data to either a decoupled state manager, or the model, that containes its own state manager to manage
+the dynamic state of the data in memory.
+
+This way, the controller doesn't have to know the details of the model to make the state change, and the model can be completely decoupled from the controller.  The controller or state
+engine then becomes a traffic cop, or train station switching hub, between view, model, devices and API's (like REST)
+
+For those familiar with older chipsets - the controller then becomes something like a north bridge, directing data
+traffic to the different app compnents, or sub components, with instructions on what it expects to be done with that
+data.
+
+Each section in the app, such as Model and View, then become like a device off the north bridge - that take the data
+and the instructions and perform the expected action.
+
+### the Model device
+
+The Model device, takes the data, has a "model controller" to handle how dynamic data is manimpulated.
+
+
+State
+
+S1 = State One
+S2 = State Two
+P1 = Priority One
+P2 = Priority Two
+
+For the type of data in this model
+S1P1 -> S2P1 -> Slog
+S1P1 -> S2P2 -> Slog -> Plog
+S1P1 -> S1P2 -> Plog
+
+S1P1 -> S
+
+
+### the View device
+
+The View device, takes the data, has a "view controller" to handle how dynamic data is presented to a user.
+
+### the API device
+
+The API device, takes the data, has an "API controller" to handle how dynamic data is presented to an API, like a
+REST interface, or a plugin type interface.
+
+### the CRUD device
+
+The CRUD device, takes the data, has a "storage controller" to handle how dynamic data is stored on non-volitile
+storage.  This could be in the form of a CSV, YAML, JSON files, or into a database.  The first three just have
+filesystem interaction, while the CRUD device controller will need to have a database driver or hook to write to
+a database, like SQL or NOSQL type database.  Perhaps the SQL driver(s) may include mysql, mariadb, postgres, oracle,
+mssql, and the NOSQL controller could perform similarly for those types of database interactions.
+
+
+### printers??
+
+Not sure yet where to put printers, probably categorize them as a view, as it is a presentation of the dynamic data
+at the time of the print.
+
+
+
+
+
+
+
+
+
+
+## CRUD Store controller
 
 CRUD is an old computer science term to abstract the following storage paradigm:
 
@@ -34,7 +102,14 @@ as well.
 The eisenban project will prototype this kind of factory based model to be duplicated and re-used
 in future projects like the learning-and-research-accellerator project.
 
-### Comparing CRUD to SQL terminology
+### crudInMemInstanceEngine.py 
+
+This inherits the crudStoreEngine.py, and is specific to modifying the instance data store in memory, that has already
+been loaded, or is being created.  
+
+## API device controller
+
+Comparing CRUD to SQL terminology
 
 | CRUD | SQL |
 |---|---|
@@ -52,29 +127,21 @@ in future projects like the learning-and-research-accellerator project.
 | Update | PUT |
 | Delete | DELETE |
 
-### crudInMemInstanceEngine.py 
-
-This inherits the crudStoreEngine.py, and is specific to modifying the instance data store in memory, that has already
-been loaded, or is being created.  
-
-## State Management Engine
+## State Management device
 
 The intention is to record all state changes and actions, so the data can be mined for future planning
 improvements by the user.  Tasks can be either archived, or deleted, but messing with a "revert"
 function is against the purpose of working on continuous improvement as well as transparency, therefore
 to be avoided at all costs.
 
-The State Management Engine will attempt to abstract the idea of state change, so it can be replicated for multiple 
-projects.
+The State Management device will attempt to abstract the idea of state change.  This device may be specific to the
+data in the model, so it may only be able to be used as a reference for other state management devices for other
+projects, rather than be used directly in multiple projects.
 
-The State Management Engine will abstract the notion of state such that an instruction to change state can be given to
-the state management engine, without actually changing the data in a dynamic model.  If this framework is successful,
-it can be pulled out and plopped down in other projects, and used directly without any required modification to the
-project it is plopped down into.
 
-Possibly considering a factory object, but likely going to approach a simpler object or pattern first.
 
-### Wish List of Actions to be implemented by the State Management System and IQD
+
+### Wish List of instructions to be implemented by the Controller core - and directed to the right device
 
 #### Create
 
@@ -119,7 +186,7 @@ Possibly considering a factory object, but likely going to approach a simpler ob
 * Plugin or I/O interface 
   - Print/Send/Notify/timer/calendar Task (provide middleware interface that plugins providers can butt up to)
   - Task History
-  - Current State
+  - Current Statek h]
   - Task History Range
   - iCal Target Dates, Meetings, 
   - Timer/Timer Schedule
