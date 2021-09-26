@@ -98,19 +98,7 @@ class CyLogger(Singleton):
         """
         # print ".............Level: " + str(level)
         self.lvl = int(level)
-        '''
-        if environ:
-            self.environment = environ
-            try:
-                envDebugMode = self.environment.getdebugmode()
-                envVerboseMode = self.environment.getverbosemode()
-            except IndexError:
-                pass
-            if re.match("^debug$", envDebugMode):
-                self.lvl = 10
-            elif re.match("^verbose$", envVerboseMode):
-                self.lvl = 20
-        '''
+
         if debug_mode or verbose_mode:
             if debug_mode:
                 self.lvl = 10
