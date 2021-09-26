@@ -18,6 +18,8 @@ sys.path.append("..")
 # --- Non-native python libraries in this source tree
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority
+from eisenban.lib.run_commands import RunWith
+
 
 class test_loggers(unittest.TestCase):
     """
