@@ -19,18 +19,9 @@ class Conf(object) :
         self.version = "0.0.0.0"
         self.options = []
         self.logger = CyLogger()
-        self.currentRepoPath = "~/"
         psudopath = os.path.abspath(os.path.dirname(__file__))
         partialpath = psudopath.split("/")
         self.appPath = os.path.join("/", "/".join(partialpath[:-1]))
-        self.currentVarFilePath = ""
-        self.currentTemplateFilePath = ""
-        self.onlyVmImage = ""
-        self.proxy = ""
-        self.httpProxy = ""
-        self.httpsProxy = ""
-        self.ftpProxy = ""
-        self.repoRoot = ""
 
     def getVersion(self) :
         """
@@ -60,18 +51,6 @@ class Conf(object) :
         """
         return self.logger
 
-    def setEnviron(self, environ=""):
-        """
-        Setter for the password
-        """
-        self.environ = environ
-
-    def getEnviron(self):
-        """
-        Getter for the password
-        """
-        return self.environ
-
     def setCurrentRepo(self, repoPath=""):
         """
         Setter for the password
@@ -100,156 +79,6 @@ class Conf(object) :
         '''
         return self.currentVarFilePath
     
-    def setCurrentTemplateFilePath(self, templateFilePath):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.currentTemplateFilePath = templateFilePath
-    
-    def getCurrentTemplateFilePath(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.currentTemplateFilePath
-    
-    def setOnlyVmImage(self, onlyVmImage):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.onlyVmImage = onlyVmImage
-    
-    def getOnlyVmImage(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.onlyVmImage
-    
-    def setProxy(self, proxy):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.proxy = proxy
-    
-    def getProxy(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.proxy
-
-    def setHttpProxy(self, httpProxy):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.httpProxy = httpProxy
-
-    def getHttpProxy(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.httpProxy
-
-    def setHttpsProxy(self, httpsProxy):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.httpsProxy = httpsProxy
-
-    def getHttpsProxy(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.httpsProxy
-
-    def setFtpProxy(self, ftpProxy):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.ftpProxy = ftpProxy
-
-    def getFtpProxy(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.ftpProxy
-    
-    def setRsyncProxy(self, rsyncProxy):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.rsyncProxy = rsyncProxy
-
-    def getRsyncProxy(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.rsyncProxy
-    
-    def setNoProxy(self, noProxy):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        self.noProxy = noProxy
-
-    def getNoProxy(self):
-        '''
-        Getter for the full packer json file path
-
-        @author: Roy Nielsen
-        '''
-        return self.noProxy
-    
-    def setRepoRoot(self, repo):
-        '''
-        Setter for the full path to the boxcutter repo
-
-        @author: Roy Nielsen
-        '''
-        self.repoRoot = repo
-
-    def getRepoRoot(self):
-        '''
-        Getter for the full path to the boxcutter repo
-
-        @author: Roy Nielsen
-        '''
-        return self.repoRoot
-    
-    def getVmBuildConf(self) :
-        """
-        return self...
-        """
-        return self.appPath + "/vmbuilder.conf"
-
     def returnConf(self) :
         """
         return self...
