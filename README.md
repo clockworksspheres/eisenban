@@ -88,3 +88,8 @@ parent template to be created that will provide default handlers for each piece 
 * [https://github.com/maciek-nowak/eisenhower-matrix](https://github.com/maciek-nowak/eisenhower-matrix)
 * [https://github.com/sthompson232/Eisenhowers-Quadrant](https://github.com/sthompson232/Eisenhowers-Quadrant)
 
+## Examples of other apps with task tracking integrations with other and similar systems - 
+
+* [Sunsama -  organizes your work one day at a time. Every day should feel calm and focused.](https://www.sunsama.com/a/howtoadhd)
+
+
