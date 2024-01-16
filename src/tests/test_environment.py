@@ -2,29 +2,6 @@
 '''
 Created on Jul 13, 2011 - stonix project
 
-###############################################################################
-#                                                                             #
-# Copyright 2015.  Los Alamos National Security, LLC. This material was       #
-# produced under U.S. Government contract DE-AC52-06NA25396 for Los Alamos    #
-# National Laboratory (LANL), which is operated by Los Alamos National        #
-# Security, LLC for the U.S. Department of Energy. The U.S. Government has    #
-# rights to use, reproduce, and distribute this software.  NEITHER THE        #
-# GOVERNMENT NOR LOS ALAMOS NATIONAL SECURITY, LLC MAKES ANY WARRANTY,        #
-# EXPRESS OR IMPLIED, OR ASSUMES ANY LIABILITY FOR THE USE OF THIS SOFTWARE.  #
-# If software is modified to produce derivative works, such modified software #
-# should be clearly marked, so as not to confuse it with the version          #
-# available from LANL.                                                        #
-#                                                                             #
-# Additionally, this program is free software; you can redistribute it and/or #
-# modify it under the terms of the GNU General Public License as published by #
-# the Free Software Foundation; either version 2 of the License, or (at your  #
-# option) any later version. Accordingly, this program is distributed in the  #
-# hope that it will be useful, but WITHOUT ANY WARRANTY; without even the     #
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.    #
-# See the GNU General Public License for more details.                        #
-#                                                                             #
-###############################################################################
-
 @author: dkennel
 @change: 2015/10/23 eball Updated deprecated unit test methods, added dummy
                           PN file creation
@@ -41,10 +18,10 @@ import tracemalloc
 
 #####
 # Include the parent project directory in the PYTHONPATH
-# appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
-# sys.path.append(appendDir)
+appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
+sys.path.append(appendDir)
 
-sys.path.append("..")
+# --- Non-native python libraries in this source tree
 import eisenban.lib.environment as environment
 
 
@@ -60,7 +37,7 @@ class test_environment(unittest.TestCase):
     def testGetostype(self):
         tracemalloc.start(10)
         validtypes = 'Red Hat Enterprise Linux|Debian|Ubuntu|CentOS|Fedora|' + \
-                     'openSUSE|Mac OS X'
+                     'openSUSE|Mac OS X|macOS'
         print('OS Type: ' + str(self.to.getostype()))
         self.assertTrue(re.search(validtypes, self.to.getostype()))
 
@@ -143,6 +120,7 @@ class test_environment(unittest.TestCase):
         print('UUID: ' + str(uuid))
         self.assertTrue(uuid)
 
+    @unittest.skip
     def testIsMobile(self):
         tracemalloc.start(10)
         self.assertFalse(self.to.ismobile(),

@@ -239,7 +239,7 @@ if __name__ == "__main__":
     else:
         level = 30
     logger = CyLogger(level=level)
-    logger.initializeLogs(filename="ramdiskTestLog")
+    logger.initializeLogs(filename="eisenbanTestLog")
 
     logger.log(lp.DEBUG, "Modules: " + str(modules))
 

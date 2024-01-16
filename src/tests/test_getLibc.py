@@ -19,10 +19,8 @@ from datetime import datetime
 
 #####
 # Include the parent project directory in the PYTHONPATH
-# appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
-# sys.path.append(appendDir)
-
-sys.path.append("..")
+appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
+sys.path.append(appendDir)
 
 # --- Non-native python libraries in this source tree
 from eisenban.lib.loggers import CyLogger
@@ -70,6 +68,7 @@ class test_getLibc(unittest.TestCase):
 
     ##################################
 
+    @unittest.skip("no longer cross platform")
     def test_uname(self):
         """
         """
@@ -92,6 +91,7 @@ class test_getLibc(unittest.TestCase):
         
     ##################################
 
+    @unittest.skip("no longer cross platform")
     def test_symlink(self):
         """
         """

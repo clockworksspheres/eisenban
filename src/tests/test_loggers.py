@@ -19,6 +19,8 @@ sys.path.append("..")
 from eisenban.lib.environment import Environment
 from eisenban.lib.loggers import CyLogger
 from eisenban.lib.loggers import LogPriority
+from eisenban.lib.run_commands import RunWith
+
 
 class test_loggers(unittest.TestCase):
     """

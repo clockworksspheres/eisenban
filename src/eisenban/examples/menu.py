@@ -8,11 +8,11 @@ from optparse import OptionParser, SUPPRESS_HELP
 
 sys.path.append("../..")
 #--- non-native python libraries in this source tree
-import ramdisk
-from ramdisk.lib.run_commands import RunWith
-from ramdisk.lib.loggers import CyLogger
-from ramdisk.lib.loggers import LogPriority as lp
-from ramdisk.lib.composite_menu import MenuComposite, MenuItem 
+import eisenban
+from eisenban.lib.run_commands import RunWith
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority as lp
+from eisenban.lib.composite_menu import MenuComposite, MenuItem 
 """
 parser = OptionParser(usage="\n\n%prog [options]\n\n", version="0.7.2")
 
