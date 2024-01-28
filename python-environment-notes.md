@@ -1,4 +1,10 @@
-# Pyenv notes
+# Python environment notes
+
+## Miniconda / Anaconda
+
+
+
+## Pyenv
 
 Pyenv provides a framework for managing different versions of python, so one can manage the version of python one uses for different classes, courses, projects, etc.
 

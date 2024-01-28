@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "design/README.md",
+                "file": "python-environment-notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,6 +64,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "fc9eb82d582ce7d4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -85,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "design/README.md",
+                "file": "python-environment-notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "design/README.md",
+                "file": "python-environment-notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "design/README.md"
+                "file": "python-environment-notes.md"
               }
             }
           }
@@ -148,6 +156,12 @@
   },
   "active": "253de4c1d86101dc",
   "lastOpenFiles": [
+    "src/eisenban/lib/__pycache__/run_commands.cpython-312.pyc",
+    "src/eisenban/lib/__pycache__/getLibc.cpython-312.pyc",
+    "src/eisenban/lib/__pycache__/singleton.cpython-312.pyc",
+    "src/eisenban/lib/__pycache__/loggers.cpython-312.pyc",
+    "src/eisenban/__pycache__/__init__.cpython-312.pyc",
+    "design/README.md",
     "README.md"
   ]
 }
