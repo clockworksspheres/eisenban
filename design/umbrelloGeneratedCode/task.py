@@ -1,10 +1,24 @@
+#!/usr/bin/env -S python -u
+"""
+Task module
+
+"""
+
+#--- Native python libraries
+
+from datetime import datetime
+
 from state import *
 
 class task(object):
 
   """
+  Task Class
+
+  :purpose: Identify and track the purpose, goals, timing, requirements, resources, notes, why stalled, etc
+
   :version:
-  :author:
+  :author: Roy Nielsen
   """
 
   """ ATTRIBUTES
@@ -33,6 +47,7 @@ class task(object):
     @param string taskId : 
     @param string creationTimeStamp : 
     @param string initialTargetCompletionTimestamp : 
+    @param string currentTargetCompletionTimestamp : 
     @param string currentState : 
     @param string description : 
     @return  :
