@@ -165,3 +165,41 @@ My personal preference is to use locally installed apps for design works, as I t
 
 ### 
 
+
+
+setTitle
+setTaskId
+setDescription
+setInitialCompletionTimestamp
+
+set(*arg, **kwarg)
+get(*arg, **kwarg)
+
+verifying [ title, 
+            taskId, 
+	    creationTimeStamp, 
+	    initialTargetCreationTimeStamp, 
+	    currentState, 
+	    description, 
+	    currentTargetCompletionTimestamp, 
+	    atomic_task_id, 
+	    taskNote ]
+
+
+        setServiceSuccess = False
+
+        if self.isServiceVarValid(service):
+            self.service = service
+            setServiceSuccess = True
+
+        if "serviceName" in kwargs:
+            self.servicename = kwargs.get("serviceName")
+        elif "servicename" in kwargs:
+            self.servicename = kwargs.get("servicename")
+        else:
+            self.servicename = ""
+
+
+
+
+
