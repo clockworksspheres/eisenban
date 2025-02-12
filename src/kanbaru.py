@@ -1,3 +1,5 @@
+#!/usr/bin/env -S python -u
+
 import logging
 import os
 import sys
