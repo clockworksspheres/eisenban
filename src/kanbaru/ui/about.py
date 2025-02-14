@@ -71,22 +71,7 @@ class About(QMainWindow):
 
     def easter_egg(self) -> None:
         """Easter egg for the logo."""
-        self.count += 1
-        if self.count == 5:
-            logging.info("Easter egg activated!")
-            with open(get_current_directory() +
-                      "\\resources\\img\\rainydevil.txt", "rb") as f:
-                b64data = f.read()
-                data = b64decode(b64data)
-                rainydevilpic = QPixmap()
-                rainydevilpic.loadFromData(data, "PNG")
-                rainydevilpic = rainydevilpic.scaled(
-                    100, 100, Qt.KeepAspectRatio)
-                self.ui.label_logo_bottom.setPixmap(rainydevilpic)
-                self.ui.label_logo_bottom.setScaledContents(True)
-                self.ui.label_logo_bottom.setContentsMargins(0, 0, 0, 0)
-                self.ui.label_logo_bottom.setFixedSize(100, 100)
-                self.setFixedSize(628, 458)
+        pass
 
     @overrides(QMainWindow)
     def paintEvent(self, event: QPaintEvent) -> None:

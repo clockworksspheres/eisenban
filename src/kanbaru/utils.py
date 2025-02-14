@@ -84,8 +84,8 @@ def get_current_directory() -> str:
         The current directory of the application.
     """
     path = os.path.dirname(os.path.abspath(__file__))
-    if os.path.basename(path) != "src":
-        path = os.path.join(path, "src")
+    #if os.path.basename(path) != "src":
+    #    path = os.path.join(path, "src")
     return path
 
 

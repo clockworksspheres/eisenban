@@ -346,16 +346,16 @@ class CardDescription(QMainWindow):
 
     def setup_font(self) -> None:
         notosans = setup_font_db("NotoSans.ttf")[0]
-        toruspro = setup_font_db("TorusPro.ttf")[0]
-        self.ui.label_card_desc.setFont(QFont(toruspro, 28))
-        self.ui.label_title.setFont(QFont(toruspro, 14, QFont.Bold))
-        self.ui.label_date.setFont(QFont(toruspro, 14, QFont.Bold))
-        self.ui.label_time.setFont(QFont(toruspro, 14, QFont.Bold))
-        self.ui.label_description.setFont(QFont(toruspro, 14, QFont.Bold))
+        andika = setup_font_db("Andika-Regular.ttf")[0]
+        self.ui.label_card_desc.setFont(QFont(andika, 28))
+        self.ui.label_title.setFont(QFont(andika, 14, QFont.Bold))
+        self.ui.label_date.setFont(QFont(andika, 14, QFont.Bold))
+        self.ui.label_time.setFont(QFont(andika, 14, QFont.Bold))
+        self.ui.label_description.setFont(QFont(andika, 14, QFont.Bold))
         self.ui.lineEdit_title.setFont(QFont(notosans, 12))
         self.ui.calendarWidget.setFont(QFont(notosans, 12))
         self.ui.timeEdit.setFont(QFont(notosans, 16, QFont.Bold))
         self.ui.textEdit_description.setFont(QFont(notosans, 12))
-        self.ui.btn_delete.setFont(QFont(toruspro, 12))
-        self.ui.btn_cancel.setFont(QFont(toruspro, 12))
-        self.ui.btn_save.setFont(QFont(toruspro, 12))
+        self.ui.btn_delete.setFont(QFont(andika, 12))
+        self.ui.btn_cancel.setFont(QFont(andika, 12))
+        self.ui.btn_save.setFont(QFont(andika, 12))

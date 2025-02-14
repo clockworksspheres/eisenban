@@ -123,9 +123,9 @@ class WelcomeScreen(QMainWindow):
     @staticmethod
     def setup_font(parent: Ui_WelcomeWindow) -> None:
         notosans = setup_font_db("NotoSans.ttf")[0]
-        toruspro = setup_font_db("TorusPro.ttf")[0]
-        parent.ui.label_login.setFont(QFont(toruspro, 13, QFont.Bold))
-        parent.ui.label_signup.setFont(QFont(toruspro, 13, QFont.Bold))
+        andika = setup_font_db("Andika-Regular.ttf")[0]
+        parent.ui.label_login.setFont(QFont(andika, 13, QFont.Bold))
+        parent.ui.label_signup.setFont(QFont(andika, 13, QFont.Bold))
         parent.ui.lineEdit_login_username.setFont(QFont(notosans, 12))
         parent.ui.lineEdit_login_password.setFont(QFont(notosans, 12))
         parent.ui.lineEdit_signup_username.setFont(QFont(notosans, 12))
@@ -134,8 +134,8 @@ class WelcomeScreen(QMainWindow):
             QFont(notosans, 12))
         parent.ui.label_login_msg.setFont(QFont(notosans, 11, QFont.Bold))
         parent.ui.label_signup_msg.setFont(QFont(notosans, 11, QFont.Bold))
-        parent.ui.btn_login.setFont(QFont(toruspro, 12, QFont.Bold))
-        parent.ui.btn_signup.setFont(QFont(toruspro, 12, QFont.Bold))
+        parent.ui.btn_login.setFont(QFont(andika, 12, QFont.Bold))
+        parent.ui.btn_signup.setFont(QFont(andika, 12, QFont.Bold))
 
     def login_username_listener(self, text: str,
                                 parent: Ui_WelcomeWindow) -> None:

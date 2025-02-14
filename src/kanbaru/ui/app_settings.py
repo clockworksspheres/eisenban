@@ -221,10 +221,10 @@ class AppSettings(QMainWindow):
         ]
 
     def setup_font(self) -> None:
-        toruspro = setup_font_db("TorusPro.ttf")[0]
-        self.ui.label_app_settings.setFont(QFont(toruspro, 28))
-        self.ui.label_manage_board.setFont(QFont(toruspro, 14, QFont.Bold))
-        self.ui.label_manage_board_desc.setFont(QFont(toruspro, 11))
-        self.ui.btn_delete.setFont(QFont(toruspro, 12))
-        self.ui.btn_cancel.setFont(QFont(toruspro, 12))
-        self.ui.btn_save.setFont(QFont(toruspro, 12))
+        andika = setup_font_db("Andika-Regular.ttf")[0]
+        self.ui.label_app_settings.setFont(QFont(andika, 28))
+        self.ui.label_manage_board.setFont(QFont(andika, 14, QFont.Bold))
+        self.ui.label_manage_board_desc.setFont(QFont(andika, 11))
+        self.ui.btn_delete.setFont(QFont(andika, 12))
+        self.ui.btn_cancel.setFont(QFont(andika, 12))
+        self.ui.btn_save.setFont(QFont(andika, 12))
