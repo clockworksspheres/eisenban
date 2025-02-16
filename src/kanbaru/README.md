@@ -146,7 +146,6 @@ Kanbaru is released under the MIT license. See [LICENSE](https://github.com/dula
 ```sh
 python -m venv temp
 source temp/bin/activate
-sudo python install tk*
 sudo apt-get install python3-tk*
 pip install PySide6
 ./kanbaru.py
@@ -157,7 +156,6 @@ pip install PySide6
 ```sh
 python -m venv temp
 source temp/bin/activate
-sudo python install tk*
 sudo apt-get install python3-tk*
 pip install PySide6
 sudo apt-get install xcb
