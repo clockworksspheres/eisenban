@@ -28,7 +28,10 @@ Kanbaru is free and open source, released under the MIT license.
 -   [App Settings](#app-settings)
 -   [About Page](#about-page)
 -   [License](#license)
-    [Getting Started with Ubuntu](#getting-started-with-ubuntu)
+-   [Getting Started with Ubuntu](#getting-started-with-ubuntu)
+-   [Getting Started with Debian Based ParrotOS](#getting-started-with-debian-based-parrotos)
+
+
 ## Authors
 
 ### 👤 Dulapah Vibulsanti (64011388)
@@ -138,7 +141,7 @@ This page shows the developer as well as the project's [License](#license). This
 
 Kanbaru is released under the MIT license. See [LICENSE](https://github.com/dulapahv/Kanbaru/blob/main/LICENSE) for more information.
 
-# Getting Started With Ubuntu
+# Getting Started With Ubuntu 24.04
 
 ```sh
 python -m venv temp
@@ -146,8 +149,10 @@ source temp/bin/activate
 sudo python install tk*
 sudo apt-get install python3-tk*
 pip install PySide6
-./kanbaru.py```
-# Getting Started With Debian
+./kanbaru.py
+```
+
+# Getting Started With Debian Based ParrotOS 6
 
 ```sh
 python -m venv temp
@@ -160,3 +165,4 @@ sudo apt install libxcb-cursor0
 sudo apt install libxcb-xinerama0
 ./kanbaru.py
 ```
+
