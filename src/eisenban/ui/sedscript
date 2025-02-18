@@ -1,0 +1,14 @@
+# download andika font from font.google.com
+ sed -i '' 's/TorusPro/Andika-Regular/g' app_settings.py
+ sed -i '' 's/TorusPro/Andika-Regular/g' board_settings.py
+ sed -i '' 's/TorusPro/Andika-Regular/g' card_description.py
+ sed -i '' 's/TorusPro/Andika-Regular/g' main.py            
+ sed -i '' 's/TorusPro/Andika-Regular/g' welcome.py
+ sed -i '' 's/toruspro/andika/g' app_settings.py
+ sed -i '' 's/toruspro/andika/g' board_settings.py
+ sed -i '' 's/toruspro/andika/g' card_description.py 
+ sed -i '' 's/toruspro/andika/g' main.py            
+ sed -i '' 's/toruspro/andika/g' welcome.py 
+
+
+
