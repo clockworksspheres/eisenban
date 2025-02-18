@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Kanbaru</string>
+   <string>Eisenban</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../resources.qrc">
@@ -117,8 +117,8 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
 color: #FFFFFF;</string>
             </property>
             <property name="text">
-             <string>Kan
-baru</string>
+             <string>Eisen
+ban</string>
             </property>
             <property name="margin">
              <number>10</number>

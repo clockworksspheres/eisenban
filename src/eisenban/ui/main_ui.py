@@ -379,9 +379,9 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Kanbaru", None))
-        self.label_logo.setText(QCoreApplication.translate("MainWindow", u"Kan\n"
-"baru", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Eisenban", None))
+        self.label_logo.setText(QCoreApplication.translate("MainWindow", u"Eisen\n"
+"ban", None))
         self.btn_add_board.setText(QCoreApplication.translate("MainWindow", u" Add a board", None))
         self.btn_board_settings.setText(QCoreApplication.translate("MainWindow", u"Manage Board", None))
         self.btn_app_settings.setText(QCoreApplication.translate("MainWindow", u" App Settings", None))

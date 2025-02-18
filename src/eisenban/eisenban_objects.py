@@ -13,7 +13,7 @@ class Color(Enum):
     TEAL = "#5eb5c1"
 
 
-class KanbaruObject(ABC):
+class EisenbanObject(ABC):
     @property
     @abstractmethod
     def title(self) -> str:
@@ -31,7 +31,7 @@ class KanbaruObject(ABC):
         pass
 
 
-class Card(KanbaruObject):
+class Card(EisenbanObject):
     def __init__(self, title: str = "New Card", date: str = "", time: str = "",
                  description: str = "") -> None:
         self.__title = title
@@ -102,7 +102,7 @@ class Card(KanbaruObject):
         )
 
 
-class Panel(KanbaruObject):
+class Panel(EisenbanObject):
     def __init__(self, title: str = "New Panel",
                  card_lists: List[Card] = []) -> None:
         self.__title = title
@@ -143,7 +143,7 @@ class Panel(KanbaruObject):
         )
 
 
-class Board(KanbaruObject):
+class Board(EisenbanObject):
     def __init__(self, title: str = "New Board", color: str = "LIGHTBLUE",
                  panels_lists: List[Panel] = []):
         self.__title = title

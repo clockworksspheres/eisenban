@@ -1,4 +1,4 @@
-from kanbaru_objects import Board, Card, Color, Panel
+from eisenban_objects import Board, Card, Color, Panel
 import logging
 import os
 import sys

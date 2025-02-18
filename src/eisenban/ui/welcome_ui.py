@@ -495,9 +495,9 @@ class Ui_WelcomeWindow(object):
     # setupUi
 
     def retranslateUi(self, WelcomeWindow):
-        WelcomeWindow.setWindowTitle(QCoreApplication.translate("WelcomeWindow", u"Kanbaru", None))
+        WelcomeWindow.setWindowTitle(QCoreApplication.translate("WelcomeWindow", u"Eisenban", None))
         self.label.setText("")
-        self.label_login.setText(QCoreApplication.translate("WelcomeWindow", u"Log in to Kanbaru", None))
+        self.label_login.setText(QCoreApplication.translate("WelcomeWindow", u"Log in to Eisenban", None))
         self.lineEdit_login_username.setPlaceholderText(QCoreApplication.translate("WelcomeWindow", u"Username", None))
         self.lineEdit_login_password.setPlaceholderText(QCoreApplication.translate("WelcomeWindow", u"Password", None))
         self.label_login_msg.setText(QCoreApplication.translate("WelcomeWindow", u"Incorrect username/password", None))

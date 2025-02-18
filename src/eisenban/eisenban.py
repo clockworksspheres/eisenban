@@ -6,7 +6,7 @@ import sys
 from tkinter import Tk, messagebox
 
 if sys.version_info < (3, 10):
-    print("Python 3.10 or higher is required to run Kanbaru. Please consider "
+    print("Python 3.10 or higher is required to run Eisenban. Please consider "
           "upgrading.")
     sys.exit(1)
 
@@ -52,7 +52,7 @@ except ModuleNotFoundError:
         sys.exit(1)
 
 
-class Kanbaru(QMainWindow):
+class Eisenban(QMainWindow):
     def __init__(self) -> None:
         QMainWindow.__init__(self)
 
@@ -60,7 +60,7 @@ class Kanbaru(QMainWindow):
         self.tb_path = None
         self.path = get_current_directory()
 
-        logging.info("Starting Kanbaru...")
+        logging.info("Starting Eisenban...")
         logging.info(f'Current directory: "{self.path}"')
 
         # Initialize local table
@@ -99,12 +99,12 @@ class Kanbaru(QMainWindow):
             logging.info("Windows OS detected")
             self.tb_path = os.path.join(
                 os.path.expanduser(
-                    "~"), "Documents", "Kanbaru", "Table.pickle"
+                    "~"), "Documents", "Eisenban", "Table.pickle"
             )
         else:
             logging.info("Unix OS detected")
             self.tb_path = os.path.join(
-                os.path.expanduser("~"), "Kanbaru", "Table.pickle"
+                os.path.expanduser("~"), "Eisenban", "Table.pickle"
             )
         tb = Table.get_instance()
         tb.set_path(self.tb_path)
@@ -148,6 +148,6 @@ if __name__ == "__main__":
         debug=True if "--debug" in sys.argv else False,
     )
 
-    window = Kanbaru()
+    window = Eisenban()
     window.show()
     sys.exit(app.exec())

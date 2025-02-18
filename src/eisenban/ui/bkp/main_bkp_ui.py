@@ -688,7 +688,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Kanbaru", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Eisenban", None))
         self.label_logo.setText(QCoreApplication.translate("MainWindow", u"Kan\n"
 "baru", None))
         self.btn_board_1.setText(QCoreApplication.translate("MainWindow", u"Board 1", None))

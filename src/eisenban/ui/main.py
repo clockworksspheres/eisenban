@@ -10,7 +10,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea,
 
 from db import Table
 from dialog import dialog_factory, input_dialog_factory
-from kanbaru_objects import Board, Card, Panel
+from eisenban_objects import Board, Card, Panel
 from ui.about import About
 from ui.app_settings import AppSettings
 from ui.board_settings import BoardSettings

@@ -6,7 +6,7 @@ from PySide6.QtWidgets import QMainWindow
 
 from db import Table
 from dialog import dialog_factory, input_dialog_factory
-from kanbaru_objects import Board, Color, Panel
+from eisenban_objects import Board, Color, Panel
 from ui.board_settings_ui import Ui_BoardWindow
 from utils import keyPressEvent, modify_hex_color, setup_font_db
 
