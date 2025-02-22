@@ -1,14 +1,22 @@
+#!/bin/bash
 # download andika font from font.google.com
- sed -i '' 's/TorusPro/Andika-Regular/g' app_settings.py
- sed -i '' 's/TorusPro/Andika-Regular/g' board_settings.py
- sed -i '' 's/TorusPro/Andika-Regular/g' card_description.py
- sed -i '' 's/TorusPro/Andika-Regular/g' main.py            
- sed -i '' 's/TorusPro/Andika-Regular/g' welcome.py
- sed -i '' 's/toruspro/andika/g' app_settings.py
- sed -i '' 's/toruspro/andika/g' board_settings.py
- sed -i '' 's/toruspro/andika/g' card_description.py 
- sed -i '' 's/toruspro/andika/g' main.py            
- sed -i '' 's/toruspro/andika/g' welcome.py 
+
+oldFont="Andika-Regular"
+newFont="Arimo-Medium"
+oldVar="andika"
+newVar="arimo"
+
+
+ sed -i '' "s/$oldFont/$newFont/g" app_settings.py
+ sed -i '' "s/$oldFont/$newFont/g" board_settings.py
+ sed -i '' "s/$oldFont/$newFont/g" card_description.py
+ sed -i '' "s/$oldFont/$newFont/g" main.py            
+ sed -i '' "s/$oldFont/$newFont/g" welcome.py
+ sed -i '' "s/$oldVar/$newVar/g" app_settings.py
+ sed -i '' "s/$oldVar/$newVar/g" board_settings.py
+ sed -i '' "s/$oldVar/$newVar/g" card_description.py 
+ sed -i '' "s/$oldVar/$newVar/g" main.py            
+ sed -i '' "s/$oldVar/$newVar/g" welcome.py 
 
 
 

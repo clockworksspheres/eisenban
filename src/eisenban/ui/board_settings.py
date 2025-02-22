@@ -425,22 +425,22 @@ class BoardSettings(QMainWindow):
         self.title_txt = text
 
     def setup_font(self) -> None:
-        notosans = setup_font_db("NotoSans.ttf")[0]
-        andika = setup_font_db("Andika-Regular.ttf")[0]
-        self.ui.label_board_desc.setFont(QFont(andika, 28))
-        self.ui.label_title.setFont(QFont(andika, 14, QFont.Bold))
-        self.ui.label_color.setFont(QFont(andika, 14, QFont.Bold))
-        self.ui.label_manage_panel.setFont(QFont(andika, 14, QFont.Bold))
-        self.ui.label_manage_panel_desc.setFont(QFont(andika, 11))
+        notosans = setup_font_db('NotoSans.ttf')[0]
+        arimo = setup_font_db('Arimo-Medium.ttf')[0]
+        self.ui.label_board_desc.setFont(QFont(arimo, 28))
+        self.ui.label_title.setFont(QFont(arimo, 14, QFont.Bold))
+        self.ui.label_color.setFont(QFont(arimo, 14, QFont.Bold))
+        self.ui.label_manage_panel.setFont(QFont(arimo, 14, QFont.Bold))
+        self.ui.label_manage_panel_desc.setFont(QFont(arimo, 11))
         self.ui.lineEdit_title.setFont(QFont(notosans, 12))
-        self.ui.btn_color_1.setFont(QFont(andika, 12))
-        self.ui.btn_color_2.setFont(QFont(andika, 12))
-        self.ui.btn_color_3.setFont(QFont(andika, 12))
-        self.ui.btn_color_4.setFont(QFont(andika, 12))
-        self.ui.btn_color_5.setFont(QFont(andika, 12))
-        self.ui.btn_color_6.setFont(QFont(andika, 12))
-        self.ui.listWidget_manage_panel.setFont(QFont(andika, 12))
-        self.ui.btn_delete.setFont(QFont(andika, 12))
-        self.ui.btn_rename.setFont(QFont(andika, 12))
-        self.ui.btn_cancel.setFont(QFont(andika, 12))
-        self.ui.btn_save.setFont(QFont(andika, 12))
+        self.ui.btn_color_1.setFont(QFont(arimo, 12))
+        self.ui.btn_color_2.setFont(QFont(arimo, 12))
+        self.ui.btn_color_3.setFont(QFont(arimo, 12))
+        self.ui.btn_color_4.setFont(QFont(arimo, 12))
+        self.ui.btn_color_5.setFont(QFont(arimo, 12))
+        self.ui.btn_color_6.setFont(QFont(arimo, 12))
+        self.ui.listWidget_manage_panel.setFont(QFont(arimo, 12))
+        self.ui.btn_delete.setFont(QFont(arimo, 12))
+        self.ui.btn_rename.setFont(QFont(arimo, 12))
+        self.ui.btn_cancel.setFont(QFont(arimo, 12))
+        self.ui.btn_save.setFont(QFont(arimo, 12))

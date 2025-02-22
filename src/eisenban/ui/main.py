@@ -58,7 +58,7 @@ class MainScreen(QMainWindow):
 
         for index, board in enumerate(tb_boards):
             new_button = self.board_factory(
-                parent, self.get_updated_board(board), "Andika-Regular.ttf",
+                parent, self.get_updated_board(board), 'Arimo-Medium.ttf',
                 is_constructed=index == 0)
             new_button.board = board
             new_name = f"{new_button.__class__.__name__}_{id(new_button)}"
@@ -75,13 +75,13 @@ class MainScreen(QMainWindow):
             parent.ui.vertSpacer_scrollAreaContent)
 
         self.add_panel_button(
-            parent, Table.get_instance().boards[0], "Andika-Regular.ttf")
+            parent, Table.get_instance().boards[0], 'Arimo-Medium.ttf')
 
         parent.ui.label_board.setText(
             f"{Table.get_instance().boards[0].title[:40]}"
             f"{(Table.get_instance().boards[0].title[40:] and '...')}")
 
-        self.setup_font(parent, "Andika-Regular.ttf")
+        self.setup_font(parent, 'Arimo-Medium.ttf')
 
         parent.ui.label_logo.mousePressEvent = lambda event: self.show_about(
             event)
@@ -840,11 +840,11 @@ class MainScreen(QMainWindow):
             if widget is not None:
                 layout.removeWidget(widget)
                 widget.deleteLater()
-        self.board_factory(parent, board, "Andika-Regular.ttf")
+        self.board_factory(parent, board, 'Arimo-Medium.ttf')
         parent.ui.list_add.setParent(None)
         parent.ui.horizontalLayout_5.removeItem(
             parent.ui.horzSpacer_panel_right)
-        self.add_panel_button(parent, board, "Andika-Regular.ttf")
+        self.add_panel_button(parent, board, 'Arimo-Medium.ttf')
 
     @staticmethod
     def change_card(board: Board, source: Panel, destination: Panel, card: Card,
@@ -923,12 +923,12 @@ class MainScreen(QMainWindow):
 
     @staticmethod
     def setup_font(parent: Ui_MainWindow, font: str) -> None:
-        andika = setup_font_db(font)[0]
-        parent.ui.label_logo.setFont(QFont(andika, 36))
-        parent.ui.label_board.setFont(QFont(andika, 28))
-        parent.ui.btn_add_board.setFont(QFont(andika, 12))
-        parent.ui.btn_board_settings.setFont(QFont(andika, 12))
-        parent.ui.btn_app_settings.setFont(QFont(andika, 12))
+        arimo = setup_font_db(font)[0]
+        parent.ui.label_logo.setFont(QFont(arimo, 36))
+        parent.ui.label_board.setFont(QFont(arimo, 28))
+        parent.ui.btn_add_board.setFont(QFont(arimo, 12))
+        parent.ui.btn_board_settings.setFont(QFont(arimo, 12))
+        parent.ui.btn_app_settings.setFont(QFont(arimo, 12))
 
 
 class CustomListWidget(QListWidget):
