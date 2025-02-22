@@ -221,7 +221,7 @@ class AppSettings(QMainWindow):
         ]
 
     def setup_font(self) -> None:
-        andika = setup_font_db("Andika-Regular.ttf")[0]
+        andika = setup_font_db('Arimo-Medium.ttf')[0]
         self.ui.label_app_settings.setFont(QFont(andika, 28))
         self.ui.label_manage_board.setFont(QFont(andika, 14, QFont.Bold))
         self.ui.label_manage_board_desc.setFont(QFont(andika, 11))

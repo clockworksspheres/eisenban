@@ -42,7 +42,7 @@ def dialog_factory(parent: Type = None, function: Callable = None,
     dialog.setWindowIcon(icon)
     dialog.setWindowTitle(title)
     dialog.setText(msg)
-    font = setup_font_db("Andika-Regular.ttf")
+    font = setup_font_db('Arimo-Medium.ttf')
     dialog.setFont(font[0])
     if yes_no:
         dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
@@ -168,7 +168,7 @@ def input_dialog_factory(title: str = "", msg: str = "", default: str = "",
     layout.addWidget(line_edit)
     layout.addWidget(buttons)
     dialog.setLayout(layout)
-    font = setup_font_db("Andika-Regular.ttf")
+    font = setup_font_db("Arimo-Medium.ttf")
     dialog.setFont(font[0])
     label.setFont(font[0])
     line_edit.setFont(QFont(font[0], 12))

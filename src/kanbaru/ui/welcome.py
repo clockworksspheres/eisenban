@@ -123,7 +123,7 @@ class WelcomeScreen(QMainWindow):
     @staticmethod
     def setup_font(parent: Ui_WelcomeWindow) -> None:
         notosans = setup_font_db("NotoSans.ttf")[0]
-        andika = setup_font_db("Andika-Regular.ttf")[0]
+        andika = setup_font_db('Arimo-Medium.ttf')[0]
         parent.ui.label_login.setFont(QFont(andika, 13, QFont.Bold))
         parent.ui.label_signup.setFont(QFont(andika, 13, QFont.Bold))
         parent.ui.lineEdit_login_username.setFont(QFont(notosans, 12))

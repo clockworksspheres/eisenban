@@ -83,7 +83,14 @@ def get_current_directory() -> str:
     path : str
         The current directory of the application.
     """
-    path = os.path.dirname(os.path.abspath(__file__))
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        path = sys._MEIPASS
+    except Exception:
+        path = os.path.dirname(os.path.abspath(__file__))
+
+    #path = os.path.dirname(os.path.abspath(__file__))
     #if os.path.basename(path) != "src":
     #    path = os.path.join(path, "src")
     return path
