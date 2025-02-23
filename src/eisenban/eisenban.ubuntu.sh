@@ -6,16 +6,18 @@
 # https://pyinstaller.org/en/stable/
 
 #if doesn't exist...
-# python3 -m venv packenv
-# source packenv/bin/activate
+# cd to the eisenban source root
+ 
+#python3 -m venv packenv
+#source packenv/bin/activate
 
 # pip3 install PySide6 PyInstaller
 # pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
-pyinstaller --clean -y eisenban.macos.spec
-pyinstaller -y eisenban.macos.spec
-# cp -a resources dist/eisenban.app/Contents/MacOS
-cp -a resources dist/eisenban.app/Contents/Resources
+pyinstaller --clean -y eisenban.linux.onefile.spec
+pyinstaller -y eisenban.linux.onefile.spec
+#cp -a resources dist/eisenban.app/Contents/MacOS
+#cp -a resources dist/eisenban.app/Contents/Resources
 
 
 

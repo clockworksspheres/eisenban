@@ -1,9 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
-
+#
+# https://stackoverflow.com/questions/41870727/pyinstaller-adding-data-files
+#
 
 a = Analysis(
     ['eisenban.py'],
-    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/bin', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/include', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/lib'],
+    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/bin', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/include', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/lib/python3.12/site-packages'],
     binaries=[],
     datas=[("resources/font/NotoSans.ttf",   "Resources"), 
            ("resources/font/Arimo-Medium.ttf",   "Resources"), 
@@ -18,7 +20,7 @@ a = Analysis(
            ("resources/img/settings.png",    "Resources"), 
            ("resources/img/settings_2.png",  "Resources"), 
            ("resources/img/up-arrow.png",    "Resources")],
-    hiddenimports=['python3','python*','PySide6.*'],
+    hiddenimports=['python3','python*','PySide6'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
