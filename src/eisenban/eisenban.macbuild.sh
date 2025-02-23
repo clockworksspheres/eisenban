@@ -16,6 +16,8 @@ pyinstaller --clean -y eisenban.macos.spec
 pyinstaller -y eisenban.macos.spec
 # cp -a resources dist/eisenban.app/Contents/MacOS
 cp -a resources dist/eisenban.app/Contents/Resources
+cp -a dist/eisenban.app ~/Desktop
+open ~/Desktop/eisenban.app
 
 
 
