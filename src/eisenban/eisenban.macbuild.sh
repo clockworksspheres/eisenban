@@ -9,8 +9,7 @@
 # python3 -m venv temp
 # source temp/bin/activate
 
-# pip3 install python6
-# pip3 install pyinstaller
+# pip3 install PySide6 PyInstaller
 # pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
 pyinstaller --clean -y eisenban.macos.spec
