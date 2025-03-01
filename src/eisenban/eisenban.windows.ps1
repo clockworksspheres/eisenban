@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # highly modified version of:
-# https://www.pythonguis.com/tutorials/packaging-pyside6-applications-pyinstaller-macos-dmg/
+# https://www.pythonguis.com/tutorials/packaging-pyside6-applications-windows-pyinstaller-installforge/
 # amoung others... including
 # https://pyinstaller.org/en/stable/
 
