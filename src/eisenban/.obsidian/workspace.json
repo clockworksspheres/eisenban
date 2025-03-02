@@ -169,5 +169,12 @@
     }
   },
   "active": "33bf88de6dc1c9ca",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "eisenban.windows11.copy-cmds-setup-env.txt",
+    "eisenban.windows11.setup-env.ps1",
+    "eisenban.windows11.copy-cmds-setup-builds.txt",
+    "eisenban.windows11.copy.cmds.txt",
+    "eisenban.windows.copy.cmds.txt",
+    "eisenban.windows11.onefile.spec"
+  ]
 }
