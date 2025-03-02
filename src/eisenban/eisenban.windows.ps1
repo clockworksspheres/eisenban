@@ -9,18 +9,23 @@
 
 #if doesn't exist...
 # cd to the eisenban source root
- 
-# python3 -m venv packenv
-# packenv/Scripts/Activate.ps1
 
-# pip3 install PySide6 PyInstaller
-# pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+$FolderPath = ".\packenv"
+if (!(Test-Path -Path $FolderPath -PathType Container)) {
+   
+   python3 -m venv packenv
+   .\packenv\Scripts\Activate.ps1
 
+   pip3 install PySide6 PyInstaller
+   pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
-# before script is run:
-# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-# powershell -File ".\eisenban.windows.ps1"
+} else {
+    .\packenv\Scripts\Activate.ps1
+}
 
+#####
+# Do every time, to make sure everyone knows source of E.ico icon, so 
+# proper license can be found
 cp .\resources\icons\Barkerbaggies-Bag-O-Tiles-E.ico .\resources\icons\E.ico
 
 pyinstaller --clean -y eisenban.windows11.onefile.spec
