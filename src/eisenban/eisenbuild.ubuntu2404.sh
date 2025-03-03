@@ -19,8 +19,8 @@ else
    source packenv/bin/activate
 fi
 
-pyinstaller --clean -y eisenban.linux.onefile.spec
-pyinstaller -y eisenban.linux.onefile.spec
+pyinstaller --clean -y eisenbuild.linux.onefile.spec
+pyinstaller -y eisenbuild.linux.onefile.spec
 #cp -a resources dist/eisenban.app/Contents/MacOS
 #cp -a resources dist/eisenban.app/Contents/Resources
 

@@ -28,8 +28,8 @@ if (!(Test-Path -Path $FolderPath -PathType Container)) {
 # proper license can be found
 cp .\resources\icons\Barkerbaggies-Bag-O-Tiles-E.ico .\resources\icons\E.ico
 
-pyinstaller --clean -y eisenban.windows11.onefile.spec
-pyinstaller -y eisenban.windows11.onefile.spec
+pyinstaller --clean -y eisenbuild.windows11.onefile.spec
+pyinstaller -y eisenbuild.windows11.onefile.spec
 
 
 

@@ -19,8 +19,8 @@ else
    source packenv/bin/activate
 fi
 
-pyinstaller --clean -y eisenban.macos.spec
-pyinstaller -y eisenban.macos.spec
+pyinstaller --clean -y eisenbuild.macos.spec
+pyinstaller -y eisenbuild.macos.spec
 cp -a resources dist/eisenban.app/Contents/Resources
 cp -a dist/eisenban.app ~/Desktop
 open ~/Desktop/eisenban.app
