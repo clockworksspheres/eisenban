@@ -5,14 +5,19 @@
 # amoung others... including
 # https://pyinstaller.org/en/stable/
 
-#if doesn't exist...
-# cd to the eisenban source root
- 
-#python3 -m venv packenv
-#source packenv/bin/activate
+#if doesn't the packenv directory doesn't exist...
 
-# pip3 install PySide6 PyInstaller
-# pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+directory="./packenv"
+actfile="./packenv/bin/activate"
+if [ ! -d "$directory" ]  || [ ! -f "$actfile"]; then
+   python3 -m venv packenv
+   source packenv/bin/activate
+
+   pip3 install PySide6 PyInstaller
+   pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+else
+   source packenv/bin/activate
+fi
 
 pyinstaller --clean -y eisenban.linux.onefile.spec
 pyinstaller -y eisenban.linux.onefile.spec
