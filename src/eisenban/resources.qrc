@@ -1,5 +1,11 @@
 <RCC>
   <qresource prefix="img">
+    <file>resources/font/NotoSans.ttf</file>
+    <file>resources/font/Arimo-Medium.ttf</file>
+    <file>resources/icons/Barkerbaggies-Bag-O-Tiles-E.icns</file>
+    <file>resources/icons/Barkerbaggies-Bag-O-Tiles-E.ico</file>
+    <file>resources/icons/E.ico</file>
+    <file>resources/icons/E.icns</file>
     <file>resources/img/down-arrow.png</file>
     <file>resources/img/left-arrow.png</file>
     <file>resources/img/right-arrow.png</file>
