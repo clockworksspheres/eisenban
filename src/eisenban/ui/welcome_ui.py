@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'welcome.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,7 +18,6 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QVBoxLayout, QWidget)
-import resources_rc
 
 class Ui_WelcomeWindow(object):
     def setupUi(self, WelcomeWindow):
@@ -26,7 +25,7 @@ class Ui_WelcomeWindow(object):
             WelcomeWindow.setObjectName(u"WelcomeWindow")
         WelcomeWindow.resize(1024, 678)
         icon = QIcon()
-        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         WelcomeWindow.setWindowIcon(icon)
         WelcomeWindow.setStyleSheet(u"background-color: #454c5a;")
         WelcomeWindow.setIconSize(QSize(128, 128))
@@ -43,7 +42,7 @@ class Ui_WelcomeWindow(object):
         self.horizontalLayout_2 = QHBoxLayout(self.widget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(15, 15, 15, 15)
-        self.horizontalSpacer_4 = QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_4 = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_4)
 
@@ -54,7 +53,7 @@ class Ui_WelcomeWindow(object):
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.verticalSpacer_4 = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_4 = QSpacerItem(0, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_6.addItem(self.verticalSpacer_4)
 
@@ -73,7 +72,7 @@ class Ui_WelcomeWindow(object):
         self.verticalLayout_2.setSpacing(15)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(30, 0, 30, 0)
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
@@ -82,6 +81,9 @@ class Ui_WelcomeWindow(object):
         self.label = QLabel(self.widget1)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(250, 50))
+        font = QFont()
+        font.setFamilies([u"Arimo"])
+        self.label.setFont(font)
         self.label.setPixmap(QPixmap(u":/img/resources/img/kanbaru.png"))
         self.label.setScaledContents(True)
 
@@ -90,7 +92,7 @@ class Ui_WelcomeWindow(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
 
-        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_5)
 
@@ -102,11 +104,11 @@ class Ui_WelcomeWindow(object):
         self.verticalLayout_4.setContentsMargins(-1, 0, -1, 0)
         self.label_login = QLabel(self.widget_2)
         self.label_login.setObjectName(u"label_login")
-        font = QFont()
-        font.setFamilies([u"Torus Pro"])
-        font.setPointSize(13)
-        font.setBold(True)
-        self.label_login.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"Arimo"])
+        font1.setPointSize(14)
+        font1.setBold(False)
+        self.label_login.setFont(font1)
         self.label_login.setStyleSheet(u"color: #282c33;")
         self.label_login.setAlignment(Qt.AlignCenter)
         self.label_login.setWordWrap(True)
@@ -116,10 +118,10 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_login_username = QLineEdit(self.widget_2)
         self.lineEdit_login_username.setObjectName(u"lineEdit_login_username")
         self.lineEdit_login_username.setMinimumSize(QSize(0, 40))
-        font1 = QFont()
-        font1.setFamilies([u"Manrope Medium"])
-        font1.setPointSize(12)
-        self.lineEdit_login_username.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"Arimo"])
+        font2.setPointSize(13)
+        self.lineEdit_login_username.setFont(font2)
         self.lineEdit_login_username.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -160,7 +162,7 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_login_password = QLineEdit(self.widget_2)
         self.lineEdit_login_password.setObjectName(u"lineEdit_login_password")
         self.lineEdit_login_password.setMinimumSize(QSize(0, 40))
-        self.lineEdit_login_password.setFont(font1)
+        self.lineEdit_login_password.setFont(font2)
         self.lineEdit_login_password.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -201,11 +203,11 @@ class Ui_WelcomeWindow(object):
 
         self.label_login_msg = QLabel(self.widget_2)
         self.label_login_msg.setObjectName(u"label_login_msg")
-        font2 = QFont()
-        font2.setFamilies([u"Torus Pro"])
-        font2.setPointSize(11)
-        font2.setBold(True)
-        self.label_login_msg.setFont(font2)
+        font3 = QFont()
+        font3.setFamilies([u"Arimo"])
+        font3.setPointSize(11)
+        font3.setBold(False)
+        self.label_login_msg.setFont(font3)
         self.label_login_msg.setStyleSheet(u"color: #d63a3e;")
         self.label_login_msg.setWordWrap(True)
 
@@ -214,24 +216,24 @@ class Ui_WelcomeWindow(object):
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
         self.btn_login = QPushButton(self.widget_2)
         self.btn_login.setObjectName(u"btn_login")
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.btn_login.sizePolicy().hasHeightForWidth())
         self.btn_login.setSizePolicy(sizePolicy)
         self.btn_login.setMinimumSize(QSize(120, 30))
-        font3 = QFont()
-        font3.setFamilies([u"Torus Pro"])
-        font3.setPointSize(12)
-        font3.setBold(True)
-        self.btn_login.setFont(font3)
-        self.btn_login.setCursor(QCursor(Qt.PointingHandCursor))
+        font4 = QFont()
+        font4.setFamilies([u"Arimo"])
+        font4.setPointSize(12)
+        font4.setBold(False)
+        self.btn_login.setFont(font4)
+        self.btn_login.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_login.setFocusPolicy(Qt.TabFocus)
         self.btn_login.setStyleSheet(u"QPushButton {\n"
 "	background-color: #5dac48;\n"
@@ -264,7 +266,7 @@ class Ui_WelcomeWindow(object):
         self.line_2.setFrameShadow(QFrame.Plain)
         self.line_2.setLineWidth(0)
         self.line_2.setMidLineWidth(0)
-        self.line_2.setFrameShape(QFrame.HLine)
+        self.line_2.setFrameShape(QFrame.Shape.HLine)
 
         self.verticalLayout_2.addWidget(self.line_2)
 
@@ -276,7 +278,7 @@ class Ui_WelcomeWindow(object):
         self.verticalLayout_5.setContentsMargins(-1, 0, -1, 0)
         self.label_signup = QLabel(self.widget_3)
         self.label_signup.setObjectName(u"label_signup")
-        self.label_signup.setFont(font)
+        self.label_signup.setFont(font1)
         self.label_signup.setStyleSheet(u"color: #282c33;")
         self.label_signup.setAlignment(Qt.AlignCenter)
         self.label_signup.setWordWrap(True)
@@ -286,7 +288,7 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_signup_username = QLineEdit(self.widget_3)
         self.lineEdit_signup_username.setObjectName(u"lineEdit_signup_username")
         self.lineEdit_signup_username.setMinimumSize(QSize(0, 40))
-        self.lineEdit_signup_username.setFont(font1)
+        self.lineEdit_signup_username.setFont(font2)
         self.lineEdit_signup_username.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -327,7 +329,7 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_signup_password = QLineEdit(self.widget_3)
         self.lineEdit_signup_password.setObjectName(u"lineEdit_signup_password")
         self.lineEdit_signup_password.setMinimumSize(QSize(0, 40))
-        self.lineEdit_signup_password.setFont(font1)
+        self.lineEdit_signup_password.setFont(font2)
         self.lineEdit_signup_password.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -369,7 +371,10 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_signup_confirm_password = QLineEdit(self.widget_3)
         self.lineEdit_signup_confirm_password.setObjectName(u"lineEdit_signup_confirm_password")
         self.lineEdit_signup_confirm_password.setMinimumSize(QSize(0, 40))
-        self.lineEdit_signup_confirm_password.setFont(font1)
+        font5 = QFont()
+        font5.setFamilies([u"Manrope Medium"])
+        font5.setPointSize(12)
+        self.lineEdit_signup_confirm_password.setFont(font5)
         self.lineEdit_signup_confirm_password.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -410,7 +415,11 @@ class Ui_WelcomeWindow(object):
 
         self.label_signup_msg = QLabel(self.widget_3)
         self.label_signup_msg.setObjectName(u"label_signup_msg")
-        self.label_signup_msg.setFont(font2)
+        font6 = QFont()
+        font6.setFamilies([u"Arimo"])
+        font6.setPointSize(13)
+        font6.setBold(False)
+        self.label_signup_msg.setFont(font6)
         self.label_signup_msg.setStyleSheet(u"color: #d63a3e;")
         self.label_signup_msg.setWordWrap(True)
 
@@ -419,7 +428,7 @@ class Ui_WelcomeWindow(object):
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
 
@@ -428,8 +437,8 @@ class Ui_WelcomeWindow(object):
         sizePolicy.setHeightForWidth(self.btn_signup.sizePolicy().hasHeightForWidth())
         self.btn_signup.setSizePolicy(sizePolicy)
         self.btn_signup.setMinimumSize(QSize(120, 30))
-        self.btn_signup.setFont(font3)
-        self.btn_signup.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_signup.setFont(font6)
+        self.btn_signup.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_signup.setFocusPolicy(Qt.TabFocus)
         self.btn_signup.setStyleSheet(u"QPushButton {\n"
 "	background-color: #5dac48;\n"
@@ -456,11 +465,11 @@ class Ui_WelcomeWindow(object):
 
         self.verticalLayout_2.addWidget(self.widget_3)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 30, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_2 = QSpacerItem(20, 30, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_2)
 
-        self.horizontalSpacer_5 = QSpacerItem(300, 0, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_5 = QSpacerItem(300, 0, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_2.addItem(self.horizontalSpacer_5)
 
@@ -473,14 +482,14 @@ class Ui_WelcomeWindow(object):
 
         self.verticalLayout_6.addWidget(self.widget1)
 
-        self.verticalSpacer_3 = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_3 = QSpacerItem(0, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_6.addItem(self.verticalSpacer_3)
 
 
         self.horizontalLayout_2.addWidget(self.widget_4)
 
-        self.horizontalSpacer_3 = QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_3)
 

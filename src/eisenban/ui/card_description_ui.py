@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'card_description.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (QApplication, QCalendarWidget, QFrame, QHBoxLayou
     QLabel, QLineEdit, QMainWindow, QPushButton,
     QSizePolicy, QSpacerItem, QTextEdit, QTimeEdit,
     QVBoxLayout, QWidget)
-import resources_rc
 
 class Ui_CardWindow(object):
     def setupUi(self, CardWindow):
@@ -27,7 +26,7 @@ class Ui_CardWindow(object):
             CardWindow.setObjectName(u"CardWindow")
         CardWindow.resize(620, 678)
         icon = QIcon()
-        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         CardWindow.setWindowIcon(icon)
         CardWindow.setStyleSheet(u"background-color: #454c5a;")
         CardWindow.setIconSize(QSize(128, 128))
@@ -39,15 +38,15 @@ class Ui_CardWindow(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.label_card_desc = QLabel(self.centralwidget)
         self.label_card_desc.setObjectName(u"label_card_desc")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_card_desc.sizePolicy().hasHeightForWidth())
         self.label_card_desc.setSizePolicy(sizePolicy)
         self.label_card_desc.setMinimumSize(QSize(0, 70))
         font = QFont()
-        font.setFamilies([u"Torus Pro"])
-        font.setPointSize(28)
+        font.setFamilies([u"Arimo"])
+        font.setPointSize(36)
         self.label_card_desc.setFont(font)
         self.label_card_desc.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -72,9 +71,9 @@ class Ui_CardWindow(object):
         self.label_title = QLabel(self.widget1)
         self.label_title.setObjectName(u"label_title")
         font1 = QFont()
-        font1.setFamilies([u"Torus Pro"])
-        font1.setPointSize(14)
-        font1.setBold(True)
+        font1.setFamilies([u"Arimo"])
+        font1.setPointSize(18)
+        font1.setBold(False)
         self.label_title.setFont(font1)
         self.label_title.setStyleSheet(u"color: #282c33;")
         self.label_title.setWordWrap(True)
@@ -127,7 +126,7 @@ class Ui_CardWindow(object):
         self.calendarWidget = QCalendarWidget(self.widget1)
         self.calendarWidget.setObjectName(u"calendarWidget")
         self.calendarWidget.setFont(font2)
-        self.calendarWidget.setCursor(QCursor(Qt.PointingHandCursor))
+        self.calendarWidget.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.calendarWidget.setFocusPolicy(Qt.TabFocus)
         self.calendarWidget.setStyleSheet(u"QCalendarWidget QWidget {\n"
 "	background-color: #6badee;\n"
@@ -232,7 +231,7 @@ class Ui_CardWindow(object):
         font3.setPointSize(16)
         font3.setBold(True)
         self.timeEdit.setFont(font3)
-        self.timeEdit.setCursor(QCursor(Qt.PointingHandCursor))
+        self.timeEdit.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.timeEdit.setStyleSheet(u"QTimeEdit {\n"
 "	background-color: #6badee;\n"
 "	color: #ffffff;\n"
@@ -274,11 +273,11 @@ class Ui_CardWindow(object):
 
         self.verticalLayout_2.addWidget(self.timeEdit)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 0, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(40, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_2.addItem(self.horizontalSpacer_2)
 
-        self.verticalSpacer = QSpacerItem(20, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
@@ -351,17 +350,17 @@ class Ui_CardWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.btn_delete = QPushButton(self.widget1)
         self.btn_delete.setObjectName(u"btn_delete")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
         self.btn_delete.setSizePolicy(sizePolicy1)
         self.btn_delete.setMinimumSize(QSize(140, 30))
         font5 = QFont()
-        font5.setFamilies([u"Torus Pro"])
-        font5.setPointSize(12)
+        font5.setFamilies([u"Arimo"])
+        font5.setPointSize(13)
         self.btn_delete.setFont(font5)
-        self.btn_delete.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_delete.setFocusPolicy(Qt.TabFocus)
         self.btn_delete.setStyleSheet(u"QPushButton {\n"
 "	background-color: #d63a3e;\n"
@@ -382,7 +381,7 @@ class Ui_CardWindow(object):
 
         self.horizontalLayout.addWidget(self.btn_delete)
 
-        self.horizontalSpacer = QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
@@ -392,7 +391,7 @@ class Ui_CardWindow(object):
         self.btn_cancel.setSizePolicy(sizePolicy1)
         self.btn_cancel.setMinimumSize(QSize(100, 30))
         self.btn_cancel.setFont(font5)
-        self.btn_cancel.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_cancel.setFocusPolicy(Qt.TabFocus)
         self.btn_cancel.setStyleSheet(u"QPushButton {\n"
 "	background-color: #acb2bf;\n"
@@ -419,7 +418,7 @@ class Ui_CardWindow(object):
         self.btn_save.setSizePolicy(sizePolicy1)
         self.btn_save.setMinimumSize(QSize(100, 30))
         self.btn_save.setFont(font5)
-        self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_save.setFocusPolicy(Qt.TabFocus)
         self.btn_save.setStyleSheet(u"QPushButton {\n"
 "	background-color: #6badee;\n"

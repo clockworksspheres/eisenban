@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'app_settings.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLay
     QLabel, QListWidget, QListWidgetItem, QMainWindow,
     QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
     QWidget)
-import resources_rc
 
 class Ui_SettingsWindow(object):
     def setupUi(self, SettingsWindow):
@@ -27,7 +26,7 @@ class Ui_SettingsWindow(object):
             SettingsWindow.setObjectName(u"SettingsWindow")
         SettingsWindow.resize(576, 678)
         icon = QIcon()
-        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         SettingsWindow.setWindowIcon(icon)
         SettingsWindow.setStyleSheet(u"background-color: #454c5a;")
         SettingsWindow.setIconSize(QSize(128, 128))
@@ -39,7 +38,7 @@ class Ui_SettingsWindow(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.label_app_settings = QLabel(self.centralwidget)
         self.label_app_settings.setObjectName(u"label_app_settings")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_app_settings.sizePolicy().hasHeightForWidth())
@@ -77,9 +76,9 @@ class Ui_SettingsWindow(object):
         self.label_manage_board = QLabel(self.widget1)
         self.label_manage_board.setObjectName(u"label_manage_board")
         font1 = QFont()
-        font1.setFamilies([u"Torus Pro"])
+        font1.setFamilies([u"Arimo"])
         font1.setPointSize(14)
-        font1.setBold(True)
+        font1.setBold(False)
         self.label_manage_board.setFont(font1)
         self.label_manage_board.setStyleSheet(u"color: #282c33;")
         self.label_manage_board.setWordWrap(True)
@@ -89,8 +88,8 @@ class Ui_SettingsWindow(object):
         self.label_manage_board_desc = QLabel(self.widget1)
         self.label_manage_board_desc.setObjectName(u"label_manage_board_desc")
         font2 = QFont()
-        font2.setFamilies([u"Torus Pro"])
-        font2.setPointSize(11)
+        font2.setFamilies([u"Arimo"])
+        font2.setPointSize(12)
         self.label_manage_board_desc.setFont(font2)
         self.label_manage_board_desc.setWordWrap(True)
 
@@ -197,7 +196,7 @@ class Ui_SettingsWindow(object):
         self.listWidget_manage_board.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.listWidget_manage_board.setVerticalScrollMode(QAbstractItemView.ScrollPerPixel)
         self.listWidget_manage_board.setHorizontalScrollMode(QAbstractItemView.ScrollPerPixel)
-        self.listWidget_manage_board.setProperty("isWrapping", False)
+        self.listWidget_manage_board.setProperty(u"isWrapping", False)
         self.listWidget_manage_board.setSpacing(5)
         self.listWidget_manage_board.setUniformItemSizes(True)
         self.listWidget_manage_board.setWordWrap(True)
@@ -209,17 +208,17 @@ class Ui_SettingsWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.btn_delete = QPushButton(self.widget1)
         self.btn_delete.setObjectName(u"btn_delete")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
         self.btn_delete.setSizePolicy(sizePolicy1)
         self.btn_delete.setMinimumSize(QSize(150, 30))
         font4 = QFont()
-        font4.setFamilies([u"Torus Pro"])
-        font4.setPointSize(12)
+        font4.setFamilies([u"Arimo"])
+        font4.setPointSize(14)
         self.btn_delete.setFont(font4)
-        self.btn_delete.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_delete.setFocusPolicy(Qt.TabFocus)
         self.btn_delete.setStyleSheet(u"QPushButton {\n"
 "	background-color: #d63a3e;\n"
@@ -240,7 +239,7 @@ class Ui_SettingsWindow(object):
 
         self.horizontalLayout_4.addWidget(self.btn_delete)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_3)
 
@@ -258,7 +257,7 @@ class Ui_SettingsWindow(object):
         self.line_2.setFrameShadow(QFrame.Plain)
         self.line_2.setLineWidth(0)
         self.line_2.setMidLineWidth(0)
-        self.line_2.setFrameShape(QFrame.HLine)
+        self.line_2.setFrameShape(QFrame.Shape.HLine)
 
         self.verticalLayout_2.addWidget(self.line_2)
 
@@ -276,7 +275,7 @@ class Ui_SettingsWindow(object):
         self.btn_about.setSizePolicy(sizePolicy1)
         self.btn_about.setMinimumSize(QSize(100, 30))
         self.btn_about.setFont(font4)
-        self.btn_about.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_about.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_about.setFocusPolicy(Qt.TabFocus)
         self.btn_about.setStyleSheet(u"QPushButton {\n"
 "	background-color: #6badee;\n"
@@ -297,7 +296,7 @@ class Ui_SettingsWindow(object):
 
         self.horizontalLayout.addWidget(self.btn_about)
 
-        self.horizontalSpacer = QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
@@ -307,7 +306,7 @@ class Ui_SettingsWindow(object):
         self.btn_cancel.setSizePolicy(sizePolicy1)
         self.btn_cancel.setMinimumSize(QSize(100, 30))
         self.btn_cancel.setFont(font4)
-        self.btn_cancel.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_cancel.setFocusPolicy(Qt.TabFocus)
         self.btn_cancel.setStyleSheet(u"QPushButton {\n"
 "	background-color: #acb2bf;\n"
@@ -334,7 +333,7 @@ class Ui_SettingsWindow(object):
         self.btn_save.setSizePolicy(sizePolicy1)
         self.btn_save.setMinimumSize(QSize(100, 30))
         self.btn_save.setFont(font4)
-        self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_save.setFocusPolicy(Qt.TabFocus)
         self.btn_save.setStyleSheet(u"QPushButton {\n"
 "	background-color: #6badee;\n"

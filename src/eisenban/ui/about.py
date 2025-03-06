@@ -23,7 +23,7 @@ class About(QMainWindow):
         self.ui.label_logo_bottom.mousePressEvent = lambda event: \
             self.easter_egg()
         self.setWindowModality(Qt.ApplicationModal)
-
+        """
         self.ui.label_description_2.setText(QCoreApplication.translate(
             "About",
             "<html><head/><body>"
@@ -46,7 +46,7 @@ class About(QMainWindow):
             "</body></html>",
             None)
         )
-
+     
         self.ui.label_license.setText(QCoreApplication.translate(
             "About",
             "<html><head/><body>"
@@ -58,7 +58,7 @@ class About(QMainWindow):
             "</body></html>",
             None)
         )
-
+        """
     @overrides(QMainWindow)
     def deleteLater(self) -> None:
         """Override deleteLater() to prevent closing the window when

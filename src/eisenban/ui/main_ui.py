@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,7 +18,6 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QMainWindow, QPushButton, QScrollArea, QSizePolicy,
     QVBoxLayout, QWidget)
-import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -26,7 +25,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1024, 678)
         icon = QIcon()
-        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet(u"background-color: #454c5a;\n"
 "color: rgb(255, 255, 255);\n"
@@ -48,7 +47,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.panel_left = QWidget(self.widget)
         self.panel_left.setObjectName(u"panel_left")
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.panel_left.sizePolicy().hasHeightForWidth())
@@ -63,7 +62,7 @@ class Ui_MainWindow(object):
         self.label_logo = QLabel(self.panel_left)
         self.label_logo.setObjectName(u"label_logo")
         font = QFont()
-        font.setFamilies([u"Torus Pro"])
+        font.setFamilies([u"Arimo"])
         font.setPointSize(36)
         self.label_logo.setFont(font)
         self.label_logo.setStyleSheet(u"background-color: #282c34;\n"
@@ -75,7 +74,7 @@ class Ui_MainWindow(object):
 
         self.scrollArea_panel_left = QScrollArea(self.panel_left)
         self.scrollArea_panel_left.setObjectName(u"scrollArea_panel_left")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.MinimumExpanding)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.MinimumExpanding)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.scrollArea_panel_left.sizePolicy().hasHeightForWidth())
@@ -142,7 +141,7 @@ class Ui_MainWindow(object):
         self.scrollArea_panel_left.setWidgetResizable(True)
         self.scrollAreaContent_panel_left = QWidget()
         self.scrollAreaContent_panel_left.setObjectName(u"scrollAreaContent_panel_left")
-        self.scrollAreaContent_panel_left.setGeometry(QRect(0, 0, 144, 417))
+        self.scrollAreaContent_panel_left.setGeometry(QRect(0, 0, 144, 481))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaContent_panel_left)
         self.verticalLayout_4.setSpacing(10)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -155,10 +154,10 @@ class Ui_MainWindow(object):
         self.btn_add_board.setObjectName(u"btn_add_board")
         self.btn_add_board.setMinimumSize(QSize(0, 30))
         font1 = QFont()
-        font1.setFamilies([u"Torus Pro"])
-        font1.setPointSize(12)
+        font1.setFamilies([u"Arimo"])
+        font1.setPointSize(13)
         self.btn_add_board.setFont(font1)
-        self.btn_add_board.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_add_board.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_add_board.setFocusPolicy(Qt.TabFocus)
         self.btn_add_board.setStyleSheet(u"QPushButton {\n"
 "	background-color: #acb2bf;\n"
@@ -177,7 +176,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u":/img/resources/img/add.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/img/resources/img/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_add_board.setIcon(icon1)
 
         self.verticalLayout_2.addWidget(self.btn_add_board)
@@ -186,7 +185,7 @@ class Ui_MainWindow(object):
         self.btn_board_settings.setObjectName(u"btn_board_settings")
         self.btn_board_settings.setMinimumSize(QSize(0, 30))
         self.btn_board_settings.setFont(font1)
-        self.btn_board_settings.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_board_settings.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_board_settings.setFocusPolicy(Qt.TabFocus)
         self.btn_board_settings.setStyleSheet(u"QPushButton {\n"
 "	background-color: #7f8ca6;\n"
@@ -205,7 +204,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u":/img/resources/img/settings_2.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/img/resources/img/settings_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_board_settings.setIcon(icon2)
 
         self.verticalLayout_2.addWidget(self.btn_board_settings)
@@ -214,7 +213,7 @@ class Ui_MainWindow(object):
         self.btn_app_settings.setObjectName(u"btn_app_settings")
         self.btn_app_settings.setMinimumSize(QSize(0, 30))
         self.btn_app_settings.setFont(font1)
-        self.btn_app_settings.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_app_settings.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_app_settings.setFocusPolicy(Qt.TabFocus)
         self.btn_app_settings.setStyleSheet(u"QPushButton {\n"
 "	background-color: #7f8ca6;\n"
@@ -233,7 +232,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u":/img/resources/img/settings.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/img/resources/img/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_app_settings.setIcon(icon3)
 
         self.verticalLayout_2.addWidget(self.btn_app_settings)
@@ -248,7 +247,7 @@ class Ui_MainWindow(object):
         self.horzLayout_panel_right.setObjectName(u"horzLayout_panel_right")
         self.label_board = QLabel(self.widget)
         self.label_board.setObjectName(u"label_board")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Fixed)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.label_board.sizePolicy().hasHeightForWidth())
@@ -269,7 +268,7 @@ class Ui_MainWindow(object):
 
         self.widget_panel_right = QWidget(self.widget)
         self.widget_panel_right.setObjectName(u"widget_panel_right")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy3.setHorizontalStretch(0)
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.widget_panel_right.sizePolicy().hasHeightForWidth())
@@ -350,7 +349,7 @@ class Ui_MainWindow(object):
         self.scrollArea_panel_right.setWidgetResizable(True)
         self.scrollAreaContent_panel_right = QWidget()
         self.scrollAreaContent_panel_right.setObjectName(u"scrollAreaContent_panel_right")
-        self.scrollAreaContent_panel_right.setGeometry(QRect(0, 0, 862, 589))
+        self.scrollAreaContent_panel_right.setGeometry(QRect(0, 0, 862, 585))
         self.horizontalLayout_5 = QHBoxLayout(self.scrollAreaContent_panel_right)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(8, 0, 0, 8)
