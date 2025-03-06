@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "proto/windowsselfsignedforps1.md",
+                "file": "proto/qt-ui-compile.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "windowsselfsignedforps1"
+              "title": "qt-ui-compile"
             }
           }
         ]
@@ -170,6 +170,7 @@
   },
   "active": "33bf88de6dc1c9ca",
   "lastOpenFiles": [
+    "proto/windowsselfsignedforps1.md",
     "proto/Class_abcQWidget_.md",
     "eisenban.windows11.copy-cmds-setup-env.txt",
     "eisenban.windows11.setup-env.ps1",
