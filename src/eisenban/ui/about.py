@@ -20,8 +20,10 @@ class About(QMainWindow):
 
         self.ui.centralwidget.mousePressEvent = lambda event: \
             self.deleteLater()
+        """
         self.ui.label_logo_bottom.mousePressEvent = lambda event: \
             self.easter_egg()
+        """
         self.setWindowModality(Qt.ApplicationModal)
         """
         self.ui.label_description_2.setText(QCoreApplication.translate(
