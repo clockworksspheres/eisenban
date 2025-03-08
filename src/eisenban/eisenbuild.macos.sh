@@ -18,6 +18,10 @@ if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
 else
    source packenv/bin/activate
 fi
+export PATH=".":$PATH
+./gen_qrc-0.0.3.py
+
+pyside6-rcc resources.qrc -o resources_rc.py
 
 pyinstaller --clean -y eisenbuild.macos.spec
 pyinstaller -y eisenbuild.macos.spec
