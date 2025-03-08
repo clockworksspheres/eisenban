@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "proto/qt-ui-compile.md",
+                "file": "proto/macosAppResources_rc.py.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "qt-ui-compile"
+              "title": "macosAppResources_rc.py"
             }
           }
         ]
@@ -170,14 +170,30 @@
   },
   "active": "33bf88de6dc1c9ca",
   "lastOpenFiles": [
-    "resources.qrc~",
+    "dist/eisenban.app/Contents/_CodeSignature/CodeResources",
+    "dist/eisenban.app/Contents/_CodeSignature",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtSvg.framework/Versions/A/_CodeSignature/CodeResources",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtSvg.framework/Versions/A/_CodeSignature",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtQmlModels.framework/Versions/A/_CodeSignature/CodeResources",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtQmlModels.framework/Versions/A/_CodeSignature",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtNetwork.framework/Versions/A/_CodeSignature/CodeResources",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtNetwork.framework/Versions/A/_CodeSignature",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtWidgets.framework/Versions/A/_CodeSignature/CodeResources",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtWidgets.framework/Versions/A/_CodeSignature",
+    "dist/eisenban.app/Contents/Frameworks/PySide6/Qt/lib/QtQml.framework/Versions/A/_CodeSignature/CodeResources",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/pwrdLogo175.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/tai-ku.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/pwrdLogo100.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/logoLarge.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/pwrdLogo75.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/pwrdLogo200.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/pwrdLogo150.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/logoMed.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/logo64.gif",
+    "dist/org.clockworksspheres.eisenban/_internal/_tk_data/images/logo100.gif",
+    "proto/qt-ui-compile.md",
+    "proto/macosAppResources_rc.py.md",
     "proto/windowsselfsignedforps1.md",
-    "proto/Class_abcQWidget_.md",
-    "eisenban.windows11.copy-cmds-setup-env.txt",
-    "eisenban.windows11.setup-env.ps1",
-    "eisenban.windows11.copy-cmds-setup-builds.txt",
-    "eisenban.windows11.copy.cmds.txt",
-    "eisenban.windows.copy.cmds.txt",
-    "eisenban.windows11.onefile.spec"
+    "proto/Class_abcQWidget_.md"
   ]
 }

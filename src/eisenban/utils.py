@@ -1,4 +1,5 @@
 import os
+import sys
 from typing import Callable, Type
 
 from PySide6.QtCore import Qt
@@ -83,10 +84,16 @@ def get_current_directory() -> str:
     path : str
         The current directory of the application.
     """
-    path = os.path.dirname(os.path.abspath(__file__))
+
+    if getattr(sys, 'frozen', False):
+        # Running as PyInstaller bundle
+        base_path = sys._MEIPASS
+    else:
+        # Running as a regular Python script
+        base_path = os.path.dirname(os.path.abspath(__file__))
     #if os.path.basename(path) != "src":
     #    path = os.path.join(path, "src")
-    return path
+    return base_path
 
 
 def setup_font_db(font: str) -> QFontDatabase:
