@@ -53,7 +53,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/img/resources/img/icon.png</pixmap>
+         <pixmap>resources/img/icon.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -86,7 +86,7 @@
           <property name="font">
            <font>
             <family>Arimo</family>
-            <pointsize>36</pointsize>
+            <pointsize>24</pointsize>
            </font>
           </property>
           <property name="styleSheet">
@@ -234,7 +234,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>:/img/resources/img/kanbaru.png</pixmap>
+           <pixmap>resources/img/kanbaru.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>

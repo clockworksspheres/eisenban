@@ -90,7 +90,7 @@ def get_current_directory() -> str:
         base_path = sys._MEIPASS
     else:
         # Running as a regular Python script
-        base_path = os.path.dirname(os.path.abspath(__file__))
+        base_path = os.path.abspath(".")
     #if os.path.basename(path) != "src":
     #    path = os.path.join(path, "src")
     return base_path

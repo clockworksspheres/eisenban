@@ -63,7 +63,7 @@ class Ui_MainWindow(object):
         self.label_logo.setObjectName(u"label_logo")
         font = QFont()
         font.setFamilies([u"Arimo"])
-        font.setPointSize(36)
+        font.setPointSize(24)
         self.label_logo.setFont(font)
         self.label_logo.setStyleSheet(u"background-color: #282c34;\n"
 "color: #FFFFFF;")
@@ -141,7 +141,7 @@ class Ui_MainWindow(object):
         self.scrollArea_panel_left.setWidgetResizable(True)
         self.scrollAreaContent_panel_left = QWidget()
         self.scrollAreaContent_panel_left.setObjectName(u"scrollAreaContent_panel_left")
-        self.scrollAreaContent_panel_left.setGeometry(QRect(0, 0, 144, 481))
+        self.scrollAreaContent_panel_left.setGeometry(QRect(0, 0, 144, 509))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaContent_panel_left)
         self.verticalLayout_4.setSpacing(10)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -155,7 +155,7 @@ class Ui_MainWindow(object):
         self.btn_add_board.setMinimumSize(QSize(0, 30))
         font1 = QFont()
         font1.setFamilies([u"Arimo"])
-        font1.setPointSize(13)
+        font1.setPointSize(12)
         self.btn_add_board.setFont(font1)
         self.btn_add_board.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_add_board.setFocusPolicy(Qt.TabFocus)
@@ -176,7 +176,8 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u":/img/resources/img/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"resources/img/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"resources/img/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.btn_add_board.setIcon(icon1)
 
         self.verticalLayout_2.addWidget(self.btn_add_board)
@@ -204,7 +205,8 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u":/img/resources/img/settings_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"resources/img/settings_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"resources/img/settings_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.btn_board_settings.setIcon(icon2)
 
         self.verticalLayout_2.addWidget(self.btn_board_settings)
@@ -232,7 +234,8 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u":/img/resources/img/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"../resources/img/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"resources/img/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.btn_app_settings.setIcon(icon3)
 
         self.verticalLayout_2.addWidget(self.btn_app_settings)

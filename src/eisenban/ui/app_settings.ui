@@ -59,8 +59,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Torus Pro</family>
-        <pointsize>28</pointsize>
+        <family>Arimo</family>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -125,7 +125,7 @@ border-radius: 5px;</string>
                 <property name="font">
                  <font>
                   <family>Arimo</family>
-                  <pointsize>14</pointsize>
+                  <pointsize>13</pointsize>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -145,7 +145,7 @@ border-radius: 5px;</string>
                 <property name="font">
                  <font>
                   <family>Arimo</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>11</pointsize>
                  </font>
                 </property>
                 <property name="text">

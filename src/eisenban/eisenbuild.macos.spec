@@ -5,9 +5,12 @@
 
 a = Analysis(
     ['eisenban.py'],
-    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/bin', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/include', '/Users/victor/Documents/src/github/roynielsen17/Kanbaru/src/kanbaru/packenv/lib/python3.12/site-packages'],
+    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', '/Users/victor/Documents/src/github/roynielsen17/eisenban/src/eisenban/packenv/bin', '/Users/victor/Documents/src/github/roynielsen17/eisenban/src/eisenban/packenv/include', '/Users/victor/Documents/src/github/roynielsen17/eisenban/src/eisenban/packenv/lib/python3.12/site-packages'],
     binaries=[],
-    datas=[('resources_rc.py', 'Resources')],
+    datas=[("resources/font/*.ttf",   "resources/font"), 
+            ("resources/font/*.txt",   "resources/font"), 
+            ("resources/img/*.png",    "resources/img"), 
+            ("resources/icons/*.icns",  "resources/icns")],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

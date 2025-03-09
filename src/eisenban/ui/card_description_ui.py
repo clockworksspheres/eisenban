@@ -46,7 +46,7 @@ class Ui_CardWindow(object):
         self.label_card_desc.setMinimumSize(QSize(0, 70))
         font = QFont()
         font.setFamilies([u"Arimo"])
-        font.setPointSize(36)
+        font.setPointSize(24)
         self.label_card_desc.setFont(font)
         self.label_card_desc.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"

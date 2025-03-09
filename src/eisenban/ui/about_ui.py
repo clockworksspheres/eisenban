@@ -40,7 +40,7 @@ class Ui_About(object):
         sizePolicy.setHeightForWidth(self.label_logo_top.sizePolicy().hasHeightForWidth())
         self.label_logo_top.setSizePolicy(sizePolicy)
         self.label_logo_top.setMaximumSize(QSize(55, 55))
-        self.label_logo_top.setPixmap(QPixmap(u":/img/resources/img/icon.png"))
+        self.label_logo_top.setPixmap(QPixmap(u"resources/img/icon.png"))
         self.label_logo_top.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.label_logo_top)
@@ -56,7 +56,7 @@ class Ui_About(object):
         self.label_title.setObjectName(u"label_title")
         font = QFont()
         font.setFamilies([u"Arimo"])
-        font.setPointSize(36)
+        font.setPointSize(24)
         self.label_title.setFont(font)
         self.label_title.setStyleSheet(u"color: #ffffff")
 
@@ -118,7 +118,7 @@ class Ui_About(object):
         sizePolicy.setHeightForWidth(self.label_logo_bottom.sizePolicy().hasHeightForWidth())
         self.label_logo_bottom.setSizePolicy(sizePolicy)
         self.label_logo_bottom.setMaximumSize(QSize(210, 40))
-        self.label_logo_bottom.setPixmap(QPixmap(u":/img/resources/img/kanbaru.png"))
+        self.label_logo_bottom.setPixmap(QPixmap(u"resources/img/kanbaru.png"))
         self.label_logo_bottom.setScaledContents(True)
 
         self.verticalLayout_3.addWidget(self.label_logo_bottom)

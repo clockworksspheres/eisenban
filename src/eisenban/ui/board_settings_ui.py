@@ -47,7 +47,7 @@ class Ui_BoardWindow(object):
         self.label_board_desc.setMinimumSize(QSize(0, 70))
         font = QFont()
         font.setFamilies([u"Arimo"])
-        font.setPointSize(36)
+        font.setPointSize(24)
         self.label_board_desc.setFont(font)
         self.label_board_desc.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -135,7 +135,7 @@ class Ui_BoardWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -141, 516, 655))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 516, 655))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")

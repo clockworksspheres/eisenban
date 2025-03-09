@@ -60,7 +60,7 @@
       <property name="font">
        <font>
         <family>Arimo</family>
-        <pointsize>36</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">

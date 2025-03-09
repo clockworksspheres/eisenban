@@ -109,7 +109,7 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
             <property name="font">
              <font>
               <family>Arimo</family>
-              <pointsize>36</pointsize>
+              <pointsize>24</pointsize>
              </font>
             </property>
             <property name="styleSheet">
@@ -207,7 +207,7 @@ QScrollBar QMenu::item:selected {
                <x>0</x>
                <y>0</y>
                <width>144</width>
-               <height>481</height>
+               <height>509</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -241,7 +241,7 @@ QScrollBar QMenu::item:selected {
             <property name="font">
              <font>
               <family>Arimo</family>
-              <pointsize>13</pointsize>
+              <pointsize>12</pointsize>
              </font>
             </property>
             <property name="cursor">
@@ -273,7 +273,8 @@ QPushButton:focus {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>:/img/resources/img/add.png</normaloff>:/img/resources/img/add.png</iconset>
+              <normaloff>resources/img/add.png</normaloff>
+              <normalon>resources/img/add.png</normalon>resources/img/add.png</iconset>
             </property>
            </widget>
           </item>
@@ -288,7 +289,7 @@ QPushButton:focus {
             <property name="font">
              <font>
               <family>Arimo</family>
-              <pointsize>13</pointsize>
+              <pointsize>12</pointsize>
              </font>
             </property>
             <property name="cursor">
@@ -320,7 +321,8 @@ QPushButton:focus {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>:/img/resources/img/settings_2.png</normaloff>:/img/resources/img/settings_2.png</iconset>
+              <normaloff>resources/img/settings_2.png</normaloff>
+              <normalon>resources/img/settings_2.png</normalon>resources/img/settings_2.png</iconset>
             </property>
            </widget>
           </item>
@@ -335,7 +337,7 @@ QPushButton:focus {
             <property name="font">
              <font>
               <family>Arimo</family>
-              <pointsize>13</pointsize>
+              <pointsize>12</pointsize>
              </font>
             </property>
             <property name="cursor">
@@ -367,7 +369,8 @@ QPushButton:focus {
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>:/img/resources/img/settings.png</normaloff>:/img/resources/img/settings.png</iconset>
+              <normaloff>../resources/img/settings.png</normaloff>
+              <normalon>resources/img/settings.png</normalon>../resources/img/settings.png</iconset>
             </property>
            </widget>
           </item>
