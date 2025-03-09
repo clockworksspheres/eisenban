@@ -11,14 +11,10 @@
             "id": "33bf88de6dc1c9ca",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "proto/qt-ui-compile.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "qt-ui-compile"
+              "title": "New tab"
             }
           }
         ]
@@ -170,30 +166,31 @@
   },
   "active": "33bf88de6dc1c9ca",
   "lastOpenFiles": [
-    "dist/eisenban.app/Contents/Frameworks/event.log",
-    "dist/eisenban.app/Contents/Resources/font/__init__.py",
-    "dist/eisenban.app/Contents/Resources/font/TorusPro.ttf",
-    "dist/eisenban.app/Contents/Resources/font/NotoSans.ttf",
-    "dist/eisenban.app/Contents/Resources/font/Arimo-Medium.ttf",
-    "dist/eisenban.app/Contents/Resources/font/Arimo-LICENCE.txt",
-    "dist/eisenban.app/Contents/Resources/font/Andika-Regular.ttf",
-    "dist/eisenban.app/Contents/Resources/font/Andika-OFL-LICENSE.txt",
-    "dist/eisenban.app/Contents/Resources/font/Andika-Bold.ttf",
-    "dist/eisenban.app/Contents/Resources/font",
-    "dist/eisenban.app/Contents/Resources/icons/E.ico",
-    "dist/eisenban.app/Contents/Resources/img/up-arrow.png",
-    "dist/eisenban.app/Contents/Resources/img/settings_2.png",
-    "dist/eisenban.app/Contents/Resources/img/settings.png",
-    "dist/eisenban.app/Contents/Resources/img/right-arrow.png",
-    "dist/eisenban.app/Contents/Resources/img/logout.png",
-    "dist/eisenban.app/Contents/Resources/img/left-arrow.png",
-    "dist/eisenban.app/Contents/Resources/img/kanbaru.png",
-    "dist/eisenban.app/Contents/Resources/img/icon.png",
-    "dist/eisenban.app/Contents/Resources/img/down-arrow.png",
-    "dist/eisenban.app/Contents/Resources/img/delete.png",
-    "proto/Class_abcQWidget_.md",
-    "proto/macosAppResources_rc.py.md",
+    "utils.py",
+    "ui/welcome_ui.py",
+    "ui/welcome.ui",
+    "ui/welcome.py",
+    "ui/sedscript",
+    "ui/main_ui.py",
+    "ui/main.ui",
+    "ui/main.py",
+    "ui/eisenban.pro.user",
+    "ui/eisenban.pro",
+    "ui/card_description_ui.py",
+    "resources/img/up-arrow.png",
+    "resources/img/settings_2.png",
+    "resources/img/settings.png",
+    "resources/img/right-arrow.png",
+    "resources/img/logout.png",
+    "resources/img/left-arrow.png",
+    "resources/img/kanbaru.png",
+    "resources/img/icon.png",
+    "resources/img/down-arrow.png",
+    "resources/img/delete.png",
+    "proto/windowsselfsignedforps1.md",
     "proto/qt-ui-compile.md",
-    "proto/windowsselfsignedforps1.md"
+    "proto/macosAppResources_rc.py.md",
+    "proto/Class_abcQWidget_.md",
+    "README.md"
   ]
 }
