@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLay
     QLabel, QListWidget, QListWidgetItem, QMainWindow,
     QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
     QWidget)
+import resources_rc
 
 class Ui_SettingsWindow(object):
     def setupUi(self, SettingsWindow):
@@ -45,8 +46,8 @@ class Ui_SettingsWindow(object):
         self.label_app_settings.setSizePolicy(sizePolicy)
         self.label_app_settings.setMinimumSize(QSize(0, 70))
         font = QFont()
-        font.setFamilies([u"Arimo"])
-        font.setPointSize(24)
+        font.setFamilies([u"Torus Pro"])
+        font.setPointSize(28)
         self.label_app_settings.setFont(font)
         self.label_app_settings.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -76,9 +77,9 @@ class Ui_SettingsWindow(object):
         self.label_manage_board = QLabel(self.widget1)
         self.label_manage_board.setObjectName(u"label_manage_board")
         font1 = QFont()
-        font1.setFamilies([u"Arimo"])
-        font1.setPointSize(13)
-        font1.setBold(False)
+        font1.setFamilies([u"Torus Pro"])
+        font1.setPointSize(14)
+        font1.setBold(True)
         self.label_manage_board.setFont(font1)
         self.label_manage_board.setStyleSheet(u"color: #282c33;")
         self.label_manage_board.setWordWrap(True)
@@ -88,7 +89,7 @@ class Ui_SettingsWindow(object):
         self.label_manage_board_desc = QLabel(self.widget1)
         self.label_manage_board_desc.setObjectName(u"label_manage_board_desc")
         font2 = QFont()
-        font2.setFamilies([u"Arimo"])
+        font2.setFamilies([u"Torus Pro"])
         font2.setPointSize(11)
         self.label_manage_board_desc.setFont(font2)
         self.label_manage_board_desc.setWordWrap(True)
@@ -215,8 +216,8 @@ class Ui_SettingsWindow(object):
         self.btn_delete.setSizePolicy(sizePolicy1)
         self.btn_delete.setMinimumSize(QSize(150, 30))
         font4 = QFont()
-        font4.setFamilies([u"Arimo"])
-        font4.setPointSize(14)
+        font4.setFamilies([u"Torus Pro"])
+        font4.setPointSize(12)
         self.btn_delete.setFont(font4)
         self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_delete.setFocusPolicy(Qt.TabFocus)

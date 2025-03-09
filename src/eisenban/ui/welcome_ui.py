@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QVBoxLayout, QWidget)
+import resources_rc
 
 class Ui_WelcomeWindow(object):
     def setupUi(self, WelcomeWindow):
@@ -81,9 +82,6 @@ class Ui_WelcomeWindow(object):
         self.label = QLabel(self.widget1)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(250, 50))
-        font = QFont()
-        font.setFamilies([u"Arimo"])
-        self.label.setFont(font)
         self.label.setPixmap(QPixmap(u":/img/resources/img/kanbaru.png"))
         self.label.setScaledContents(True)
 
@@ -104,11 +102,11 @@ class Ui_WelcomeWindow(object):
         self.verticalLayout_4.setContentsMargins(-1, 0, -1, 0)
         self.label_login = QLabel(self.widget_2)
         self.label_login.setObjectName(u"label_login")
-        font1 = QFont()
-        font1.setFamilies([u"Arimo"])
-        font1.setPointSize(14)
-        font1.setBold(False)
-        self.label_login.setFont(font1)
+        font = QFont()
+        font.setFamilies([u"Torus Pro"])
+        font.setPointSize(13)
+        font.setBold(True)
+        self.label_login.setFont(font)
         self.label_login.setStyleSheet(u"color: #282c33;")
         self.label_login.setAlignment(Qt.AlignCenter)
         self.label_login.setWordWrap(True)
@@ -118,10 +116,10 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_login_username = QLineEdit(self.widget_2)
         self.lineEdit_login_username.setObjectName(u"lineEdit_login_username")
         self.lineEdit_login_username.setMinimumSize(QSize(0, 40))
-        font2 = QFont()
-        font2.setFamilies([u"Arimo"])
-        font2.setPointSize(13)
-        self.lineEdit_login_username.setFont(font2)
+        font1 = QFont()
+        font1.setFamilies([u"Manrope Medium"])
+        font1.setPointSize(12)
+        self.lineEdit_login_username.setFont(font1)
         self.lineEdit_login_username.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -162,7 +160,7 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_login_password = QLineEdit(self.widget_2)
         self.lineEdit_login_password.setObjectName(u"lineEdit_login_password")
         self.lineEdit_login_password.setMinimumSize(QSize(0, 40))
-        self.lineEdit_login_password.setFont(font2)
+        self.lineEdit_login_password.setFont(font1)
         self.lineEdit_login_password.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -203,11 +201,11 @@ class Ui_WelcomeWindow(object):
 
         self.label_login_msg = QLabel(self.widget_2)
         self.label_login_msg.setObjectName(u"label_login_msg")
-        font3 = QFont()
-        font3.setFamilies([u"Arimo"])
-        font3.setPointSize(11)
-        font3.setBold(False)
-        self.label_login_msg.setFont(font3)
+        font2 = QFont()
+        font2.setFamilies([u"Torus Pro"])
+        font2.setPointSize(11)
+        font2.setBold(True)
+        self.label_login_msg.setFont(font2)
         self.label_login_msg.setStyleSheet(u"color: #d63a3e;")
         self.label_login_msg.setWordWrap(True)
 
@@ -228,11 +226,11 @@ class Ui_WelcomeWindow(object):
         sizePolicy.setHeightForWidth(self.btn_login.sizePolicy().hasHeightForWidth())
         self.btn_login.setSizePolicy(sizePolicy)
         self.btn_login.setMinimumSize(QSize(120, 30))
-        font4 = QFont()
-        font4.setFamilies([u"Arimo"])
-        font4.setPointSize(12)
-        font4.setBold(False)
-        self.btn_login.setFont(font4)
+        font3 = QFont()
+        font3.setFamilies([u"Torus Pro"])
+        font3.setPointSize(12)
+        font3.setBold(True)
+        self.btn_login.setFont(font3)
         self.btn_login.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_login.setFocusPolicy(Qt.TabFocus)
         self.btn_login.setStyleSheet(u"QPushButton {\n"
@@ -278,7 +276,7 @@ class Ui_WelcomeWindow(object):
         self.verticalLayout_5.setContentsMargins(-1, 0, -1, 0)
         self.label_signup = QLabel(self.widget_3)
         self.label_signup.setObjectName(u"label_signup")
-        self.label_signup.setFont(font1)
+        self.label_signup.setFont(font)
         self.label_signup.setStyleSheet(u"color: #282c33;")
         self.label_signup.setAlignment(Qt.AlignCenter)
         self.label_signup.setWordWrap(True)
@@ -288,7 +286,7 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_signup_username = QLineEdit(self.widget_3)
         self.lineEdit_signup_username.setObjectName(u"lineEdit_signup_username")
         self.lineEdit_signup_username.setMinimumSize(QSize(0, 40))
-        self.lineEdit_signup_username.setFont(font2)
+        self.lineEdit_signup_username.setFont(font1)
         self.lineEdit_signup_username.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -329,7 +327,7 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_signup_password = QLineEdit(self.widget_3)
         self.lineEdit_signup_password.setObjectName(u"lineEdit_signup_password")
         self.lineEdit_signup_password.setMinimumSize(QSize(0, 40))
-        self.lineEdit_signup_password.setFont(font2)
+        self.lineEdit_signup_password.setFont(font1)
         self.lineEdit_signup_password.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -371,10 +369,7 @@ class Ui_WelcomeWindow(object):
         self.lineEdit_signup_confirm_password = QLineEdit(self.widget_3)
         self.lineEdit_signup_confirm_password.setObjectName(u"lineEdit_signup_confirm_password")
         self.lineEdit_signup_confirm_password.setMinimumSize(QSize(0, 40))
-        font5 = QFont()
-        font5.setFamilies([u"Manrope Medium"])
-        font5.setPointSize(12)
-        self.lineEdit_signup_confirm_password.setFont(font5)
+        self.lineEdit_signup_confirm_password.setFont(font1)
         self.lineEdit_signup_confirm_password.setStyleSheet(u"QLineEdit {\n"
 "	border-color: #dfe1e6;\n"
 "	border-width: 1.5px;\n"
@@ -415,11 +410,7 @@ class Ui_WelcomeWindow(object):
 
         self.label_signup_msg = QLabel(self.widget_3)
         self.label_signup_msg.setObjectName(u"label_signup_msg")
-        font6 = QFont()
-        font6.setFamilies([u"Arimo"])
-        font6.setPointSize(13)
-        font6.setBold(False)
-        self.label_signup_msg.setFont(font6)
+        self.label_signup_msg.setFont(font2)
         self.label_signup_msg.setStyleSheet(u"color: #d63a3e;")
         self.label_signup_msg.setWordWrap(True)
 
@@ -437,7 +428,7 @@ class Ui_WelcomeWindow(object):
         sizePolicy.setHeightForWidth(self.btn_signup.sizePolicy().hasHeightForWidth())
         self.btn_signup.setSizePolicy(sizePolicy)
         self.btn_signup.setMinimumSize(QSize(120, 30))
-        self.btn_signup.setFont(font6)
+        self.btn_signup.setFont(font3)
         self.btn_signup.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_signup.setFocusPolicy(Qt.TabFocus)
         self.btn_signup.setStyleSheet(u"QPushButton {\n"

@@ -53,7 +53,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>resources/img/icon.png</pixmap>
+         <pixmap resource="../resources.qrc">:/img/resources/img/icon.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -85,15 +85,15 @@
          <widget class="QLabel" name="label_title">
           <property name="font">
            <font>
-            <family>Arimo</family>
-            <pointsize>24</pointsize>
+            <family>Torus Pro</family>
+            <pointsize>32</pointsize>
            </font>
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ffffff</string>
           </property>
           <property name="text">
-           <string>Eisenban</string>
+           <string>Kanbaru</string>
           </property>
          </widget>
         </item>
@@ -101,8 +101,8 @@
          <widget class="QLabel" name="label_sub_title">
           <property name="font">
            <font>
-            <family>Arimo</family>
-            <pointsize>14</pointsize>
+            <family>Torus Pro</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
           <property name="styleSheet">
@@ -137,15 +137,15 @@
      <widget class="QLabel" name="label_description">
       <property name="font">
        <font>
-        <family>Arimo</family>
-        <pointsize>14</pointsize>
+        <family>Torus Pro</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ffffff</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eisenban continuation of frozen Kanbaru project on github. Continuing to untagle easter-egg.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Continuing Development:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kanbaru is a group project for Software Engineering Principle course, KMITL Software Engineering, year 2, semester 2.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Developed by:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -181,15 +181,15 @@
       </property>
       <property name="font">
        <font>
-        <family>Arimo</family>
-        <pointsize>14</pointsize>
+        <family>Torus Pro</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ffffff</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1. Roy Nielsen (&lt;a href=&quot;https://github.com/roynielsen17&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/roynielsen17&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;View Kanbaru (beware of easter-egg and TorusPro font license) on &lt;/span&gt;&lt;a href=&quot;https://github.com/dulapahv/Kanbaru&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;Github&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1. Dulapah Vibulsanti (&lt;a href=&quot;https://github.com/dulapahv&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/dulapahv&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;2. Anucha Cheewachanon (&lt;a href=&quot;https://github.com/SpiralNuggets&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/SpiralNuggets&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;3. Annopdanai Pamarapa (&lt;a href=&quot;https://github.com/beam2546&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/beam2546&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;View Kanbaru on &lt;/span&gt;&lt;a href=&quot;https://github.com/dulapahv/Kanbaru&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;Github&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -217,31 +217,6 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QLabel" name="label_logo_bottom">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>210</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap>resources/img/kanbaru.png</pixmap>
-          </property>
-          <property name="scaledContents">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
          <spacer name="verticalSpacer_4">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -258,15 +233,15 @@
          <widget class="QLabel" name="label_license">
           <property name="font">
            <font>
-            <family>Arimo</family>
-            <pointsize>13</pointsize>
+            <family>Torus Pro</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ffffff</string>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eisenban is released under the MIT license. See &lt;a href=&quot;https://github.com/dulapahv/Kanbaru/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;LICENSE&lt;/span&gt;&lt;/a&gt; for more information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kanbaru is released under the MIT license. See &lt;a href=&quot;https://github.com/dulapahv/Kanbaru/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;LICENSE&lt;/span&gt;&lt;/a&gt; for more information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>
@@ -294,11 +269,38 @@
         </property>
        </spacer>
       </item>
+      <item>
+       <widget class="QLabel" name="label_logo_bottom">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>210</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources.qrc">:/img/resources/img/kanbaru.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

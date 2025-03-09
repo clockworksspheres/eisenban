@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLay
     QLabel, QLineEdit, QListWidget, QListWidgetItem,
     QMainWindow, QPushButton, QRadioButton, QScrollArea,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+import resources_rc
 
 class Ui_BoardWindow(object):
     def setupUi(self, BoardWindow):
@@ -46,8 +47,8 @@ class Ui_BoardWindow(object):
         self.label_board_desc.setSizePolicy(sizePolicy)
         self.label_board_desc.setMinimumSize(QSize(0, 70))
         font = QFont()
-        font.setFamilies([u"Arimo"])
-        font.setPointSize(24)
+        font.setFamilies([u"Torus Pro"])
+        font.setPointSize(28)
         self.label_board_desc.setFont(font)
         self.label_board_desc.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -135,7 +136,7 @@ class Ui_BoardWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 516, 655))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 516, 673))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -148,9 +149,9 @@ class Ui_BoardWindow(object):
         self.label_title = QLabel(self.scrollAreaWidgetContents)
         self.label_title.setObjectName(u"label_title")
         font1 = QFont()
-        font1.setFamilies([u"Arimo"])
+        font1.setFamilies([u"Torus Pro"])
         font1.setPointSize(14)
-        font1.setBold(False)
+        font1.setBold(True)
         self.label_title.setFont(font1)
         self.label_title.setStyleSheet(u"color: #282c33;")
         self.label_title.setWordWrap(True)
@@ -205,7 +206,7 @@ class Ui_BoardWindow(object):
         self.btn_color_1.setObjectName(u"btn_color_1")
         self.btn_color_1.setMinimumSize(QSize(120, 40))
         font3 = QFont()
-        font3.setFamilies([u"Arimo"])
+        font3.setFamilies([u"Torus Pro"])
         font3.setPointSize(12)
         self.btn_color_1.setFont(font3)
         self.btn_color_1.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
@@ -373,11 +374,7 @@ class Ui_BoardWindow(object):
 
         self.label_manage_panel = QLabel(self.scrollAreaWidgetContents)
         self.label_manage_panel.setObjectName(u"label_manage_panel")
-        font4 = QFont()
-        font4.setFamilies([u"Arimo"])
-        font4.setPointSize(18)
-        font4.setBold(False)
-        self.label_manage_panel.setFont(font4)
+        self.label_manage_panel.setFont(font1)
         self.label_manage_panel.setStyleSheet(u"color: #282c33;")
         self.label_manage_panel.setWordWrap(True)
 
@@ -385,7 +382,10 @@ class Ui_BoardWindow(object):
 
         self.label_manage_panel_desc = QLabel(self.scrollAreaWidgetContents)
         self.label_manage_panel_desc.setObjectName(u"label_manage_panel_desc")
-        self.label_manage_panel_desc.setFont(font3)
+        font4 = QFont()
+        font4.setFamilies([u"Torus Pro"])
+        font4.setPointSize(11)
+        self.label_manage_panel_desc.setFont(font4)
         self.label_manage_panel_desc.setWordWrap(True)
 
         self.verticalLayout_2.addWidget(self.label_manage_panel_desc)
@@ -394,9 +394,9 @@ class Ui_BoardWindow(object):
         self.listWidget_manage_panel.setObjectName(u"listWidget_manage_panel")
         self.listWidget_manage_panel.setMinimumSize(QSize(0, 300))
         font5 = QFont()
-        font5.setFamilies([u"Arimo"])
-        font5.setPointSize(13)
-        font5.setBold(False)
+        font5.setFamilies([u"Torus Pro"])
+        font5.setPointSize(12)
+        font5.setBold(True)
         self.listWidget_manage_panel.setFont(font5)
         self.listWidget_manage_panel.setFocusPolicy(Qt.TabFocus)
         self.listWidget_manage_panel.setStyleSheet(u"QListWidget::item {\n"
@@ -511,10 +511,7 @@ class Ui_BoardWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
         self.btn_delete.setSizePolicy(sizePolicy1)
         self.btn_delete.setMinimumSize(QSize(140, 30))
-        font6 = QFont()
-        font6.setFamilies([u"Torus Pro"])
-        font6.setPointSize(12)
-        self.btn_delete.setFont(font6)
+        self.btn_delete.setFont(font3)
         self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_delete.setFocusPolicy(Qt.TabFocus)
         self.btn_delete.setStyleSheet(u"QPushButton {background-color: #d63a3e; color: #ffffff; border-radius: 5px}\n"
@@ -528,7 +525,7 @@ class Ui_BoardWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_rename.sizePolicy().hasHeightForWidth())
         self.btn_rename.setSizePolicy(sizePolicy1)
         self.btn_rename.setMinimumSize(QSize(140, 30))
-        self.btn_rename.setFont(font6)
+        self.btn_rename.setFont(font3)
         self.btn_rename.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_rename.setFocusPolicy(Qt.TabFocus)
         self.btn_rename.setStyleSheet(u"QPushButton {background-color: #6badee; color: #ffffff; border-radius: 5px}\n"
@@ -566,7 +563,7 @@ class Ui_BoardWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_cancel.sizePolicy().hasHeightForWidth())
         self.btn_cancel.setSizePolicy(sizePolicy1)
         self.btn_cancel.setMinimumSize(QSize(100, 30))
-        self.btn_cancel.setFont(font6)
+        self.btn_cancel.setFont(font3)
         self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_cancel.setFocusPolicy(Qt.TabFocus)
         self.btn_cancel.setStyleSheet(u"QPushButton {\n"
@@ -593,7 +590,7 @@ class Ui_BoardWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
         self.btn_save.setSizePolicy(sizePolicy1)
         self.btn_save.setMinimumSize(QSize(100, 30))
-        self.btn_save.setFont(font6)
+        self.btn_save.setFont(font3)
         self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_save.setFocusPolicy(Qt.TabFocus)
         self.btn_save.setStyleSheet(u"QPushButton {\n"

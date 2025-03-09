@@ -20,7 +20,7 @@
    <string>Board Settings</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources.qrc">
     <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
@@ -65,8 +65,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Arimo</family>
-        <pointsize>24</pointsize>
+        <family>Torus Pro</family>
+        <pointsize>28</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -197,7 +197,7 @@ QScrollBar QMenu::item:selected {
                <x>0</x>
                <y>0</y>
                <width>516</width>
-               <height>655</height>
+               <height>673</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -227,9 +227,9 @@ QScrollBar QMenu::item:selected {
                    <widget class="QLabel" name="label_title">
                     <property name="font">
                      <font>
-                      <family>Arimo</family>
+                      <family>Torus Pro</family>
                       <pointsize>14</pointsize>
-                      <bold>false</bold>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -303,9 +303,9 @@ QLineEdit:focus {
                    <widget class="QLabel" name="label_color">
                     <property name="font">
                      <font>
-                      <family>Arimo</family>
+                      <family>Torus Pro</family>
                       <pointsize>14</pointsize>
-                      <bold>false</bold>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -339,7 +339,7 @@ QLineEdit:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
+                          <family>Torus Pro</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -386,7 +386,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
+                          <family>Torus Pro</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -427,7 +427,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
+                          <family>Torus Pro</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -478,7 +478,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
+                          <family>Torus Pro</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -522,7 +522,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
+                          <family>Torus Pro</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -563,7 +563,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
+                          <family>Torus Pro</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -621,9 +621,9 @@ QRadioButton:focus {
                    <widget class="QLabel" name="label_manage_panel">
                     <property name="font">
                      <font>
-                      <family>Arimo</family>
-                      <pointsize>18</pointsize>
-                      <bold>false</bold>
+                      <family>Torus Pro</family>
+                      <pointsize>14</pointsize>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -641,8 +641,8 @@ QRadioButton:focus {
                    <widget class="QLabel" name="label_manage_panel_desc">
                     <property name="font">
                      <font>
-                      <family>Arimo</family>
-                      <pointsize>12</pointsize>
+                      <family>Torus Pro</family>
+                      <pointsize>11</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -664,9 +664,9 @@ You can select multiple panels at the same time.</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Arimo</family>
-                      <pointsize>13</pointsize>
-                      <bold>false</bold>
+                      <family>Torus Pro</family>
+                      <pointsize>12</pointsize>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="focusPolicy">
@@ -1036,6 +1036,8 @@ QPushButton:focus {
   <tabstop>btn_cancel</tabstop>
   <tabstop>btn_save</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

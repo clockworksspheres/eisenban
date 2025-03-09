@@ -14,7 +14,7 @@
    <string>App Settings</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources.qrc">
     <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
@@ -59,8 +59,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Arimo</family>
-        <pointsize>24</pointsize>
+        <family>Torus Pro</family>
+        <pointsize>28</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -124,9 +124,9 @@ border-radius: 5px;</string>
                <widget class="QLabel" name="label_manage_board">
                 <property name="font">
                  <font>
-                  <family>Arimo</family>
-                  <pointsize>13</pointsize>
-                  <bold>false</bold>
+                  <family>Torus Pro</family>
+                  <pointsize>14</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -144,7 +144,7 @@ border-radius: 5px;</string>
                <widget class="QLabel" name="label_manage_board_desc">
                 <property name="font">
                  <font>
-                  <family>Arimo</family>
+                  <family>Torus Pro</family>
                   <pointsize>11</pointsize>
                  </font>
                 </property>
@@ -312,8 +312,8 @@ QScrollBar QMenu::item:selected {
                   </property>
                   <property name="font">
                    <font>
-                    <family>Arimo</family>
-                    <pointsize>14</pointsize>
+                    <family>Torus Pro</family>
+                    <pointsize>12</pointsize>
                    </font>
                   </property>
                   <property name="cursor">
@@ -404,8 +404,8 @@ QPushButton:focus {
               </property>
               <property name="font">
                <font>
-                <family>Arimo</family>
-                <pointsize>14</pointsize>
+                <family>Torus Pro</family>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -466,8 +466,8 @@ QPushButton:focus {
               </property>
               <property name="font">
                <font>
-                <family>Arimo</family>
-                <pointsize>14</pointsize>
+                <family>Torus Pro</family>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -515,8 +515,8 @@ QPushButton:focus {
               </property>
               <property name="font">
                <font>
-                <family>Arimo</family>
-                <pointsize>14</pointsize>
+                <family>Torus Pro</family>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -567,6 +567,8 @@ QPushButton:focus {
   <tabstop>btn_cancel</tabstop>
   <tabstop>btn_save</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

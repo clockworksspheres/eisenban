@@ -14,7 +14,7 @@
    <string>Card Description</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources.qrc">
     <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
@@ -59,8 +59,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Arimo</family>
-        <pointsize>24</pointsize>
+        <family>Torus Pro</family>
+        <pointsize>28</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -117,9 +117,9 @@ border-radius: 5px;</string>
            <widget class="QLabel" name="label_title">
             <property name="font">
              <font>
-              <family>Arimo</family>
-              <pointsize>18</pointsize>
-              <bold>false</bold>
+              <family>Torus Pro</family>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -188,9 +188,9 @@ QTextEdit QMenu::item:selected {
                <widget class="QLabel" name="label_date">
                 <property name="font">
                  <font>
-                  <family>Arimo</family>
-                  <pointsize>18</pointsize>
-                  <bold>false</bold>
+                  <family>Torus Pro</family>
+                  <pointsize>14</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -310,9 +310,9 @@ QCalendarWidget QSpinBox::down-arrow:pressed {
                <widget class="QLabel" name="label_time">
                 <property name="font">
                  <font>
-                  <family>Arimo</family>
-                  <pointsize>18</pointsize>
-                  <bold>false</bold>
+                  <family>Torus Pro</family>
+                  <pointsize>14</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -422,9 +422,9 @@ QTimeEdit::down-arrow:pressed {
            <widget class="QLabel" name="label_description">
             <property name="font">
              <font>
-              <family>Arimo</family>
-              <pointsize>18</pointsize>
-              <bold>false</bold>
+              <family>Torus Pro</family>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -533,8 +533,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </property>
               <property name="font">
                <font>
-                <family>Arimo</family>
-                <pointsize>13</pointsize>
+                <family>Torus Pro</family>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -595,8 +595,8 @@ QPushButton:focus {
               </property>
               <property name="font">
                <font>
-                <family>Arimo</family>
-                <pointsize>13</pointsize>
+                <family>Torus Pro</family>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -644,8 +644,8 @@ QPushButton:focus {
               </property>
               <property name="font">
                <font>
-                <family>Arimo</family>
-                <pointsize>13</pointsize>
+                <family>Torus Pro</family>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -697,6 +697,8 @@ QPushButton:focus {
   <tabstop>btn_cancel</tabstop>
   <tabstop>btn_save</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -14,7 +14,7 @@
    <string>Eisenban</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources.qrc">
     <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
@@ -177,16 +177,11 @@ border-radius: 5px;</string>
                        <height>50</height>
                       </size>
                      </property>
-                     <property name="font">
-                      <font>
-                       <family>Arimo</family>
-                      </font>
-                     </property>
                      <property name="text">
                       <string/>
                      </property>
                      <property name="pixmap">
-                      <pixmap>:/img/resources/img/kanbaru.png</pixmap>
+                      <pixmap resource="../resources.qrc">:/img/resources/img/kanbaru.png</pixmap>
                      </property>
                      <property name="scaledContents">
                       <bool>true</bool>
@@ -224,9 +219,9 @@ border-radius: 5px;</string>
                      <widget class="QLabel" name="label_login">
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>14</pointsize>
-                        <bold>false</bold>
+                        <family>Torus Pro</family>
+                        <pointsize>13</pointsize>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -253,8 +248,8 @@ border-radius: 5px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -310,8 +305,8 @@ QLineEdit QMenu::item:selected {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -364,9 +359,9 @@ QLineEdit QMenu::item:selected {
                      <widget class="QLabel" name="label_login_msg">
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
+                        <family>Torus Pro</family>
                         <pointsize>11</pointsize>
-                        <bold>false</bold>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -414,9 +409,9 @@ QLineEdit QMenu::item:selected {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
+                          <family>Torus Pro</family>
                           <pointsize>12</pointsize>
-                          <bold>false</bold>
+                          <bold>true</bold>
                          </font>
                         </property>
                         <property name="cursor">
@@ -488,9 +483,9 @@ QPushButton:focus {
                      <widget class="QLabel" name="label_signup">
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>14</pointsize>
-                        <bold>false</bold>
+                        <family>Torus Pro</family>
+                        <pointsize>13</pointsize>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -517,8 +512,8 @@ QPushButton:focus {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -574,8 +569,8 @@ QLineEdit QMenu::item:selected {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -688,9 +683,9 @@ QLineEdit QMenu::item:selected {
                      <widget class="QLabel" name="label_signup_msg">
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
-                        <bold>false</bold>
+                        <family>Torus Pro</family>
+                        <pointsize>11</pointsize>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -738,9 +733,9 @@ QLineEdit QMenu::item:selected {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Arimo</family>
-                          <pointsize>13</pointsize>
-                          <bold>false</bold>
+                          <family>Torus Pro</family>
+                          <pointsize>12</pointsize>
+                          <bold>true</bold>
                          </font>
                         </property>
                         <property name="cursor">
@@ -851,6 +846,8 @@ QPushButton:focus {
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -17,6 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+import resources_rc
 
 class Ui_About(object):
     def setupUi(self, About):
@@ -40,7 +41,7 @@ class Ui_About(object):
         sizePolicy.setHeightForWidth(self.label_logo_top.sizePolicy().hasHeightForWidth())
         self.label_logo_top.setSizePolicy(sizePolicy)
         self.label_logo_top.setMaximumSize(QSize(55, 55))
-        self.label_logo_top.setPixmap(QPixmap(u"resources/img/icon.png"))
+        self.label_logo_top.setPixmap(QPixmap(u":/img/resources/img/icon.png"))
         self.label_logo_top.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.label_logo_top)
@@ -55,8 +56,8 @@ class Ui_About(object):
         self.label_title = QLabel(self.centralwidget)
         self.label_title.setObjectName(u"label_title")
         font = QFont()
-        font.setFamilies([u"Arimo"])
-        font.setPointSize(24)
+        font.setFamilies([u"Torus Pro"])
+        font.setPointSize(32)
         self.label_title.setFont(font)
         self.label_title.setStyleSheet(u"color: #ffffff")
 
@@ -65,8 +66,8 @@ class Ui_About(object):
         self.label_sub_title = QLabel(self.centralwidget)
         self.label_sub_title.setObjectName(u"label_sub_title")
         font1 = QFont()
-        font1.setFamilies([u"Arimo"])
-        font1.setPointSize(14)
+        font1.setFamilies([u"Torus Pro"])
+        font1.setPointSize(12)
         self.label_sub_title.setFont(font1)
         self.label_sub_title.setStyleSheet(u"color: #ffffff")
 
@@ -113,26 +114,13 @@ class Ui_About(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label_logo_bottom = QLabel(self.centralwidget)
-        self.label_logo_bottom.setObjectName(u"label_logo_bottom")
-        sizePolicy.setHeightForWidth(self.label_logo_bottom.sizePolicy().hasHeightForWidth())
-        self.label_logo_bottom.setSizePolicy(sizePolicy)
-        self.label_logo_bottom.setMaximumSize(QSize(210, 40))
-        self.label_logo_bottom.setPixmap(QPixmap(u"resources/img/kanbaru.png"))
-        self.label_logo_bottom.setScaledContents(True)
-
-        self.verticalLayout_3.addWidget(self.label_logo_bottom)
-
         self.verticalSpacer_4 = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_3.addItem(self.verticalSpacer_4)
 
         self.label_license = QLabel(self.centralwidget)
         self.label_license.setObjectName(u"label_license")
-        font2 = QFont()
-        font2.setFamilies([u"Arimo"])
-        font2.setPointSize(13)
-        self.label_license.setFont(font2)
+        self.label_license.setFont(font1)
         self.label_license.setStyleSheet(u"color: #ffffff")
         self.label_license.setWordWrap(True)
         self.label_license.setOpenExternalLinks(True)
@@ -145,6 +133,16 @@ class Ui_About(object):
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
+        self.label_logo_bottom = QLabel(self.centralwidget)
+        self.label_logo_bottom.setObjectName(u"label_logo_bottom")
+        sizePolicy.setHeightForWidth(self.label_logo_bottom.sizePolicy().hasHeightForWidth())
+        self.label_logo_bottom.setSizePolicy(sizePolicy)
+        self.label_logo_bottom.setMaximumSize(QSize(210, 40))
+        self.label_logo_bottom.setPixmap(QPixmap(u":/img/resources/img/kanbaru.png"))
+        self.label_logo_bottom.setScaledContents(True)
+
+        self.horizontalLayout_2.addWidget(self.label_logo_bottom)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
@@ -159,11 +157,11 @@ class Ui_About(object):
     def retranslateUi(self, About):
         About.setWindowTitle(QCoreApplication.translate("About", u"About", None))
         self.label_logo_top.setText("")
-        self.label_title.setText(QCoreApplication.translate("About", u"Eisenban", None))
+        self.label_title.setText(QCoreApplication.translate("About", u"Kanbaru", None))
         self.label_sub_title.setText(QCoreApplication.translate("About", u"Kanban Project Manager", None))
-        self.label_description.setText(QCoreApplication.translate("About", u"<html><head/><body><p>Eisenban continuation of frozen Kanbaru project on github. Continuing to untagle easter-egg.</p><p><span style=\" font-weight:700;\">Continuing Development:</span></p></body></html>", None))
-        self.label_description_2.setText(QCoreApplication.translate("About", u"<html><head/><body><p>1. Roy Nielsen (<a href=\"https://github.com/roynielsen17\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">github/roynielsen17</span></a>)</p><p><span style=\" font-weight:700;\">View Kanbaru (beware of easter-egg and TorusPro font license) on </span><a href=\"https://github.com/dulapahv/Kanbaru\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">Github</span></a></p></body></html>", None))
+        self.label_description.setText(QCoreApplication.translate("About", u"<html><head/><body><p>Kanbaru is a group project for Software Engineering Principle course, KMITL Software Engineering, year 2, semester 2.</p><p><span style=\" font-weight:700;\">Developed by:</span></p></body></html>", None))
+        self.label_description_2.setText(QCoreApplication.translate("About", u"<html><head/><body><p>1. Dulapah Vibulsanti (<a href=\"https://github.com/dulapahv\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">github/dulapahv</span></a>)</p><p>2. Anucha Cheewachanon (<a href=\"https://github.com/SpiralNuggets\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">github/SpiralNuggets</span></a>)</p><p>3. Annopdanai Pamarapa (<a href=\"https://github.com/beam2546\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">github/beam2546</span></a>)</p><p><span style=\" font-weight:700;\">View Kanbaru on </span><a href=\"https://github.com/dulapahv/Kanbaru\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">Github</span></a></p></body></html>", None))
+        self.label_license.setText(QCoreApplication.translate("About", u"<html><head/><body><p>Kanbaru is released under the MIT license. See <a href=\"https://github.com/dulapahv/Kanbaru/blob/main/LICENSE\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">LICENSE</span></a> for more information.</p></body></html>", None))
         self.label_logo_bottom.setText("")
-        self.label_license.setText(QCoreApplication.translate("About", u"<html><head/><body><p>Eisenban is released under the MIT license. See <a href=\"https://github.com/dulapahv/Kanbaru/blob/main/LICENSE\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">LICENSE</span></a> for more information.</p></body></html>", None))
     # retranslateUi
 

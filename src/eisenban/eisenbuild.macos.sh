@@ -19,13 +19,13 @@ else
    source packenv/bin/activate
 fi
 export PATH=".":$PATH
-# ./gen_qrc-0.0.3.py
+#./gen_qrc-0.0.3.py
 
-# pyside6-rcc resources.qrc -o resources_rc.py
+pyside6-rcc resources.qrc -o resources_rc.py
 
 pyinstaller --clean -y eisenbuild.macos.spec
 pyinstaller -y eisenbuild.macos.spec
-cp -a resources dist/eisenban.app/Contents/Resources
+#cp -a resources dist/eisenban.app/Contents/Resources
 cp -a dist/eisenban.app ~/Desktop
 open ~/Desktop/eisenban.app
 
