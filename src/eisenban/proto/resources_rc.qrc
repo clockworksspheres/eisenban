@@ -1,26 +1,26 @@
 <?xml version="1.0" ?>
 <RCC>
   <qresource prefix="/resources">
-    <file>font/Andika-Bold.ttf</file>
-    <file>font/TorusPro.ttf</file>
-    <file>font/Andika-Regular.ttf</file>
-    <file>font/NotoSans.ttf</file>
-    <file>font/Arimo-Medium.ttf</file>
-    <file>img/add.png</file>
-    <file>img/icon.png</file>
-    <file>img/left-arrow.png</file>
-    <file>img/down-arrow.png</file>
-    <file>img/settings.png</file>
-    <file>img/settings_2.png</file>
-    <file>img/logout.png</file>
-    <file>img/right-arrow.png</file>
-    <file>img/delete.png</file>
-    <file>img/up-arrow.png</file>
-    <file>img/kanbaru.png</file>
-    <file>img/bg.png</file>
-    <file>icons/Barkerbaggies-Bag-O-Tiles-E.ico</file>
-    <file>icons/E.ico</file>
-    <file>icons/E.icns</file>
-    <file>icons/Barkerbaggies-Bag-O-Tiles-E.icns</file>
+    <file>resources/font/Andika-Bold.ttf</file>
+    <file>resources/font/TorusPro.ttf</file>
+    <file>resources/font/Andika-Regular.ttf</file>
+    <file>resources/font/NotoSans.ttf</file>
+    <file>resources/font/Arimo-Medium.ttf</file>
+    <file>resources/img/add.png</file>
+    <file>resources/img/icon.png</file>
+    <file>resources/img/left-arrow.png</file>
+    <file>resources/img/down-arrow.png</file>
+    <file>resources/img/settings.png</file>
+    <file>resources/img/settings_2.png</file>
+    <file>resources/img/logout.png</file>
+    <file>resources/img/right-arrow.png</file>
+    <file>resources/img/delete.png</file>
+    <file>resources/img/up-arrow.png</file>
+    <file>resources/img/kanbaru.png</file>
+    <file>resources/img/bg.png</file>
+    <file>resources/icons/Barkerbaggies-Bag-O-Tiles-E.ico</file>
+    <file>resources/icons/E.ico</file>
+    <file>resources/icons/E.icns</file>
+    <file>resources/icons/Barkerbaggies-Bag-O-Tiles-E.icns</file>
   </qresource>
 </RCC>

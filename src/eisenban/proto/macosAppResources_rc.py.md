@@ -1,4 +1,12 @@
-d## how to include resource.py into macos .app pyinstaller
+It ends up that resources.qrc needs to be in eisenban's qtcreator's file: 
+
+``` makefile
+RESOURCES += resources.qrc
+```
+
+check out the proto directory on how to create that file...
+
+## how to include resource.py into macos .app pyinstaller
 
 
 To include a `resource.py` file in a macOS `.app` bundle using PyInstaller, you can use the `--add-data` option. This option allows you to specify additional data files or directories that should be included in the application bundle.

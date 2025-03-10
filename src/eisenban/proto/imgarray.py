@@ -10,7 +10,7 @@ ext_files = []
 for ext in ext_extensions:
     # Use glob to find files with the specified extension
     for file_path in glob.glob(f"{ext_dir}/**/*{ext}", recursive=True):
-        file_path = "/".join(file_path.split("/")[1:])
+        file_path = ext_dir + "/" + "/".join(file_path.split("/")[1:])
         ext_files.append(file_path)
         print(file_path)
 
@@ -23,7 +23,7 @@ ext_files = []
 for ext in ext_extensions:
     # Use glob to find files with the specified extension
     for file_path in glob.glob(f"{ext_dir}/**/*{ext}", recursive=True):
-        file_path = "/".join(file_path.split("/")[1:])
+        file_path =  ext_dir +"/" + "/".join(file_path.split("/")[1:])
         ext_files.append(file_path)
         print(file_path)
 
@@ -36,7 +36,7 @@ ext_files = []
 for ext in ext_extensions:
     # Use glob to find files with the specified extension
     for file_path in glob.glob(f"{ext_dir}/**/*{ext}", recursive=True):
-        file_path = "/".join(file_path.split("/")[1:])
+        file_path = ext_dir + "/" + "/".join(file_path.split("/")[1:])
         ext_files.append(file_path)
         print(file_path)
 
