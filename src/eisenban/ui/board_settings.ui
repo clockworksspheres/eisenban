@@ -20,7 +20,7 @@
    <string>Board Settings</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources.qrc">
+   <iconset>
     <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
@@ -65,8 +65,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Torus Pro</family>
-        <pointsize>28</pointsize>
+        <family>Arimo</family>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -195,9 +195,9 @@ QScrollBar QMenu::item:selected {
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>0</y>
+               <y>-136</y>
                <width>516</width>
-               <height>673</height>
+               <height>650</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -227,9 +227,9 @@ QScrollBar QMenu::item:selected {
                    <widget class="QLabel" name="label_title">
                     <property name="font">
                      <font>
-                      <family>Torus Pro</family>
+                      <family>Arimo</family>
                       <pointsize>14</pointsize>
-                      <bold>true</bold>
+                      <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -303,9 +303,9 @@ QLineEdit:focus {
                    <widget class="QLabel" name="label_color">
                     <property name="font">
                      <font>
-                      <family>Torus Pro</family>
+                      <family>Arimo</family>
                       <pointsize>14</pointsize>
-                      <bold>true</bold>
+                      <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -339,7 +339,7 @@ QLineEdit:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -386,7 +386,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -427,7 +427,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -478,7 +478,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -522,7 +522,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -563,7 +563,7 @@ QRadioButton:focus {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
                          </font>
                         </property>
@@ -621,9 +621,9 @@ QRadioButton:focus {
                    <widget class="QLabel" name="label_manage_panel">
                     <property name="font">
                      <font>
-                      <family>Torus Pro</family>
+                      <family>Arimo</family>
                       <pointsize>14</pointsize>
-                      <bold>true</bold>
+                      <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -641,8 +641,8 @@ QRadioButton:focus {
                    <widget class="QLabel" name="label_manage_panel_desc">
                     <property name="font">
                      <font>
-                      <family>Torus Pro</family>
-                      <pointsize>11</pointsize>
+                      <family>Arimo</family>
+                      <pointsize>12</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -816,7 +816,7 @@ QScrollBar QMenu::item:selected {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>12</pointsize>
                        </font>
                       </property>
@@ -852,7 +852,7 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
                       </property>
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>12</pointsize>
                        </font>
                       </property>
@@ -929,7 +929,7 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
               </property>
               <property name="font">
                <font>
-                <family>Torus Pro</family>
+                <family>Arimo</family>
                 <pointsize>12</pointsize>
                </font>
               </property>
@@ -978,7 +978,7 @@ QPushButton:focus {
               </property>
               <property name="font">
                <font>
-                <family>Torus Pro</family>
+                <family>Arimo</family>
                 <pointsize>12</pointsize>
                </font>
               </property>
@@ -1036,8 +1036,6 @@ QPushButton:focus {
   <tabstop>btn_cancel</tabstop>
   <tabstop>btn_save</tabstop>
  </tabstops>
- <resources>
-  <include location="../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

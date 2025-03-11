@@ -53,7 +53,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../resources.qrc">:/img/resources/img/icon.png</pixmap>
+         <pixmap resource="../eisenban.qrc">:/eisenban/resources/img/icon.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -85,15 +85,15 @@
          <widget class="QLabel" name="label_title">
           <property name="font">
            <font>
-            <family>Torus Pro</family>
-            <pointsize>32</pointsize>
+            <family>Arimo</family>
+            <pointsize>24</pointsize>
            </font>
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ffffff</string>
           </property>
           <property name="text">
-           <string>Kanbaru</string>
+           <string>Eisenban</string>
           </property>
          </widget>
         </item>
@@ -101,15 +101,15 @@
          <widget class="QLabel" name="label_sub_title">
           <property name="font">
            <font>
-            <family>Torus Pro</family>
-            <pointsize>12</pointsize>
+            <family>Arimo</family>
+            <pointsize>13</pointsize>
            </font>
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ffffff</string>
           </property>
           <property name="text">
-           <string>Kanban Project Manager</string>
+           <string>Eisenban Project Manager</string>
           </property>
          </widget>
         </item>
@@ -137,7 +137,7 @@
      <widget class="QLabel" name="label_description">
       <property name="font">
        <font>
-        <family>Torus Pro</family>
+        <family>Arimo</family>
         <pointsize>12</pointsize>
        </font>
       </property>
@@ -145,13 +145,16 @@
        <string notr="true">color: #ffffff</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kanbaru is a group project for Software Engineering Principle course, KMITL Software Engineering, year 2, semester 2.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Developed by:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;eisenban is a rebranding of the Kanbaru project on &lt;a href=&quot;https://github.com/dulapahv/Kanbaru&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;Github&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Beware of the easter-egg and font license problems with the Kanbaru project.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Respun by:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
       </property>
       <property name="openExternalLinks">
-       <bool>false</bool>
+       <bool>true</bool>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::LinksAccessibleByMouse</set>
       </property>
      </widget>
     </item>
@@ -181,7 +184,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Torus Pro</family>
+        <family>Arimo</family>
         <pointsize>12</pointsize>
        </font>
       </property>
@@ -189,12 +192,38 @@
        <string notr="true">color: #ffffff</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1. Dulapah Vibulsanti (&lt;a href=&quot;https://github.com/dulapahv&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/dulapahv&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;2. Anucha Cheewachanon (&lt;a href=&quot;https://github.com/SpiralNuggets&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/SpiralNuggets&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;3. Annopdanai Pamarapa (&lt;a href=&quot;https://github.com/beam2546&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/beam2546&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;View Kanbaru on &lt;/span&gt;&lt;a href=&quot;https://github.com/dulapahv/Kanbaru&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;Github&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1. Roy Nielsen (&lt;a href=&quot;https://github.com/roynielsen17&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;github/roynielsen17&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;View eisenban on &lt;/span&gt;&lt;a href=&quot;https://github.com/roynielsen17/eisenban&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;Github&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+Previously Kanbaru:&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
       </property>
       <property name="openExternalLinks">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_logo_bottom">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>210</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../eisenban.qrc">:/eisenban/resources/img/kanbaru.png</pixmap>
+      </property>
+      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
@@ -233,7 +262,7 @@
          <widget class="QLabel" name="label_license">
           <property name="font">
            <font>
-            <family>Torus Pro</family>
+            <family>Arimo</family>
             <pointsize>12</pointsize>
            </font>
           </property>
@@ -241,7 +270,7 @@
            <string notr="true">color: #ffffff</string>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kanbaru is released under the MIT license. See &lt;a href=&quot;https://github.com/dulapahv/Kanbaru/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;LICENSE&lt;/span&gt;&lt;/a&gt; for more information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eisenban is released under the MIT license. See &lt;a href=&quot;https://github.com/dulapahv/eisenban/blob/main/LICENSE&quot;&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline; color:#fb568a;&quot;&gt;LICENSE&lt;/span&gt;&lt;/a&gt; for more information.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>
@@ -269,38 +298,13 @@
         </property>
        </spacer>
       </item>
-      <item>
-       <widget class="QLabel" name="label_logo_bottom">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>210</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="../resources.qrc">:/img/resources/img/kanbaru.png</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
    </layout>
   </widget>
  </widget>
  <resources>
-  <include location="../resources.qrc"/>
+  <include location="../eisenban.qrc"/>
  </resources>
  <connections/>
 </ui>

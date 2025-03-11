@@ -14,7 +14,7 @@
    <string>Eisenban</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources.qrc">
+   <iconset>
     <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
@@ -181,7 +181,7 @@ border-radius: 5px;</string>
                       <string/>
                      </property>
                      <property name="pixmap">
-                      <pixmap resource="../resources.qrc">:/img/resources/img/kanbaru.png</pixmap>
+                      <pixmap>:/img/resources/img/kanbaru.png</pixmap>
                      </property>
                      <property name="scaledContents">
                       <bool>true</bool>
@@ -219,9 +219,9 @@ border-radius: 5px;</string>
                      <widget class="QLabel" name="label_login">
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>13</pointsize>
-                        <bold>true</bold>
+                        <bold>false</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -359,9 +359,9 @@ QLineEdit QMenu::item:selected {
                      <widget class="QLabel" name="label_login_msg">
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>11</pointsize>
-                        <bold>true</bold>
+                        <bold>false</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -409,9 +409,9 @@ QLineEdit QMenu::item:selected {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
-                          <bold>true</bold>
+                          <bold>false</bold>
                          </font>
                         </property>
                         <property name="cursor">
@@ -483,9 +483,9 @@ QPushButton:focus {
                      <widget class="QLabel" name="label_signup">
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>13</pointsize>
-                        <bold>true</bold>
+                        <bold>false</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -683,9 +683,9 @@ QLineEdit QMenu::item:selected {
                      <widget class="QLabel" name="label_signup_msg">
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>11</pointsize>
-                        <bold>true</bold>
+                        <bold>false</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -733,9 +733,9 @@ QLineEdit QMenu::item:selected {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Torus Pro</family>
+                          <family>Arimo</family>
                           <pointsize>12</pointsize>
-                          <bold>true</bold>
+                          <bold>false</bold>
                          </font>
                         </property>
                         <property name="cursor">
@@ -846,8 +846,6 @@ QPushButton:focus {
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

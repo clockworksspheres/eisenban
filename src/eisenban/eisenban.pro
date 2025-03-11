@@ -1,2 +1,2 @@
 FORMS += ui/main.ui
-RESOURCES += resources.qrc
+RESOURCES += eisenban.qrc

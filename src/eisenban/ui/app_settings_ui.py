@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLay
     QLabel, QListWidget, QListWidgetItem, QMainWindow,
     QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
     QWidget)
-import resources_rc
 
 class Ui_SettingsWindow(object):
     def setupUi(self, SettingsWindow):
@@ -46,8 +45,8 @@ class Ui_SettingsWindow(object):
         self.label_app_settings.setSizePolicy(sizePolicy)
         self.label_app_settings.setMinimumSize(QSize(0, 70))
         font = QFont()
-        font.setFamilies([u"Torus Pro"])
-        font.setPointSize(28)
+        font.setFamilies([u"Arimo"])
+        font.setPointSize(24)
         self.label_app_settings.setFont(font)
         self.label_app_settings.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -77,9 +76,9 @@ class Ui_SettingsWindow(object):
         self.label_manage_board = QLabel(self.widget1)
         self.label_manage_board.setObjectName(u"label_manage_board")
         font1 = QFont()
-        font1.setFamilies([u"Torus Pro"])
+        font1.setFamilies([u"Arimo"])
         font1.setPointSize(14)
-        font1.setBold(True)
+        font1.setBold(False)
         self.label_manage_board.setFont(font1)
         self.label_manage_board.setStyleSheet(u"color: #282c33;")
         self.label_manage_board.setWordWrap(True)
@@ -89,8 +88,8 @@ class Ui_SettingsWindow(object):
         self.label_manage_board_desc = QLabel(self.widget1)
         self.label_manage_board_desc.setObjectName(u"label_manage_board_desc")
         font2 = QFont()
-        font2.setFamilies([u"Torus Pro"])
-        font2.setPointSize(11)
+        font2.setFamilies([u"Arimo"])
+        font2.setPointSize(12)
         self.label_manage_board_desc.setFont(font2)
         self.label_manage_board_desc.setWordWrap(True)
 
@@ -215,10 +214,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
         self.btn_delete.setSizePolicy(sizePolicy1)
         self.btn_delete.setMinimumSize(QSize(150, 30))
-        font4 = QFont()
-        font4.setFamilies([u"Torus Pro"])
-        font4.setPointSize(12)
-        self.btn_delete.setFont(font4)
+        self.btn_delete.setFont(font2)
         self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_delete.setFocusPolicy(Qt.TabFocus)
         self.btn_delete.setStyleSheet(u"QPushButton {\n"
@@ -275,7 +271,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_about.sizePolicy().hasHeightForWidth())
         self.btn_about.setSizePolicy(sizePolicy1)
         self.btn_about.setMinimumSize(QSize(100, 30))
-        self.btn_about.setFont(font4)
+        self.btn_about.setFont(font2)
         self.btn_about.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_about.setFocusPolicy(Qt.TabFocus)
         self.btn_about.setStyleSheet(u"QPushButton {\n"
@@ -306,7 +302,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_cancel.sizePolicy().hasHeightForWidth())
         self.btn_cancel.setSizePolicy(sizePolicy1)
         self.btn_cancel.setMinimumSize(QSize(100, 30))
-        self.btn_cancel.setFont(font4)
+        self.btn_cancel.setFont(font2)
         self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_cancel.setFocusPolicy(Qt.TabFocus)
         self.btn_cancel.setStyleSheet(u"QPushButton {\n"
@@ -333,7 +329,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
         self.btn_save.setSizePolicy(sizePolicy1)
         self.btn_save.setMinimumSize(QSize(100, 30))
-        self.btn_save.setFont(font4)
+        self.btn_save.setFont(font2)
         self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_save.setFocusPolicy(Qt.TabFocus)
         self.btn_save.setStyleSheet(u"QPushButton {\n"
@@ -365,7 +361,7 @@ class Ui_SettingsWindow(object):
         self.verticalLayout_3.addWidget(self.widget)
 
         SettingsWindow.setCentralWidget(self.centralwidget)
-        QWidget.setTabOrder(self.widget, self.listWidget_manage_board)
+        QWidget.setTabOrder(self.widget1, self.listWidget_manage_board)
         QWidget.setTabOrder(self.listWidget_manage_board, self.btn_delete)
         QWidget.setTabOrder(self.btn_delete, self.btn_about)
         QWidget.setTabOrder(self.btn_about, self.btn_cancel)

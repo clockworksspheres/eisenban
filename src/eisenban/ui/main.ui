@@ -14,7 +14,7 @@
    <string>Eisenban</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources.qrc">
+   <iconset>
     <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
@@ -108,8 +108,8 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
            <widget class="QLabel" name="label_logo">
             <property name="font">
              <font>
-              <family>Torus Pro</family>
-              <pointsize>36</pointsize>
+              <family>Arimo</family>
+              <pointsize>24</pointsize>
              </font>
             </property>
             <property name="styleSheet">
@@ -117,8 +117,10 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
 color: #FFFFFF;</string>
             </property>
             <property name="text">
-             <string>Eisen
-ban</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eisen&lt;br/&gt;ban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::MarkdownText</enum>
             </property>
             <property name="margin">
              <number>10</number>
@@ -207,7 +209,7 @@ QScrollBar QMenu::item:selected {
                <x>0</x>
                <y>0</y>
                <width>144</width>
-               <height>417</height>
+               <height>472</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -240,8 +242,8 @@ QScrollBar QMenu::item:selected {
             </property>
             <property name="font">
              <font>
-              <family>Torus Pro</family>
-              <pointsize>12</pointsize>
+              <family>Arimo</family>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="cursor">
@@ -272,8 +274,8 @@ QPushButton:focus {
              <string> Add a board</string>
             </property>
             <property name="icon">
-             <iconset resource="../resources.qrc">
-              <normaloff>:/img/resources/img/add.png</normaloff>:/img/resources/img/add.png</iconset>
+             <iconset resource="../eisenban.qrc">
+              <normaloff>:/eisenban/resources/img/add.png</normaloff>:/eisenban/resources/img/add.png</iconset>
             </property>
            </widget>
           </item>
@@ -287,8 +289,8 @@ QPushButton:focus {
             </property>
             <property name="font">
              <font>
-              <family>Torus Pro</family>
-              <pointsize>12</pointsize>
+              <family>Arimo</family>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="cursor">
@@ -319,8 +321,8 @@ QPushButton:focus {
              <string>Manage Board</string>
             </property>
             <property name="icon">
-             <iconset resource="../resources.qrc">
-              <normaloff>:/img/resources/img/settings_2.png</normaloff>:/img/resources/img/settings_2.png</iconset>
+             <iconset resource="../eisenban.qrc">
+              <normaloff>:/eisenban/resources/img/settings_2.png</normaloff>:/eisenban/resources/img/settings_2.png</iconset>
             </property>
            </widget>
           </item>
@@ -334,8 +336,8 @@ QPushButton:focus {
             </property>
             <property name="font">
              <font>
-              <family>Torus Pro</family>
-              <pointsize>12</pointsize>
+              <family>Arimo</family>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="cursor">
@@ -366,8 +368,8 @@ QPushButton:focus {
              <string> App Settings</string>
             </property>
             <property name="icon">
-             <iconset resource="../resources.qrc">
-              <normaloff>:/img/resources/img/settings.png</normaloff>:/img/resources/img/settings.png</iconset>
+             <iconset resource="../eisenban.qrc">
+              <normaloff>:/eisenban/resources/img/settings.png</normaloff>:/eisenban/resources/img/settings.png</iconset>
             </property>
            </widget>
           </item>
@@ -525,7 +527,7 @@ QScrollBar QMenu::item:selected {
                  <x>0</x>
                  <y>0</y>
                  <width>862</width>
-                 <height>589</height>
+                 <height>585</height>
                 </rect>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -564,7 +566,7 @@ QScrollBar QMenu::item:selected {
   <tabstop>scrollArea_panel_right</tabstop>
  </tabstops>
  <resources>
-  <include location="../resources.qrc"/>
+  <include location="../eisenban.qrc"/>
  </resources>
  <connections/>
 </ui>

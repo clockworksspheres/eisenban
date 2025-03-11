@@ -5,7 +5,7 @@
 
 a = Analysis(
     ['eisenban.py'],
-    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', '/Users/victor/Documents/src/github/roynielsen17/eisenban/src/eisenban/packenv/bin', '/Users/victor/Documents/src/github/roynielsen17/eisenban/src/eisenban/packenv/include', '/Users/victor/Documents/src/github/roynielsen17/eisenban/src/eisenban/packenv/lib/python3.12/site-packages'],
+    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', './packenv/bin', './packenv/include', './packenv/lib/python3.12/site-packages'],
     binaries=[],
     datas=[("resources/font/*.ttf",   "resources/font"), 
             ("resources/font/*.txt",   "resources/font"), 

@@ -23,13 +23,13 @@ export PATH=".":$PATH
 # DOES NOT WORK - need to figure out why...
 #./gen_qrc-0.0.3.py
 
-pyside6-rcc resources.qrc -o resources_rc.py
+#pyside6-rcc eisenban.qrc -o eisenban_rc.py
 
 pyinstaller --clean -y eisenbuild.macos.spec
 pyinstaller -y eisenbuild.macos.spec
 ### DOES NOT WORK... need to figure out why...
-#cp -a resources dist/eisenban.app/Contents/Resources
-#cp -a resources dist/eisenban.app/Contents
+cp -a resources dist/eisenban.app/Contents/Resources
+cp -a resources dist/eisenban.app/Contents
 cp -a dist/eisenban.app ~/Desktop
 open ~/Desktop/eisenban.app
 

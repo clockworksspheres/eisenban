@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLay
     QLabel, QLineEdit, QListWidget, QListWidgetItem,
     QMainWindow, QPushButton, QRadioButton, QScrollArea,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
-import resources_rc
 
 class Ui_BoardWindow(object):
     def setupUi(self, BoardWindow):
@@ -47,8 +46,8 @@ class Ui_BoardWindow(object):
         self.label_board_desc.setSizePolicy(sizePolicy)
         self.label_board_desc.setMinimumSize(QSize(0, 70))
         font = QFont()
-        font.setFamilies([u"Torus Pro"])
-        font.setPointSize(28)
+        font.setFamilies([u"Arimo"])
+        font.setPointSize(24)
         self.label_board_desc.setFont(font)
         self.label_board_desc.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -136,7 +135,7 @@ class Ui_BoardWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 516, 673))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -136, 516, 650))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -149,9 +148,9 @@ class Ui_BoardWindow(object):
         self.label_title = QLabel(self.scrollAreaWidgetContents)
         self.label_title.setObjectName(u"label_title")
         font1 = QFont()
-        font1.setFamilies([u"Torus Pro"])
+        font1.setFamilies([u"Arimo"])
         font1.setPointSize(14)
-        font1.setBold(True)
+        font1.setBold(False)
         self.label_title.setFont(font1)
         self.label_title.setStyleSheet(u"color: #282c33;")
         self.label_title.setWordWrap(True)
@@ -206,7 +205,7 @@ class Ui_BoardWindow(object):
         self.btn_color_1.setObjectName(u"btn_color_1")
         self.btn_color_1.setMinimumSize(QSize(120, 40))
         font3 = QFont()
-        font3.setFamilies([u"Torus Pro"])
+        font3.setFamilies([u"Arimo"])
         font3.setPointSize(12)
         self.btn_color_1.setFont(font3)
         self.btn_color_1.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
@@ -382,10 +381,7 @@ class Ui_BoardWindow(object):
 
         self.label_manage_panel_desc = QLabel(self.scrollAreaWidgetContents)
         self.label_manage_panel_desc.setObjectName(u"label_manage_panel_desc")
-        font4 = QFont()
-        font4.setFamilies([u"Torus Pro"])
-        font4.setPointSize(11)
-        self.label_manage_panel_desc.setFont(font4)
+        self.label_manage_panel_desc.setFont(font3)
         self.label_manage_panel_desc.setWordWrap(True)
 
         self.verticalLayout_2.addWidget(self.label_manage_panel_desc)
@@ -393,11 +389,11 @@ class Ui_BoardWindow(object):
         self.listWidget_manage_panel = QListWidget(self.scrollAreaWidgetContents)
         self.listWidget_manage_panel.setObjectName(u"listWidget_manage_panel")
         self.listWidget_manage_panel.setMinimumSize(QSize(0, 300))
-        font5 = QFont()
-        font5.setFamilies([u"Torus Pro"])
-        font5.setPointSize(12)
-        font5.setBold(True)
-        self.listWidget_manage_panel.setFont(font5)
+        font4 = QFont()
+        font4.setFamilies([u"Torus Pro"])
+        font4.setPointSize(12)
+        font4.setBold(True)
+        self.listWidget_manage_panel.setFont(font4)
         self.listWidget_manage_panel.setFocusPolicy(Qt.TabFocus)
         self.listWidget_manage_panel.setStyleSheet(u"QListWidget::item {\n"
 "	height: 40px;\n"

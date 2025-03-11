@@ -18,7 +18,6 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QVBoxLayout, QWidget)
-import resources_rc
 
 class Ui_WelcomeWindow(object):
     def setupUi(self, WelcomeWindow):
@@ -103,9 +102,9 @@ class Ui_WelcomeWindow(object):
         self.label_login = QLabel(self.widget_2)
         self.label_login.setObjectName(u"label_login")
         font = QFont()
-        font.setFamilies([u"Torus Pro"])
+        font.setFamilies([u"Arimo"])
         font.setPointSize(13)
-        font.setBold(True)
+        font.setBold(False)
         self.label_login.setFont(font)
         self.label_login.setStyleSheet(u"color: #282c33;")
         self.label_login.setAlignment(Qt.AlignCenter)
@@ -202,9 +201,9 @@ class Ui_WelcomeWindow(object):
         self.label_login_msg = QLabel(self.widget_2)
         self.label_login_msg.setObjectName(u"label_login_msg")
         font2 = QFont()
-        font2.setFamilies([u"Torus Pro"])
+        font2.setFamilies([u"Arimo"])
         font2.setPointSize(11)
-        font2.setBold(True)
+        font2.setBold(False)
         self.label_login_msg.setFont(font2)
         self.label_login_msg.setStyleSheet(u"color: #d63a3e;")
         self.label_login_msg.setWordWrap(True)
@@ -227,9 +226,9 @@ class Ui_WelcomeWindow(object):
         self.btn_login.setSizePolicy(sizePolicy)
         self.btn_login.setMinimumSize(QSize(120, 30))
         font3 = QFont()
-        font3.setFamilies([u"Torus Pro"])
+        font3.setFamilies([u"Arimo"])
         font3.setPointSize(12)
-        font3.setBold(True)
+        font3.setBold(False)
         self.btn_login.setFont(font3)
         self.btn_login.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_login.setFocusPolicy(Qt.TabFocus)
