@@ -25,6 +25,8 @@ export PATH=".":$PATH
 
 #pyside6-rcc eisenban.qrc -o eisenban_rc.py
 
+pushd ui; python3 compile_uifiles.py; popd
+
 pyinstaller --clean -y eisenbuild.macos.spec
 pyinstaller -y eisenbuild.macos.spec
 ### DOES NOT WORK... need to figure out why...
