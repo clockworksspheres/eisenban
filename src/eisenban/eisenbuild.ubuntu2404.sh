@@ -11,13 +11,13 @@ directory="./packenv"
 actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
    python3 -m venv packenv
-   source packenv/bin/activate
 
-   pip3 install PySide6 PyInstaller
-   pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
-else
-   source packenv/bin/activate
 fi
+source ./packenv/bin/activate
+
+pip3 install PySide6 PyInstaller
+pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+
 
 pyinstaller --clean -y eisenbuild.linux.py312.onefile.spec
 pyinstaller -y eisenbuild.linux.py312.onefile.spec
