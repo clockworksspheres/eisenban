@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'app_settings.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -361,7 +361,7 @@ class Ui_SettingsWindow(object):
         self.verticalLayout_3.addWidget(self.widget)
 
         SettingsWindow.setCentralWidget(self.centralwidget)
-        QWidget.setTabOrder(self.widget1, self.listWidget_manage_board)
+        QWidget.setTabOrder(self.widget, self.listWidget_manage_board)
         QWidget.setTabOrder(self.listWidget_manage_board, self.btn_delete)
         QWidget.setTabOrder(self.btn_delete, self.btn_about)
         QWidget.setTabOrder(self.btn_about, self.btn_cancel)

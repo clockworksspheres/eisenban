@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "proto/macosAppResources_rc.py.md",
+                "file": "proto/process/README.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "macosAppResources_rc.py"
+              "title": "README"
             }
           }
         ]
@@ -168,19 +168,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6620bc122ddc4625",
+  "active": "33bf88de6dc1c9ca",
   "lastOpenFiles": [
+    "proto/psygnal/README.md",
+    "proto/process/ele-002.py",
+    "proto/process/ele-006.py",
+    "proto/process/ele-003.py",
+    "proto/process/README.md",
+    "proto/process/ele-004.py",
+    "proto/process/ele-001.py",
+    "proto/process/ele-005.py",
+    "proto/process",
+    "proto/macosAppResources_rc.py.md",
     "proto/pickle/Table.pickle",
     "proto/pickle/print_pickle_001.py",
     "proto/pickle",
-    "event.log",
-    "ui/__pycache__/welcome_ui.cpython-312.pyc",
-    "ui/__pycache__/welcome.cpython-312.pyc",
-    "ui/__pycache__/main_ui.cpython-312.pyc",
-    "ui/__pycache__/card_description_ui.cpython-312.pyc",
-    "ui/__pycache__/card_description.cpython-312.pyc",
-    "ui/__pycache__/board_settings_ui.cpython-312.pyc",
-    "ui/__pycache__/board_settings.cpython-312.pyc",
     "dist/eisenban.app/Contents/Resources/img/delete.png",
     "dist/eisenban.app/Contents/Resources/img/up-arrow.png",
     "dist/eisenban.app/Contents/Resources/img/settings_2.png",
@@ -193,7 +195,6 @@
     "dist/eisenban.app/Contents/Resources/img/down-arrow.png",
     "proto/windowsselfsignedforps1.md",
     "proto/qt-ui-compile.md",
-    "proto/macosAppResources_rc.py.md",
     "proto/Class_abcQWidget_.md",
     "README.md"
   ]
