@@ -505,7 +505,7 @@ AI-generated answer. Please verify critical facts.
 
 
 
-"""
+``` python
 #ele-009.py
 
 import subprocess
@@ -530,4 +530,5 @@ output, error = proc.communicate((passwd + '\n').encode())
 print("Output:", output)
 # print("Error:", error)
 
-"""
+```
+
