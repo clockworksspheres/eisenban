@@ -10,7 +10,6 @@ Created on Jul 13, 2011 - stonix project
 '''
 import os
 import re
-import pwd
 import sys
 import unittest
 import traceback
@@ -19,10 +18,18 @@ import tracemalloc
 #####
 # Include the parent project directory in the PYTHONPATH
 appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
+appendDir = ("../")
 sys.path.append(appendDir)
 
 # --- Non-native python libraries in this source tree
 import eisenban.lib.environment as environment
+
+if sys.platform.startswith('win32'):
+    import win32api
+    from eisenban.lib.windows_utilities import is_windows_process_elevated
+
+else:
+    import pwd
 
 
 class test_environment(unittest.TestCase):

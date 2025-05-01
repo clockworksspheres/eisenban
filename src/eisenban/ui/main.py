@@ -1,5 +1,6 @@
 import datetime
 import logging
+import sys
 
 from PySide6.QtCore import QCoreApplication, QEvent, QSize, Qt, Slot
 from PySide6.QtGui import QCursor, QDragMoveEvent, QDropEvent, QFont
@@ -7,6 +8,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea,
                                QApplication, QFrame, QLabel, QListWidget,
                                QListWidgetItem, QMainWindow, QPushButton,
                                QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+
 
 from db import Table
 from dialog import dialog_factory, input_dialog_factory
