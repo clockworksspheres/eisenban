@@ -60,7 +60,7 @@
       <property name="font">
        <font>
         <family>Arimo</family>
-        <pointsize>36</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -118,7 +118,7 @@ border-radius: 5px;</string>
             <property name="font">
              <font>
               <family>Arimo</family>
-              <pointsize>18</pointsize>
+              <pointsize>14</pointsize>
               <bold>false</bold>
              </font>
             </property>
@@ -189,7 +189,7 @@ QTextEdit QMenu::item:selected {
                 <property name="font">
                  <font>
                   <family>Arimo</family>
-                  <pointsize>18</pointsize>
+                  <pointsize>14</pointsize>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -311,7 +311,7 @@ QCalendarWidget QSpinBox::down-arrow:pressed {
                 <property name="font">
                  <font>
                   <family>Arimo</family>
-                  <pointsize>18</pointsize>
+                  <pointsize>14</pointsize>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -423,7 +423,7 @@ QTimeEdit::down-arrow:pressed {
             <property name="font">
              <font>
               <family>Arimo</family>
-              <pointsize>18</pointsize>
+              <pointsize>14</pointsize>
               <bold>false</bold>
              </font>
             </property>
@@ -534,7 +534,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <property name="font">
                <font>
                 <family>Arimo</family>
-                <pointsize>13</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -596,7 +596,7 @@ QPushButton:focus {
               <property name="font">
                <font>
                 <family>Arimo</family>
-                <pointsize>13</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -645,7 +645,7 @@ QPushButton:focus {
               <property name="font">
                <font>
                 <family>Arimo</family>
-                <pointsize>13</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">

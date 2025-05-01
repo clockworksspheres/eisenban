@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,6 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QMainWindow, QPushButton, QScrollArea, QSizePolicy,
     QVBoxLayout, QWidget)
+import eisenban_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -63,10 +64,11 @@ class Ui_MainWindow(object):
         self.label_logo.setObjectName(u"label_logo")
         font = QFont()
         font.setFamilies([u"Arimo"])
-        font.setPointSize(36)
+        font.setPointSize(24)
         self.label_logo.setFont(font)
         self.label_logo.setStyleSheet(u"background-color: #282c34;\n"
 "color: #FFFFFF;")
+        self.label_logo.setTextFormat(Qt.MarkdownText)
         self.label_logo.setMargin(10)
         self.label_logo.setIndent(8)
 
@@ -141,7 +143,7 @@ class Ui_MainWindow(object):
         self.scrollArea_panel_left.setWidgetResizable(True)
         self.scrollAreaContent_panel_left = QWidget()
         self.scrollAreaContent_panel_left.setObjectName(u"scrollAreaContent_panel_left")
-        self.scrollAreaContent_panel_left.setGeometry(QRect(0, 0, 144, 481))
+        self.scrollAreaContent_panel_left.setGeometry(QRect(0, 0, 144, 472))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaContent_panel_left)
         self.verticalLayout_4.setSpacing(10)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -176,7 +178,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u":/img/resources/img/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/eisenban/resources/img/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_add_board.setIcon(icon1)
 
         self.verticalLayout_2.addWidget(self.btn_add_board)
@@ -204,7 +206,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u":/img/resources/img/settings_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u":/eisenban/resources/img/settings_2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_board_settings.setIcon(icon2)
 
         self.verticalLayout_2.addWidget(self.btn_board_settings)
@@ -232,7 +234,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u":/img/resources/img/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u":/eisenban/resources/img/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_app_settings.setIcon(icon3)
 
         self.verticalLayout_2.addWidget(self.btn_app_settings)
@@ -379,8 +381,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Eisenban", None))
-        self.label_logo.setText(QCoreApplication.translate("MainWindow", u"Eisen\n"
-"ban", None))
+        self.label_logo.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Eisen<br/>ban</p></body></html>", None))
         self.btn_add_board.setText(QCoreApplication.translate("MainWindow", u" Add a board", None))
         self.btn_board_settings.setText(QCoreApplication.translate("MainWindow", u"Manage Board", None))
         self.btn_app_settings.setText(QCoreApplication.translate("MainWindow", u" App Settings", None))

@@ -177,11 +177,6 @@ border-radius: 5px;</string>
                        <height>50</height>
                       </size>
                      </property>
-                     <property name="font">
-                      <font>
-                       <family>Arimo</family>
-                      </font>
-                     </property>
                      <property name="text">
                       <string/>
                      </property>
@@ -225,7 +220,7 @@ border-radius: 5px;</string>
                       <property name="font">
                        <font>
                         <family>Arimo</family>
-                        <pointsize>14</pointsize>
+                        <pointsize>13</pointsize>
                         <bold>false</bold>
                        </font>
                       </property>
@@ -253,8 +248,8 @@ border-radius: 5px;</string>
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -310,8 +305,8 @@ QLineEdit QMenu::item:selected {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -489,7 +484,7 @@ QPushButton:focus {
                       <property name="font">
                        <font>
                         <family>Arimo</family>
-                        <pointsize>14</pointsize>
+                        <pointsize>13</pointsize>
                         <bold>false</bold>
                        </font>
                       </property>
@@ -517,8 +512,8 @@ QPushButton:focus {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -574,8 +569,8 @@ QLineEdit QMenu::item:selected {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -689,7 +684,7 @@ QLineEdit QMenu::item:selected {
                       <property name="font">
                        <font>
                         <family>Arimo</family>
-                        <pointsize>13</pointsize>
+                        <pointsize>11</pointsize>
                         <bold>false</bold>
                        </font>
                       </property>
@@ -739,7 +734,7 @@ QLineEdit QMenu::item:selected {
                         <property name="font">
                          <font>
                           <family>Arimo</family>
-                          <pointsize>13</pointsize>
+                          <pointsize>12</pointsize>
                           <bold>false</bold>
                          </font>
                         </property>

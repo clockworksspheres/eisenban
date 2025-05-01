@@ -66,7 +66,7 @@
       <property name="font">
        <font>
         <family>Arimo</family>
-        <pointsize>36</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -195,9 +195,9 @@ QScrollBar QMenu::item:selected {
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>-141</y>
+               <y>-136</y>
                <width>516</width>
-               <height>655</height>
+               <height>650</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -622,7 +622,7 @@ QRadioButton:focus {
                     <property name="font">
                      <font>
                       <family>Arimo</family>
-                      <pointsize>18</pointsize>
+                      <pointsize>14</pointsize>
                       <bold>false</bold>
                      </font>
                     </property>
@@ -664,9 +664,9 @@ You can select multiple panels at the same time.</string>
                     </property>
                     <property name="font">
                      <font>
-                      <family>Arimo</family>
-                      <pointsize>13</pointsize>
-                      <bold>false</bold>
+                      <family>Torus Pro</family>
+                      <pointsize>12</pointsize>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="focusPolicy">
@@ -816,7 +816,7 @@ QScrollBar QMenu::item:selected {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>12</pointsize>
                        </font>
                       </property>
@@ -852,7 +852,7 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
                       </property>
                       <property name="font">
                        <font>
-                        <family>Torus Pro</family>
+                        <family>Arimo</family>
                         <pointsize>12</pointsize>
                        </font>
                       </property>
@@ -929,7 +929,7 @@ QPushButton:focus {border-color: #000000; border-width: 1.5px; border-style: sol
               </property>
               <property name="font">
                <font>
-                <family>Torus Pro</family>
+                <family>Arimo</family>
                 <pointsize>12</pointsize>
                </font>
               </property>
@@ -978,7 +978,7 @@ QPushButton:focus {
               </property>
               <property name="font">
                <font>
-                <family>Torus Pro</family>
+                <family>Arimo</family>
                 <pointsize>12</pointsize>
                </font>
               </property>

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'app_settings.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -45,8 +45,8 @@ class Ui_SettingsWindow(object):
         self.label_app_settings.setSizePolicy(sizePolicy)
         self.label_app_settings.setMinimumSize(QSize(0, 70))
         font = QFont()
-        font.setFamilies([u"Torus Pro"])
-        font.setPointSize(28)
+        font.setFamilies([u"Arimo"])
+        font.setPointSize(24)
         self.label_app_settings.setFont(font)
         self.label_app_settings.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -214,10 +214,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
         self.btn_delete.setSizePolicy(sizePolicy1)
         self.btn_delete.setMinimumSize(QSize(150, 30))
-        font4 = QFont()
-        font4.setFamilies([u"Arimo"])
-        font4.setPointSize(14)
-        self.btn_delete.setFont(font4)
+        self.btn_delete.setFont(font2)
         self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_delete.setFocusPolicy(Qt.TabFocus)
         self.btn_delete.setStyleSheet(u"QPushButton {\n"
@@ -274,7 +271,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_about.sizePolicy().hasHeightForWidth())
         self.btn_about.setSizePolicy(sizePolicy1)
         self.btn_about.setMinimumSize(QSize(100, 30))
-        self.btn_about.setFont(font4)
+        self.btn_about.setFont(font2)
         self.btn_about.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_about.setFocusPolicy(Qt.TabFocus)
         self.btn_about.setStyleSheet(u"QPushButton {\n"
@@ -305,7 +302,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_cancel.sizePolicy().hasHeightForWidth())
         self.btn_cancel.setSizePolicy(sizePolicy1)
         self.btn_cancel.setMinimumSize(QSize(100, 30))
-        self.btn_cancel.setFont(font4)
+        self.btn_cancel.setFont(font2)
         self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_cancel.setFocusPolicy(Qt.TabFocus)
         self.btn_cancel.setStyleSheet(u"QPushButton {\n"
@@ -332,7 +329,7 @@ class Ui_SettingsWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
         self.btn_save.setSizePolicy(sizePolicy1)
         self.btn_save.setMinimumSize(QSize(100, 30))
-        self.btn_save.setFont(font4)
+        self.btn_save.setFont(font2)
         self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_save.setFocusPolicy(Qt.TabFocus)
         self.btn_save.setStyleSheet(u"QPushButton {\n"

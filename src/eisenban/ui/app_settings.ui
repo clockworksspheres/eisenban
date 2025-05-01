@@ -59,8 +59,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Torus Pro</family>
-        <pointsize>28</pointsize>
+        <family>Arimo</family>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -313,7 +313,7 @@ QScrollBar QMenu::item:selected {
                   <property name="font">
                    <font>
                     <family>Arimo</family>
-                    <pointsize>14</pointsize>
+                    <pointsize>12</pointsize>
                    </font>
                   </property>
                   <property name="cursor">
@@ -405,7 +405,7 @@ QPushButton:focus {
               <property name="font">
                <font>
                 <family>Arimo</family>
-                <pointsize>14</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -467,7 +467,7 @@ QPushButton:focus {
               <property name="font">
                <font>
                 <family>Arimo</family>
-                <pointsize>14</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
@@ -516,7 +516,7 @@ QPushButton:focus {
               <property name="font">
                <font>
                 <family>Arimo</family>
-                <pointsize>14</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">

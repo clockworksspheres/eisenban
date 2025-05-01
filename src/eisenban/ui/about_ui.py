@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'about.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -17,6 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+import eisenban_rc
 
 class Ui_About(object):
     def setupUi(self, About):
@@ -40,7 +41,7 @@ class Ui_About(object):
         sizePolicy.setHeightForWidth(self.label_logo_top.sizePolicy().hasHeightForWidth())
         self.label_logo_top.setSizePolicy(sizePolicy)
         self.label_logo_top.setMaximumSize(QSize(55, 55))
-        self.label_logo_top.setPixmap(QPixmap(u":/img/resources/img/icon.png"))
+        self.label_logo_top.setPixmap(QPixmap(u":/eisenban/resources/img/icon.png"))
         self.label_logo_top.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.label_logo_top)
@@ -56,7 +57,7 @@ class Ui_About(object):
         self.label_title.setObjectName(u"label_title")
         font = QFont()
         font.setFamilies([u"Arimo"])
-        font.setPointSize(36)
+        font.setPointSize(24)
         self.label_title.setFont(font)
         self.label_title.setStyleSheet(u"color: #ffffff")
 
@@ -66,7 +67,7 @@ class Ui_About(object):
         self.label_sub_title.setObjectName(u"label_sub_title")
         font1 = QFont()
         font1.setFamilies([u"Arimo"])
-        font1.setPointSize(14)
+        font1.setPointSize(13)
         self.label_sub_title.setFont(font1)
         self.label_sub_title.setStyleSheet(u"color: #ffffff")
 
@@ -84,10 +85,14 @@ class Ui_About(object):
 
         self.label_description = QLabel(self.centralwidget)
         self.label_description.setObjectName(u"label_description")
-        self.label_description.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"Arimo"])
+        font2.setPointSize(12)
+        self.label_description.setFont(font2)
         self.label_description.setStyleSheet(u"color: #ffffff")
         self.label_description.setWordWrap(True)
-        self.label_description.setOpenExternalLinks(False)
+        self.label_description.setOpenExternalLinks(True)
+        self.label_description.setTextInteractionFlags(Qt.LinksAccessibleByMouse)
 
         self.verticalLayout_2.addWidget(self.label_description)
 
@@ -98,12 +103,22 @@ class Ui_About(object):
         self.label_description_2 = QLabel(self.centralwidget)
         self.label_description_2.setObjectName(u"label_description_2")
         self.label_description_2.setMaximumSize(QSize(370, 16777215))
-        self.label_description_2.setFont(font1)
+        self.label_description_2.setFont(font2)
         self.label_description_2.setStyleSheet(u"color: #ffffff")
         self.label_description_2.setWordWrap(True)
         self.label_description_2.setOpenExternalLinks(True)
 
         self.verticalLayout_2.addWidget(self.label_description_2)
+
+        self.label_logo_bottom = QLabel(self.centralwidget)
+        self.label_logo_bottom.setObjectName(u"label_logo_bottom")
+        sizePolicy.setHeightForWidth(self.label_logo_bottom.sizePolicy().hasHeightForWidth())
+        self.label_logo_bottom.setSizePolicy(sizePolicy)
+        self.label_logo_bottom.setMaximumSize(QSize(210, 40))
+        self.label_logo_bottom.setPixmap(QPixmap(u":/eisenban/resources/img/kanbaru.png"))
+        self.label_logo_bottom.setScaledContents(True)
+
+        self.verticalLayout_2.addWidget(self.label_logo_bottom)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -113,25 +128,12 @@ class Ui_About(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label_logo_bottom = QLabel(self.centralwidget)
-        self.label_logo_bottom.setObjectName(u"label_logo_bottom")
-        sizePolicy.setHeightForWidth(self.label_logo_bottom.sizePolicy().hasHeightForWidth())
-        self.label_logo_bottom.setSizePolicy(sizePolicy)
-        self.label_logo_bottom.setMaximumSize(QSize(210, 40))
-        self.label_logo_bottom.setPixmap(QPixmap(u":/img/resources/img/kanbaru.png"))
-        self.label_logo_bottom.setScaledContents(True)
-
-        self.verticalLayout_3.addWidget(self.label_logo_bottom)
-
         self.verticalSpacer_4 = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_3.addItem(self.verticalSpacer_4)
 
         self.label_license = QLabel(self.centralwidget)
         self.label_license.setObjectName(u"label_license")
-        font2 = QFont()
-        font2.setFamilies([u"Arimo"])
-        font2.setPointSize(13)
         self.label_license.setFont(font2)
         self.label_license.setStyleSheet(u"color: #ffffff")
         self.label_license.setWordWrap(True)
@@ -160,10 +162,11 @@ class Ui_About(object):
         About.setWindowTitle(QCoreApplication.translate("About", u"About", None))
         self.label_logo_top.setText("")
         self.label_title.setText(QCoreApplication.translate("About", u"Eisenban", None))
-        self.label_sub_title.setText(QCoreApplication.translate("About", u"Kanban Project Manager", None))
-        self.label_description.setText(QCoreApplication.translate("About", u"<html><head/><body><p>Eisenban continuation of frozen Kanbaru project on github. Continuing to untagle easter-egg.</p><p><span style=\" font-weight:700;\">Continuing Development:</span></p></body></html>", None))
-        self.label_description_2.setText(QCoreApplication.translate("About", u"<html><head/><body><p>1. Roy Nielsen (<a href=\"https://github.com/roynielsen17\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">github/roynielsen17</span></a>)</p><p><span style=\" font-weight:700;\">View Kanbaru (beware of easter-egg and TorusPro font license) on </span><a href=\"https://github.com/dulapahv/Kanbaru\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">Github</span></a></p></body></html>", None))
+        self.label_sub_title.setText(QCoreApplication.translate("About", u"Eisenban Project Manager", None))
+        self.label_description.setText(QCoreApplication.translate("About", u"<html><head/><body><p>eisenban is a rebranding of the Kanbaru project on <a href=\"https://github.com/dulapahv/Kanbaru\"><span style=\" text-decoration: underline; color:#007af4;\">Github</span></a>.</p><p>Beware of the easter-egg and font license problems with the Kanbaru project.</p><p><span style=\" font-weight:700;\">Respun by:</span></p></body></html>", None))
+        self.label_description_2.setText(QCoreApplication.translate("About", u"<html><head/><body><p>1. Roy Nielsen (<a href=\"https://github.com/roynielsen17\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">github/roynielsen17</span></a>)</p><p><span style=\" font-weight:700;\">View eisenban on </span><a href=\"https://github.com/roynielsen17/eisenban\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">Github</span></a></p>\n"
+"Previously Kanbaru:</body></html>", None))
         self.label_logo_bottom.setText("")
-        self.label_license.setText(QCoreApplication.translate("About", u"<html><head/><body><p>Eisenban is released under the MIT license. See <a href=\"https://github.com/dulapahv/Kanbaru/blob/main/LICENSE\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">LICENSE</span></a> for more information.</p></body></html>", None))
+        self.label_license.setText(QCoreApplication.translate("About", u"<html><head/><body><p>Eisenban is released under the MIT license. See <a href=\"https://github.com/dulapahv/eisenban/blob/main/LICENSE\"><span style=\" font-weight:700; text-decoration: underline; color:#fb568a;\">LICENSE</span></a> for more information.</p></body></html>", None))
     # retranslateUi
 

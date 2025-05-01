@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "proto/qt-ui-compile.md",
+                "file": "proto/process/README.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "qt-ui-compile"
+              "title": "README"
             }
           }
         ]
@@ -170,14 +170,34 @@
   },
   "active": "33bf88de6dc1c9ca",
   "lastOpenFiles": [
-    "resources.qrc~",
+    "proto/process/ele-013.py",
+    "proto/process/ele-012.py",
+    "proto/process/ele-011.py",
+    "Untitled.md",
+    "proto/process/README.md",
+    "proto/process/ele-010.py",
+    "proto/process/ele-009.py",
+    "proto/process/ele-008.py",
+    "proto/process/ele-007.py",
+    "lib/run_commands_linux.py",
+    "proto/psygnal/README.md",
+    "proto/process/ele-002.py",
+    "proto/process/ele-006.py",
+    "proto/process/ele-003.py",
+    "proto/macosAppResources_rc.py.md",
+    "dist/eisenban.app/Contents/Resources/img/delete.png",
+    "dist/eisenban.app/Contents/Resources/img/up-arrow.png",
+    "dist/eisenban.app/Contents/Resources/img/settings_2.png",
+    "dist/eisenban.app/Contents/Resources/img/settings.png",
+    "dist/eisenban.app/Contents/Resources/img/right-arrow.png",
+    "dist/eisenban.app/Contents/Resources/img/logout.png",
+    "dist/eisenban.app/Contents/Resources/img/left-arrow.png",
+    "dist/eisenban.app/Contents/Resources/img/kanbaru.png",
+    "dist/eisenban.app/Contents/Resources/img/icon.png",
+    "dist/eisenban.app/Contents/Resources/img/down-arrow.png",
     "proto/windowsselfsignedforps1.md",
+    "proto/qt-ui-compile.md",
     "proto/Class_abcQWidget_.md",
-    "eisenban.windows11.copy-cmds-setup-env.txt",
-    "eisenban.windows11.setup-env.ps1",
-    "eisenban.windows11.copy-cmds-setup-builds.txt",
-    "eisenban.windows11.copy.cmds.txt",
-    "eisenban.windows.copy.cmds.txt",
-    "eisenban.windows11.onefile.spec"
+    "README.md"
   ]
 }

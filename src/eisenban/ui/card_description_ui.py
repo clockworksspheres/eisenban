@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'card_description.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -46,7 +46,7 @@ class Ui_CardWindow(object):
         self.label_card_desc.setMinimumSize(QSize(0, 70))
         font = QFont()
         font.setFamilies([u"Arimo"])
-        font.setPointSize(36)
+        font.setPointSize(24)
         self.label_card_desc.setFont(font)
         self.label_card_desc.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0.5, y1:0.5, x2:0.95, y2:0.5, stop:0 rgba(107, 173, 238, 255), stop:1 rgba(69, 76, 90, 255));\n"
 "color: #ffffff;\n"
@@ -72,7 +72,7 @@ class Ui_CardWindow(object):
         self.label_title.setObjectName(u"label_title")
         font1 = QFont()
         font1.setFamilies([u"Arimo"])
-        font1.setPointSize(18)
+        font1.setPointSize(14)
         font1.setBold(False)
         self.label_title.setFont(font1)
         self.label_title.setStyleSheet(u"color: #282c33;")
@@ -358,7 +358,7 @@ class Ui_CardWindow(object):
         self.btn_delete.setMinimumSize(QSize(140, 30))
         font5 = QFont()
         font5.setFamilies([u"Arimo"])
-        font5.setPointSize(13)
+        font5.setPointSize(12)
         self.btn_delete.setFont(font5)
         self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_delete.setFocusPolicy(Qt.TabFocus)
