@@ -28,6 +28,14 @@ if sys.platform.startswith('win32'):
 else:
     import pwd
 
+if sys.platform.startswith('win32'):
+    import win32api
+    from ramdisk.lib.windows_utilities import is_windows_process_elevated
+
+else:
+    import pwd
+
+
 try:
     from eisenban.lib.localize import VERSION
 except ImportError or AssertionError:
