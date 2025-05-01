@@ -16,6 +16,7 @@ import subprocess
 import platform
 import time
 import traceback
+import pathlib
 
 sys.path.append("../..")
 
@@ -96,6 +97,7 @@ class Environment(object):
         self.version = VERSION
         if sys.platform.startswith("win32"):
             self.euid = win32api.GetUserName()
+            currpwd = os.environ['USERPROFILE']
         else:
              self.euid = os.geteuid()
              currpwd = pwd.getpwuid(self.euid)
@@ -106,10 +108,14 @@ class Environment(object):
         self.log_path = ""
         self.icon_path = ""
         self.conf_path = ""
-        try:
-            self.homedir = currpwd[5]
-        except IndexError:
-            self.homedir = '/dev/null'
+        if sys.platform.startswith("win32"):
+            self.homedir = os.environ['USERPROFILE']
+        else:
+            try:
+                self.homedir = currpwd[5]
+                # self.homedir = os.environ['USERPROFILE']
+            except IndexError:
+                self.homedir = '/dev/null'
         self.installmode = False
         self.verbosemode = False
         self.debugmode = False
@@ -473,7 +479,7 @@ class Environment(object):
             opsys = str(description) + ' ' + str(release) + ' ' + str(build)
             self.osreportstring = opsys
 
-        elif re.match(r'win32$', sys.plaform()):
+        elif re.match(r'win32$', sys.platform):
             try:
                 platform_data = platform.system()
                 description = platform_data[0]
