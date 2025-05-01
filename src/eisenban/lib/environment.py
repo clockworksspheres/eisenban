@@ -30,7 +30,7 @@ else:
 
 if sys.platform.startswith('win32'):
     import win32api
-    from ramdisk.lib.windows_utilities import is_windows_process_elevated
+    from eisenban.lib.windows_utilities import is_windows_process_elevated
 
 else:
     import pwd
