@@ -1,0 +1,73 @@
+@startuml packages_eisenban
+set namespaceSeparator none
+package "eisenban" as eisenban {
+}
+package "eisenban.config" as eisenban.config {
+}
+package "eisenban.db" as eisenban.db {
+}
+package "eisenban.dialog" as eisenban.dialog {
+}
+package "eisenban.eisenban" as eisenban.eisenban {
+}
+package "eisenban.eisenban_objects" as eisenban.eisenban_objects {
+}
+package "eisenban.eisenban_rc" as eisenban.eisenban_rc {
+}
+package "eisenban.gen_qrc-0.0.3" as eisenban.gen_qrc-0.0.3 {
+}
+package "eisenban.resources" as eisenban.resources {
+}
+package "eisenban.resources.font" as eisenban.resources.font {
+}
+package "eisenban.resources.img" as eisenban.resources.img {
+}
+package "eisenban.resources_rc" as eisenban.resources_rc {
+}
+package "eisenban.ui" as eisenban.ui {
+}
+package "eisenban.ui.about" as eisenban.ui.about {
+}
+package "eisenban.ui.about_ui" as eisenban.ui.about_ui {
+}
+package "eisenban.ui.app_settings" as eisenban.ui.app_settings {
+}
+package "eisenban.ui.app_settings_ui" as eisenban.ui.app_settings_ui {
+}
+package "eisenban.ui.bkp" as eisenban.ui.bkp {
+}
+package "eisenban.ui.bkp.app_settings_bkp2_ui" as eisenban.ui.bkp.app_settings_bkp2_ui {
+}
+package "eisenban.ui.bkp.board_settings_bkp_ui" as eisenban.ui.bkp.board_settings_bkp_ui {
+}
+package "eisenban.ui.bkp.card_description_bkp_ui" as eisenban.ui.bkp.card_description_bkp_ui {
+}
+package "eisenban.ui.bkp.main_bkp_ui" as eisenban.ui.bkp.main_bkp_ui {
+}
+package "eisenban.ui.board_settings" as eisenban.ui.board_settings {
+}
+package "eisenban.ui.board_settings_ui" as eisenban.ui.board_settings_ui {
+}
+package "eisenban.ui.card_description" as eisenban.ui.card_description {
+}
+package "eisenban.ui.card_description_ui" as eisenban.ui.card_description_ui {
+}
+package "eisenban.ui.compile_uifiles" as eisenban.ui.compile_uifiles {
+}
+package "eisenban.ui.main" as eisenban.ui.main {
+}
+package "eisenban.ui.main_ui" as eisenban.ui.main_ui {
+}
+package "eisenban.ui.welcome" as eisenban.ui.welcome {
+}
+package "eisenban.ui.welcome_ui" as eisenban.ui.welcome_ui {
+}
+package "eisenban.utils" as eisenban.utils {
+}
+eisenban.db --> eisenban.eisenban_objects
+eisenban.dialog --> eisenban.utils
+eisenban.eisenban --> eisenban.db
+eisenban.eisenban --> eisenban.ui.main
+eisenban.eisenban --> eisenban.ui.welcome
+eisenban.eisenban --> eisenban.utils
+@enduml
