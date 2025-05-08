@@ -1,0 +1,518 @@
+@startuml classes_eisenban
+set namespaceSeparator none
+class "About" as eisenban.ui.about.About {
+  count : int
+  ui
+  paintEvent(event: QPaintEvent) -> None
+}
+class "AppSettings" as eisenban.ui.app_settings.AppSettings {
+  about
+  board
+  boards_to_delete : List[Board]
+  color : str
+  new_board_order : List[Board]
+  title : str
+  ui
+  delete(event: QEvent) -> None
+  rowsMoved() -> None
+  save() -> None
+  setup_font() -> None
+  show_about(event: QEvent, color: str) -> None
+}
+class "Board" as eisenban.eisenban_objects.Board {
+  color
+  panels
+  title
+}
+class "BoardSettings" as eisenban.ui.board_settings.BoardSettings {
+  board
+  color
+  new_panel_order : List[Board]
+  old_board
+  panels
+  panels_to_delete : List[Board]
+  title
+  title_txt : Optional[str]
+  ui
+  delete(event: QEvent) -> None
+  rename(event: QEvent) -> None
+  rowsMoved() -> None
+  save() -> None
+  setup_font() -> None
+  title_listener(text: str) -> None
+}
+class "Card" as eisenban.eisenban_objects.Card {
+  date
+  description
+  time
+  title
+}
+class "CardDescription" as eisenban.ui.card_description.CardDescription {
+  card
+  color : str
+  date
+  description
+  time
+  title
+  title_txt : NoneType, str
+  ui
+  delete(event: QEvent) -> None
+  save() -> None
+  setup_font() -> None
+  title_listener(text: str) -> None
+}
+class "Color" as eisenban.eisenban_objects.Color {
+  name
+}
+class "CustomListWidget" as eisenban.ui.main.CustomListWidget {
+  board
+  parent_
+  dragMoveEvent(event: QDragMoveEvent) -> None
+  dropEvent(event: QDropEvent) -> None
+}
+class "Eisenban" as eisenban.eisenban.Eisenban {
+  path
+  tb_path : NoneType
+  init_event_logger(path: str, fmt: str, debug: bool, stdout: bool) -> None
+  initialize_local_table() -> None
+  show_main_screen()
+}
+class "EisenbanObject" as eisenban.eisenban_objects.EisenbanObject {
+  title
+}
+class "MainScreen" as eisenban.ui.main.MainScreen {
+  about
+  current_board
+  add_board(parent: Ui_MainWindow) -> None
+  add_card(parent: Ui_MainWindow, panel: Panel) -> None
+  add_panel(parent: Ui_MainWindow, board: Board) -> None
+  add_panel_button(parent: Ui_MainWindow, board: Board, font: str) -> None
+  board_factory(parent: Ui_MainWindow, board: Board, font: str, is_constructed: bool) -> QPushButton
+  card_factory(qlistwidget: QListWidget, parent: Ui_MainWindow, card: Card, font: str, index: int) -> QListWidgetItem
+  change_board(parent: Ui_MainWindow, board: Board) -> None
+  change_card(board: Board, source: Panel, destination: Panel, card: Card, index: int) -> None
+  clear_page(parent: Ui_MainWindow) -> None
+  get_updated_board(current_board: Board) -> Board
+  panel_factory(parent: Ui_MainWindow, panel: Panel, font: str, color: str) -> QWidget
+  setup_font(parent: Ui_MainWindow, font: str) -> None
+  show_about(event: QEvent) -> None
+  show_app_settings(parent: Ui_MainWindow) -> None
+  show_board_settings(parent: QMainWindow) -> None
+  show_card_description(event: QEvent, list_widget: QListWidget, parent: QMainWindow, color: str) -> None
+  update_whole_page(parent: QMainWindow) -> None
+}
+class "Panel" as eisenban.eisenban_objects.Panel {
+  cards
+  title
+}
+class "Table" as eisenban.db.Table {
+  boards
+  data
+  change_board_color(board: Board, color: Color) -> None
+  create() -> None
+  delete_board(board_delete: Board) -> None
+  delete_card(card_delete: Card) -> None
+  delete_panel(panel_delete: Panel) -> None
+  get_instance() -> 'Table'
+  get_path() -> str
+  read() -> None
+  set_path(path: str) -> None
+  update_board(board_old: Board, board_new: Board) -> None
+  update_board_order(new_board_list: List[Board]) -> None
+  update_card(card_old: Card, card_new: Card) -> None
+  update_panel(panel_old: Panel, panel_new: Panel) -> None
+  update_panel_order(board: Board, new_panel_list: List[Panel]) -> None
+  write() -> None
+}
+class "Ui_About" as eisenban.ui.about_ui.Ui_About {
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalSpacer
+  horizontalSpacer_2
+  label_description
+  label_description_2
+  label_license
+  label_logo_bottom
+  label_logo_top
+  label_sub_title
+  label_title
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalSpacer
+  verticalSpacer_2
+  verticalSpacer_3
+  verticalSpacer_4
+  retranslateUi(About)
+  setupUi(About)
+}
+class "Ui_BoardWindow" as eisenban.ui.board_settings_ui.Ui_BoardWindow {
+  btn_cancel
+  btn_color_1
+  btn_color_2
+  btn_color_3
+  btn_color_4
+  btn_color_5
+  btn_color_6
+  btn_delete
+  btn_rename
+  btn_save
+  centralwidget
+  horizontalLayout
+  horizontalLayout_4
+  horizontalLayout_5
+  horizontalSpacer
+  horizontalSpacer_3
+  label_board_desc
+  label_color
+  label_manage_panel
+  label_manage_panel_desc
+  label_title
+  lineEdit_title
+  listWidget_manage_panel
+  scrollArea
+  scrollAreaWidgetContents
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_4
+  verticalLayout_5
+  verticalLayout_6
+  verticalLayout_7
+  verticalLayout_8
+  verticalSpacer_2
+  verticalSpacer_3
+  widget
+  widget1
+  retranslateUi(BoardWindow)
+  setupUi(BoardWindow)
+}
+class "Ui_BoardWindow" as eisenban.ui.bkp.board_settings_bkp_ui.Ui_BoardWindow {
+  btn_add_member
+  btn_cancel
+  btn_color_1
+  btn_color_2
+  btn_color_3
+  btn_color_4
+  btn_color_5
+  btn_color_6
+  btn_delete
+  btn_delete_member
+  btn_rename
+  btn_save
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalLayout_4
+  horizontalLayout_5
+  horizontalSpacer
+  horizontalSpacer_2
+  horizontalSpacer_3
+  label
+  label_2
+  label_3
+  label_4
+  label_7
+  label_8
+  label_9
+  lineEdit_title
+  listWidget_manage_list
+  listWidget_manage_member
+  scrollArea
+  scrollAreaWidgetContents
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_4
+  verticalLayout_5
+  verticalLayout_6
+  verticalLayout_7
+  verticalLayout_8
+  verticalSpacer
+  verticalSpacer_2
+  verticalSpacer_3
+  widget
+  widget1
+  retranslateUi(BoardWindow)
+  setupUi(BoardWindow)
+}
+class "Ui_CardWindow" as eisenban.ui.card_description_ui.Ui_CardWindow {
+  btn_cancel
+  btn_delete
+  btn_save
+  calendarWidget
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalSpacer
+  horizontalSpacer_2
+  label_card_desc
+  label_date
+  label_description
+  label_time
+  label_title
+  lineEdit_title
+  textEdit_description
+  timeEdit
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_4
+  verticalLayout_7
+  verticalSpacer
+  widget
+  widget1
+  retranslateUi(CardWindow)
+  setupUi(CardWindow)
+}
+class "Ui_CardWindow" as eisenban.ui.bkp.card_description_bkp_ui.Ui_CardWindow {
+  btn_cancel
+  btn_color_1
+  btn_color_2
+  btn_color_3
+  btn_color_4
+  btn_color_5
+  btn_color_6
+  btn_delete_card
+  btn_save
+  calendarWidget
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalLayout_3
+  horizontalSpacer
+  horizontalSpacer_2
+  label_7
+  label_card_desc
+  label_card_info
+  label_date
+  label_description
+  label_time
+  label_title
+  lineEdit_title
+  textEdit_description
+  timeEdit
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_4
+  verticalLayout_5
+  verticalLayout_6
+  verticalLayout_7
+  verticalSpacer
+  widget
+  widget1
+  retranslateUi(CardWindow)
+  setupUi(CardWindow)
+}
+class "Ui_MainWindow" as eisenban.ui.main_ui.Ui_MainWindow {
+  btn_add_board
+  btn_app_settings
+  btn_board_settings
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalLayout_4
+  horizontalLayout_5
+  horzLayout_panel_right
+  label_board
+  label_logo
+  panel_left
+  panel_right
+  scrollAreaContent_panel_left
+  scrollAreaContent_panel_right
+  scrollArea_panel_left
+  scrollArea_panel_right
+  verticalLayout_2
+  verticalLayout_4
+  widget
+  widget_panel_right
+  retranslateUi(MainWindow)
+  setupUi(MainWindow)
+}
+class "Ui_MainWindow" as eisenban.ui.bkp.main_bkp_ui.Ui_MainWindow {
+  btn_add_board
+  btn_add_card_list_1
+  btn_add_card_list_2
+  btn_add_card_list_3
+  btn_add_list
+  btn_app_settings
+  btn_board_1
+  btn_board_2
+  btn_board_3
+  btn_board_4
+  btn_board_5
+  btn_board_6
+  btn_board_7
+  btn_board_settings
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalLayout_4
+  horizontalLayout_5
+  horzLayout_panel_right
+  horzSpacer_panel_right
+  label_board
+  label_list_1
+  label_list_2
+  label_list_3
+  label_logo
+  listWidget_list_1
+  listWidget_list_2
+  listWidget_list_3
+  list_1
+  list_2
+  list_3
+  list_add
+  panel_left
+  panel_right
+  scrollAreaContent_panel_left
+  scrollAreaContent_panel_right
+  scrollArea_panel_left
+  scrollArea_panel_right
+  vertSpacer_list_add
+  vertSpacer_scrollAreaContent
+  verticalLayout_10
+  verticalLayout_11
+  verticalLayout_12
+  verticalLayout_13
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_4
+  verticalLayout_5
+  verticalLayout_6
+  verticalLayout_7
+  verticalLayout_8
+  verticalLayout_9
+  widget
+  widget_10
+  widget_9
+  widget_add_card
+  widget_list_1
+  widget_list_2
+  widget_list_3
+  widget_panel_right
+  retranslateUi(MainWindow)
+  setupUi(MainWindow)
+}
+class "Ui_SettingsWindow" as eisenban.ui.app_settings_ui.Ui_SettingsWindow {
+  btn_about
+  btn_cancel
+  btn_delete
+  btn_save
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalLayout_3
+  horizontalLayout_4
+  horizontalSpacer
+  horizontalSpacer_3
+  label_app_settings
+  label_manage_board
+  label_manage_board_desc
+  line_2
+  listWidget_manage_board
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_7
+  widget
+  widget1
+  retranslateUi(SettingsWindow)
+  setupUi(SettingsWindow)
+}
+class "Ui_SettingsWindow" as eisenban.ui.bkp.app_settings_bkp2_ui.Ui_SettingsWindow {
+  btn_about
+  btn_cancel
+  btn_delete
+  btn_delete_account
+  btn_logout
+  btn_save
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalLayout_3
+  horizontalLayout_4
+  horizontalSpacer
+  horizontalSpacer_2
+  horizontalSpacer_3
+  label_app_settings
+  label_manage_account
+  label_manage_board
+  label_manage_board_desc
+  line_1
+  line_2
+  listWidget_manage_board
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_7
+  widget
+  widget1
+  retranslateUi(SettingsWindow)
+  setupUi(SettingsWindow)
+}
+class "Ui_WelcomeWindow" as eisenban.ui.welcome_ui.Ui_WelcomeWindow {
+  btn_login
+  btn_signup
+  centralwidget
+  horizontalLayout
+  horizontalLayout_2
+  horizontalLayout_3
+  horizontalLayout_4
+  horizontalLayout_5
+  horizontalSpacer
+  horizontalSpacer_2
+  horizontalSpacer_3
+  horizontalSpacer_4
+  horizontalSpacer_5
+  label
+  label_login
+  label_login_msg
+  label_signup
+  label_signup_msg
+  lineEdit_login_password
+  lineEdit_login_username
+  lineEdit_signup_confirm_password
+  lineEdit_signup_password
+  lineEdit_signup_username
+  line_2
+  verticalLayout
+  verticalLayout_2
+  verticalLayout_3
+  verticalLayout_4
+  verticalLayout_5
+  verticalLayout_6
+  verticalSpacer
+  verticalSpacer_2
+  verticalSpacer_3
+  verticalSpacer_4
+  verticalSpacer_5
+  widget
+  widget1
+  widget_2
+  widget_3
+  widget_4
+  retranslateUi(WelcomeWindow)
+  setupUi(WelcomeWindow)
+}
+class "WelcomeScreen" as eisenban.ui.welcome.WelcomeScreen {
+  login_password : str
+  login_username : str
+  signup_confirm_password : str
+  signup_password : str
+  signup_username : str
+  login(parent: Ui_WelcomeWindow) -> None
+  login_password_listener(text: str, parent: Ui_WelcomeWindow) -> None
+  login_username_listener(text: str, parent: Ui_WelcomeWindow) -> None
+  setup_font(parent: Ui_WelcomeWindow) -> None
+  signup(parent: Ui_WelcomeWindow) -> None
+  signup_confirm_password_listener(text: str, parent: Ui_WelcomeWindow) -> None
+  signup_password_listener(text: str, parent: Ui_WelcomeWindow) -> None
+  signup_username_listener(text: str, parent: Ui_WelcomeWindow) -> None
+}
+eisenban.eisenban_objects.Board --|> eisenban.eisenban_objects.EisenbanObject
+eisenban.eisenban_objects.Card --|> eisenban.eisenban_objects.EisenbanObject
+eisenban.eisenban_objects.Panel --|> eisenban.eisenban_objects.EisenbanObject
+@enduml

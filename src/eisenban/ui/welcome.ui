@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WelcomeWindow</class>
+ <widget class="QMainWindow" name="WelcomeWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>678</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Eisenban</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/img/resources/img/icon.png</normaloff>:/img/resources/img/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #454c5a;</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>128</width>
+    <height>128</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/img/resources/img/bg.png);
+background-position: left center;</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>15</number>
+       </property>
+       <property name="rightMargin">
+        <number>15</number>
+       </property>
+       <property name="bottomMargin">
+        <number>15</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_4" native="true">
+         <property name="styleSheet">
+          <string notr="true">background: none;</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget" native="true">
+            <property name="styleSheet">
+             <string notr="true">background: none;
+background-color: #f4f5f7;
+border-radius: 5px;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="spacing">
+              <number>12</number>
+             </property>
+             <property name="leftMargin">
+              <number>10</number>
+             </property>
+             <property name="topMargin">
+              <number>10</number>
+             </property>
+             <property name="rightMargin">
+              <number>10</number>
+             </property>
+             <property name="bottomMargin">
+              <number>10</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <property name="spacing">
+                  <number>15</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>30</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>30</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <spacer name="verticalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="maximumSize">
+                      <size>
+                       <width>250</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap>:/img/resources/img/kanbaru.png</pixmap>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_2" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_4">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_login">
+                      <property name="font">
+                       <font>
+                        <family>Arimo</family>
+                        <pointsize>13</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: #282c33;</string>
+                      </property>
+                      <property name="text">
+                       <string>Log in to Eisenban</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_login_username">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+	border-color: #dfe1e6;
+	border-width: 1.5px;
+	border-style: solid;
+	color: #282c33;
+	border-radius: 5px;
+	background-color: #ffffff;
+	padding: 0 0 0 8px
+}
+
+QLineEdit:focus {
+	border-color: #6badee;
+}
+
+QLineEdit QMenu {
+background-color: #454c5a;
+border: none;
+padding: 5px;
+margin: 0px;
+font-size: 13px;
+}
+
+QLineEdit QMenu::item {
+	padding: 5px 13px 5px 13px;
+	color: #ffffff;
+}
+
+QLineEdit QMenu::item:selected {
+	border-radius: 5px;
+	background-color: #ffffff;
+	color: #000000;
+}
+</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Username</string>
+                      </property>
+                      <property name="clearButtonEnabled">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_login_password">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+	border-color: #dfe1e6;
+	border-width: 1.5px;
+	border-style: solid;
+	color: #282c33;
+	border-radius: 5px;
+	background-color: #ffffff;
+	padding: 0 0 0 8px
+}
+
+QLineEdit:focus {
+	border-color: #6badee;
+}
+
+QLineEdit QMenu {
+background-color: #454c5a;
+border: none;
+padding: 5px;
+margin: 0px;
+font-size: 13px;
+}
+
+QLineEdit QMenu::item {
+	padding: 5px 13px 5px 13px;
+	color: #ffffff;
+}
+
+QLineEdit QMenu::item:selected {
+	border-radius: 5px;
+	background-color: #ffffff;
+	color: #000000;
+}
+</string>
+                      </property>
+                      <property name="echoMode">
+                       <enum>QLineEdit::Password</enum>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Password</string>
+                      </property>
+                      <property name="clearButtonEnabled">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_login_msg">
+                      <property name="font">
+                       <font>
+                        <family>Arimo</family>
+                        <pointsize>11</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: #d63a3e;</string>
+                      </property>
+                      <property name="text">
+                       <string>Incorrect username/password</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <spacer name="horizontalSpacer">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btn_login">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>120</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Arimo</family>
+                          <pointsize>12</pointsize>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="focusPolicy">
+                         <enum>Qt::TabFocus</enum>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+	background-color: #5dac48;
+	color: #ffffff;
+	border-radius: 5px
+}
+
+QPushButton:hover {
+	background-color: #64bd53;
+}
+
+QPushButton:focus {
+	border-color: #000000;
+	border-width: 1.5px;
+	border-style: solid;
+}
+</string>
+                        </property>
+                        <property name="text">
+                         <string>Login</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line_2">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: #9096a6;</string>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Plain</enum>
+                   </property>
+                   <property name="lineWidth">
+                    <number>0</number>
+                   </property>
+                   <property name="midLineWidth">
+                    <number>0</number>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_3" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_5">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_signup">
+                      <property name="font">
+                       <font>
+                        <family>Arimo</family>
+                        <pointsize>13</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: #282c33;</string>
+                      </property>
+                      <property name="text">
+                       <string>Sign up for an account</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_signup_username">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+	border-color: #dfe1e6;
+	border-width: 1.5px;
+	border-style: solid;
+	color: #282c33;
+	border-radius: 5px;
+	background-color: #ffffff;
+	padding: 0 0 0 8px
+}
+
+QLineEdit:focus {
+	border-color: #6badee;
+}
+
+QLineEdit QMenu {
+background-color: #454c5a;
+border: none;
+padding: 5px;
+margin: 0px;
+font-size: 13px;
+}
+
+QLineEdit QMenu::item {
+	padding: 5px 13px 5px 13px;
+	color: #ffffff;
+}
+
+QLineEdit QMenu::item:selected {
+	border-radius: 5px;
+	background-color: #ffffff;
+	color: #000000;
+}
+</string>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Username</string>
+                      </property>
+                      <property name="clearButtonEnabled">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_signup_password">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+	border-color: #dfe1e6;
+	border-width: 1.5px;
+	border-style: solid;
+	color: #282c33;
+	border-radius: 5px;
+	background-color: #ffffff;
+	padding: 0 0 0 8px
+}
+
+QLineEdit:focus {
+	border-color: #6badee;
+}
+
+QLineEdit QMenu {
+background-color: #454c5a;
+border: none;
+padding: 5px;
+margin: 0px;
+font-size: 13px;
+}
+
+QLineEdit QMenu::item {
+	padding: 5px 13px 5px 13px;
+	color: #ffffff;
+}
+
+QLineEdit QMenu::item:selected {
+	border-radius: 5px;
+	background-color: #ffffff;
+	color: #000000;
+}
+</string>
+                      </property>
+                      <property name="echoMode">
+                       <enum>QLineEdit::Password</enum>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Password</string>
+                      </property>
+                      <property name="clearButtonEnabled">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_signup_confirm_password">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Manrope Medium</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+	border-color: #dfe1e6;
+	border-width: 1.5px;
+	border-style: solid;
+	color: #282c33;
+	border-radius: 5px;
+	background-color: #ffffff;
+	padding: 0 0 0 8px
+}
+
+QLineEdit:focus {
+	border-color: #6badee;
+}
+
+QLineEdit QMenu {
+background-color: #454c5a;
+border: none;
+padding: 5px;
+margin: 0px;
+font-size: 13px;
+}
+
+QLineEdit QMenu::item {
+	padding: 5px 13px 5px 13px;
+	color: #ffffff;
+}
+
+QLineEdit QMenu::item:selected {
+	border-radius: 5px;
+	background-color: #ffffff;
+	color: #000000;
+}
+</string>
+                      </property>
+                      <property name="echoMode">
+                       <enum>QLineEdit::Password</enum>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Confirm password</string>
+                      </property>
+                      <property name="clearButtonEnabled">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_signup_msg">
+                      <property name="font">
+                       <font>
+                        <family>Arimo</family>
+                        <pointsize>11</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color: #d63a3e;</string>
+                      </property>
+                      <property name="text">
+                       <string>Incorrect username/password</string>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_4">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <spacer name="horizontalSpacer_2">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btn_signup">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>120</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Arimo</family>
+                          <pointsize>12</pointsize>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="focusPolicy">
+                         <enum>Qt::TabFocus</enum>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+	background-color: #5dac48;
+	color: #ffffff;
+	border-radius: 5px
+}
+
+QPushButton:hover {
+	background-color: #64bd53;
+}
+
+QPushButton:focus {
+	border-color: #000000;
+	border-width: 1.5px;
+	border-style: solid;
+}
+</string>
+                        </property>
+                        <property name="text">
+                         <string>Sign up</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>300</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

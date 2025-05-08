@@ -426,7 +426,7 @@ class BoardSettings(QMainWindow):
 
     def setup_font(self) -> None:
         notosans = setup_font_db("NotoSans.ttf")[0]
-        andika = setup_font_db("Andika-Regular.ttf")[0]
+        andika = setup_font_db('Arimo-Medium.ttf')[0]
         self.ui.label_board_desc.setFont(QFont(andika, 28))
         self.ui.label_title.setFont(QFont(andika, 14, QFont.Bold))
         self.ui.label_color.setFont(QFont(andika, 14, QFont.Bold))
