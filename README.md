@@ -2,7 +2,7 @@
 
 [Kanbaru](https://github.com/dulapahv/Kanbaru)
 
-[Kanbaru License](/https://github.com/dulapahv/Kanbaru/LICENSE)
+[Kanbaru License](https://github.com/dulapahv/Kanbaru/LICENSE)
 
 A Kanban-style, list-making project management application that helps you organize and visualize your tasks efficiently and effectively.
 
