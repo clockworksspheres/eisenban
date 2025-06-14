@@ -3,6 +3,9 @@
 import logging
 import os
 import sys
+
+from optparse import OptionParser
+
 from tkinter import Tk, messagebox
 
 if sys.version_info < (3, 10):
@@ -53,7 +56,7 @@ except ModuleNotFoundError:
 
 
 class Eisenban(QMainWindow):
-    def __init__(self) -> None:
+    def __init__(self, dbdir="") -> None:
         QMainWindow.__init__(self)
 
         # Get current directory
@@ -64,7 +67,7 @@ class Eisenban(QMainWindow):
         logging.info(f'Current directory: "{self.path}"')
 
         # Initialize local table
-        self.initialize_local_table()
+        self.initialize_local_table(dbdir)
 
         # straight to the main screen
         self.show_main_screen()
@@ -88,24 +91,31 @@ class Eisenban(QMainWindow):
         if stdout:
             logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-    def initialize_local_table(self) -> None:
+    def initialize_local_table(self, dbdir: str) -> None:
         """Initializes the table instance.
         - Determine table path
         - Create table instance
         - Set table path
         - Read table file
         """
-        if sys.platform == "win32":
-            logging.info("Windows OS detected")
+        if dbdir:
+            logging.info("dbdir detected")
             self.tb_path = os.path.join(
-                os.path.expanduser(
-                    "~"), "Documents", "Eisenban", "Table.pickle"
+                dbdir, "Table.pickle"
             )
+        
         else:
-            logging.info("Unix OS detected")
-            self.tb_path = os.path.join(
-                os.path.expanduser("~"), "Eisenban", "Table.pickle"
-            )
+            if sys.platform == "win32":
+                logging.info("Windows OS detected")
+                self.tb_path = os.path.join(
+                    os.path.expanduser(
+                        "~"), "Documents", "Eisenban", "Table.pickle"
+                )
+            else:
+                logging.info("Unix OS detected")
+                self.tb_path = os.path.join(
+                    os.path.expanduser("~"), "Eisenban", "Table.pickle"
+                )
         tb = Table.get_instance()
         tb.set_path(self.tb_path)
         tb.read()
@@ -138,6 +148,24 @@ def init_event_logger(path: str, fmt: str, debug: bool = False,
 
 
 if __name__ == "__main__":
+    from multiprocessing import freeze_support, set_start_method
+    freeze_support()
+    set_start_method('spawn', force=True)
+
+    parser = OptionParser(usage="\n\n%prog [options]\n\n", version="0.8.6")
+
+    parser.add_option("-t", "--table", dest="table",
+                    default="",
+                    help="Name of the directory you want the database table to be stored")
+    parser.add_option("-d", "--debug", action="store_true", dest="debug",
+                    default=0, help="Print debug messages")
+    parser.add_option("-v", "--verbose", action="store_true",
+                    dest="verbose", default=0,
+                    help="Print status messages")
+
+    (opts, args) = parser.parse_args()
+
+
     app = QApplication(sys.argv)
 
     # Set up event logger
@@ -148,6 +176,6 @@ if __name__ == "__main__":
         debug=True if "--debug" in sys.argv else False,
     )
 
-    window = Eisenban()
+    window = Eisenban(opts.table)
     window.show()
     sys.exit(app.exec())
