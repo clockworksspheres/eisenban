@@ -6,7 +6,7 @@
 
 a = Analysis(
     ['eisenban.py'],
-    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', './packenv/bin', './packenv/include', './packenv/lib/python3.12/site-packages'],
+    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', './packenv/bin', './packenv/include', './packenv/lib/python3.13/site-packages'],
     binaries=[],
     datas=[("resources/font/*.ttf",   "./resources/font"), 
            ("resources/font/*.txt",   "./resources/font"), 
@@ -31,8 +31,8 @@ exe = EXE(
     name='eisenban',
     debug=False,
     bootloader_ignore_signals=False,
-    strip=False,
-    upx=True,
+    strip=True,
+    upx=False,
     upx_exclude=[],
     runtime_tmpdir=None,
     console=True,

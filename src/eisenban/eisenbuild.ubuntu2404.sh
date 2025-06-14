@@ -21,8 +21,7 @@ pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
 pyinstaller --clean -y eisenbuild.linux.py312.onefile.spec
 pyinstaller -y eisenbuild.linux.py312.onefile.spec
-#cp -a resources dist/eisenban.app/Contents/MacOS
-#cp -a resources dist/eisenban.app/Contents/Resources
 
+sudo cp -a dist/eisenban /usr/local/bin
 
 
