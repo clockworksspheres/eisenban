@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "b2964052202f59b8",
+    "type": "split",
+    "children": [
+      {
+        "id": "c967ddd57b75a9c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6baa89248354bce7",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bc7c479d55ccd9d4",
+    "type": "split",
+    "children": [
+      {
+        "id": "d8289b27cf18143d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc1dcf6a5bf78d1f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "999e3a9522545b32",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d7ec83436722d268",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8b9d42c5a7118e20",
+    "type": "split",
+    "children": [
+      {
+        "id": "654a5b4a6c797345",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88d983fc8f721e1e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/eisenban/bugs.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for bugs"
+            }
+          },
+          {
+            "id": "12197a1413d1d437",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "src/eisenban/bugs.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from bugs"
+            }
+          },
+          {
+            "id": "d92e096c14c7ac2e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "5eb901463c0d5395",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "src/eisenban/bugs.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of bugs"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "fc1dcf6a5bf78d1f",
+  "lastOpenFiles": [
+    "src/eisenban/build/eisenbuild.macos.onefile/EXE-00.toc",
+    "src/eisenban/build/eisenbuild.macos.onefile/PKG-00.toc",
+    "src/eisenban/build/eisenbuild.macos.onefile/eisenban.pkg",
+    "src/eisenban/build/eisenbuild.macos.onefile/PYZ-00.toc",
+    "src/eisenban/build/eisenbuild.macos.onefile/PYZ-00.pyz",
+    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/struct.pyc",
+    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/pyimod03_ctypes.pyc",
+    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/pyimod02_importers.pyc",
+    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/pyimod01_archive.pyc",
+    "src/eisenban/build/eisenbuild.macos.onefile/localpycs",
+    "src/eisenban/build/eisenbuild.macos.onefile/Analysis-00.toc",
+    "src/eisenban/bugs.md",
+    "src/eisenban/README.md",
+    "README.md"
+  ]
+}
