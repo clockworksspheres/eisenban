@@ -16,7 +16,7 @@ fi
 source ./packenv/bin/activate
 
 pip3 install PySide6 PyInstaller
-pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+# pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
 
 pyinstaller --clean -y eisenbuild.linux.py312.onefile.spec

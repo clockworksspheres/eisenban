@@ -894,6 +894,7 @@ class MainScreen(QMainWindow):
                     dest_list["_Board__panels"].insert(index, card_to_move)
             except KeyError:
                 dest_list["_Board__panels"] = [card_to_move]
+            source_list.get("_Board__panels").remove(card_to_move)
             Table.get_instance().data = data
 
     @staticmethod
