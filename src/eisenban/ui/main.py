@@ -38,7 +38,7 @@ class MainScreen(QMainWindow):
         self.ui.btn_board_settings.clicked.connect(
             lambda: self.show_board_settings())
         self.ui.btn_add_board.clicked.connect(
-            lambda: self.add_board(self))
+            lambda: self.add_board())
 
         self.ui.btn_app_settings.keyPressEvent = lambda event: keyPressEvent(
             event, self, self.show_app_settings())
@@ -558,7 +558,7 @@ class MainScreen(QMainWindow):
             40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.ui.horizontalLayout_5.addItem(self.ui.horzSpacer_panel_right)
         self.ui.btn_add_list.clicked.connect(
-            lambda: self.add_panel(self, board))
+            lambda: self.add_panel(board))
 
         font_tb = setup_font_db(font)[0]
         self.ui.btn_add_list.setFont(QFont(font_tb, 12))
