@@ -5,8 +5,12 @@ import sys
 import pickle
 from typing import Dict, List
 
+sys.path.append("..")
 
-class Table:
+from lib.singleton import Singleton
+
+
+class Table(Singleton):
     """
     Singleton class for table. This class is used to store, retrieve, and
     manipulate data from the local table.
@@ -17,10 +21,12 @@ class Table:
     _instance: "Table" = None
 
     def __init__(self: "Table") -> None:
-        assert Table._instance is None, \
-            "Table class is a singleton class!"
+        #assert Table._instance is None, \
+        #    "Table class is a singleton class!"i
+        if self._instance is None:
+            self._instance = self
         Table._instance = self
-
+        
         self._tb_path: str = ""
         self.__data: List[Dict] = [vars(Board())]
 

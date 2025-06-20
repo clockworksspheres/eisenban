@@ -72,25 +72,6 @@ class Eisenban(QMainWindow):
         # straight to the main screen
         self.show_main_screen()
 
-    @staticmethod
-    def init_event_logger(path: str, fmt: str, debug: bool = False,
-                          stdout: bool = False) -> None:
-        """Initializes the event logger.
-        - Set the path of the event log file
-        - Set the format of the event log file
-        - Set the debug level of the event log file
-        - Set up the event logger
-        """
-        logging.basicConfig(
-            filename=path,
-            filemode="w",
-            format=fmt,
-            datefmt="%d-%b-%y %H:%M:%S",
-            level=logging.DEBUG if debug else logging.INFO,
-        )
-        if stdout:
-            logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
-
     def initialize_local_table(self, dbdir: str) -> None:
         """Initializes the table instance.
         - Determine table path
@@ -109,12 +90,12 @@ class Eisenban(QMainWindow):
                 logging.info("Windows OS detected")
                 self.tb_path = os.path.join(
                     os.path.expanduser(
-                        "~"), "Documents", "Eisenban", "Table.pickle"
+                        "~"), "Documents", "Eisenban.newproject", "Table.pickle"
                 )
             else:
                 logging.info("Unix OS detected")
                 self.tb_path = os.path.join(
-                    os.path.expanduser("~"), "Eisenban", "Table.pickle"
+                    os.path.expanduser("~"), "Eisenban.newproject", "Table.pickle"
                 )
         tb = Table.get_instance()
         tb.set_path(self.tb_path)
@@ -176,6 +157,42 @@ if __name__ == "__main__":
         debug=True if "--debug" in sys.argv else False,
     )
 
-    window = Eisenban(opts.table)
+
+    logging.info("Starting Eisenban...")
+    logging.info(f'Table directory "{opts.table}"')
+
+
+    tb_path = ''
+    if opts.table:
+        tb_path = opts.table
+
+    if tb_path:
+        logging.info("dbdir detected")
+        tb_path = os.path.join(
+            opts.table, "Table.pickle"
+        )
+        
+    else:
+        if sys.platform == "win32":
+            logging.info("Windows OS detected")
+            tb_path = os.path.join(
+                os.path.expanduser(
+                    "~"), "Documents", "Eisenban.newproject", "Table.pickle"
+            )
+        else:
+            logging.info("Unix OS detected")
+            tb_path = os.path.join(
+                os.path.expanduser("~"), "Eisenban.newproject", "Table.pickle"
+            )
+    # tb = Table.get_instance()
+    tb = Table()
+    tb.set_path(tb_path)
+    tb.read()
+    logging.info(f'Table path: "{tb.get_path()}"')
+    logging.info("Table instance initialized and read successfully")
+
+
+    # window = Eisenban(opts.table)
+    window = MainScreen()
     window.show()
     sys.exit(app.exec())
