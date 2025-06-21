@@ -704,6 +704,17 @@ class MainScreen(QMainWindow):
             )
             if text is None:
                 return None
+
+            if any(panel.title == text for panel in self.current_board.panels):
+                dialog_factory(
+                    title="Invalid Title",
+                    msg=f'Panel "{text}" already exists!',
+                    yes_no=False,
+                    btn_color=self.current_board.color)
+                continue
+
+                
+            '''
             if any(panel.title == text for
                    other_board in Table.get_instance().boards for
                    panel in other_board.panels):
@@ -713,6 +724,8 @@ class MainScreen(QMainWindow):
                     yes_no=False,
                     btn_color=self.current_board.color)
                 continue
+            '''
+
             if text:
                 break
             dialog_factory(
@@ -777,45 +790,46 @@ class MainScreen(QMainWindow):
             )
         data = Table.get_instance().data
         for i, board in enumerate(Table.get_instance().boards):
-            for j, panel_ in enumerate(board.panels):
-                if panel_.title == panel.title:
-                    if any(card.title == text for card in panel_.cards):
-                        dialog_factory(
-                            title="Invalid Title",
-                            msg=f'Card "{text}" already exists!',
-                            yes_no=False,
-                            btn_color=self.current_board.color
-                        )
-                        self.add_card(panel)
-                        return None
-                    try:
-                        data[i].get(
-                            "_Board__panels_lists")[j].get(
-                            "_Board__panels").append({
-                                "_Card__title": text,
-                                "_Card__description": "",
-                                "_Card__date": datetime.date.today()
-                                .strftime("%d-%m-%Y"),
-                                "_Card__time": datetime.datetime.now()
-                                .strftime("%H:%M")
-                            })
-                    except KeyError:
-                        data.get(
-                            "_Table__data")[i].get(
-                                "_Board__panels_lists")[j]["_Board__panels"] =\
-                            [{
-                                "_Card__title": text,
-                                "_Card__description": "",
-                                "_Card__date": datetime.date.today()
-                                .strftime("%d-%m-%Y"),
-                                "_Card__time": datetime.datetime.now()
-                                .strftime("%H:%M")
-                            }]
-                    Table.get_instance().data = data
-                    Table.get_instance().write()
-                    logging.info(
-                        f'Card "{text}" added to panel "{panel.title}"')
-                    self.change_board(Table.get_instance().boards[i])
+            if board.title == self.current_board.title:
+                for j, panel_ in enumerate(board.panels):
+                    if panel_.title == panel.title:
+                        if any(card.title == text for card in panel_.cards):
+                            dialog_factory(
+                                title="Invalid Title",
+                                msg=f'Card "{text}" already exists!',
+                                yes_no=False,
+                                btn_color=self.current_board.color
+                            )
+                            self.add_card(panel)
+                            return None
+                        try:
+                            data[i].get(
+                                "_Board__panels_lists")[j].get(
+                                "_Board__panels").append({
+                                    "_Card__title": text,
+                                    "_Card__description": "",
+                                    "_Card__date": datetime.date.today()
+                                    .strftime("%d-%m-%Y"),
+                                    "_Card__time": datetime.datetime.now()
+                                    .strftime("%H:%M")
+                                })
+                        except KeyError:
+                            data.get(
+                                "_Table__data")[i].get(
+                                    "_Board__panels_lists")[j]["_Board__panels"] =\
+                                [{
+                                    "_Card__title": text,
+                                    "_Card__description": "",
+                                    "_Card__date": datetime.date.today()
+                                    .strftime("%d-%m-%Y"),
+                                    "_Card__time": datetime.datetime.now()
+                                    .strftime("%H:%M")
+                                }]
+                        Table.get_instance().data = data
+                        Table.get_instance().write()
+                        logging.info(
+                            f'Card "{text}" added to panel "{panel.title}"')
+                        self.change_board(Table.get_instance().boards[i])
 
     def change_board(self, board: Board) -> None:
         """Change the board to the specified board
