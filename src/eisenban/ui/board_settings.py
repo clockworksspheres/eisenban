@@ -310,16 +310,18 @@ class BoardSettings(QMainWindow):
         '''
         for board in Table.get_instance().boards:
             for panel in board.panels:
-                if panel.title == text:
-                    dialog_factory(
-                        title="Invalid Name",
-                        msg=f'Panel "{text}" already exists!',
-                        yes_no=False,
-                        btn_color=self.color
-                    )
-                    self.rename(event)
-                    return None
         '''
+        for panel in self.panels:
+            if panel.title == text:
+                dialog_factory(
+                    title="Invalid Name",
+                    msg=f'Panel "{text}" already exists!',
+                    yes_no=False,
+                    btn_color=self.color
+                )
+                self.rename(event)
+                return None
+
         panel_obj = next(
             (panel for panel in self.board.panels if
              panel.title == selected_all[0].text()), None)
