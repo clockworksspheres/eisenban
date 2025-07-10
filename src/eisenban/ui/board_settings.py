@@ -307,6 +307,7 @@ class BoardSettings(QMainWindow):
             )
             self.rename(event)
             return None
+        '''
         for board in Table.get_instance().boards:
             for panel in board.panels:
                 if panel.title == text:
@@ -318,6 +319,7 @@ class BoardSettings(QMainWindow):
                     )
                     self.rename(event)
                     return None
+        '''
         panel_obj = next(
             (panel for panel in self.board.panels if
              panel.title == selected_all[0].text()), None)
