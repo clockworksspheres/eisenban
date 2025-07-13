@@ -368,149 +368,9 @@ class MainScreen(QMainWindow):
         self.ui.label_list.setMargin(0)
         self.ui.verticalLayout_2.addWidget(self.ui.label_list)
 
-
-        # Enable drag and drop
-        self.ui.listWidget = QListWidget()
-
-        self.ui.listWidget.setDragEnabled(True)
-        self.ui.listWidget.setDragDropMode(QListWidget.DragDrop)
-        self.ui.listWidget.setDefaultDropAction(Qt.MoveAction)
-        self.ui.listWidget.setAcceptDrops(True)
-
-        size_policy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Minimum)
-        size_policy2.setHorizontalStretch(0)
-        size_policy2.setVerticalStretch(0)
-        size_policy2.setHeightForWidth(self.sizePolicy().hasHeightForWidth())
-        self.ui.listWidget.setSizePolicy(size_policy2)
-        self.ui.listWidget.setMaximumSize(QSize(260, 16777215))
-        self.ui.listWidget.setFocusPolicy(Qt.TabFocus)
-        self.ui.listWidget.setAcceptDrops(True)
-        self.ui.listWidget.setFrameShape(QFrame.NoFrame)
-        self.ui.listWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
-        self.ui.listWidget.setAutoScroll(True)
-        self.ui.listWidget.setDragEnabled(True)
-        self.ui.listWidget.setDragDropMode(QAbstractItemView.DragDrop)
-        self.ui.listWidget.setDefaultDropAction(Qt.MoveAction)
-
-        self.ui.listWidget.setSelectionMode(QAbstractItemView.ExtendedSelection)
-        self.ui.listWidget.setVerticalScrollMode(QAbstractItemView.ScrollPerPixel)
-        self.ui.listWidget.setHorizontalScrollMode(QAbstractItemView.ScrollPerPixel)
-        self.ui.listWidget.setProperty("isWrapping", False)
-        self.ui.listWidget.setSpacing(5)
-        self.ui.listWidget.setUniformItemSizes(True)
-        self.ui.listWidget.setWordWrap(True)
-        self.ui.listWidget.verticalScrollBar().setSingleStep(10)
-        self.ui.listWidget.setSelectionRectVisible(True)
-        self.ui.listWidget.setStyleSheet(
-            f"""
-            QListWidget {{
-                background-color: #ebecf0;
-                border-radius: 10px;
-                color: #000000;
-            }}
-            QListWidget::item {{
-                height: 40px;
-                padding: 0 8px 0 8px;
-                background-color: qlineargradient(
-                    spread:pad, x1:0, y1:0.5, x2:0.95, y2:0.5,
-                    stop:0 {color},
-                    stop:0.0338983 {color},
-                    stop:0.039548 rgba(255, 255, 255, 255),
-                    stop:1 rgba(255, 255, 255, 255)
-                );
-                color: #000000;
-                border-radius: 5px;
-            }}
-            QListWidget::item:hover {{
-                background-color: qlineargradient(
-                    spread:pad, x1:0, y1:0.5, x2:0.95, y2:0.5,
-                    stop:0 {color},
-                    stop:0.0338983 {color},
-                    stop:0.039548 rgba(226, 228, 233, 255),
-                    stop:1 rgba(226, 228, 233, 255)
-                );
-                color: #000000;
-            }}
-            QListWidget::item:selected {{
-                background-color: qlineargradient(
-                    spread:pad, x1:0, y1:0.5, x2:0.95, y2:0.5,
-                    stop:0 {color},
-                    stop:0.0338983 {color},
-                    stop:0.039548 rgba(204, 204, 204, 255),
-                    stop:1 rgba(204, 204, 204, 255)
-                );
-                color: #000000;
-            }}
-            QListWidget::item:focus {{
-                background-color: qlineargradient(
-                    spread:pad, x1:0, y1:0.5, x2:0.95, y2:0.5,
-                    stop:0 {color},
-                    stop:0.0338983 {color},
-                    stop:0.039548 rgba(204, 204, 204, 255),
-                    stop:1 rgba(204, 204, 204, 255));
-                    color: #000000
-            }}
-            QScrollBar:vertical {{
-                border: none;
-                background: #ebecf0;
-                width: 10px;
-                margin: 1px 0 0 0;
-                border-radius: 5px;
-            }}
-            QScrollBar::handle:vertical {{
-                background-color: #bfc0c5;
-                min-height: 30px;
-                border-radius: 5px;
-            }}
-            QScrollBar::handle:vertical:hover {{
-                background-color: #afb0b4;
-            }}
-            QScrollBar::handle:vertical:pressed {{
-                background-color: #929497;
-            }}
-            QScrollBar::sub-line:vertical {{
-                height: 0;
-            }}
-            QScrollBar::add-line:vertical {{
-                height: 0;
-            }}
-            QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {{
-                background: none;
-            }}
-            QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {{
-                background: none;
-            }}
-            QScrollBar QMenu {{
-                background-color: #454c5a;
-                border: none;
-                padding: 5px;
-                margin: 0px;
-                font-size: 13px;
-            }}
-            QScrollBar QMenu::item {{
-                padding: 5px 13px 5px 13px;
-                color: #ffffff;
-            }}
-            QScrollBar QMenu::item:selected {{
-                border-radius: 5px;
-                background-color: {color};
-                color: #000000;
-            }}
-            """
-        )
-
-
-
-
-
-
-
-
-
-
-        #self.ui.listWidget = CustomListWidget(
-        #    self.ui.scrollArea_panel_right, self.current_board,
-        #    modify_hex_color(color))
+        self.ui.listWidget = CustomListWidget(
+            self.ui.scrollArea_panel_right, self.current_board,
+            modify_hex_color(color))
         self.ui.verticalLayout_2.addWidget(self.ui.listWidget)
 
         self.ui.widget_add_card = QWidget(self.ui.widget)
@@ -1084,6 +944,21 @@ class CustomListWidget(QListWidget):
         super().__init__()
         self.parent_ = parent
         self.board = board
+
+
+
+        # Enable drag and drop
+        # self.ui.listWidget = QListWidget()
+
+        self.setDragEnabled(True)
+        self.setDragDropMode(QListWidget.DragDrop)
+        self.setDefaultDropAction(Qt.MoveAction)
+        self.setAcceptDrops(True)
+
+
+
+
+
         self.setObjectName(u"listWidget")
         size_policy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Minimum)
         size_policy2.setHorizontalStretch(0)
@@ -1099,12 +974,6 @@ class CustomListWidget(QListWidget):
         self.setDragEnabled(True)
         self.setDragDropMode(QAbstractItemView.DragDrop)
         self.setDefaultDropAction(Qt.MoveAction)
-
-        self.setDragEnabled(True)
-        self.setDragDropMode(QListWidget.DragDropMode)
-        self.setDefaultDropAction(Qt.MoveAction)
-        self.setAcceptDrops(True)
-
         self.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.setVerticalScrollMode(QAbstractItemView.ScrollPerPixel)
         self.setHorizontalScrollMode(QAbstractItemView.ScrollPerPixel)
@@ -1254,6 +1123,7 @@ class CustomListWidget(QListWidget):
         event : QDropEvent
             The drop event
         """
+
         if event.keyboardModifiers() == Qt.ControlModifier:
             return event.ignore()
         if not event.mimeData().hasFormat(
@@ -1290,4 +1160,5 @@ class CustomListWidget(QListWidget):
             Table.get_instance().write()
         event.accept()
 
-        #super().dropEvent(event)
+        super().dropEvent(event)
+
