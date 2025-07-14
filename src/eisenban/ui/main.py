@@ -954,7 +954,8 @@ class CustomListWidget(QListWidget):
         self.setDragDropMode(QListWidget.DragDrop)
         self.setDefaultDropAction(Qt.MoveAction)
         self.setAcceptDrops(True)
-
+        # Enable multiple selection
+        self.setSelectionMode(QListWidget.ExtendedSelection)
 
 
 
@@ -1140,6 +1141,7 @@ class CustomListWidget(QListWidget):
             f'"{dest_widget.data.title}"')
 
         for i, item in enumerate(items):
+            
             source_widget.takeItem(source_widget.row(item))
 
             index = dest_widget.row(dest_widget.itemAt(event.pos()))
@@ -1154,7 +1156,7 @@ class CustomListWidget(QListWidget):
 
             logging.info(
                 f'Moved card "{item.data(Qt.UserRole).title}" to {index=}')
-
+            
             MainScreen.change_card(self.parent, self.board, source_widget, dest_widget,
                                    item.data(Qt.UserRole), index)
             Table.get_instance().write()
