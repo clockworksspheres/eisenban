@@ -884,18 +884,40 @@ class MainScreen(QMainWindow):
             if b.title == board.title:
                 break
         print(source.data.title)
+        '''
         source_list = next(
             (pan for pan in data[i].get("_Board__panels_lists", [])
              if pan.get("_Panel__title") == getattr(source, "data").title), {})
+        '''
+        source_list = {}
+        for pan in data[i].get("_Board__panels_lists", []):
+            if pan.get("_Panel__title") == getattr(source, "data").title:
+                source_list = pan
+                break
+        '''
         card_to_move = next(
             (card_ for card_ in source_list.get("_Board__panels", [])
              if card_.get("_Card__title") == card.title), {})
+        '''
+        card_to_move = {}
+        for card_ in source_list.get("_Board__panels", []):
+            if card_.get("_Card__title") == card.title:
+                card_to_move = card_
+                break
         if card_to_move:
             source_list.get("_Board__panels").remove(card_to_move)
+            '''
             dest_list = next(
                 (pan for pan in data[i].get("_Board__panels_lists", [])
                  if pan.get("_Panel__title") == getattr(
                      destination, "data").title), {})
+            '''
+            dest_list = {}
+            for pan in data[i].get("_Board__panels_lists", []):
+                if pan.get("_Panel__title") == getattr(destination, "data").title:
+                    dest_list = pan
+                    break
+
             try:
                 if index is None or index >= len(dest_list["_Board__panels"]):
                     dest_list["_Board__panels"].append(card_to_move)
