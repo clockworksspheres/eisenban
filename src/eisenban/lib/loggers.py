@@ -83,11 +83,6 @@ def singleton_decorator(cls):
 
 
 class SingletonCyLogger(type):
-    """
-    This class was retrieved from: http://stackoverflow.com/questions/33364070/python-implementing-singleton-as-metaclass-but-for-abstract-classes
-    Modified class origionally authored by: Martijn Pieters(http://stackoverflow.com/users/100297/martijn-pieters)
-    with license: https://creativecommons.org/licenses/by-sa/3.0/
-    """
     _instances = {}
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
@@ -136,7 +131,7 @@ class CyLogger(Singleton):
     Class to set up logging, with easy string referencing loggers and their
     handlers.
     
-    @author: Roy Nielsen
+    
     """
     
     instanciatedLoggers = {}
@@ -190,7 +185,7 @@ class CyLogger(Singleton):
         """
         Input validation for the logging level
 
-        @author: Roy Nielsen
+        
 
         @param level:  (Default value = 30)
  
@@ -211,7 +206,7 @@ class CyLogger(Singleton):
         If there is a RotatingFileHandler attached to the active logger,
         rotate the log.
         
-        @author: Roy Nielsen
+        
 
         @param rothandler: 
 
@@ -257,9 +252,7 @@ class CyLogger(Singleton):
         @NOTE: This only sets up the root logger.
 
         @note: Interface borrowed from Stonix's LogDispatcher.initializeLogs
-               authored by scmcleni, D. Kennel and R. Nielsen
-
-        @author: Roy Nielsen
+        
         """
         self.initialized = True
         if not filename:
@@ -365,7 +358,7 @@ class CyLogger(Singleton):
         @param *args: 
         @param **kwargs: 
 
-        @author: Roy Nielsen
+        
         """
         pass
 
@@ -377,7 +370,7 @@ class CyLogger(Singleton):
 
         One may add several handlers to one logger.
 
-        @author: Roy Nielsen
+        
         """
         pass
 
@@ -387,12 +380,10 @@ class CyLogger(Singleton):
         """
         Interface to work similar to Stonix's LogDispatcher.py
 
-        @note: Stonix's LogDispatcher.py authored by: scmcleni
-
         @param priority:  (Default value = 0)
         @param msg:  (Default value = "")
 
-        @author: Roy Nielsen
+        
         """
         pri = str(priority)
         if re.match(r"^\d\d$", pri) and self.validateLevel():
@@ -531,7 +522,6 @@ class LogPriority(object):
     Similar to LogPriority in the Stonix project LogDispatcher, only using
     numbers instead of strings.
 
-    @note: Author of the Stonix LogPriority is scmcleni
     """
     DEBUG = int(10)
     INFO = int(20)
