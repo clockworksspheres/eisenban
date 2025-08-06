@@ -4,13 +4,27 @@ import os
 import sys
 import pickle
 from typing import Dict, List
-
+from threading import Lock
+'''
 sys.path.append("..")
 
 from lib.singleton import Singleton
+'''
+
+class SingletonMeta(type):
+    _instances = {}
+    _lock: Lock = Lock()
+
+    def __call__(cls, *args, **kwargs):
+        with cls._lock:
+            if cls not in cls._instances:
+                instance = super().__call__(*args, **kwargs)
+                cls._instances[cls] = instance
+        return cls._instances[cls]
 
 
-class Table(Singleton):
+# class Table(Singleton):
+class Table(metaclass=SingletonMeta):
     """
     Singleton class for table. This class is used to store, retrieve, and
     manipulate data from the local table.

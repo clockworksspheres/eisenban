@@ -208,7 +208,7 @@ class CustomListWidget(QListWidget):
         Parameters
         ----------
         event : QDropEvent
-            The drop event
+            The drop even
         """
 
         if event.keyboardModifiers() == Qt.ControlModifier:
@@ -227,8 +227,7 @@ class CustomListWidget(QListWidget):
             f'"{dest_widget.data.title}"')
 
         for i, item in enumerate(items):
-            
-            source_widget.takeItem(source_widget.row(item))
+
 
             index = dest_widget.row(dest_widget.itemAt(event.pos()))
             if index < 0:
@@ -245,6 +244,7 @@ class CustomListWidget(QListWidget):
             
             MainScreen.change_card(self.parent, self.board, source_widget, dest_widget,
                                    item.data(Qt.UserRole), index)
+            source_widget.takeItem(source_widget.row(item))
             Table.get_instance().write()
         event.accept()
 
