@@ -245,6 +245,8 @@ class CustomListWidget(QListWidget):
             MainScreen.change_card(self.parent, self.board, source_widget, dest_widget,
                                    item.data(Qt.UserRole), index)
             source_widget.takeItem(source_widget.row(item))
+            data = Table.get_instance().data
+            # Table.get_instance().data = data
             Table.get_instance().write()
         event.accept()
 
