@@ -10,8 +10,17 @@ class _Singleton(type):
             cls._instances[cls] = super(_Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
+
 class Singleton(_Singleton('SingletonMeta', (object,), {})): pass
 
-#####
-# class Logger(Singleton):
-#    pass
+class QSingleton(type(QObject), type):
+    def __init__(cls, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        cls.instance = None
+    def __call__(cls, *args, **kwargs):
+        if cls.instance is None:
+            cls.instance = super().__call__(*args, **kwargs)
+        return cls.instance
+
+
+

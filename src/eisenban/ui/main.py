@@ -20,7 +20,7 @@ from ui.card_description import CardDescription
 from ui.main_ui import Ui_MainWindow
 from utils import (hex_to_rgba, keyPressEvent, modify_hex_color, overrides,
                    setup_font_db)
-
+from lib.qsingleton import QSingleton
 
 class CustomListWidget(QListWidget):
     """Custom QListWidget class"""
@@ -245,18 +245,18 @@ class CustomListWidget(QListWidget):
             MainScreen.change_card(self.parent, self.board, source_widget, dest_widget,
                                    item.data(Qt.UserRole), index)
             source_widget.takeItem(source_widget.row(item))
-            data = Table.get_instance().data
-            # Table.get_instance().data = data
+            
             Table.get_instance().write()
+
         event.accept()
 
         super().dropEvent(event)
 
 
-class MainScreen(QMainWindow):
-    def __init__(self) -> None:
-        QMainWindow.__init__(self)
-
+class MainScreen(QMainWindow, metaclass=QSingleton):
+    def __init__(self, *args, **kwargs) -> None:
+        # QMainWindow.__init__(self)
+        super().__init__(*args, **kwargs)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
@@ -320,6 +320,28 @@ class MainScreen(QMainWindow):
 
         self.ui.label_logo.mousePressEvent = lambda event: self.show_about(
             event)
+
+    def clear_page(self) -> None:
+        """Clear the page
+        - Remove all widgets from the layout
+
+        """
+        layout = self.ui.scrollAreaContent_panel_right.layout()
+        for i in reversed(range(layout.count())):
+            widget = layout.itemAt(i).widget()
+            if widget is not None:
+                layout.removeWidget(widget)
+                widget.deleteLater()
+        layout = self.ui.scrollAreaContent_panel_left.layout()
+        for i in reversed(range(layout.count())):
+            widget = layout.itemAt(i).widget()
+            if widget is not None:
+                layout.removeWidget(widget)
+                widget.deleteLater()
+        self.ui.verticalLayout_4.removeItem(
+            self.ui.vertSpacer_scrollAreaContent)
+        self.ui.horzSpacer_panel_right.changeSize(
+            0, 0, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
     def show_about(self, event: QEvent) -> None:
         """Shows the about dialog"""
@@ -1115,7 +1137,7 @@ class MainScreen(QMainWindow):
             if b.title == board.title:
                 break
         print(source.data.title)
-        '''
+        
         source_list = next(
             (pan for pan in data[i].get("_Board__panels_lists", [])
              if pan.get("_Panel__title") == getattr(source, "data").title), {})
@@ -1135,9 +1157,9 @@ class MainScreen(QMainWindow):
             if card_.get("_Card__title") == card.title:
                 card_to_move = card_
                 break
+        '''
         if card_to_move:
             source_list.get("_Board__panels").remove(card_to_move)
-            '''
             dest_list = next(
                 (pan for pan in data[i].get("_Board__panels_lists", [])
                  if pan.get("_Panel__title") == getattr(
@@ -1148,6 +1170,7 @@ class MainScreen(QMainWindow):
                 if pan.get("_Panel__title") == getattr(destination, "data").title:
                     dest_list = pan
                     break
+            '''
 
             try:
                 if index is None or index >= len(dest_list["_Board__panels"]):
@@ -1157,28 +1180,8 @@ class MainScreen(QMainWindow):
             except KeyError:
                 dest_list["_Board__panels"] = [card_to_move]
             Table.get_instance().data = data
-
-    def clear_page(self) -> None:
-        """Clear the page
-        - Remove all widgets from the layout
-
-        """
-        layout = self.ui.scrollAreaContent_panel_right.layout()
-        for i in reversed(range(layout.count())):
-            widget = layout.itemAt(i).widget()
-            if widget is not None:
-                layout.removeWidget(widget)
-                widget.deleteLater()
-        layout = self.ui.scrollAreaContent_panel_left.layout()
-        for i in reversed(range(layout.count())):
-            widget = layout.itemAt(i).widget()
-            if widget is not None:
-                layout.removeWidget(widget)
-                widget.deleteLater()
-        self.ui.verticalLayout_4.removeItem(
-            self.ui.vertSpacer_scrollAreaContent)
-        self.ui.horzSpacer_panel_right.changeSize(
-            0, 0, QSizePolicy.Fixed, QSizePolicy.Minimum)
+            #self.clear_page()
+            # self.update_whole_page()
 
     def setup_font(self, font: str) -> None:
         arimo = setup_font_db(font)[0]
