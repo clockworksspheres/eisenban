@@ -1183,7 +1183,7 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
                     dest_list["_Board__panels"].insert(index, card_to_move)
             except KeyError:
                 dest_list["_Board__panels"] = [card_to_move]
-            Table.get_instance().data = data
+            Table().get_instance().data = data
             #self.clear_page()
             # self.update_whole_page()
 
