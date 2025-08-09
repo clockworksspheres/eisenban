@@ -1163,7 +1163,6 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
                 break
         '''
         if card_to_move:
-            source_list.get("_Board__panels").remove(card_to_move)
             dest_list = next(
                 (pan for pan in data[i].get("_Board__panels_lists", [])
                  if pan.get("_Panel__title") == getattr(
@@ -1175,6 +1174,7 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
                     dest_list = pan
                     break
             '''
+            source_list.get("_Board__panels").remove(card_to_move)
 
             try:
                 if index is None or index >= len(dest_list["_Board__panels"]):
