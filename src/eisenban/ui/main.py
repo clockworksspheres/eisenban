@@ -233,6 +233,9 @@ class CustomListWidget(QListWidget):
             if index < 0:
                 index = dest_widget.count()
 
+            if source_widget == dest_widget:
+                source_widget.takeItem(source_widget.row(item))
+
             index += i
             if source_widget == dest_widget:
                 if len(items) > 1:
@@ -244,7 +247,8 @@ class CustomListWidget(QListWidget):
             
             MainScreen.change_card(self.parent, self.board, source_widget, dest_widget,
                                    item.data(Qt.UserRole), index)
-            source_widget.takeItem(source_widget.row(item))
+            if source_widget != dest_widget:
+                source_widget.takeItem(source_widget.row(item))
             
             Table.get_instance().write()
 
