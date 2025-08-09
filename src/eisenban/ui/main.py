@@ -245,7 +245,7 @@ class CustomListWidget(QListWidget):
             
             MainScreen.change_card(self.parent, self.board, source_widget, dest_widget,
                                    item.data(Qt.UserRole), index)
-            Table.get_instance().write()
+            Table().get_instance().write()
         event.accept()
 
         super().dropEvent(event)
@@ -1154,7 +1154,7 @@ class MainScreen(QMainWindow):
                     dest_list["_Board__panels"].insert(index, card_to_move)
             except KeyError:
                 dest_list["_Board__panels"] = [card_to_move]
-            Table.get_instance().data = data
+            Table().get_instance().data = data
 
     def clear_page(self) -> None:
         """Clear the page
