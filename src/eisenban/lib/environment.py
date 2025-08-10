@@ -29,14 +29,6 @@ if sys.platform.startswith('win32'):
 else:
     import pwd
 
-if sys.platform.startswith('win32'):
-    import win32api
-    from eisenban.lib.windows_utilities import is_windows_process_elevated
-
-else:
-    import pwd
-
-
 try:
     from eisenban.lib.localize import VERSION
 except ImportError or AssertionError:
@@ -460,7 +452,7 @@ class Environment(object):
         elif os.path.exists('/usr/bin/sw_vers'):
             self.rw.setCommand(["/usr/bin/sw_vers", "-productName"])
             output, _, _ = self.rw.communicate()
-            print("Product Name: " + str(output))
+            # print("Product Name: " + str(output))
             description = output
             description = description.strip()
 

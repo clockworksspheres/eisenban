@@ -32,8 +32,8 @@ import logging.handlers
 sys.path.append("../..")
 # from eisenban.lib.singleton import Singleton
 # from eisenban.config import DEFAULT_LOG_LEVEL
-from . singleton import Singleton
-from .. config import DEFAULT_LOG_LEVEL
+from eisenban.singleton import Singleton
+from eisenban.config import DEFAULT_LOG_LEVEL
 
 #from logging.handlers import RotatingFileHandler
 ###############################################################################
@@ -83,6 +83,8 @@ def singleton_decorator(cls):
 
 
 class SingletonCyLogger(type):
+    """
+    """
     _instances = {}
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:

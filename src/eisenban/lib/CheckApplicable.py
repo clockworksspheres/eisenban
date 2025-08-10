@@ -39,7 +39,6 @@ class CheckApplicable(object):
         Validate that the applicable dictionary has valid keys and valid value
         types.
 
-        
         """
         success = False
         if isinstance(applicable, dict):
