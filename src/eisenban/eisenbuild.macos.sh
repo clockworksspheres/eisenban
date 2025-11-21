@@ -17,8 +17,8 @@ if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
    source packenv/bin/activate
    pip install --upgrade pip
    pip install --force-reinstall --no-cache-dir Tk
-   pip install PySide6 PyInstaller
-   pip install --upgrade PyInstaller pyinstaller-hooks-contrib
+   pip install --force-reinstall --no-cache-dir PySide6 PyInstaller
+   # pip install --upgrade PyInstaller pyinstaller-hooks-contrib
 else
    source packenv/bin/activate
 fi
