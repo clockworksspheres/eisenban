@@ -32,7 +32,7 @@ import logging.handlers
 sys.path.append("../..")
 # from eisenban.lib.singleton import Singleton
 # from eisenban.config import DEFAULT_LOG_LEVEL
-from eisenban.singleton import Singleton
+from eisenban.lib.singleton import Singleton
 from eisenban.config import DEFAULT_LOG_LEVEL
 
 #from logging.handlers import RotatingFileHandler
