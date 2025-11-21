@@ -10,12 +10,15 @@
 directory="./packenv"
 actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
-   python3 -m venv packenv
-   source packenv/bin/activate
-   pip3 install --upgrade pip
 
-   pip3 install PySide6 PyInstaller
-   pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+   brew install python-tk
+
+   python -m venv packenv
+   source packenv/bin/activate
+   pip install --upgrade pip
+   pip install Tk
+   pip install PySide6 PyInstaller
+   pip install --upgrade PyInstaller pyinstaller-hooks-contrib
 else
    source packenv/bin/activate
 fi
