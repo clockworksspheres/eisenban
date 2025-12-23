@@ -7,6 +7,8 @@
 
 #if doesn't the packenv directory doesn't exist...
 
+pushd ..
+
 directory="./packenv"
 actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
@@ -31,11 +33,15 @@ export PATH=".":$PATH
 
 pushd ui; python3 compile_uifiles.py; popd
 
+
+cp BuildScripts/eisenbuild.macos.spec .
+
 echo "----- start pyinstaller --clean -y eisenbuild.macos.spec -----"
 pyinstaller --clean -y eisenbuild.macos.spec
 echo "----- end pyinstaller --clean -y eisenbuild.macos.spec -----"
 echo " ===== start pyinstaller -y eisenbuild.macos.spec ====="
 pyinstaller -y eisenbuild.macos.spec
+rm eisenbuild.macos.spec
 echo "===== end pyinstaller -y eisenbuild.macos.spec ====="
 ### DOES NOT WORK... need to figure out why...
 cp -a resources dist/eisenban.app/Contents/Resources
@@ -43,5 +49,5 @@ cp -a resources dist/eisenban.app/Contents
 cp -a dist/eisenban.app ~/Desktop
 open ~/Desktop/eisenban.app
 
-
+popd
 

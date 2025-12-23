@@ -6,6 +6,7 @@
 # https://pyinstaller.org/en/stable/
 
 #if doesn't the packenv directory doesn't exist...
+pushd ..
 
 directory="./packenv"
 actfile="./packenv/bin/activate"
@@ -24,4 +25,5 @@ pyinstaller -y eisenbuild.linux.py312.onefile.spec
 
 sudo cp -a dist/eisenban /usr/local/bin
 
+popd
 
