@@ -20,6 +20,8 @@ pip3 install PySide6 PyInstaller
 pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
 
+cp eisenbuild.linux.py312.onefile.spec BuildScripts/eisenbuild.linux.py312.onefile.spec .
+
 pyinstaller --clean -y eisenbuild.linux.py312.onefile.spec
 pyinstaller -y eisenbuild.linux.py312.onefile.spec
 
