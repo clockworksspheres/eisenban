@@ -16,7 +16,7 @@ if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
    python -m venv packenv
    source packenv/bin/activate
    pip install --upgrade pip
-   pip install --force-reinstall --no-cache-dir Tk
+   # pip install --force-reinstall --no-cache-dir Tk
    pip install --force-reinstall --no-cache-dir PySide6 PyInstaller
    # pip install --upgrade PyInstaller pyinstaller-hooks-contrib
 else
