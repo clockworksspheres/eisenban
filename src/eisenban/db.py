@@ -97,7 +97,7 @@ class Table(metaclass=SingletonMeta):
         try:
             os.makedirs(os.path.dirname(self._tb_path), exist_ok=True)
             with open(self._tb_path, "wb") as f:
-                pickle.dump(self.__data, f)
+                pickle.dump(self.__data, f, protocol=pickle.HIGHEST_PROTOCOL)
             logging.info("Table file created")
         except Exception as e:
             logging.warning(
@@ -123,7 +123,7 @@ class Table(metaclass=SingletonMeta):
         """
         try:
             with open(self._tb_path, "wb") as f:
-                pickle.dump(self.__data, f)
+                pickle.dump(self.__data, f, protocol=pickle.HIGHEST_PROTOCOL)
                 logging.info("Table written to the table file")
         except FileNotFoundError:
             logging.warning(
