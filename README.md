@@ -10,4 +10,19 @@ Eisenban is a re-branded version of Kanbaru, as the Kanbaru project is frozen an
 
 Eisenban is short for Eisenhower method Kanban board.  The Eisenhower method has not yet been integrated into the project.
 
+## FAQ: 
+
+### Q: Drag and drop isn't working on Linux
+
+_A._ Short answer:  If one is having trouble with drag and drop on Linux, it's likely a Wayland problem - one needs to set:  
+  
+export QT_QPA_PLATFORM=xcb  
+  
+in their ~/.bashrc (or similar shell config) or run the script/program with  
+  
+QT_QPA_PLATFORM=xcp <​script/program> <​script/program-options>  
+  
+for the app to work
+
+Long answer: [[dragNdropProblemsOnLinux]]
 
