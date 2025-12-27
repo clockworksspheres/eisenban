@@ -171,6 +171,8 @@
   },
   "active": "6baa89248354bce7",
   "lastOpenFiles": [
+    "src/eisenban/brake/Table.pickle",
+    "src/eisenban/brake",
     "src/eisenban/BuildScripts/build.ubuntu2404.sh",
     "src/eisenban/BuildScripts/build.rocky10.sh",
     "src/eisenban/BuildScripts/build.linux.py313.onefile.spec",
@@ -192,8 +194,6 @@
     "src/eisenban/docs/Diagrams/old/Domain Model/Domain Model.png",
     "src/eisenban/docs/Diagrams/old/Activity Network/Activity_Network.png",
     "src/eisenban/docs/Diagrams/old/Activity Diagram/Activity Diagram.png",
-    "src/eisenban/docs/Diagrams/old/Gantt Chart",
-    "src/eisenban/docs/Diagrams/old/Domain Model",
     "src/eisenban/docs/Diagrams/Use Case Diagram/Kanbaru - Use Case Diagram.png",
     "src/eisenban/docs/Diagrams/Sequence Diagram/Switch Board - Basic.png",
     "src/eisenban/docs/Diagrams/Sequence Diagram/Rename Panel - Exceptional.png",

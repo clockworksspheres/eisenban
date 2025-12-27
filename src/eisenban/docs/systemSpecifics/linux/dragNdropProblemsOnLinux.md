@@ -1,8 +1,8 @@
 # Drag and Drop Problems on Linux
 
-code introduced into eisenban.py:
+### Code solution introduced into eisenban.py:
 
-```
+``` python
 try:
 
     #####
@@ -17,6 +17,8 @@ try:
 except OSError:
     logging.info("Problem checking for and setting environment variable in linux")
 ```
+
+Note, it does not currently check if X11 is active.  The code has to be before ``` app = QApplication(sys.argv) ```,  code is currently in global context.
 
 # Discussion given by chatgpt v5
 
