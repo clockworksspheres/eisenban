@@ -1,6 +1,6 @@
 # Drag and Drop Problems on Linux
 
-### Human code solution introduced into eisenban.py:
+## Human code solution introduced into eisenban.py:
 
 ``` python
 try:
