@@ -171,6 +171,10 @@
   },
   "active": "6baa89248354bce7",
   "lastOpenFiles": [
+    "src/eisenban/BuildScripts/build.ubuntu2404.sh",
+    "src/eisenban/BuildScripts/build.rocky10.sh",
+    "src/eisenban/BuildScripts/build.linux.py313.onefile.spec",
+    "src/eisenban/BuildScripts/build.linux.py312.onefile.spec",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnUbuntuLinux.md",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnRockyLinux.md",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnDebianLinux.md",
@@ -190,15 +194,12 @@
     "src/eisenban/docs/Diagrams/old/Activity Diagram/Activity Diagram.png",
     "src/eisenban/docs/Diagrams/old/Gantt Chart",
     "src/eisenban/docs/Diagrams/old/Domain Model",
-    "src/eisenban/docs/Diagrams/old/Activity Network",
-    "src/eisenban/docs/Diagrams/old/Activity Diagram",
     "src/eisenban/docs/Diagrams/Use Case Diagram/Kanbaru - Use Case Diagram.png",
     "src/eisenban/docs/Diagrams/Sequence Diagram/Switch Board - Basic.png",
     "src/eisenban/docs/Diagrams/Sequence Diagram/Rename Panel - Exceptional.png",
     "src/eisenban/docs/Diagrams/Sequence Diagram/Rename Panel - Basic.png",
     "src/eisenban/docs/Diagrams/Sequence Diagram/Rename Panel - Alternative.png",
     "src/eisenban/docs/Diagrams/Sequence Diagram/Rename Card - Exceptional.png",
-    "src/eisenban/docs/Diagrams/old",
     "src/eisenban/bugs.md",
     "src/eisenban/README.md"
   ]

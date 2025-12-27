@@ -1,5 +1,24 @@
 # Drag and Drop Problems on Linux
 
+code introduced into eisenban.py:
+
+```
+try:
+
+    #####
+    # Must make sure environment is set correctly if OS is Linux
+    # and the window manager is Wayland.  Must be set before 
+    # creating QApplication.  Does not check if X11 is running.
+    if sys.platform.lower().startswith("linux"):
+        logging.info("Found Linux Checking for Wayland")
+        if os.environ.get("WAYLAND_DISPLAY") is not None or os.environ.get("XDG_SESSION_TYPE") == "wayland":
+            logging.info("Found Wayland, setting QT_QPA_PLATFORM")
+            os.environ["QT_QPA_PLATFORM"] = "xcb"
+except OSError:
+    logging.info("Problem checking for and setting environment variable in linux")
+```
+
+# Discussion given by chatgpt v5
 
 from chatgpt.com (version 5)
 
