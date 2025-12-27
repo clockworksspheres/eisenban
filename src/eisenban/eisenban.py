@@ -159,6 +159,22 @@ if __name__ == "__main__":
 
 
     logging.info("Starting Eisenban...")
+
+
+    #####
+    # Must make sure environment is set correctly if OS is Linux
+    # and the window manager is Wayland.  Must be set before 
+    # creating QApplication.
+    if sys.platform.lower().startswith("linux"):
+        logging.info("Found Linux Checking for Wayland")
+        if os.environ.get("WAYLAND_DISPLAY") is not None or
+           os.environ.get("XDG_SESSION_TYPE") == "wayland":
+            logging.log("Found Wayland, setting QT_QPA_PLATFORM")
+            if os.environ.get("DISPLAY") is not None:
+                # environ: QT_QPA_PLATFORM=xcb
+                os.environ.["QT_QPA_PLATFORM"] = "xcb"
+
+
     logging.info(f'Table directory "{opts.table}"')
 
 
