@@ -171,6 +171,7 @@
   },
   "active": "6baa89248354bce7",
   "lastOpenFiles": [
+    "src/eisenban/BuildScripts/build.debian12.sh",
     "src/eisenban/brake/Table.pickle",
     "src/eisenban/brake",
     "src/eisenban/BuildScripts/build.ubuntu2404.sh",
@@ -189,7 +190,6 @@
     "src/eisenban/docs/systemSpecifics/macos",
     "src/eisenban/docs/systemSpecifics/linux",
     "src/eisenban/docs/systemSpecifics",
-    "src/eisenban/docs/Diagrams/old/Gantt Chart/Gantt_Chart.pdf",
     "src/eisenban/docs/Diagrams/old/Domain Model/Domain_Model.png",
     "src/eisenban/docs/Diagrams/old/Domain Model/Domain Model.png",
     "src/eisenban/docs/Diagrams/old/Activity Network/Activity_Network.png",
