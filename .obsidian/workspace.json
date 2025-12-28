@@ -171,6 +171,8 @@
   },
   "active": "6baa89248354bce7",
   "lastOpenFiles": [
+    "src/eisenban/rake/Table.pickle",
+    "src/eisenban/rake",
     "src/eisenban/BuildScripts/build.debian12.sh",
     "src/eisenban/brake/Table.pickle",
     "src/eisenban/brake",
@@ -188,8 +190,6 @@
     "src/eisenban/docs/systemSpecifics/macos/setUpForBuilding.md",
     "src/eisenban/docs/systemSpecifics/windows",
     "src/eisenban/docs/systemSpecifics/macos",
-    "src/eisenban/docs/systemSpecifics/linux",
-    "src/eisenban/docs/systemSpecifics",
     "src/eisenban/docs/Diagrams/old/Domain Model/Domain_Model.png",
     "src/eisenban/docs/Diagrams/old/Domain Model/Domain Model.png",
     "src/eisenban/docs/Diagrams/old/Activity Network/Activity_Network.png",
