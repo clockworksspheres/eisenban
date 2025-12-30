@@ -171,6 +171,7 @@
   },
   "active": "6baa89248354bce7",
   "lastOpenFiles": [
+    "src/eisenban/proto/zoom/zoom_003.py",
     "src/eisenban/proto/zoom/zoom_002.py",
     "src/eisenban/proto/zoom/zoom_001.py",
     "src/eisenban/proto/zoom",
@@ -181,7 +182,6 @@
     "src/eisenban/brake",
     "src/eisenban/BuildScripts/build.ubuntu2404.sh",
     "src/eisenban/BuildScripts/build.rocky10.sh",
-    "src/eisenban/BuildScripts/build.linux.py313.onefile.spec",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnUbuntuLinux.md",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnRockyLinux.md",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnDebianLinux.md",
