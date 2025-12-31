@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "src/eisenban/proto/README.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,6 +171,8 @@
   },
   "active": "6baa89248354bce7",
   "lastOpenFiles": [
+    "README.md",
+    "src/eisenban/proto/README.md",
     "src/eisenban/README.md",
     "src/classes_eisenban.png",
     "src/eisenban/docs/systemSpecifics/linux/dragNdropProblemsOnLinux.md",
@@ -187,7 +189,6 @@
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnUbuntuLinux.md",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnRockyLinux.md",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnDebianLinux.md",
-    "README.md",
     "src/eisenban/docs/systemSpecifics/linux/setUpForBuilding.md",
     "src/eisenban/docs/systemSpecifics/windows/setUpForBuilding.md",
     "src/eisenban/docs/systemSpecifics/macos/setUpForBuilding.md",
