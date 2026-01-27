@@ -11,14 +11,14 @@ pipeline {
                 stage('macOS Pipeline') {
                     agent { label 'macos' }
                     stages {
-                        stage('Build') { 
+                        stage('macos Build') { 
                             steps {
                                 dir('src/eisenban/BuildScripts') {
                                     sh './build.macos.sh' 
                                 }
                             }
                         }
-                        stage('Test') { 
+                        stage('macos Test') { 
                             steps {
                                 dir('src/tests') {
                                     echo '----------=====### Starting Tests ###=====----------'
@@ -39,14 +39,14 @@ pipeline {
                 stage('Rocky 10 Pipeline') {
                     agent { label 'rocky10' }
                     stages {
-                        stage('Build') { 
+                        stage('rocky10 Build') { 
                             steps {
                                 dir('src/eisenban/BuildScripts') {
                                     sh './build.ubuntu2404.sh' 
                                 } 
                             }
                         }
-                        stage('Test') { 
+                        stage('rocky10 Test') { 
                             steps {
                                 dir('src/tests') {
                                     echo '----------=====### Starting Tests ###=====----------'
@@ -67,14 +67,14 @@ pipeline {
                 stage('Debian Pipeline') {
                     agent { label 'debian' }
                     stages {
-                        stage('Build') { 
+                        stage('debian Build') { 
                             steps {
                                 dir('src/eisenban/BuildScripts') {
                                     sh './build.ubuntu2404.sh' 
                                 } 
                             }
                         }
-                        stage('Test') { 
+                        stage('debian Test') { 
                             steps {
                                 dir('src/tests') {
                                     echo '----------=====### Starting Tests ###=====----------'
@@ -101,6 +101,3 @@ pipeline {
         }
     }
 }
-
-
-
