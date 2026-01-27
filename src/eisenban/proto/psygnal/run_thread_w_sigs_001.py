@@ -50,7 +50,7 @@ class RunThread(threading.Thread):
     run_thread.join()
     print run_thread.stdout
 
-    @author: Roy Nielsen
+    
     """
     def __init__(self, command, logger, myshell=False):
         """
@@ -114,7 +114,7 @@ class RunThread(threading.Thread):
         """
         Getter for standard output
 
-        @author: Roy Nielsen
+        
         """
         self.logger.log(lp.INFO, "Getting stdout...")
         return self.retout
@@ -125,7 +125,7 @@ class RunThread(threading.Thread):
         """
         Getter for standard err
 
-        @author: Roy Nielsen
+        
         """
         self.logger.log(lp.DEBUG, "Getting stderr...")
         return self.reterr
@@ -136,7 +136,7 @@ def runMyThreadCommand(cmd, logger, myshell=False):
     """
     Use the RunThread class to get the stdout and stderr of a command
 
-    @author: Roy Nielsen
+    
     """
     retval = None
     reterr = None

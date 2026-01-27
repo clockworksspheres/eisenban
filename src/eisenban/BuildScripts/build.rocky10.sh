@@ -6,6 +6,7 @@
 # https://pyinstaller.org/en/stable/
 
 #if doesn't the packenv directory doesn't exist...
+pushd ..
 
 directory="./packenv"
 actfile="./packenv/bin/activate"
@@ -19,9 +20,14 @@ pip3 install PySide6 PyInstaller
 pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
 
-pyinstaller --clean -y eisenbuild.linux.py312.onefile.spec
-pyinstaller -y eisenbuild.linux.py312.onefile.spec
+cp build.linux.py312.onefile.spec BuildScripts/build.linux.py312.onefile.spec .
+
+pyinstaller --clean -y build.linux.py312.onefile.spec
+pyinstaller -y build.linux.py312.onefile.spec
+
+rm build.linux.py312.onefile.spec
 
 sudo cp -a dist/eisenban /usr/local/bin
 
+popd
 

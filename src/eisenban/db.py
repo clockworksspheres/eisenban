@@ -4,13 +4,27 @@ import os
 import sys
 import pickle
 from typing import Dict, List
-
+from threading import Lock
+'''
 sys.path.append("..")
 
 from lib.singleton import Singleton
+'''
+
+class SingletonMeta(type):
+    _instances = {}
+    _lock: Lock = Lock()
+
+    def __call__(cls, *args, **kwargs):
+        with cls._lock:
+            if cls not in cls._instances:
+                instance = super().__call__(*args, **kwargs)
+                cls._instances[cls] = instance
+        return cls._instances[cls]
 
 
-class Table(Singleton):
+# class Table(Singleton):
+class Table(metaclass=SingletonMeta):
     """
     Singleton class for table. This class is used to store, retrieve, and
     manipulate data from the local table.
@@ -83,7 +97,7 @@ class Table(Singleton):
         try:
             os.makedirs(os.path.dirname(self._tb_path), exist_ok=True)
             with open(self._tb_path, "wb") as f:
-                pickle.dump(self.__data, f)
+                pickle.dump(self.__data, f, protocol=pickle.HIGHEST_PROTOCOL)
             logging.info("Table file created")
         except Exception as e:
             logging.warning(
@@ -109,7 +123,7 @@ class Table(Singleton):
         """
         try:
             with open(self._tb_path, "wb") as f:
-                pickle.dump(self.__data, f)
+                pickle.dump(self.__data, f, protocol=pickle.HIGHEST_PROTOCOL)
                 logging.info("Table written to the table file")
         except FileNotFoundError:
             logging.warning(

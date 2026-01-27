@@ -11,10 +11,14 @@
             "id": "6baa89248354bce7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "src/eisenban/proto/README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -156,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -166,19 +171,37 @@
   },
   "active": "fc1dcf6a5bf78d1f",
   "lastOpenFiles": [
-    "src/eisenban/build/eisenbuild.macos.onefile/EXE-00.toc",
-    "src/eisenban/build/eisenbuild.macos.onefile/PKG-00.toc",
-    "src/eisenban/build/eisenbuild.macos.onefile/eisenban.pkg",
-    "src/eisenban/build/eisenbuild.macos.onefile/PYZ-00.toc",
-    "src/eisenban/build/eisenbuild.macos.onefile/PYZ-00.pyz",
-    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/struct.pyc",
-    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/pyimod03_ctypes.pyc",
-    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/pyimod02_importers.pyc",
-    "src/eisenban/build/eisenbuild.macos.onefile/localpycs/pyimod01_archive.pyc",
-    "src/eisenban/build/eisenbuild.macos.onefile/localpycs",
-    "src/eisenban/build/eisenbuild.macos.onefile/Analysis-00.toc",
-    "src/eisenban/bugs.md",
+    "src/eisenban/build/eisenbuild.macos/BUNDLE-00.toc",
+    "src/eisenban/build/eisenbuild.macos/COLLECT-00.toc",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtWidgets.framework/Versions/A/Resources/Info.plist",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtWidgets.framework/Versions/A/Resources",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtVirtualKeyboardQml.framework/Versions/A/Resources/Info.plist",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtVirtualKeyboardQml.framework/Versions/A/Resources",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtVirtualKeyboard.framework/Versions/A/Resources/Info.plist",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtVirtualKeyboard.framework/Versions/A/Resources",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtSvg.framework/Versions/A/Resources/Info.plist",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtSvg.framework/Versions/A/Resources",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/PySide6/Qt/lib/QtQuick.framework/Versions/A/Resources/Info.plist",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/demos/images/tcllogo.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/demos/images/earthris.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/demos/images/earth.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/images/tai-ku.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/images/pwrdLogo75.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/images/pwrdLogo200.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/images/pwrdLogo175.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/images/pwrdLogo150.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/images/pwrdLogo100.gif",
+    "src/eisenban/dist/org.clockworksspheres.eisenban/_internal/Tk.framework/Versions/8.5/Resources/Scripts/images/logoMed.gif",
+    "README.md",
+    "src/eisenban/proto/README.md",
     "src/eisenban/README.md",
-    "README.md"
+    "src/eisenban/docs/systemSpecifics/linux/dragNdropProblemsOnLinux.md",
+    "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnUbuntuLinux.md",
+    "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnRockyLinux.md",
+    "src/eisenban/docs/systemSpecifics/linux/setUpForBuildingOnDebianLinux.md",
+    "src/eisenban/docs/systemSpecifics/linux/setUpForBuilding.md",
+    "src/eisenban/docs/systemSpecifics/windows/setUpForBuilding.md",
+    "src/eisenban/docs/systemSpecifics/macos/setUpForBuilding.md",
+    "src/eisenban/bugs.md"
   ]
 }

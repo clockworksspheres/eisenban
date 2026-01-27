@@ -7,15 +7,20 @@
 
 #if doesn't the packenv directory doesn't exist...
 
+pushd ..
+
 directory="./packenv"
 actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
-   python3 -m venv packenv
-   source packenv/bin/activate
-   pip3 install --upgrade pip
 
-   pip3 install PySide6 PyInstaller
-   pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+   brew install python-tk
+
+   python -m venv packenv
+   source packenv/bin/activate
+   pip install --upgrade pip
+   # pip install --force-reinstall --no-cache-dir Tk
+   pip install --force-reinstall --no-cache-dir PySide6 PyInstaller
+   # pip install --upgrade PyInstaller pyinstaller-hooks-contrib
 else
    source packenv/bin/activate
 fi
@@ -28,13 +33,20 @@ export PATH=".":$PATH
 
 pushd ui; python3 compile_uifiles.py; popd
 
-pyinstaller --clean -y eisenbuild.macos.spec
-pyinstaller -y eisenbuild.macos.spec
+cp BuildScripts/build.macos.spec .
+
+echo "----- start pyinstaller --clean -y eisenbuild.macos.spec -----"
+pyinstaller --clean -y build.macos.spec
+echo "----- end pyinstaller --clean -y eisenbuild.macos.spec -----"
+echo " ===== start pyinstaller -y eisenbuild.macos.spec ====="
+pyinstaller -y build.macos.spec
+rm build.macos.spec
+echo "===== end pyinstaller -y eisenbuild.macos.spec ====="
 ### DOES NOT WORK... need to figure out why...
 cp -a resources dist/eisenban.app/Contents/Resources
 cp -a resources dist/eisenban.app/Contents
 cp -a dist/eisenban.app ~/Desktop
 open ~/Desktop/eisenban.app
 
-
+popd
 

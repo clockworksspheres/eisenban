@@ -1,0 +1,14 @@
+{
+    "column_order": [
+        "To Do",
+        "In Progress",
+        "Done"
+    ],
+    "columns": {
+        "To Do": [
+            "first task"
+        ],
+        "In Progress": [],
+        "Done": []
+    }
+}

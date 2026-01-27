@@ -29,14 +29,6 @@ if sys.platform.startswith('win32'):
 else:
     import pwd
 
-if sys.platform.startswith('win32'):
-    import win32api
-    from eisenban.lib.windows_utilities import is_windows_process_elevated
-
-else:
-    import pwd
-
-
 try:
     from eisenban.lib.localize import VERSION
 except ImportError or AssertionError:
@@ -76,8 +68,6 @@ class Environment(object):
     """
     The Environment class collects commonly used information about the
     execution platform and makes it available to the rules.
-    :version: 1.0
-    :author: D. Kennel
     """
 
     def __init__(self):
@@ -133,7 +123,7 @@ class Environment(object):
         or upstart
         set the variable self.systemtype equal to the result
 
-        @author: Breen Malmberg
+        
         '''
 
         validtypes = ['launchd', 'systemd', 'init', 'upstart']
@@ -187,7 +177,7 @@ class Environment(object):
         @return: self.systemtype
         @rtype: string
 
-        @author: Breen Malmberg
+        
         '''
 
         return self.systemtype
@@ -199,7 +189,7 @@ class Environment(object):
 
         @param bool: installmode
         @return: void
-        @author: D. Kennel
+        
         """
         try:
             if type(installmode) is bool:
@@ -214,7 +204,7 @@ class Environment(object):
         the program is to run in install mode.
 
         @return: bool : installmode
-        @author: D. Kennel
+        
         """
         return self.installmode
 
@@ -225,7 +215,7 @@ class Environment(object):
 
         @param bool: verbosemode
         @return: void
-        @author: D. Kennel
+        
         """
         try:
             if isinstance(verbosemode, bool):
@@ -240,7 +230,7 @@ class Environment(object):
         the program is to run in verbose mode.
 
         @return: bool : verbosemode
-        @author: D. Kennel
+        
         """
         return self.verbosemode
 
@@ -251,7 +241,7 @@ class Environment(object):
 
         @param bool: debugmode
         @return: void
-        @author: D. Kennel
+        
         """
         try:
             if isinstance(debugmode, bool):
@@ -266,7 +256,7 @@ class Environment(object):
         program is to run in debug mode.
 
         @return: bool : debugmode
-        @author: D. Kennel
+        
         """
         return self.debugmode
 
@@ -275,7 +265,7 @@ class Environment(object):
         Return the detailed operating system type.
 
         @return string :
-        @author D. Kennel
+        
         """
         return self.operatingsystem
 
@@ -284,7 +274,7 @@ class Environment(object):
         Return the detailed operating system type with full version info.
 
         @return string :
-        @author D. Kennel
+        
         """
         return self.osreportstring
 
@@ -292,7 +282,7 @@ class Environment(object):
         """Return the value of self.osfamily which should be linux, darwin,
         solaris or freebsd.
         @return string :
-        @author: D. Kennel
+        
         """
         return self.osfamily
 
@@ -301,7 +291,7 @@ class Environment(object):
         Return the OS version as a string.
 
         @return string :
-        @author D. Kennel
+        
         """
         return self.osversion
 
@@ -310,7 +300,7 @@ class Environment(object):
         Return the hostname of the system.
 
         @return: string
-        @author: dkennel
+        
         """
         return self.hostname
 
@@ -319,7 +309,7 @@ class Environment(object):
         Return the IP address associated with the host name.
 
         @return string :
-        @author D. Kennel
+        
         """
         return self.ipaddress
 
@@ -328,7 +318,7 @@ class Environment(object):
         Return the mac address in native format.
 
         @return string :
-        @author D. Kennel
+        
         """
         return self.macaddress
 
@@ -337,7 +327,7 @@ class Environment(object):
         Return the effective user ID
 
         @return int :
-        @author D. Kennel
+        
         """
         return self.euid
 
@@ -346,7 +336,7 @@ class Environment(object):
         Returns the home directory of the current effective user ID.
 
         @return: string
-        @author: D. Kennel
+        
         """
         return self.homedir
 
@@ -355,7 +345,7 @@ class Environment(object):
         Returns the version of the this program.
 
         @return: string
-        @author: D. Kennel
+        
         """
         return self.version
 
@@ -364,7 +354,7 @@ class Environment(object):
         Private method to populate data.
 
         @return: void
-        @author D. Kennel
+        
         """
         # print 'Environment Running discoveros'
         self.discoveros()
@@ -380,7 +370,7 @@ class Environment(object):
         """
         Discover the operating system type and version
         @return : void
-        @author: D. Kennel
+        
         """
         # Alternative (better) implementation for Linux
         if os.path.exists('/usr/bin/lsb_release'):
@@ -443,7 +433,7 @@ class Environment(object):
                     index = index + 1
             self.osversion = osver
 
-        # Breen Malmberg added support for os-release file
+        # added support for os-release file
         # method of getting version information
         elif os.path.isfile('/etc/os-release'):
             with open('/etc/os-release', 'r') as relfile:
@@ -462,7 +452,7 @@ class Environment(object):
         elif os.path.exists('/usr/bin/sw_vers'):
             self.rw.setCommand(["/usr/bin/sw_vers", "-productName"])
             output, _, _ = self.rw.communicate()
-            print("Product Name: " + str(output))
+            # print("Product Name: " + str(output))
             description = output
             description = description.strip()
 
@@ -498,7 +488,7 @@ class Environment(object):
 
         @return: self.major_ver
         @rtype: string
-        @author: Breen Malmberg
+        
         '''
 
         ver = self.getosver()
@@ -516,7 +506,7 @@ class Environment(object):
 
         @return: self.minor_ver
         @rtype: string
-        @author: Breen Malmberg
+        
         '''
 
         ver = self.getosver()
@@ -534,7 +524,7 @@ class Environment(object):
 
         @return: self.trivial_ver
         @rtype: string
-        @author: Breen Malmberg
+        
         '''
 
         ver = self.getosver()
@@ -631,9 +621,7 @@ class Environment(object):
         associated with the current default route.
 
         @return: string - ipaddress
-        @author: dkennel
-        @change: 2017/9/20 - bgonz12 - Changed implementation to not branch
-                    conditionally by OS, but to branch by file system searches.
+        
         """
         if sys.platform.startswith('darwin'):
             ipaddr = ''
@@ -703,7 +691,7 @@ class Environment(object):
         @param list: list of ipaddresses
         @param int: level
         @return: list - ipaddresses
-        @author: dkennel
+        
         """
         quad = target.split('.')
         if level == 1:
@@ -727,9 +715,7 @@ class Environment(object):
         This method returns all ip addresses on all interfaces on the system.
 
         @return: list of strings
-        @author: dkennel
-        @change: 2017/9/22 - bgonz12 - Changed implementation to use the ip
-                    command before trying to use the ifconfig command.
+        
         """
         iplist = []
         cmd = ''
@@ -781,7 +767,7 @@ class Environment(object):
         """
         Find and return the
         Serial number of the local machine
-        @author: dkennel
+        
         @return: string
         """
         systemserial = '0'
@@ -822,7 +808,7 @@ class Environment(object):
         """
         Find and return the
         Chassis serial number
-        @author: dkennel
+        
         @requires: string
         """
         chassisserial = '0'
@@ -842,7 +828,7 @@ class Environment(object):
         """
         Find and return the
         System manufacturer
-        @author: D. Kennel
+        
         @return: string
         """
         systemmfr = 'Unk'
@@ -864,7 +850,7 @@ class Environment(object):
         """
         Find and return the
         Chassis manufacterer
-        @author: D. Kennel
+        
         @return: string
         """
         chassismfr = 'Unk'
@@ -885,7 +871,7 @@ class Environment(object):
         this will be the UUID of the system. On Solaris SPARC this will be
         a number that is _hopefully_ unique as that platform doesn't have
         UUID numbers.
-        @author: D. Kennel
+        
         @return: string
         """
         uuid = '0'
@@ -954,7 +940,7 @@ class Environment(object):
         Returns a bool indicating whether or not the system in question is a
         laptop. The is mobile method is used by some rules that have alternate
         settings for laptops.
-        @author: dkennel
+        
         @regturn: bool - true if system is a laptop
         '''
         ismobile = False
@@ -989,7 +975,7 @@ class Environment(object):
         Returns a bool indicating whether or not the little snitch program is
         active. Little snitch is a firewall utility used on Mac systems and can
         interfere with STONIX operations.
-        @author: ekkehard
+        
         @return: bool - true if little snitch is running
         """
         issnitchactive = False
@@ -1017,7 +1003,7 @@ class Environment(object):
         conf
         logs
 
-        @author: Roy Nielsen
+        
         """
         try:
             script_path_zero = sys._MEIPASS
@@ -1102,7 +1088,7 @@ class Environment(object):
         self select the higher level.
 
         @return: string - low, med, high
-        @author: dkennel
+        
         '''
         if FISMACAT not in ['high', 'med', 'low']:
             raise ValueError('FISMACAT invalid: valid values are low, med, high')
@@ -1113,7 +1099,7 @@ class Environment(object):
         """
         Getter test mode flag
 
-        @author: Roy Nielsen
+        
         """
         return self.test_mode
 
@@ -1121,7 +1107,7 @@ class Environment(object):
         """
         Getter for the script path
 
-        @author: Roy Nielsen
+        
         """
         return self.script_path
 
@@ -1129,7 +1115,7 @@ class Environment(object):
         """
         Getter for the icon path
 
-        @author: Roy Nielsen
+        
         """
         return self.icon_path
 
@@ -1137,7 +1123,7 @@ class Environment(object):
         """
         Getter for rules path
 
-        @author: Roy Nielsen
+        
         """
         return self.rules_path
 
@@ -1145,7 +1131,7 @@ class Environment(object):
         """
         Getter for conf file path
 
-        @author: Roy Nielsen
+        
         """
         return self.conf_path
 
@@ -1153,7 +1139,7 @@ class Environment(object):
         """
         Getter for log path
 
-        @author: Roy Nielsen
+        
         """
         return self.log_path
 
@@ -1161,7 +1147,7 @@ class Environment(object):
         """
         Getter for stonix resources directory
 
-        @author: Roy Nielsen
+        
         """
         return self.resources_path
 
@@ -1169,7 +1155,7 @@ class Environment(object):
         '''
         Return the runtime recorded.
 
-        @author: dkennel
+        
         '''
         return self.runtime
 
@@ -1179,7 +1165,7 @@ class Environment(object):
         used by the log dispatcher in the run metadata.
 
         @param num: int - number of rules that apply to this host
-        @author: dkennel
+        
         '''
         if not isinstance(num, int):
             raise TypeError('Number of rules must be an integer')
@@ -1192,7 +1178,7 @@ class Environment(object):
         '''
         Return the number of rules that apply to this host.
 
-        @author: dkennel
+        
         '''
         return self.numrules
 
@@ -1201,7 +1187,7 @@ class Environment(object):
         Return the system FISMA risk categorization.
 
         @return: string - low, med, high
-        @author: dkennel
+        
         '''
         return self.systemfismacat
 
@@ -1212,7 +1198,7 @@ class Environment(object):
         localize.py
 
         @param category: string - low, med, high
-        @author: dkennel
+        
         '''
 
         if category not in ['high', 'med', 'low']:
