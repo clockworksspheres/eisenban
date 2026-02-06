@@ -294,11 +294,11 @@ class RunWith(object):
             finally:
                 try:
                     proc.stdout.close()
-                except SubprocessError:
+                except (SubprocessError, UnboundLocalError):
                     pass
                 try:
                     proc.stderr.close()
-                except SubprocessError:
+                except (SubprocessError, UnboundLocalError):
                     pass
                 #####
                 # Lines below could reveal a password if it is passed as an
@@ -1065,7 +1065,7 @@ class RunWith(object):
                                 str(output) + "\"\n" + str(self.stdout) + "\n")
             return self.stdout, self.stderr, self.retcode
 
-##############################################################################
+#############################################################################
 
 class RunThread(threading.Thread):
     """
