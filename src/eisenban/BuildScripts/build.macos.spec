@@ -6,7 +6,10 @@
 a = Analysis(
     ['eisenban.py'],
     pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', './packenv/bin', './packenv/include', './packenv/lib/python3.13/site-packages'],
-    binaries=[],
+    binaries=[
+        ('/System/Library/Frameworks/Tk.framework', 'Tk.framework'),
+        ('/System/Library/Frameworks/Tcl.framework', 'Tcl.framework')
+    ],
     datas=[("resources/font/*.ttf",   "./resources/font"), 
            ("resources/font/*.txt",   "./resources/font"), 
            ("resources/img/*.png",    "./resources/img"), 
