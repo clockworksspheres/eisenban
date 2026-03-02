@@ -1,4 +1,3 @@
-from eisenban_objects import Board, Card, Color, Panel
 import logging
 import os
 import sys
@@ -10,6 +9,9 @@ sys.path.append("..")
 
 from lib.singleton import Singleton
 '''
+
+from eisenban_objects import Board, Card, Color, Panel
+
 
 class SingletonMeta(type):
     _instances = {}

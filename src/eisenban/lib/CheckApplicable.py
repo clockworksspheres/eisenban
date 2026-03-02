@@ -9,10 +9,10 @@ try:
 except ModuleNotFoundError as err:
     from packaging.version import parse as LooseVersion
 
-sys.path.append("../../")
+sys.path.append("./../")
 
 #--- non-native python libraries in this source tree
-from eisenban.lib.loggers import LogPriority
+from lib.loggers import LogPriority
 
 
 class CheckApplicable(object):

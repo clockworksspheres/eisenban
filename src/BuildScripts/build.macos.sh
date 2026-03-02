@@ -14,12 +14,14 @@ actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
 
    brew install python-tk
-
    python -m venv packenv
    source packenv/bin/activate
    pip install --upgrade pip
+   pip install firebase-admin
+   pip install pyside6
+   pip install pyinstaller
    # pip install --force-reinstall --no-cache-dir Tk
-   pip install --force-reinstall --no-cache-dir PySide6 PyInstaller
+   # pip install --force-reinstall --no-cache-dir PyInstaller
    # pip install --upgrade PyInstaller pyinstaller-hooks-contrib
 else
    source packenv/bin/activate
