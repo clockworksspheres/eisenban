@@ -21,11 +21,11 @@ import subprocess
 from subprocess import Popen, PIPE
 from subprocess import SubprocessError as SubprocessError
 
-sys.path.append("../..")
+sys.path.append("./..")
 
-from eisenban.lib.loggers import CyLogger
-from eisenban.lib.loggers import LogPriority as lp
-from eisenban.lib.loggers import MockLogger
+from lib.loggers import CyLogger
+from lib.loggers import LogPriority as lp
+from lib.loggers import MockLogger
 
 
 class OSNotValidForRunWith(BaseException):

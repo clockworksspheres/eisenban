@@ -10,13 +10,13 @@ from datetime import datetime
 
 #####
 # Include the parent project directory in the PYTHONPATH
-appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
-sys.path.append(appendDir)
-
+#appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
+#sys.path.append(appendDir)
+sys.path.append("./..")
 #--- non-native python libraries in this source tree
-from eisenban.lib.loggers import CyLogger
-from eisenban.lib.loggers import LogPriority as lp
-from eisenban.lib.run_commands import RunWith, SetCommandTypeError
+from lib.loggers import CyLogger
+from lib.loggers import LogPriority as lp
+from lib.run_commands import RunWith, SetCommandTypeError
 
 
 class test_run_commands(unittest.TestCase):
