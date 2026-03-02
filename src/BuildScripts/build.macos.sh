@@ -5,10 +5,9 @@
 # amoung others... including
 # https://pyinstaller.org/en/stable/
 
-#if doesn't the packenv directory doesn't exist...
-
 pushd ..
 
+#if doesn't the packenv directory doesn't exist...
 directory="./packenv"
 actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
@@ -31,11 +30,11 @@ export PATH=".":$PATH
 # DOES NOT WORK - need to figure out why...
 #./gen_qrc-0.0.3.py
 
-#pyside6-rcc eisenban.qrc -o eisenban_rc.py
+cp BuildScripts/build.macos.spec eisenban
 
-pushd ui; python3 compile_uifiles.py; popd
+pushd eisenban
 
-cp BuildScripts/build.macos.spec .
+#pushd ui; python3 compile_uifiles.py; popd
 
 echo "----- start pyinstaller --clean -y eisenbuild.macos.spec -----"
 pyinstaller --clean -y build.macos.spec
@@ -50,5 +49,6 @@ cp -a resources dist/eisenban.app/Contents
 cp -a dist/eisenban.app ~/Desktop
 open ~/Desktop/eisenban.app
 
+popd
 popd
 
