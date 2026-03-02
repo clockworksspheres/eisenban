@@ -33,9 +33,13 @@ export PATH=".":$PATH
 
 #pyside6-rcc eisenban.qrc -o eisenban_rc.py
 
-pushd ui; python3 compile_uifiles.py; popd
+# pushd ui; python3 compile_uifiles.py; popd
 
-cp BuildScripts/build.macos.spec .
+cp BuildScripts/build.macos.spec eisenban
+
+pushd eisenban
+
+#pushd ui; python3 compile_uifiles.py; popd
 
 echo "----- start pyinstaller --clean -y eisenbuild.macos.spec -----"
 pyinstaller --clean -y build.macos.spec
@@ -50,5 +54,6 @@ cp -a resources dist/eisenban.app/Contents
 cp -a dist/eisenban.app ~/Desktop
 open ~/Desktop/eisenban.app
 
+popd
 popd
 
