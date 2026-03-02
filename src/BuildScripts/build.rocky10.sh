@@ -5,29 +5,40 @@
 # amoung others... including
 # https://pyinstaller.org/en/stable/
 
-#if doesn't the packenv directory doesn't exist...
 pushd ..
 
+#if doesn't the packenv directory doesn't exist...
 directory="./packenv"
 actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
-   python3 -m venv packenv
 
+   sudo apt install python3-tk
+   python -m venv packenv
+   source packenv/bin/activate
+   pip install --upgrade pip
+   pip install firebase-admin
+   pip install pyside6
+   pip install pyinstaller
+   # pip3 install PySide6 PyInstaller
+   # pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+
+else
+   source packenv/bin/activate
 fi
 source ./packenv/bin/activate
 
-pip3 install PySide6 PyInstaller
-pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
+cp BuildScripts/build.linux.py313.onefile.spec eisenban/build.linux.py313.onefile.spec
 
-cp build.linux.py312.onefile.spec BuildScripts/build.linux.py312.onefile.spec .
+pushd eisenban
 
-pyinstaller --clean -y build.linux.py312.onefile.spec
-pyinstaller -y build.linux.py312.onefile.spec
+pyinstaller --clean -y build.linux.py313.onefile.spec
+pyinstaller -y build.linux.py313.onefile.spec
 
-rm build.linux.py312.onefile.spec
+rm build.linux.py313.onefile.spec
 
 sudo cp -a dist/eisenban /usr/local/bin
 
+popd
 popd
 
