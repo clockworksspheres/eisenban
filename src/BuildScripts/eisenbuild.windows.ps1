@@ -7,8 +7,8 @@
 # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 # powershell -File ".\eisenban.windows.ps1"
 
-#if doesn't exist...
-# cd to the eisenban source root
+pushd ..
+
 
 $FolderPath = ".\packenv"
 if (!(Test-Path -Path $FolderPath -PathType Container)) {
@@ -16,12 +16,19 @@ if (!(Test-Path -Path $FolderPath -PathType Container)) {
    python3 -m venv packenv
    .\packenv\Scripts\Activate.ps1
 
-   pip3 install PySide6 PyInstaller
-   pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+   pip install --upgrade pip
+   pip install firebase-admin   
+   pip3 install PySide6 
+   pip3 install PyInstaller
+   # pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
 
 } else {
     .\packenv\Scripts\Activate.ps1
 }
+
+cp BuildScripts/eisenbuild.windows11.onefile.spec eisenban
+
+pushd eisenban
 
 #####
 # Do every time, to make sure everyone knows source of E.ico icon, so 
@@ -31,5 +38,8 @@ cp .\resources\icons\Barkerbaggies-Bag-O-Tiles-E.ico .\resources\icons\E.ico
 pyinstaller --clean -y eisenbuild.windows11.onefile.spec
 pyinstaller -y eisenbuild.windows11.onefile.spec
 
+rm eisenbuild.windows11.onefile.spec
 
+popd
+popd
 
