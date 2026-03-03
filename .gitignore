@@ -144,3 +144,6 @@ dmypy.json
 # Easter egg generated file
 /src/resources/img/rainydevil.png
 plan/Kanbaru.ldb
+
+.obsidian/workspace.json
+*obsidian/workspace.json

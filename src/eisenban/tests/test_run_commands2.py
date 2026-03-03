@@ -33,7 +33,7 @@ from subprocess import SubprocessError
 from unittest.mock import MagicMock, Mock, call, patch
 
 import sys
-sys.path.append("./..")
+sys.path.append("..")
 
 # ── import the module under test ──────────────────────────────────────────────
 # Adjust the import path if your project layout differs.
