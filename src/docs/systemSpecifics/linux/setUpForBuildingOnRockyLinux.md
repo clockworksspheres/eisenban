@@ -10,8 +10,8 @@ sudo dnf install git
 sudo dnf-install net-tools
 sudo dnf install python3
 sudo dnf install python3-pip
-sudo dnf install python3-tkinter
-pip install pytest
+sudo dnf install python3-virtualenv
+#sudo dnf install python3-tkinter
 ```
 
 # Installing useful apps with dnf
