@@ -26,7 +26,7 @@ except ModuleNotFoundError:
     response = messagebox.askyesno(
         "Error: Module Not Found",
         "Required modules not found. Would you like to install them now?\n\n"
-        "Required modules: PySide6, firebase-admin"
+        "Required modules: PySide6"
     )
 
     if response:
