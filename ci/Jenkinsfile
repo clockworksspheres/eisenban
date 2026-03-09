@@ -13,7 +13,7 @@ pipeline {
                     stages {
                         stage('macos Build') { 
                             steps {
-                                dir('src/eisenban/BuildScripts') {
+                                dir('src/BuildScripts') {
                                     sh './build.macos.sh' 
                                 }
                             }
@@ -41,7 +41,7 @@ pipeline {
                     stages {
                         stage('rocky10 Build') { 
                             steps {
-                                dir('src/eisenban/BuildScripts') {
+                                dir('src/BuildScripts') {
                                     sh './build.ubuntu2404.sh' 
                                 } 
                             }
@@ -69,7 +69,7 @@ pipeline {
                     stages {
                         stage('debian Build') { 
                             steps {
-                                dir('src/eisenban/BuildScripts') {
+                                dir('src/BuildScripts') {
                                     sh './build.ubuntu2404.sh' 
                                 } 
                             }
