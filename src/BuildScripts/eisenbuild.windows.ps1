@@ -17,7 +17,6 @@ if (!(Test-Path -Path $FolderPath -PathType Container)) {
    .\packenv\Scripts\Activate.ps1
 
    pip install --upgrade pip
-   pip install firebase-admin   
    pip3 install PySide6 
    pip3 install PyInstaller
    # pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
