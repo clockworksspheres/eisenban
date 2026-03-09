@@ -5,13 +5,13 @@
 
 a = Analysis(
     ['eisenban.py'],
-    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', './packenv/bin', './packenv/include', './packenv/lib/python3.13/site-packages'],
+    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons'],
     binaries=[],
     datas=[("resources/font/*.ttf",   "./resources/font"), 
            ("resources/font/*.txt",   "./resources/font"), 
            ("resources/img/*.png",    "./resources/img"), 
            ("resources/icons/*.icns",  "./resources/icns")], 
-    hiddenimports=['python3','python*','PySide6.*'],
+    hiddenimports=[ ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -41,4 +41,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    onfile=True,
 )

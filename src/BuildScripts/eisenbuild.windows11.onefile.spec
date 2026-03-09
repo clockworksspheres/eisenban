@@ -7,13 +7,13 @@
 
 a = Analysis(
     ['eisenban.py'],
-    pathex=['.', '.\\ui', '.\\ui\\bkp', '.\\resources\\font', '.\\resources\\img', '.\\resources\\icons', '.\\packenv\\bin', '.\\packenv\\include', '.\\packenv\\lib\\python3.12\\site-packages'],
+    pathex=['.', '.\\ui', '.\\ui\\bkp', '.\\resources\\font', '.\\resources\\img', '.\\resources\\icons', '.\\packenv\\bin'],
     binaries=[],
     datas=[("resources/font/*.ttf",   "./resources/font"), 
            ("resources/font/*.txt",   "./resources/font"), 
            ("resources/img/*.png",    "./resources/img"), 
            ("resources/icons/*.ico",  "./resources/icons")], 
-    hiddenimports=['python3','python*','PySide6'],
+    hiddenimports=[ ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -43,4 +43,5 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon='.\\resources\icons\E.ico',
+    onefile=True,
 )
