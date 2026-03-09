@@ -5,16 +5,13 @@
 
 a = Analysis(
     ['eisenban.py'],
-    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons', './packenv/bin', './packenv/include', './packenv/lib/python3.13/site-packages'],
-    binaries=[
-        ('/System/Library/Frameworks/Tk.framework', 'Tk.framework'),
-        ('/System/Library/Frameworks/Tcl.framework', 'Tcl.framework')
-    ],
+    pathex=['.', './ui', './ui/bkp', './resources/font', './resources/img', './resources/icons' ],
+    binaries=[ ],
     datas=[("resources/font/*.ttf",   "./resources/font"), 
            ("resources/font/*.txt",   "./resources/font"), 
            ("resources/img/*.png",    "./resources/img"), 
            ("resources/icons/*.icns",  "./resources/icns")], 
-    hiddenimports=['python3','python*','PySide6.*'],
+    hiddenimports=[ ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -27,20 +24,22 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
+    a.binaries,
+    a.datas,
     [],
-    exclude_binaries=True,
     name='eisenban',
-    debug=True,
+    debug=False,
     bootloader_ignore_signals=False,
-    strip=True,
-    upx=False,
+    strip=False,
+    upx=True,
     runtime_tmpdir="/tmp",
-    console=False,
+    console=True,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    onefile=True,
 )
 coll = COLLECT(
     exe,
@@ -52,7 +51,7 @@ coll = COLLECT(
     name='org.clockworksspheres.eisenban',
 )
 app = BUNDLE(
-    coll,
+    exe,
     name='eisenban.app',
     icon='E.icns',
     bundle_identifier='org.clockworksspheres.eisenban',

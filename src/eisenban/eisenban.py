@@ -17,7 +17,7 @@ try:
     from PySide6.QtWidgets import QApplication, QMainWindow
     from db import Table
     from ui.main import MainScreen
-    from ui.welcome import WelcomeScreen
+    #from ui.welcome import WelcomeScreen
     from utils import get_current_directory
 except ModuleNotFoundError:
     logging.warning("Required modules not found. Prompting user to install...")

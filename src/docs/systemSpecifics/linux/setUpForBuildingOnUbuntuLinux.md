@@ -41,6 +41,7 @@ sudo snap install obsidian --classic # does not work on arm platforms
 sudo snap install drawio # does not work on arm platforms
 sudo snap install zotero-snap # does not work on arm platforms, must be executed as zotero-snap
 ```
+
 # Installing
 
 ```
