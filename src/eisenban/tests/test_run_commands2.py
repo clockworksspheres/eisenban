@@ -33,7 +33,12 @@ from subprocess import SubprocessError
 from unittest.mock import MagicMock, Mock, call, patch
 
 import sys
-sys.path.append("..")
+from pathlib import Path
+
+# Get the parent directory of the current file's parent directory
+#  and add it to sys.path
+parent_dir = Path(__file__).parent.parent
+sys.path.append(str(parent_dir))
 
 # ── import the module under test ──────────────────────────────────────────────
 # Adjust the import path if your project layout differs.
