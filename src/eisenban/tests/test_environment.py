@@ -10,12 +10,12 @@ import sys
 import unittest
 import traceback
 import tracemalloc
+from pathlib import Path
 
-#####
-# Include the parent project directory in the PYTHONPATH
-#appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-1])
-appendDir = ("./..")
-sys.path.append(appendDir)
+# Get the parent directory of the current file's parent directory
+#  and add it to sys.path
+parent_dir = Path(__file__).parent.parent
+sys.path.append(str(parent_dir))
 
 # --- Non-native python libraries in this source tree
 import lib.environment as environment
