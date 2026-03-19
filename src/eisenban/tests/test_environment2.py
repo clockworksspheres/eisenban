@@ -51,12 +51,8 @@ def make_env():
         env.euid = 1000
         env.homedir = "/home/testuser"
         env.test_mode = False
-        env.script_path = "/opt/stonix"
-        env.resources_path = "/opt/stonix/stonix_resources"
-        env.rules_path = "/opt/stonix/stonix_resources/rules"
+        env.script_path =  parent_dir
         env.log_path = "/var/log"
-        env.icon_path = "/opt/stonix/stonix_resources/gfx"
-        env.conf_path = "/etc/stonix.conf"
         env.installmode = False
         env.verbosemode = False
         env.debugmode = False
@@ -491,40 +487,6 @@ class TestNumRules(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
-class TestCollectPaths(unittest.TestCase):
-
-    def setUp(self):
-        self.env = make_env()
-
-    @patch("sys.argv", ["/opt/stonix/stonix.py"])
-    def test_paths_root_user(self):
-        self.env.euid = 0
-        with patch("lib.environment.os.path.realpath", side_effect=lambda p: p):
-            self.env.collectpaths()
-        self.assertEqual(self.env.log_path, "/var/log")
-        self.assertEqual(self.env.conf_path, "/etc/stonix.conf")
-
-    @patch("sys.argv", ["/some/other/script.py"])
-    def test_paths_non_root_user(self):
-        self.env.euid = 1000
-        self.env.homedir = "/home/alice"
-        with patch("lib.environment.os.path.realpath", side_effect=lambda p: p), \
-             patch("lib.environment.os.path.exists", return_value=False):
-            self.env.collectpaths()
-        self.assertIn("/home/alice", self.env.log_path)
-
-    @patch("sys.argv", ["/some/path/stonixtest.py", "/opt/stonix/stonixtest.py"])
-    def test_test_mode_detected(self):
-        self.env.euid = 1000
-        self.env.homedir = "/home/alice"
-        with patch("lib.environment.os.path.realpath", side_effect=lambda p: p), \
-             patch("lib.environment.os.path.exists", return_value=True):
-            self.env.collectpaths()
-        self.assertTrue(self.env.test_mode)
-
-
-# ---------------------------------------------------------------------------
-
 class TestPathGetters(unittest.TestCase):
 
     def setUp(self):
@@ -533,25 +495,6 @@ class TestPathGetters(unittest.TestCase):
     def test_get_test_mode(self):
         self.env.test_mode = True
         self.assertTrue(self.env.get_test_mode())
-
-    def test_get_script_path(self):
-        self.assertEqual(self.env.get_script_path(), "/opt/stonix")
-
-    def test_get_icon_path(self):
-        self.assertEqual(self.env.get_icon_path(), "/opt/stonix/stonix_resources/gfx")
-
-    def test_get_rules_path(self):
-        self.assertEqual(self.env.get_rules_path(), "/opt/stonix/stonix_resources/rules")
-
-    def test_get_config_path(self):
-        self.assertEqual(self.env.get_config_path(), "/etc/stonix.conf")
-
-    def test_get_log_path(self):
-        self.assertEqual(self.env.get_log_path(), "/var/log")
-
-    def test_get_resources_path(self):
-        self.assertEqual(self.env.get_resources_path(), "/opt/stonix/stonix_resources")
-
 
 # ---------------------------------------------------------------------------
 
@@ -562,7 +505,7 @@ class TestCollectInfo(unittest.TestCase):
         env = make_env()
         methods = [
             "discoveros", "setosfamily", "guessnetwork",
-            "collectpaths", "determinefismacat", "setsystemtype",
+            "determinefismacat", "setsystemtype",
         ]
         mocks = {m: MagicMock() for m in methods}
         with patch.multiple(env, **mocks):

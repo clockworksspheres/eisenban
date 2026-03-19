@@ -1,11 +1,5 @@
 #!/usr/bin/env -S python3 -u
 
-###############################################################################
-#                                                                             #
-
-#                                                                             #
-###############################################################################
-
 #--- Native python libraries
 import os
 import re
@@ -17,8 +11,12 @@ import platform
 import time
 import traceback
 import pathlib
+from pathlib import Path
 
-sys.path.append("./..")
+# Get the parent directory of the current file's parent directory
+#  and add it to sys.path
+parent_dir = Path(__file__).parent.parent
+sys.path.append(str(parent_dir))
 
 from config import DEFAULT_LOG_LEVEL, LogPriority
 
@@ -36,6 +34,7 @@ except ImportError or AssertionError:
 
 
 # FISMACAT must be one of ['high', 'medium', 'low']
+FISMACAT = globals().get("FISMACAT", "low")
 
 try:
     from lib.localize import FISMACAT
@@ -85,7 +84,7 @@ class Environment(object):
         self.systemtype = ''
         self.numrules = 0
         self.version = VERSION
-        if sys.platform.startswith("win32"):
+        if sys.platform.lower().startswith("win32"):
             self.euid = win32api.GetUserName()
             currpwd = os.environ['USERPROFILE']
         else:
@@ -132,15 +131,15 @@ class Environment(object):
         cmd = ""
         self.systemtype = ""
 
-        # buld the command
+        # build the command
         for cl in cmdlocs:
             if os.path.exists(cl):
                 cmdbase = cl
         if cmdbase:
             cmd = cmdbase + " -p1"
         elif not cmdbase:
-            if  sys.platform.startswith('win32'):
-                self.sytemtype = 'windows'
+            if  sys.platform.lower().startswith('win32'):
+                self.systemtype = 'windows'
                 if self.systemtype not in validtypes and DEFAULT_LOG_LEVEL >= LogPriority["VERBOSE"]:
                     print(str(__name__) + ":This system is based on an unknown architecture")
                 elif DEFAULT_LOG_LEVEL >= LogPriority["VERBOSE"]:
@@ -370,7 +369,6 @@ class Environment(object):
         self.setosfamily()
         # print 'Environment running guessnetwork'
         self.guessnetwork()
-        self.collectpaths()
         self.determinefismacat()
         self.setsystemtype()
 
@@ -481,11 +479,13 @@ class Environment(object):
 
         elif re.match(r'win32$', sys.platform):
             try:
-                platform_data = platform.system()
-                description = platform_data[0]
-                release = platform_data[2]
-                build = platform_data[3]
-                opsys = str(description).strip() + ' ' + str(release) + ' ' + str(build) 
+                description = platform.system()
+                self.operatingsystem = description
+                platform_data = platform.win32_ver()
+                self.release = platform_data[0]
+                self.osversion = self.release
+                self.build = platform_data[1]
+                opsys = str(description).strip() + ' ' + str(self.release) + ' ' + str(self.build) 
             except Exception as err:
                 print(traceback.format_exc())
                 raise()
@@ -986,7 +986,7 @@ class Environment(object):
         """
         Returns a bool indicating whether or not the little snitch program is
         active. Little snitch is a firewall utility used on Mac systems and can
-        interfere with STONIX operations.
+        interfere with project operations.
         
         @return: bool - true if little snitch is running
         """
@@ -1006,92 +1006,6 @@ class Environment(object):
                     break
         return issnitchactive
 
-    def collectpaths(self):
-        """
-        Determine how stonix is run and return appropriate paths for:
-
-        icons
-        rules
-        conf
-        logs
-
-        
-        """
-        try:
-            script_path_zero = sys._MEIPASS
-        except AttributeError:
-            script_path_zero = os.path.realpath(sys.argv[0])
-
-        try:
-            script_path_one = os.path.realpath(sys.argv[1])
-        except IndexError:
-            script_path_one = ""
-
-        self.test_mode = False
-        #####
-        # Check which argv variable has the script name -- required to allow
-        # for using the eclipse debugger.
-        if re.search("stonix.py$", script_path_zero) or \
-           re.search("stonix$", script_path_zero):
-            #####
-            # Run normally
-            self.script_path = os.path.dirname(os.path.realpath(sys.argv[0]))
-        else:
-            #####
-            # Run with Eclipse debugger -- Eclipse debugger will never try
-            # to run the "stonix" binary blob created by pyinstaller,
-            # so don't include here.
-            # print "DEBUG: Environment.collectpaths: unexpected argv[0]" + \
-            #       ": " + str(sys.argv[0])
-            if re.search("stonix.py$", script_path_one) or \
-               re.search("stonixtest.py$", script_path_one):
-                script = script_path_one.split("/")[-1]
-                script_path = "/".join(script_path_one.split("/")[:-1])
-
-                if re.match("^stonixtest.py$", script) and \
-                   os.path.exists(script_path_one) and \
-                   os.path.exists(os.path.join(script_path, "stonixtest.py")) and \
-                   os.path.exists(os.path.join(script_path, "stonix.py")):
-                    self.test_mode = True
-                    self.script_path = os.path.dirname(os.path.realpath(sys.argv[1]))
-                else:
-                    print("ERROR: Cannot run using this method")
-            else:
-                #print "DEBUG: Cannot find appropriate path, building paths for current directory"
-                try:
-                    self.script_path = sys._MEIPASS
-                except AttributeError:
-                    self.script_path = os.path.dirname(os.path.realpath(sys.argv[0]))
-
-        #####
-        # Set the rules & stonix_resources paths
-        # ##
-        # create the self.resources_path
-        self.resources_path = os.path.join(self.script_path,
-                                           "stonix_resources")
-        # ##
-        # create the self.rules_path
-        self.rules_path = os.path.join(self.script_path,
-                                       "stonix_resources",
-                                       "rules")
-        #####
-        # Set the log file path
-        if self.geteuid() == 0:
-            self.log_path = '/var/log'
-        else:
-            userpath = self.geteuidhome()
-            self.log_path = os.path.join(userpath, '.stonix')
-            if userpath == '/dev/null':
-                self.log_path = '/tmp'
-
-        #####
-        # Set the icon path
-        self.icon_path = os.path.join(self.resources_path, 'gfx')
-
-        #####
-        # Set the configuration file path
-        self.conf_path = "/etc/stonix.conf"
-
     def determinefismacat(self):
         '''
         This method pulls the fimsa categorization from the localize.py
@@ -1102,10 +1016,12 @@ class Environment(object):
         @return: string - low, med, high
         
         '''
-        if FISMACAT not in ['high', 'med', 'low']:
+        value = globals().get("FISMACAT", "low")
+
+        if value not in ['high', 'med', 'low']:
             raise ValueError('FISMACAT invalid: valid values are low, med, high')
-        else:
-            return FISMACAT
+
+        return FISMACAT
 
     def get_test_mode(self):
         """
@@ -1114,54 +1030,6 @@ class Environment(object):
         
         """
         return self.test_mode
-
-    def get_script_path(self):
-        """
-        Getter for the script path
-
-        
-        """
-        return self.script_path
-
-    def get_icon_path(self):
-        """
-        Getter for the icon path
-
-        
-        """
-        return self.icon_path
-
-    def get_rules_path(self):
-        """
-        Getter for rules path
-
-        
-        """
-        return self.rules_path
-
-    def get_config_path(self):
-        """
-        Getter for conf file path
-
-        
-        """
-        return self.conf_path
-
-    def get_log_path(self):
-        """
-        Getter for log path
-
-        
-        """
-        return self.log_path
-
-    def get_resources_path(self):
-        """
-        Getter for stonix resources directory
-
-        
-        """
-        return self.resources_path
 
     def getruntime(self):
         '''
