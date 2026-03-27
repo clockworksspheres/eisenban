@@ -13,13 +13,15 @@ pushd ..
 $FolderPath = ".\packenv"
 if (!(Test-Path -Path $FolderPath -PathType Container)) {
    
-   python3 -m venv packenv
+   python -m venv packenv
    .\packenv\Scripts\Activate.ps1
 
    pip install --upgrade pip
-   pip3 install PySide6 
-   pip3 install PyInstaller
-   # pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+   pip install PySide6 
+   pip install PyInstaller
+   pip install pyteset
+   pip install pywin32
+   # pip install --upgrade PyInstaller pyinstaller-hooks-contrib
 
 } else {
     .\packenv\Scripts\Activate.ps1

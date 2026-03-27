@@ -56,26 +56,30 @@ class test_run_commands(unittest.TestCase):
         command = ['/bin/ls', 1, '.']
         self.assertRaises(SetCommandTypeError,
                           self.rw.setCommand, [command])
-
+    
+    @unittest.skipIf(sys.platform.lower().startswith("win"), "doesn't work on Windows, need to write windows specific tests")
     def test_communicate(self):
         """
         """
         self.rw.__init__(self.logger)
         self.logger.log(lp.DEBUG, "=============== Starting test_communicate...")
 
-        self.rw.setCommand('/bin/ls /var/spool', myshell=True)
-        _, _, retval = self.rw.communicate(silent=False)
-        self.assertEqual(retval, 0,
-                          "Valid [] command execution failed: " +
-                          '/bin/ls /var/spool --- retval: ' + str(retval))
-        self.rw.setCommand(['/bin/ls', '-l', '/usr/local'])
-        _, _, retval = self.rw.communicate(silent=False)
-        self.assertEqual(retval, 0,
+        if not sys.platform.lower().startswith("win32"):
+            self.rw.setCommand('/bin/ls /var/spool', myshell=True)
+            _, _, retval = self.rw.communicate(silent=False)
+            self.assertEqual(retval, 0,
+                              "Valid [] command execution failed: " +
+                              '/bin/ls /var/spool --- retval: ' + str(retval))
+
+            self.rw.setCommand(['/bin/ls', '-l', '/usr/local'])
+            _, _, retval = self.rw.communicate(silent=False)
+            self.assertEqual(retval, 0,
                           "Valid [] command execution failed: " +
                           '/bin/ls /var/spool --- retval: ' + str(retval))
 
         self.logger.log(lp.DEBUG, "=============== Ending test_communicate...")
 
+    @unittest.skipIf(sys.platform.lower().startswith("win"), "doesn't work on Windows, need to write windows specific tests")
     def test_wait(self):
         """
         """
@@ -168,6 +172,8 @@ class test_run_commands(unittest.TestCase):
             ping = "/sbin/ping"
         elif os.path.exists('/bin/ping'):
             ping = "/bin/ping"
+        elif os.path.exists("C:\\WINDOWS\\system32\\PING.EXE"):
+            ping = "C:\\WINDOWS\\system32\\PING.EXE"
 
         self.rw.setCommand([ping, '-c', '12', '8.8.8.8'])
         try:
