@@ -18,7 +18,7 @@ from pathlib import Path
 parent_dir = Path(__file__).parent.parent
 sys.path.append(str(parent_dir))
 
-from config import DEFAULT_LOG_LEVEL, LogPriority
+from lib.config import DEFAULT_LOG_LEVEL, LogPriority
 
 if sys.platform.startswith('win32'):
     import win32api
