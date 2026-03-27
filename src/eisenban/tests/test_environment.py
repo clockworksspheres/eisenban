@@ -19,7 +19,7 @@ sys.path.append(str(parent_dir))
 
 # --- Non-native python libraries in this source tree
 import lib.environment as environment
-import config
+from lib import config
 
 if sys.platform.startswith('win32'):
     import win32api
@@ -41,7 +41,7 @@ class test_environment(unittest.TestCase):
     def testGetostype(self):
         tracemalloc.start(10)
         validtypes = 'Red Hat Enterprise Linux|AlmaLinux|Rocky Linux|Debian|Ubuntu|CentOS|Fedora|' + \
-                     'openSUSE|Mac OS X|macOS|Windows'
+                     'openSUSE|Mac OS X|macOS|Windows|macOS'
         print('OS Type: ' + str(self.to.getostype()))
         self.assertTrue(re.search(validtypes, self.to.getostype()))
 

@@ -64,7 +64,7 @@ def make_env():
 # ===========================================================================
 # Test Cases
 # ===========================================================================
-
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestEnvironmentInit(unittest.TestCase):
     """Tests for __init__ wiring."""
 
@@ -93,6 +93,7 @@ class TestEnvironmentInit(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestModeSettersGetters(unittest.TestCase):
 
     def setUp(self):
@@ -130,6 +131,7 @@ class TestModeSettersGetters(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestSimpleGetters(unittest.TestCase):
 
     def setUp(self):
@@ -181,6 +183,7 @@ class TestSimpleGetters(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestOsVersionParsing(unittest.TestCase):
 
     def setUp(self):
@@ -213,6 +216,7 @@ class TestOsVersionParsing(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestSetOsFamily(unittest.TestCase):
 
     def setUp(self):
@@ -245,6 +249,7 @@ class TestSetOsFamily(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestDiscoverOs(unittest.TestCase):
 
     def setUp(self):
@@ -307,6 +312,7 @@ class TestDiscoverOs(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestSetSystemType(unittest.TestCase):
 
     def setUp(self):
@@ -344,6 +350,7 @@ class TestSetSystemType(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestGuessNetwork(unittest.TestCase):
 
     def setUp(self):
@@ -369,6 +376,7 @@ class TestGuessNetwork(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestMatchIp(unittest.TestCase):
 
     def setUp(self):
@@ -397,6 +405,7 @@ class TestMatchIp(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestGetAllIps(unittest.TestCase):
 
     def setUp(self):
@@ -417,6 +426,7 @@ class TestGetAllIps(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestFismaCat(unittest.TestCase):
 
     def setUp(self):
@@ -463,6 +473,7 @@ class TestFismaCat(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestNumRules(unittest.TestCase):
 
     def setUp(self):
@@ -487,6 +498,7 @@ class TestNumRules(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestPathGetters(unittest.TestCase):
 
     def setUp(self):
@@ -498,6 +510,7 @@ class TestPathGetters(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestCollectInfo(unittest.TestCase):
     """collectinfo() should call each discovery method in order."""
 
@@ -516,6 +529,7 @@ class TestCollectInfo(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestIsmobile(unittest.TestCase):
 
     def setUp(self):
@@ -541,6 +555,7 @@ class TestIsmobile(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestIssnitchActive(unittest.TestCase):
 
     def setUp(self):
@@ -569,6 +584,7 @@ class TestIssnitchActive(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestGetSystemSerialNumber(unittest.TestCase):
 
     def setUp(self):
@@ -594,6 +610,7 @@ class TestGetSystemSerialNumber(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestGetSysUuid(unittest.TestCase):
 
     def setUp(self):
@@ -610,6 +627,7 @@ class TestGetSysUuid(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestGetDefaultIp(unittest.TestCase):
 
     def setUp(self):
@@ -638,6 +656,7 @@ class TestGetDefaultIp(unittest.TestCase):
 
 # ---------------------------------------------------------------------------
 
+@unittest.skipIf(sys.platform.lower().startswith("win32"), "Tests not applicable to Windows")
 class TestRunWithIntegration(unittest.TestCase):
     """
     Verify Environment delegates commands to RunWith correctly,
