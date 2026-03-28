@@ -161,7 +161,6 @@ class test_run_commands(unittest.TestCase):
 
         self.logger.log(lp.DEBUG, "=============== Completed test_wait...")
 
-    @unittest.skipIf(sys.platform.lower().startswith("win"), "needs to be re=writtent to work on windows as well")
     def test_timeout(self):
         """
         """

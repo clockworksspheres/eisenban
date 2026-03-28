@@ -24,12 +24,16 @@ import datetime
 import traceback
 import logging
 import logging.handlers
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).parent.parent))
-
+#####
+# Include the parent project directory in the PYTHONPATH - next three lines no good on Windows..
+# appendDir = "/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-2])
+# sys.path.append(appendDir)
+# sys.path.append("/".join(os.path.abspath(os.path.dirname(__file__)).split('/')[:-2]))
+sys.path.append("./..")
+# from eisenban.lib.singleton import Singleton
+# from eisenban.config import DEFAULT_LOG_LEVEL
 from lib.singleton import Singleton
-from lib.config import DEFAULT_LOG_LEVEL
+from config import DEFAULT_LOG_LEVEL
 
 #from logging.handlers import RotatingFileHandler
 ###############################################################################
