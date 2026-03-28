@@ -10,20 +10,14 @@ import platform
 import unittest
 import traceback
 import tracemalloc
-from pathlib import Path
-
-# Get the parent directory of the current file's parent directory
-#  and add it to sys.path
-parent_dir = Path(__file__).parent.parent
-sys.path.append(str(parent_dir))
 
 # --- Non-native python libraries in this source tree
-import lib.environment as environment
-from lib import config
+import eisenban.lib.environment as environment
+from eisenban.lib import config
 
 if sys.platform.startswith('win32'):
     import win32api
-    from lib.windows_utilities import is_windows_process_elevated
+    from eisenban.lib.windows_utilities import is_windows_process_elevated
 
 else:
     import pwd

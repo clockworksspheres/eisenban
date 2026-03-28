@@ -12,13 +12,8 @@ import unittest
 from unittest.mock import (
     MagicMock, patch, PropertyMock, call, mock_open
 )
-from pathlib import Path
 
-# Ensure project root is on sys.path so lib.environment can be imported
-parent_dir = Path(__file__).parent.parent
-sys.path.append(str(parent_dir))
-
-import lib.environment as env_module
+import eisenban.lib.environment as env_module
 Environment = env_module.Environment
 
 
@@ -51,7 +46,6 @@ def make_env():
         env.euid = 1000
         env.homedir = "/home/testuser"
         env.test_mode = False
-        env.script_path =  parent_dir
         env.log_path = "/var/log"
         env.installmode = False
         env.verbosemode = False

@@ -6,12 +6,7 @@ from unittest.mock import patch, MagicMock
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QKeyEvent
 
-from pathlib import Path
-
-parent_dir = Path(__file__).parent.parent
-sys.path.append(str(parent_dir))
-
-import utils
+import eisenban.utils
 
 
 # -------------------------------------------------
@@ -33,7 +28,7 @@ class TestUtils(unittest.TestCase):
         class Base:
             def foo(self): pass
 
-        @utils.overrides(Base)
+        @eisenban.utils.overrides(Base)
         def foo():
             return "ok"
 
@@ -44,7 +39,7 @@ class TestUtils(unittest.TestCase):
             def foo(self): pass
 
         with self.assertRaises(AssertionError):
-            @utils.overrides(Base)
+            @eisenban.utils.overrides(Base)
             def bar():
                 pass
 
@@ -53,13 +48,13 @@ class TestUtils(unittest.TestCase):
     # -------------------------
     def test_hex_to_rgba(self):
         self.assertEqual(
-            utils.hex_to_rgba("rgb(1,2,3)"),
+            eisenban.utils.hex_to_rgba("rgb(1,2,3)"),
             "rgba(1,2,3, 255)"
         )
 
     def test_hex_to_rgba_multiple(self):
         self.assertEqual(
-            utils.hex_to_rgba("rgb(10,20,30)"),
+            eisenban.utils.hex_to_rgba("rgb(10,20,30)"),
             "rgba(10,20,30, 255)"
         )
 
@@ -68,25 +63,25 @@ class TestUtils(unittest.TestCase):
     # -------------------------
     def test_modify_hex_color_lighten(self):
         self.assertEqual(
-            utils.modify_hex_color("#000000", 30),
+            eisenban.utils.modify_hex_color("#000000", 30),
             "#1e1e1e"
         )
 
     def test_modify_hex_color_clamp_upper(self):
         self.assertEqual(
-            utils.modify_hex_color("#ffffff", 30),
+            eisenban.utils.modify_hex_color("#ffffff", 30),
             "#ffffff"
         )
 
     def test_modify_hex_color_clamp_lower(self):
         self.assertEqual(
-            utils.modify_hex_color("#101010", -20),
+            eisenban.utils.modify_hex_color("#101010", -20),
             "#000000"
         )
 
     def test_modify_hex_color_mid(self):
         self.assertEqual(
-            utils.modify_hex_color("#112233", 10),
+            eisenban.utils.modify_hex_color("#112233", 10),
             "#1b2c3d"
         )
 
@@ -95,36 +90,36 @@ class TestUtils(unittest.TestCase):
     # -------------------------
     @patch.object(sys, "frozen", False, create=True)
     def test_get_current_directory_normal(self):
-        path = utils.get_current_directory()
+        path = eisenban.utils.get_current_directory()
         self.assertTrue(os.path.isabs(path))
 
     @patch.object(sys, "frozen", True, create=True)
     @patch.object(sys, "_MEIPASS", "/tmp/testpath", create=True)
     def test_get_current_directory_frozen(self):
-        path = utils.get_current_directory()
+        path = eisenban.utils.get_current_directory()
         self.assertEqual(path, "/tmp/testpath")
 
     # -------------------------
     # setup_font_db()
     # -------------------------
-    @patch("utils.QFontDatabase")
-    @patch("utils.get_current_directory", return_value="/base")
+    @patch("eisenban.utils.QFontDatabase")
+    @patch("eisenban.utils.get_current_directory", return_value="/base")
     def test_setup_font_db_success(self, mock_base, mock_qfont):
         mock_qfont.addApplicationFont.return_value = 1
         mock_qfont.applicationFontFamilies.return_value = ["Arial"]
 
-        result = utils.setup_font_db("font.ttf")
+        result = eisenban.utils.setup_font_db("font.ttf")
 
         self.assertEqual(result, ["Arial"])
         mock_qfont.addApplicationFont.assert_called_once()
 
-    @patch("utils.QFontDatabase")
-    @patch("utils.get_current_directory", return_value="/base")
+    @patch("eisenban.utils.QFontDatabase")
+    @patch("eisenban.utils.get_current_directory", return_value="/base")
     def test_setup_font_db_failure(self, mock_base, mock_qfont):
         mock_qfont.addApplicationFont.return_value = -1
 
         with self.assertRaises(Exception):
-            utils.setup_font_db("font.ttf")
+            eisenban.utils.setup_font_db("font.ttf")
 
     # -------------------------
     # keyPressEvent()
@@ -135,7 +130,7 @@ class TestUtils(unittest.TestCase):
 
         event = make_key_event(Qt.Key_Return)
 
-        utils.keyPressEvent(event, parent, func)
+        eisenban.utils.keyPressEvent(event, parent, func)
 
         func.assert_called_once_with(parent)
 
@@ -144,14 +139,14 @@ class TestUtils(unittest.TestCase):
 
         event = make_key_event(Qt.Key_Return)
 
-        utils.keyPressEvent(event, None, func)
+        eisenban.utils.keyPressEvent(event, None, func)
 
         func.assert_called_once_with()
 
     def test_keypress_enter_no_function(self):
         event = make_key_event(Qt.Key_Return)
 
-        result = utils.keyPressEvent(event, None, None)
+        result = eisenban.utils.keyPressEvent(event, None, None)
 
         self.assertIsNone(result)
 
@@ -160,7 +155,7 @@ class TestUtils(unittest.TestCase):
 
         event = make_key_event(Qt.Key_A)
 
-        result = utils.keyPressEvent(event, None, func)
+        result = eisenban.utils.keyPressEvent(event, None, func)
 
         func.assert_not_called()
         self.assertIsNone(result)
@@ -170,7 +165,7 @@ class TestUtils(unittest.TestCase):
 
         event = make_key_event(Qt.Key_Enter)
 
-        utils.keyPressEvent(event, None, func)
+        eisenban.utils.keyPressEvent(event, None, func)
 
         func.assert_called_once()
 

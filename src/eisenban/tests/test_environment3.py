@@ -16,7 +16,6 @@ import time
 import unittest
 from contextlib import ExitStack
 from unittest.mock import MagicMock, patch, mock_open
-from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # Ensure lib.environment imports cleanly on all platforms
@@ -28,11 +27,8 @@ fake_pwd_module = types.SimpleNamespace(
 )
 sys.modules.setdefault("pwd", fake_pwd_module)
 
-# Ensure project root is on sys.path so lib.environment can be imported
-parent_dir = Path(__file__).parent.parent
-sys.path.append(str(parent_dir))
 
-import lib.environment as env_module
+import eisenban.lib.environment as env_module
 Environment = env_module.Environment
 
 
@@ -78,7 +74,6 @@ def make_env():
         env.euid = 1000
         env.homedir = "/home/testuser"
         env.test_mode = False
-        env.script_path = parent_dir
         env.resources_path = ""
         env.rules_path = ""
         env.log_path = "/var/log"
@@ -108,8 +103,9 @@ class TestEnvironmentConstruction(unittest.TestCase):
         )
 
         with ExitStack() as stack:
-            stack.enter_context(patch("lib.environment.sys.platform", "linux"))
-            stack.enter_context(patch("lib.environment.os.geteuid", return_value=1000))
+            #stack.enter_context(patch("environment.lib.environment.sys.platform", "linux"))
+            stack.enter_context(patch("eisenban.lib.environment.sys.platform", "linux"))
+            stack.enter_context(patch("eisenban.lib.environment.os.geteuid", return_value=1000))
             stack.enter_context(patch.object(env_module, "pwd", fake_pwd))
 
             env = Environment()
@@ -123,9 +119,9 @@ class TestEnvironmentConstruction(unittest.TestCase):
     @patch.object(Environment, "determinefismacat", return_value=None)
     def test_init_windows_sets_euid_and_homedir(self, _det_fisma, _collectinfo):
         with ExitStack() as stack:
-            stack.enter_context(patch("lib.environment.sys.platform", "win32"))
-            stack.enter_context(patch("lib.environment.win32api.GetUserName", return_value="winuser"))
-            stack.enter_context(patch.dict("lib.environment.os.environ", {"USERPROFILE": r"C:\Users\WinUser"}, clear=True))
+            stack.enter_context(patch("eisenban.lib.environment.sys.platform", "win32"))
+            stack.enter_context(patch("eisenban.lib.environment.win32api.GetUserName", return_value="winuser"))
+            stack.enter_context(patch.dict("eisenban.lib.environment.os.environ", {"USERPROFILE": r"C:\Users\WinUser"}, clear=True))
 
             env = Environment()
 
@@ -270,7 +266,7 @@ class TestOsFamily(unittest.TestCase):
         self.env = make_env()
 
     def _run(self, platform_str):
-        with patch("lib.environment.sys.platform", platform_str):
+        with patch("eisenban.lib.environment.sys.platform", platform_str):
             self.env.setosfamily()
 
     def test_linux(self):
@@ -303,7 +299,7 @@ class TestDiscoverOs(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     def test_lsb_release_path(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/bin/lsb_release"
         self.env.rw.communicate.return_value = (
@@ -314,15 +310,15 @@ class TestDiscoverOs(unittest.TestCase):
         self.assertIn("Ubuntu", self.env.operatingsystem)
         self.assertEqual(self.env.osversion, "22.04")
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     @patch("builtins.open", mock_open(read_data="Red Hat Enterprise Linux release 8.7 (Ootpa)\n"))
     def test_redhat_release_path(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/etc/redhat-release"
         self.env.discoveros()
         self.assertIn("Red Hat", self.env.operatingsystem)
 
-    @patch("lib.environment.os.path.exists", return_value=False)
-    @patch("lib.environment.os.path.isfile")
+    @patch("eisenban.lib.environment.os.path.exists", return_value=False)
+    @patch("eisenban.lib.environment.os.path.isfile")
     @patch("builtins.open", mock_open(
         read_data='NAME="Ubuntu"\nVERSION="22.04.3 LTS (Jammy Jellyfish)"\n'
     ))
@@ -344,7 +340,7 @@ class TestDiscoverOs(unittest.TestCase):
         ])
         self.env.rw.communicate.side_effect = lambda: next(responses)
 
-        with patch("lib.environment.sys.platform", "darwin"):
+        with patch("eisenban.lib.environment.sys.platform", "darwin"):
             self.env.discoveros()
 
         self.assertEqual(self.env.operatingsystem, "macOS")
@@ -360,23 +356,23 @@ class TestSystemType(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     def test_detects_systemd(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/bin/ps"
         self.env.rw.communicate.return_value = ("/lib/systemd/systemd\n", "", "")
         self.env.setsystemtype()
         self.assertEqual(self.env.systemtype, "systemd")
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     def test_detects_launchd(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/bin/ps"
         self.env.rw.communicate.return_value = ("  1 ??  Ss   0:00.01 /sbin/launchd\n", "", "")
         self.env.setsystemtype()
         self.assertEqual(self.env.systemtype, "launchd")
 
-    @patch("lib.environment.os.path.exists", return_value=False)
+    @patch("eisenban.lib.environment.os.path.exists", return_value=False)
     def test_windows_fallback_mocked(self, _):
-        with patch("lib.environment.sys.platform", "win32"):
+        with patch("eisenban.lib.environment.sys.platform", "win32"):
             self.env.setsystemtype()
         self.assertEqual(self.env.systemtype, "windows")
 
@@ -394,17 +390,17 @@ class TestNetworking(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.sys.platform", "darwin")
+    @patch("eisenban.lib.environment.sys.platform", "darwin")
     def test_darwin_guessnetwork_returns_early(self):
         self.env.guessnetwork()
         self.assertEqual(self.env.hostname, "")
         self.assertEqual(self.env.ipaddress, "")
         self.assertEqual(self.env.macaddress, "")
 
-    @patch("lib.environment.sys.platform", "linux")
-    @patch("lib.environment.socket.getfqdn", return_value="badhost")
-    @patch("lib.environment.socket.gethostbyname_ex", side_effect=socket.gaierror)
-    @patch("lib.environment.os.path.exists", return_value=False)
+    @patch("eisenban.lib.environment.sys.platform", "linux")
+    @patch("eisenban.lib.environment.socket.getfqdn", return_value="badhost")
+    @patch("eisenban.lib.environment.socket.gethostbyname_ex", side_effect=socket.gaierror)
+    @patch("eisenban.lib.environment.os.path.exists", return_value=False)
     def test_gaierror_uses_getdefaultip(self, *_):
         self.env.rw.communicate.return_value = ("", "", "")
         with patch.object(self.env, "getdefaultip", return_value="192.168.0.1"):
@@ -417,14 +413,14 @@ class TestDefaultIp(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.sys.platform", "darwin")
+    @patch("eisenban.lib.environment.sys.platform", "darwin")
     def test_darwin_returns_empty(self):
         result = self.env.getdefaultip()
         self.assertEqual(result, "")
 
-    @patch("lib.environment.sys.platform", "linux")
-    @patch("lib.environment.os.path.exists")
-    @patch("lib.environment.subprocess.Popen")
+    @patch("eisenban.lib.environment.sys.platform", "linux")
+    @patch("eisenban.lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.subprocess.Popen")
     def test_linux_lsb_release_path(self, mock_popen, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/bin/lsb_release"
         proc = MagicMock()
@@ -477,8 +473,8 @@ class TestIPDiscovery(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.os.path.exists")
-    @patch("lib.environment.subprocess.Popen")
+    @patch("eisenban.lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.subprocess.Popen")
     def test_parses_inet_prefix(self, mock_popen, mock_exists):
         mock_exists.side_effect = lambda p: p in ("/usr/sbin/ip", "/sbin/ip")
         proc = MagicMock()
@@ -606,8 +602,8 @@ class TestMobileDetection(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.os.path.exists")
-    @patch("lib.environment.subprocess.Popen")
+    @patch("eisenban.lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.subprocess.Popen")
     def test_macbook_detected(self, mock_popen, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/sbin/system_profiler"
         proc = MagicMock()
@@ -618,7 +614,7 @@ class TestMobileDetection(unittest.TestCase):
         result = self.env.ismobile()
         self.assertTrue(result)
 
-    @patch("lib.environment.os.path.exists", return_value=False)
+    @patch("eisenban.lib.environment.os.path.exists", return_value=False)
     def test_not_mobile_when_no_tools(self, _):
         result = self.env.ismobile()
         self.assertFalse(result)
@@ -633,7 +629,7 @@ class TestSnitch(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.subprocess.Popen")
+    @patch("eisenban.lib.environment.subprocess.Popen")
     def test_snitch_detected_on_darwin_mocked(self, mock_popen):
         self.env.osfamily = "darwin"
         proc = MagicMock()
@@ -645,7 +641,7 @@ class TestSnitch(unittest.TestCase):
         self.env.osfamily = "linux"
         self.assertFalse(self.env.issnitchactive())
 
-    @patch("lib.environment.subprocess.Popen")
+    @patch("eisenban.lib.environment.subprocess.Popen")
     def test_snitch_not_found_on_darwin_mocked(self, mock_popen):
         self.env.osfamily = "darwin"
         proc = MagicMock()
@@ -664,7 +660,7 @@ class TestSerialNumber(unittest.TestCase):
         self.env = make_env()
         self.env.euid = 1000  # non-root, DMI won't be used
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     def test_system_profiler_path(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/sbin/system_profiler"
         self.env.rw.communicate.return_value = (
@@ -674,7 +670,7 @@ class TestSerialNumber(unittest.TestCase):
         self.env.rw.setCommand.assert_called()
         self.assertIsNotNone(serial)
 
-    @patch("lib.environment.os.path.exists", return_value=False)
+    @patch("eisenban.lib.environment.os.path.exists", return_value=False)
     def test_returns_zero_when_no_tools(self, _):
         result = self.env.get_system_serial_number()
         self.assertEqual(result, "0")
@@ -690,7 +686,7 @@ class TestUUID(unittest.TestCase):
         self.env = make_env()
         self.env.euid = 0
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     def test_dmidecode_command_path(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/sbin/dmidecode"
         self.env.rw.communicate.return_value = ("SOME-UUID-1234\n", "", "")
@@ -711,7 +707,7 @@ class TestRunWithIntegration(unittest.TestCase):
     def setUp(self):
         self.env = make_env()
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     def test_setsystemtype_calls_rw_setCommand(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/bin/ps"
         self.env.rw.communicate.return_value = ("launchd\n", "", "")
@@ -720,7 +716,7 @@ class TestRunWithIntegration(unittest.TestCase):
         args = self.env.rw.setCommand.call_args[0][0]
         self.assertIn("ps", args)
 
-    @patch("lib.environment.os.path.exists")
+    @patch("eisenban.lib.environment.os.path.exists")
     def test_discoveros_calls_rw_with_lsb_release(self, mock_exists):
         mock_exists.side_effect = lambda p: p == "/usr/bin/lsb_release"
         self.env.rw.communicate.return_value = (
