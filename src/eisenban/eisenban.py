@@ -15,10 +15,9 @@ if sys.version_info < (3, 10):
 
 try:
     from PySide6.QtWidgets import QApplication, QMainWindow
-    from db import Table
-    from ui.main import MainScreen
-    #from ui.welcome import WelcomeScreen
-    from utils import get_current_directory
+    from eisenban.db import Table
+    from eisenban.ui.main import MainScreen
+    from eisenban.utils import get_current_directory
 except ModuleNotFoundError:
     logging.warning("Required modules not found. Prompting user to install...")
     root = Tk()
@@ -47,10 +46,10 @@ except ModuleNotFoundError:
         finally:
             from PySide6.QtWidgets import QApplication, QMainWindow
 
-            from db import Table
-            from ui.main import MainScreen
-            from ui.welcome import WelcomeScreen
-            from utils import get_current_directory
+            from eisenban.db import Table
+            from eisenban.ui.main import MainScreen
+            from eisenban.ui.welcome import WelcomeScreen
+            from eisenban.utils import get_current_directory
     else:
         sys.exit(1)
 

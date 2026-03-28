@@ -2,11 +2,11 @@ from PySide6.QtCore import QEvent, QDate, QTime
 from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QMainWindow
 
-from db import Table
-from dialog import dialog_factory
-from eisenban_objects import Card
-from ui.card_description_ui import Ui_CardWindow
-from utils import hex_to_rgba, keyPressEvent, modify_hex_color, setup_font_db
+from eisenban.db import Table
+from eisenban.dialog import dialog_factory
+from eisenban.eisenban_objects import Card
+from eisenban.ui.card_description_ui import Ui_CardWindow
+from eisenban.utils import hex_to_rgba, keyPressEvent, modify_hex_color, setup_font_db
 
 
 class CardDescription(QMainWindow):

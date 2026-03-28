@@ -4,11 +4,11 @@ from PySide6.QtCore import QEvent
 from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QMainWindow
 
-from db import Table
-from dialog import dialog_factory, input_dialog_factory
-from eisenban_objects import Board, Color, Panel
-from ui.board_settings_ui import Ui_BoardWindow
-from utils import keyPressEvent, modify_hex_color, setup_font_db
+from eisenban.db import Table
+from eisenban.dialog import dialog_factory, input_dialog_factory
+from eisenban.eisenban_objects import Board, Color, Panel
+from eisenban.ui.board_settings_ui import Ui_BoardWindow
+from eisenban.utils import keyPressEvent, modify_hex_color, setup_font_db
 
 
 class BoardSettings(QMainWindow):

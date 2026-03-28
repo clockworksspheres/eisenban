@@ -24,12 +24,9 @@ import datetime
 import traceback
 import logging
 import logging.handlers
-from pathlib import Path
 
-sys.path.append(str(Path(__file__).parent.parent))
-
-from lib.singleton import Singleton
-from lib.config import DEFAULT_LOG_LEVEL
+from eisenban.lib.singleton import Singleton
+from eisenban.lib.config import DEFAULT_LOG_LEVEL
 
 #from logging.handlers import RotatingFileHandler
 ###############################################################################

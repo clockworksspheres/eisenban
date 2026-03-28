@@ -5,8 +5,8 @@ from PySide6.QtCore import QCoreApplication, Qt
 from PySide6.QtGui import QPaintEvent, QPainter, QPainterPath, QPixmap, QRegion
 from PySide6.QtWidgets import QMainWindow
 
-from ui.about_ui import Ui_About
-from utils import get_current_directory, overrides
+from eisenban.ui.about_ui import Ui_About
+from eisenban.utils import get_current_directory, overrides
 
 
 class About(QMainWindow):

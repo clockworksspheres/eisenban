@@ -13,9 +13,7 @@ import os
 import re
 import sys
 
-sys.path.append("../..")
-
-from ramdisk.lib.libHelperExceptions import NotValidForThisOS
+from eisenban.lib.libHelperExceptions import NotValidForThisOS
 
 if not sys.platform.startswith("linux"):
     raise NotValidForThisOS("Not Valid For This OS...")
@@ -31,12 +29,10 @@ import traceback
 from subprocess import Popen, PIPE
 from subprocess import SubprocessError as SubprocessError
 
-sys.path.append("../..")
-
-from ramdisk.lib.loggers import CyLogger
-from ramdisk.lib.loggers import LogPriority as lp
-from ramdisk.lib.loggers import MockLogger
-from ramdisk.lib.getLibc.linuxGetLibc import getLibc
+from eisenban.lib.loggers import CyLogger
+from eisenban.lib.loggers import LogPriority as lp
+from eisenban.lib.loggers import MockLogger
+from eisenban.lib.getLibc.linuxGetLibc import getLibc
 
 
 class OSNotValidForRunWith(BaseException):
