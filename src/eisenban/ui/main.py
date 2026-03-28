@@ -10,17 +10,17 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea,
                                QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 
 
-from eisenban.db import Table
-from eisenban.dialog import dialog_factory, input_dialog_factory
-from eisenban.eisenban_objects import Board, Card, Panel
-from eisenban.ui.about import About
-from eisenban.ui.app_settings import AppSettings
-from eisenban.ui.board_settings import BoardSettings
-from eisenban.ui.card_description import CardDescription
-from eisenban.ui.main_ui import Ui_MainWindow
-from eisenban.utils import (hex_to_rgba, keyPressEvent, modify_hex_color, overrides,
-                            setup_font_db)
-from eisenban.lib.qsingleton import QSingleton
+from db import Table
+from dialog import dialog_factory, input_dialog_factory
+from eisenban_objects import Board, Card, Panel
+from ui.about import About
+from ui.app_settings import AppSettings
+from ui.board_settings import BoardSettings
+from ui.card_description import CardDescription
+from ui.main_ui import Ui_MainWindow
+from utils import (hex_to_rgba, keyPressEvent, modify_hex_color, overrides,
+                   setup_font_db)
+from lib.qsingleton import QSingleton
 
 class CustomListWidget(QListWidget):
     """Custom QListWidget class"""

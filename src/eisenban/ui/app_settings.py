@@ -5,12 +5,12 @@ from PySide6.QtCore import QEvent
 from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QMainWindow
 
-from eisenban.db import Table
-from eisenban.dialog import dialog_factory
-from eisenban.eisenban_objects import Board
-from eisenban.ui.about import About
-from eisenban.ui.app_settings_ui import Ui_SettingsWindow
-from eisenban.utils import keyPressEvent, modify_hex_color, setup_font_db
+from db import Table
+from dialog import dialog_factory
+from eisenban_objects import Board
+from ui.about import About
+from ui.app_settings_ui import Ui_SettingsWindow
+from utils import keyPressEvent, modify_hex_color, setup_font_db
 
 
 class AppSettings(QMainWindow):

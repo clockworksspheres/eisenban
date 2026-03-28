@@ -5,7 +5,7 @@ from PySide6.QtGui import QFont, QIcon
 from PySide6.QtWidgets import (QDialog, QDialogButtonBox, QLabel, QLineEdit,
                                QMessageBox, QPushButton, QVBoxLayout)
 
-from eisenban.utils import get_current_directory, modify_hex_color, setup_font_db
+from utils import get_current_directory, modify_hex_color, setup_font_db
 
 
 def dialog_factory(parent: Type = None, function: Callable = None,

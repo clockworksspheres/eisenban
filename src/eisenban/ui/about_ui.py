@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
-import eisenban.eisenban_rc
+import eisenban_rc
 
 class Ui_About(object):
     def setupUi(self, About):

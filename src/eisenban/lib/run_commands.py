@@ -20,10 +20,16 @@ import traceback
 import subprocess
 from subprocess import Popen, PIPE
 from subprocess import SubprocessError as SubprocessError
+from pathlib import Path
 
-from eisenban.lib.loggers import CyLogger
-from eisenban.lib.loggers import LogPriority as lp
-from eisenban.lib.loggers import MockLogger
+# Get the parent directory of the current file's parent directory
+#  and add it to sys.path
+parent_dir = Path(__file__).parent.parent
+sys.path.append(str(parent_dir))
+
+from lib.loggers import CyLogger
+from lib.loggers import LogPriority as lp
+from lib.loggers import MockLogger
 
 
 class OSNotValidForRunWith(BaseException):
