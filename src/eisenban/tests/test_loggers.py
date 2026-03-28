@@ -12,12 +12,18 @@ import os
 import traceback
 import tracemalloc
 from datetime import datetime
+from pathlib import Path
+
+# Get the parent directory of the current file's parent directory
+#  and add it to sys.path
+parent_dir = Path(__file__).parent.parent
+sys.path.append(str(parent_dir))
 
 # --- Non-native python libraries in this source tree
-from eisenban.lib.environment import Environment
-from eisenban.lib.loggers import CyLogger
-from eisenban.lib.loggers import LogPriority
-from eisenban.lib.run_commands import RunWith
+from lib.environment import Environment
+from lib.loggers import CyLogger
+from lib.loggers import LogPriority
+from lib.run_commands import RunWith
 
 
 class test_loggers(unittest.TestCase):

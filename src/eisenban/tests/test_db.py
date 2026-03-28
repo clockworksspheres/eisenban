@@ -1,9 +1,12 @@
 import sys
 import unittest
 from unittest.mock import patch, MagicMock, mock_open
+from pathlib import Path
+parent_dir = Path(__file__).parent.parent
+sys.path.append(str(parent_dir))
 
-import eisenban.db
-from eisenban.db import Table
+import db
+from db import Table
 
 
 class TestTableFullCoverage(unittest.TestCase):
@@ -81,7 +84,7 @@ class TestTableFullCoverage(unittest.TestCase):
     # -------------------------
     # Path
     # -------------------------
-    @patch("eisenban.db.logging.warning")
+    @patch("db.logging.warning")
     def test_set_path_empty(self, mock_warn):
         self.assertIsNone(self.table.set_path(""))
         mock_warn.assert_called_once()
@@ -93,18 +96,18 @@ class TestTableFullCoverage(unittest.TestCase):
     # -------------------------
     # create()
     # -------------------------
-    @patch("eisenban.db.sys.exit", side_effect=SystemExit)
-    @patch("eisenban.db.pickle.dump", side_effect=Exception)
-    @patch("eisenban.db.open", new_callable=mock_open)
-    @patch("eisenban.db.os.makedirs")
+    @patch("db.sys.exit", side_effect=SystemExit)
+    @patch("db.pickle.dump", side_effect=Exception)
+    @patch("db.open", new_callable=mock_open)
+    @patch("db.os.makedirs")
     def test_create_exception(self, *_):
         with self.assertRaises(SystemExit):
             self.table.create()
 
     @patch.object(Table, "get_instance")
-    @patch("eisenban.db.pickle.dump")
-    @patch("eisenban.db.open", new_callable=mock_open)
-    @patch("eisenban.db.os.makedirs")
+    @patch("db.pickle.dump")
+    @patch("db.open", new_callable=mock_open)
+    @patch("db.os.makedirs")
     def test_create_success(self, m_mkdir, m_open, m_dump, m_get):
         inst = MagicMock()
         m_get.return_value = inst
@@ -117,21 +120,21 @@ class TestTableFullCoverage(unittest.TestCase):
     # -------------------------
     # write()
     # -------------------------
-    @patch("eisenban.db.pickle.dump")
-    @patch("eisenban.db.open", new_callable=mock_open)
+    @patch("db.pickle.dump")
+    @patch("db.open", new_callable=mock_open)
     def test_write_ok(self, m_open, m_dump):
         self.table.write()
         m_dump.assert_called_once()
 
     @patch.object(Table, "create")
-    @patch("eisenban.db.open", side_effect=FileNotFoundError)
+    @patch("db.open", side_effect=FileNotFoundError)
     def test_write_fnf(self, m_open, m_create):
         self.table.write()
         m_create.assert_called_once()
 
-    @patch("eisenban.db.sys.exit", side_effect=SystemExit)
-    @patch("eisenban.db.pickle.dump", side_effect=Exception)
-    @patch("eisenban.db.open", new_callable=mock_open)
+    @patch("db.sys.exit", side_effect=SystemExit)
+    @patch("db.pickle.dump", side_effect=Exception)
+    @patch("db.open", new_callable=mock_open)
     def test_write_exception(self, *_):
         with self.assertRaises(SystemExit):
             self.table.write()
@@ -139,24 +142,24 @@ class TestTableFullCoverage(unittest.TestCase):
     # -------------------------
     # read()
     # -------------------------
-    @patch("eisenban.db.Color")
-    @patch("eisenban.db.pickle.load", return_value=[])
-    @patch("eisenban.db.open", new_callable=mock_open)
+    @patch("db.Color")
+    @patch("db.pickle.load", return_value=[])
+    @patch("db.open", new_callable=mock_open)
     def test_read_ok(self, m_open, m_load, _):
         self.table.read()
         m_load.assert_called_once()
 
-    @patch("eisenban.db.Color")
+    @patch("db.Color")
     @patch.object(Table, "create")
-    @patch("eisenban.db.open", side_effect=FileNotFoundError)
+    @patch("db.open", side_effect=FileNotFoundError)
     def test_read_fnf(self, m_open, m_create, _):
         self.table.read()
         m_create.assert_called_once()
 
-    @patch("eisenban.db.Color")
+    @patch("db.Color")
     @patch.object(Table, "create")
-    @patch("eisenban.db.open", new_callable=mock_open)
-    @patch("eisenban.db.pickle.load", side_effect=Exception)
+    @patch("db.open", new_callable=mock_open)
+    @patch("db.pickle.load", side_effect=Exception)
     def test_read_exception(self, m_load, m_open, m_create, _):
         self.table.read()
         m_create.assert_called_once()
@@ -164,7 +167,7 @@ class TestTableFullCoverage(unittest.TestCase):
     # -------------------------
     # boards property
     # -------------------------
-    @patch("eisenban.db.Color")
+    @patch("db.Color")
     def test_boards_property(self, _):
         self.table.data = self._valid_data()
         boards = self.table.boards
@@ -199,7 +202,7 @@ class TestTableFullCoverage(unittest.TestCase):
 
         m_write.assert_called_once()
 
-    @patch("eisenban.db.Color")
+    @patch("db.Color")
     @patch.object(Table, "write")
     def test_update_board(self, m_write, m_color):
         m_color.return_value.name = "LIGHTBLUE"
@@ -222,7 +225,7 @@ class TestTableFullCoverage(unittest.TestCase):
 
         m_write.assert_called_once()
 
-    @patch("eisenban.db.Color")
+    @patch("db.Color")
     @patch.object(Table, "write")
     def test_update_board_order(self, m_write, m_color):
         m_color.return_value.name = "LIGHTBLUE"
@@ -268,7 +271,7 @@ class TestTableFullCoverage(unittest.TestCase):
     # -------------------------
     # change color
     # -------------------------
-    @patch("eisenban.db.Color")
+    @patch("db.Color")
     @patch.object(Table, "write")
     def test_change_board_color(self, m_write, m_color):
         m_color.return_value.name = "LIGHTBLUE"

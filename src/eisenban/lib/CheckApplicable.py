@@ -7,8 +7,13 @@ import traceback
 
 from packaging.version import parse as LooseVersion
 
+from pathlib import Path
+
+parent_dir = Path(__file__).parent.parent
+sys.path.append(str(parent_dir))
+
 #--- non-native python libraries in this source tree
-from eisenban.lib.loggers import LogPriority
+from lib.loggers import LogPriority
 
 
 class CheckApplicable(object):

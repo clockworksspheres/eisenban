@@ -4,10 +4,13 @@ import sys
 import pickle
 from typing import Dict, List
 from threading import Lock
+'''
+sys.path.append("..")
 
-from eisenban.lib.singleton import Singleton
+from lib.singleton import Singleton
+'''
 
-from eisenban.eisenban_objects import Board, Card, Color, Panel
+from eisenban_objects import Board, Card, Color, Panel
 
 
 class SingletonMeta(type):
