@@ -103,10 +103,14 @@ class Card(EisenbanObject):
 
 
 class Panel(EisenbanObject):
+    #def __init__(self, title: str = "New Panel",
+    #             card_lists: List[Card] = []) -> None:
+    #    self.__title = title
+    #    self.__card_lists = card_lists
     def __init__(self, title: str = "New Panel",
-                 card_lists: List[Card] = []) -> None:
+                card_lists: List[Card] = None) -> None:
         self.__title = title
-        self.__card_lists = card_lists
+        self.__card_lists = card_lists or []
 
     @property
     def title(self) -> str:
@@ -144,10 +148,14 @@ class Panel(EisenbanObject):
 
 
 class Board(EisenbanObject):
+    #def __init__(self, title: str = "New Board", color: str = "LIGHTBLUE",
+    #             panels_lists: List[Panel] = []):
     def __init__(self, title: str = "New Board", color: str = "LIGHTBLUE",
-                 panels_lists: List[Panel] = []):
+                panels_lists: List[Panel] = None):
         self.__title = title
-        self.__panels_lists = panels_lists
+        self.__panels_lists = panels_lists or []    
+        #self.__title = title
+        #self.__panels_lists = panels_lists
         try:
             self.__color = color
             Color[self.__color].value
@@ -177,6 +185,7 @@ class Board(EisenbanObject):
 
     @color.setter
     def color(self, color: str) -> None:
+        '''
         if color in Color.value2member_map_:
             self.__color = color
         else:
@@ -184,7 +193,21 @@ class Board(EisenbanObject):
                 "Board color must be one of the following: "
                 "LIGHTBLUE, ROSE, GOLD, GREEN, LAVENDER, TEAL."
             )
-
+        '''
+        try:
+            # Try enum name first
+            if color in Color.__members__:
+                self.__color = color
+            else:
+                # Try enum value
+                member = Color(color)
+                self.__color = member.name
+        except Exception:
+            raise ValueError(
+                "Board color must be one of the following: "
+                "LIGHTBLUE, ROSE, GOLD, GREEN, LAVENDER, TEAL."
+            )
+        
     @panels.setter
     def panels(self, panel: Panel) -> None:
         if panel is None:
