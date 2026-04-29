@@ -17,9 +17,11 @@ if (!(Test-Path -Path $FolderPath -PathType Container)) {
    .\packenv\Scripts\Activate.ps1
 
    pip install --upgrade pip
+   pip install astroid
+   pip install pylint
+   pip install pytest
    pip install PySide6 
    pip install PyInstaller
-   pip install pyteset
    pip install pywin32
    # pip install --upgrade PyInstaller pyinstaller-hooks-contrib
 

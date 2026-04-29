@@ -16,6 +16,9 @@ if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
    python -m venv packenv
    source packenv/bin/activate
    pip install --upgrade pip
+   pip install astroid
+   pip install pytest
+   pip install pylint
    pip install pyside6
    pip install pyinstaller
    # pip install --force-reinstall --no-cache-dir Tk
