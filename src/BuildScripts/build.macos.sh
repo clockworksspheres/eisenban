@@ -12,7 +12,6 @@ directory="./packenv"
 actfile="./packenv/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
 
-   brew install python-tk
    python -m venv packenv
    source packenv/bin/activate
    pip install --upgrade pip
