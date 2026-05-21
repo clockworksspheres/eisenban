@@ -6,31 +6,15 @@ pipeline {
                 echo 'Running pre-parallel stage'
             }
         }
-        stage('Parallel Pipelines') {
+        stage('Parallel build Pipelines') {
             parallel {
                 stage('macOS Pipeline') {
                     agent { label 'macos' }
                     stages {
-                        stage('macos Build') { 
+                        stage('macOS Build') { 
                             steps {
                                 dir('src/BuildScripts') {
                                     sh './build.macos.sh' 
-                                }
-                            }
-                        }
-                        stage('macos Test') { 
-                            steps {
-                                dir('src/eisenban/tests') {
-                                    echo '----------=====### Starting Tests ###=====----------'
-                                    sh 'ls -l'
-                                    sh '/opt/homebrew/bin/py.test --junit-xml test-reports/results.xml test_*.py'
-                                    // sh '/Users/jenkins/.pyenv/shims/python ./test_run_commands.py'
-                                    echo '----------=====### Finished Tests ###=====----------'
-                                }
-                            }
-                            post {
-                                always {
-                                    junit 'src/eisenban/tests/test-reports/results.xml' 
                                 }
                             }
                         }
@@ -42,24 +26,8 @@ pipeline {
                         stage('rocky10 Build') { 
                             steps {
                                 dir('src/BuildScripts') {
-                                    sh './build.ubuntu2404.sh' 
+                                    sh './build.rocky10.sh' 
                                 } 
-                            }
-                        }
-                        stage('rocky10 Test') { 
-                            steps {
-                                dir('src/eisenban/tests') {
-                                    echo '----------=====### Starting Tests ###=====----------'
-                                    sh 'ls -l'
-                                    sh 'sudo /usr/bin/py.test --junit-xml test-reports/results.xml test_*.py'
-                                    // sh '/Users/jenkins/.pyenv/shims/python ./test_run_commands.py'
-                                    echo '----------=====### Finished Tests ###=====----------'
-                                }
-                            }
-                            post {
-                                always {
-                                    junit 'src/eisenban/tests/test-reports/results.xml' 
-                                }
                             }
                         }
                     }
@@ -70,23 +38,80 @@ pipeline {
                         stage('debian Build') { 
                             steps {
                                 dir('src/BuildScripts') {
-                                    sh './build.ubuntu2404.sh' 
+                                    sh './build.debian13.sh' 
                                 } 
                             }
                         }
-                        stage('debian Test') { 
+                    }
+                }
+            }
+        }
+        stage('Parallel test pipelines') {
+            parallel {
+                stage('macOS Pipeline') {
+                    agent { label 'macos' }
+                    environment {
+                        VENV = "../../packenv"
+                        QT_QPA_PLATFORM = "offscreen"
+                    }
+                    stages {
+                        stage('macOS Test') { 
                             steps {
                                 dir('src/eisenban/tests') {
                                     echo '----------=====### Starting Tests ###=====----------'
-                                    sh 'ls -l'
-                                    sh 'sudo /usr/bin/py.test --junit-xml test-reports/results.xml test_*.py'
-                                    // sh '/Users/jenkins/.pyenv/shims/python ./test_run_commands.py'
+                                    sh """
+                                        ls -l
+                                        . ${VENV}/bin/activate
+                                        ${VENV}/bin/python -m pytest -v --junit-xml test-reports/results.xml
+                                    """
                                     echo '----------=====### Finished Tests ###=====----------'
+                                    junit 'test-reports/results.xml'
                                 }
                             }
-                            post {
-                                always {
-                                    junit 'src/eisenban/tests/test-reports/results.xml' 
+                        }
+                    }
+                }
+                stage('Rocky 10 Pipeline') {
+                    agent { label 'rocky10' }
+                    environment {
+                        VENV = "../../packenv"
+                        QT_QPA_PLATFORM = "offscreen"
+                    }
+                    stages {
+                        stage('Rocky10 Test') { 
+                            steps {
+                                dir('src/eisenban/tests') {
+                                    echo '----------=====### Starting Tests ###=====----------'
+                                    sh """
+                                        ls -l
+                                        . ${VENV}/bin/activate
+                                        ${VENV}/bin/python -m pytest -v --junit-xml test-reports/results.xml
+                                    """
+                                    echo '----------=====### Finished Tests ###=====----------'
+                                    junit 'test-reports/results.xml'
+                                }
+                            }
+                        }
+                    }
+                }
+                stage('Debian Pipeline') {
+                    agent { label 'debian' }
+                    environment {
+                        VENV = "../../packenv"
+                        QT_QPA_PLATFORM = "offscreen"
+                    }
+                    stages {
+                        stage('Debian Test') { 
+                            steps {
+                                dir('src/eisenban/tests') {
+                                    echo '----------=====### Starting Tests ###=====----------'
+                                    sh """
+                                        ls -l
+                                        . ${VENV}/bin/activate
+                                        ${VENV}/bin/python -m pytest -v --junit-xml test-reports/results.xml
+                                    """
+                                    echo '----------=====### Finished Tests ###=====----------'
+                                    junit 'test-reports/results.xml'
                                 }
                             }
                         }
