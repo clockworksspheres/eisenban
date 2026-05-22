@@ -1,6 +1,8 @@
 import os
 import sys
-from typing import Callable, Type
+#from typing import Callable, Type
+from typing import Type
+from collections.abc import Callable
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QFontDatabase, QKeyEvent
@@ -122,7 +124,7 @@ def setup_font_db(font: str) -> QFontDatabase:
 #def keyPressEvent(event: QKeyEvent, parent: QMainWindow = None,
 #                  function: Callable = None) -> Callable | None:
 def keyPressEvent(event: QKeyEvent, parent: QMainWindow = None,
-                  function: Callable = None):
+                  function: Callable = None) -> Callable | None:
     """This function is used to call a function when the enter key is pressed
 
     Parameters
@@ -139,3 +141,4 @@ def keyPressEvent(event: QKeyEvent, parent: QMainWindow = None,
         if not parent:
             return function()
         return function(parent)
+
