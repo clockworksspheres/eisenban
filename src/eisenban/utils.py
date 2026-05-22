@@ -1,8 +1,8 @@
 import os
 import sys
-#from typing import Callable, Type
-from typing import Type
-from collections.abc import Callable
+from typing import Callable, Type
+#from typing import Type
+#from collections.abc import Callable
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QFontDatabase, QKeyEvent
