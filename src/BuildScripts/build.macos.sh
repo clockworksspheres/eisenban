@@ -5,6 +5,13 @@
 # amoung others... including
 # https://pyinstaller.org/en/stable/
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
+eval "$(pyenv init -)"
+
+pyenv global 3.11
+python --version
+
 pushd ..
 
 #if doesn't the packenv directory doesn't exist...
