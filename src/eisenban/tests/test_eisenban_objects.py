@@ -29,9 +29,9 @@ class TestCard(unittest.TestCase):
         mock_datetime.strptime = MagicMock()
 
         card = Card()
-        card.date = "01-01-2024"
+        card.date = "2024-01-01"
 
-        mock_datetime.strptime.assert_called_once_with("01-01-2024", "%d-%m-%Y")
+        mock_datetime.strptime.assert_called_once_with("2024-01-01", "%Y-%m-%d")
 
     @patch("eisenban.eisenban_objects.datetime")
     def test_date_invalid_format(self, mock_datetime):

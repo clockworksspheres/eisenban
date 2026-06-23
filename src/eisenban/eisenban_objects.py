@@ -72,9 +72,9 @@ class Card(EisenbanObject):
         if date is None:
             raise ValueError("Card date cannot be None.")
         try:
-            datetime.strptime(date, "%d-%m-%Y")
+            datetime.strptime(date, "%Y-%m-%d")
         except ValueError:
-            raise ValueError("Card date must follow format DD-MM-YYYY.")
+            raise ValueError("Card date must follow format YYY-MM-DD.")
         self.__date = date
 
     @time.setter

@@ -136,7 +136,7 @@ def init_event_logger(path: str, fmt: str, debug: bool = False,
         filename=path,
         filemode="w",
         format=fmt,
-        datefmt="%d-%b-%y %H:%M:%S",
+        datefmt="%Y-%m-%d_%H-%M-%S",
         level=logging.DEBUG if debug else logging.INFO,
     )
     if stdout:

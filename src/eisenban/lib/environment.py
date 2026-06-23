@@ -11,6 +11,7 @@ import platform
 import time
 import traceback
 import pathlib
+from datetime import datetime
 from pathlib import Path
 
 # Get the parent directory of the current file's parent directory
@@ -108,7 +109,8 @@ class Environment(object):
         self.installmode = False
         self.verbosemode = False
         self.debugmode = False
-        self.runtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        datestamp = datetime.utcnow()
+        self.runtime = datestamp.strftime("%Y-%m-%d_%H-%M-%S")
         self.systemfismacat = 'low'
         self.determinefismacat()
         self.collectinfo()

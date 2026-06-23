@@ -1066,7 +1066,7 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
                                     "_Card__title": text,
                                     "_Card__description": "",
                                     "_Card__date": datetime.date.today()
-                                    .strftime("%d-%m-%Y"),
+                                    .strftime("%Y-%m-%d"),
                                     "_Card__time": datetime.datetime.now()
                                     .strftime("%H:%M")
                                 })
@@ -1078,7 +1078,7 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
                                     "_Card__title": text,
                                     "_Card__description": "",
                                     "_Card__date": datetime.date.today()
-                                    .strftime("%d-%m-%Y"),
+                                    .strftime("%Y-%m-%d"),
                                     "_Card__time": datetime.datetime.now()
                                     .strftime("%H:%M")
                                 }]
