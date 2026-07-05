@@ -10,5 +10,7 @@ Eisenban is a re-branded version of Kanbaru, as the Kanbaru project is frozen an
 
 Eisenban is short for Eisenhower method Kanban board.  The Eisenhower method has not yet been integrated into the project.
 
+A kanban board for this project can be found by running ```eisenban -t src/eisenban/eisenboard``` ie. on the src/eisenban/eisenboard directory. 
+
 A [clockworksspheres](https://clockworksspheres.github.io/) project.
 
