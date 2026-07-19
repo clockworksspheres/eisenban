@@ -5,30 +5,26 @@
 # amoung others... including
 # https://pyinstaller.org/en/stable/
 
+echo "----------===== ### =====----------"
+echo " ### starting Ubuntu based build ###"
+
 pushd ..
 
-#if doesn't the packenv directory doesn't exist...
-directory="./packenv"
-actfile="./packenv/bin/activate"
+directory="./projEnv"
+actfile="$directory/bin/activate"
 if [ ! -d "$directory" ]  || [ ! -f "$actfile" ] ; then
 
+   sudo apt install python-is-python3
    sudo apt install python3-tk
-   python -m venv packenv
-   source packenv/bin/activate
-   pip install --upgrade pip
-   pip install astroid
-   pip install pylint
-   pip install pytest
-   pip install pyside6
-   pip install pyinstaller
-   # pip3 install PySide6 PyInstaller
-   # pip3 install --upgrade PyInstaller pyinstaller-hooks-contrib
+
+   python3 -m venv $directory
+   source $actfile
+
+   pip install -r requirements.txt
 
 else
-   source packenv/bin/activate
+   source $actfile
 fi
-source ./packenv/bin/activate
-
 
 cp BuildScripts/build.linux.py313.onefile.spec eisenban/build.linux.py313.onefile.spec
 

@@ -5,28 +5,22 @@
 
 # before script is run:
 # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-# powershell -File ".\eisenban.windows.ps1"
+# powershell -File ".\eisenbuild.windows.ps1"
 
 pushd ..
 
-
-$FolderPath = ".\packenv"
-if (!(Test-Path -Path $FolderPath -PathType Container)) {
+$directory = ".\projEnv"
+$actfile = "$directory\Scripts\Activate.ps1"
+if (!(Test-Path -Path $directory -PathType Container)) {
+   #if (!(Test-Path -Path ".\packenv" -PathType Container)) {
    
-   python -m venv packenv
-   .\packenv\Scripts\Activate.ps1
+   python -m venv $directory
+   powershell -File $actfile
 
-   pip install --upgrade pip
-   pip install astroid
-   pip install pylint
-   pip install pytest
-   pip install PySide6 
-   pip install PyInstaller
-   pip install pywin32
-   # pip install --upgrade PyInstaller pyinstaller-hooks-contrib
-
+   #pip install --upgrade pip
+   pip install -r requirements.txt
 } else {
-    .\packenv\Scripts\Activate.ps1
+   powershell -File $actfile
 }
 
 cp BuildScripts/eisenbuild.windows11.onefile.spec eisenban
