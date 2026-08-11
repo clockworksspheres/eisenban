@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'card_description.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.10.2
+## Created by: Qt User Interface Compiler version 6.11.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,7 +24,7 @@ class Ui_CardWindow(object):
     def setupUi(self, CardWindow):
         if not CardWindow.objectName():
             CardWindow.setObjectName(u"CardWindow")
-        CardWindow.resize(620, 678)
+        CardWindow.resize(679, 686)
         icon = QIcon()
         icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         CardWindow.setWindowIcon(icon)
@@ -127,7 +127,7 @@ class Ui_CardWindow(object):
         self.calendarWidget.setObjectName(u"calendarWidget")
         self.calendarWidget.setFont(font2)
         self.calendarWidget.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.calendarWidget.setFocusPolicy(Qt.TabFocus)
+        self.calendarWidget.setFocusPolicy(Qt.FocusPolicy.TabFocus)
         self.calendarWidget.setStyleSheet(u"QCalendarWidget QWidget {\n"
 "	background-color: #6badee;\n"
 "}\n"
@@ -269,7 +269,7 @@ class Ui_CardWindow(object):
 "	height: 12px;\n"
 "}\n"
 "")
-        self.timeEdit.setTimeSpec(Qt.LocalTime)
+        self.timeEdit.setTimeSpec(Qt.TimeSpec.LocalTime)
 
         self.verticalLayout_2.addWidget(self.timeEdit)
 
@@ -338,16 +338,101 @@ class Ui_CardWindow(object):
 "	background-color: {modify_hex_color(self.color)};\n"
 "	color: #ffffff;\n"
 "}")
-        self.textEdit_description.setFrameShape(QFrame.NoFrame)
+        self.textEdit_description.setFrameShape(QFrame.Shape.NoFrame)
         self.textEdit_description.setTabChangesFocus(False)
         self.textEdit_description.setTabStopDistance(20.000000000000000)
         self.textEdit_description.setAcceptRichText(False)
-        self.textEdit_description.setTextInteractionFlags(Qt.LinksAccessibleByKeyboard|Qt.LinksAccessibleByMouse|Qt.TextBrowserInteraction|Qt.TextEditable|Qt.TextEditorInteraction|Qt.TextSelectableByKeyboard|Qt.TextSelectableByMouse)
+        self.textEdit_description.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse|Qt.TextInteractionFlag.TextBrowserInteraction|Qt.TextInteractionFlag.TextEditable|Qt.TextInteractionFlag.TextEditorInteraction|Qt.TextInteractionFlag.TextSelectableByKeyboard|Qt.TextInteractionFlag.TextSelectableByMouse)
 
         self.verticalLayout.addWidget(self.textEdit_description)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.prependPushButton = QPushButton(self.widget1)
+        self.prependPushButton.setObjectName(u"prependPushButton")
+        self.prependPushButton.setMinimumSize(QSize(140, 30))
+        palette = QPalette()
+        brush = QBrush(QColor(255, 255, 255, 255))
+        brush.setStyle(Qt.BrushStyle.SolidPattern)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.WindowText, brush)
+        brush1 = QBrush(QColor(107, 173, 238, 255))
+        brush1.setStyle(Qt.BrushStyle.SolidPattern)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Button, brush1)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Text, brush)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.ButtonText, brush)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Base, brush1)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Window, brush1)
+        brush2 = QBrush(QColor(39, 191, 115, 255))
+        brush2.setStyle(Qt.BrushStyle.SolidPattern)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Highlight, brush2)
+        brush3 = QBrush(QColor(255, 255, 255, 128))
+        brush3.setStyle(Qt.BrushStyle.SolidPattern)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.PlaceholderText, brush3)
+#endif
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.WindowText, brush)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Button, brush1)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Text, brush)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.ButtonText, brush)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Base, brush1)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Window, brush1)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Highlight, brush2)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.PlaceholderText, brush3)
+#endif
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.WindowText, brush)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Button, brush1)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Text, brush)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.ButtonText, brush)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Base, brush1)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Window, brush1)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Highlight, brush2)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.PlaceholderText, brush3)
+#endif
+        self.prependPushButton.setPalette(palette)
+        self.prependPushButton.setAutoFillBackground(False)
+        self.prependPushButton.setStyleSheet(u"QPushButton {\n"
+"	background-color: #6badee;\n"
+"	color: #ffffff;\n"
+"	border-radius: 5px\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #5487bb;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border-color: #000000;\n"
+"	border-width: 1.5px;\n"
+"	border-style: solid;\n"
+"}\n"
+"")
+
+        self.horizontalLayout.addWidget(self.prependPushButton)
+
+        self.appendPushButton = QPushButton(self.widget1)
+        self.appendPushButton.setObjectName(u"appendPushButton")
+        self.appendPushButton.setMinimumSize(QSize(140, 30))
+        self.appendPushButton.setStyleSheet(u"QPushButton {\n"
+"	background-color: #6badee;\n"
+"	color: #ffffff;\n"
+"	border-radius: 5px\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #5487bb;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border-color: #000000;\n"
+"	border-width: 1.5px;\n"
+"	border-style: solid;\n"
+"}\n"
+"")
+
+        self.horizontalLayout.addWidget(self.appendPushButton)
+
         self.btn_delete = QPushButton(self.widget1)
         self.btn_delete.setObjectName(u"btn_delete")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
@@ -361,7 +446,7 @@ class Ui_CardWindow(object):
         font5.setPointSize(12)
         self.btn_delete.setFont(font5)
         self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_delete.setFocusPolicy(Qt.TabFocus)
+        self.btn_delete.setFocusPolicy(Qt.FocusPolicy.TabFocus)
         self.btn_delete.setStyleSheet(u"QPushButton {\n"
 "	background-color: #d63a3e;\n"
 "	color: #ffffff;\n"
@@ -392,7 +477,7 @@ class Ui_CardWindow(object):
         self.btn_cancel.setMinimumSize(QSize(100, 30))
         self.btn_cancel.setFont(font5)
         self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_cancel.setFocusPolicy(Qt.TabFocus)
+        self.btn_cancel.setFocusPolicy(Qt.FocusPolicy.TabFocus)
         self.btn_cancel.setStyleSheet(u"QPushButton {\n"
 "	background-color: #acb2bf;\n"
 "	color: #ffffff;\n"
@@ -419,7 +504,7 @@ class Ui_CardWindow(object):
         self.btn_save.setMinimumSize(QSize(100, 30))
         self.btn_save.setFont(font5)
         self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_save.setFocusPolicy(Qt.TabFocus)
+        self.btn_save.setFocusPolicy(Qt.FocusPolicy.TabFocus)
         self.btn_save.setStyleSheet(u"QPushButton {\n"
 "	background-color: #6badee;\n"
 "	color: #ffffff;\n"
@@ -479,6 +564,8 @@ class Ui_CardWindow(object):
 "</style></head><body style=\" font-family:'Noto Sans'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Torus Pro';\"><br /></p></body></html>", None))
         self.textEdit_description.setPlaceholderText(QCoreApplication.translate("CardWindow", u"Add a more detailed description...", None))
+        self.prependPushButton.setText(QCoreApplication.translate("CardWindow", u"prepend timestamp", None))
+        self.appendPushButton.setText(QCoreApplication.translate("CardWindow", u"append timestamp", None))
         self.btn_delete.setText(QCoreApplication.translate("CardWindow", u"Delete Card", None))
         self.btn_cancel.setText(QCoreApplication.translate("CardWindow", u"Cancel", None))
         self.btn_save.setText(QCoreApplication.translate("CardWindow", u"Save", None))

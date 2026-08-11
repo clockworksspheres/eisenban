@@ -1,5 +1,7 @@
+from datetime import datetime
+
 from PySide6.QtCore import QEvent, QDate, QTime
-from PySide6.QtGui import QFont
+from PySide6.QtGui import QFont, QTextCursor
 from PySide6.QtWidgets import QMainWindow
 
 from db import Table
@@ -30,6 +32,8 @@ class CardDescription(QMainWindow):
         )
         self.ui.btn_cancel.clicked.connect(self.close)
         self.ui.btn_save.clicked.connect(self.save)
+        self.ui.appendPushButton.clicked.connect(self.appendTimestamp)
+        self.ui.prependPushButton.clicked.connect(self.prependTimestamp)
 
         self.ui.btn_delete.keyPressEvent = lambda event: keyPressEvent(
             event, function=dialog_factory(
@@ -271,6 +275,8 @@ class CardDescription(QMainWindow):
             """
         )
         self.ui.btn_save.setStyleSheet(stylesheet)
+        self.ui.prependPushButton.setStyleSheet(stylesheet)
+        self.ui.appendPushButton.setStyleSheet(stylesheet)
 
         self.setup_font()
 
@@ -307,6 +313,24 @@ class CardDescription(QMainWindow):
         """Deletes the card from the table."""
         Table.get_instance().delete_card(self)
         self.close()
+
+    def appendTimestamp(self):
+        print("Appending timestamp")
+        timestamp = datetime.now().strftime('%Y-%m-%d_%H%M')
+        print(timestamp)
+        # Output example: 2026-08-11_1316   
+
+        self.ui.textEdit_description.append(f"{timestamp}")
+
+    def prependTimestamp(self):
+        print("Prepending timestamp")
+        timestamp = datetime.now().strftime('%Y-%m-%d_%H%M')
+        print(timestamp)
+        # Output example: 2026-08-11_1316   
+
+        cursor = QTextCursor(self.ui.textEdit_description.document())
+        cursor.setPosition(0)
+        cursor.insertText(f"{timestamp}")
 
     @property
     def title(self) -> str:
