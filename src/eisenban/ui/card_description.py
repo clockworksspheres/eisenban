@@ -320,7 +320,7 @@ class CardDescription(QMainWindow):
         print(timestamp)
         # Output example: 2026-08-11_1316   
 
-        self.ui.textEdit_description.append(f"{timestamp}")
+        self.ui.textEdit_description.append(f"{timestamp}\n\n")
 
     def prependTimestamp(self):
         print("Prepending timestamp")
@@ -330,7 +330,7 @@ class CardDescription(QMainWindow):
 
         cursor = QTextCursor(self.ui.textEdit_description.document())
         cursor.setPosition(0)
-        cursor.insertText(f"{timestamp}")
+        cursor.insertText(f"\n{timestamp}\n")
 
     @property
     def title(self) -> str:
