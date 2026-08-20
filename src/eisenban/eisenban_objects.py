@@ -33,10 +33,13 @@ class EisenbanObject(ABC):
 
 class Card(EisenbanObject):
     def __init__(self, title: str = "New Card", date: str = "", time: str = "",
+                 urgent: bool = True, important: bool = True, 
                  description: str = "") -> None:
         self.__title = title
         self.__date = date
         self.__time = time
+        self.__urgent = urgent
+        self.__important = important
         self.__description = description
 
     @property
@@ -55,6 +58,14 @@ class Card(EisenbanObject):
     def time(self) -> str:
         return self.__time
 
+    @property
+    def urgent(self) -> bool:
+        return self.__urgent
+
+    @property
+    def important(self) -> bool:
+        return self.__important
+
     @title.setter
     def title(self, title: str):
         if title is None:
@@ -66,6 +77,18 @@ class Card(EisenbanObject):
         if description is None:
             raise ValueError("Card description cannot be None.")
         self.__description = description
+
+    @urgent.setter
+    def urgent(self, urgent: bool):
+        if urgent is None:
+            raise ValueError("Card urgent cannot be None.")
+        self.__urgent = urgent
+
+    @important.setter
+    def important(self, important: bool):
+        if important is None:
+            raise ValueError("Card important cannot be None.")
+        self.__important = important
 
     @date.setter
     def date(self, date: str):
@@ -92,12 +115,15 @@ class Card(EisenbanObject):
             self.__title == card.title and
             self.__date == card.date and
             self.__time == card.time and
+            self.__urgent == card.urgent and
+            self.__important == card.important and
             self.__description == card.description
-        )
+       )
 
     def __str__(self):
         return (
             f"{self.title=}, {self.date=}, {self.time=}, "
+            f"{self.urgent=}, {self.important=}, "
             f"{self.description=}".replace("self.", "")
         )
 

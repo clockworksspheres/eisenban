@@ -212,7 +212,9 @@ class Table(metaclass=SingletonMeta):
                         title=card_item.get('_Card__title', ''),
                         description=card_item.get('_Card__description', ''),
                         date=card_item.get('_Card__date', ''),
-                        time=card_item.get('_Card__time', '')
+                        time=card_item.get('_Card__time', ''),
+                        urgent=card_item.get('_Card__urgent'),
+                        important=card_item.get('_Card__important')
                     )
                     cards.append(card)
 
@@ -259,15 +261,19 @@ class Table(metaclass=SingletonMeta):
                             "_Board__panels_lists")[index_p].get(
                                 "_Board__panels")[index_c]
                         card_dict["_Card__title"] = card_new.title
-                        card_dict["_Card__description"] = card_new.description
                         card_dict["_Card__date"] = card_new.date
                         card_dict["_Card__time"] = card_new.time
+                        card_dict["_Card__urgent"] = card_new.urgent
+                        card_dict["_Card__important"] = card_new.important
+                        card_dict["_Card__description"] = card_new.description
                         Table.write(self)
                         logging.info("Card updated:")
                         logging.info(
                             f"{card_old} -> title='{card_new.title}', "
                             f"date='{card_new.date}', "
                             f"time='{card_new.time}', "
+                            f"urgent={card_new.urgent}, "
+                            f"important={card_new.important}, "
                             f"description='{card_new.description}'")
                         return None
 
@@ -345,7 +351,9 @@ class Table(metaclass=SingletonMeta):
                                 "_Card__title": card.title,
                                 "_Card__description": card.description,
                                 "_Card__date": card.date,
-                                "_Card__time": card.time
+                                "_Card__time": card.time,
+                                "_Card__urgent": card.urgent,
+                                "_Card__important": card.important
                             }
                             for card in panel.cards
                         ]
@@ -381,7 +389,9 @@ class Table(metaclass=SingletonMeta):
                                 "_Card__title": card.title,
                                 "_Card__description": card.description,
                                 "_Card__date": card.date,
-                                "_Card__time": card.time
+                                "_Card__time": card.time,
+                                "_Card__urgent": card.urgent,
+                                "_Card__important": card.important
                             }
                             for card in panel.cards
                         ]

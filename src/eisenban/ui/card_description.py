@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 
 from PySide6.QtCore import QEvent, QDate, QTime
@@ -34,6 +35,10 @@ class CardDescription(QMainWindow):
         self.ui.btn_save.clicked.connect(self.save)
         self.ui.appendPushButton.clicked.connect(self.appendTimestamp)
         self.ui.prependPushButton.clicked.connect(self.prependTimestamp)
+        #self.ui.urgentComboBox.currentIndexChanged.connect(self.onUrgentChange)
+        #self.ui.importantComboBox.currentIndexChanged.connect(self.onImportantChange)
+
+        self.ui.btn_save.setDefault(True)
 
         self.ui.btn_delete.keyPressEvent = lambda event: keyPressEvent(
             event, function=dialog_factory(
@@ -54,6 +59,8 @@ class CardDescription(QMainWindow):
         self.title = card.title
         self.date = card.date
         self.time = card.time
+        self.urgent = card.urgent
+        self.important = card.important
         self.description = card.description
 
         color = hex_to_rgba(color)
@@ -280,6 +287,22 @@ class CardDescription(QMainWindow):
 
         self.setup_font()
 
+    def onUrgentChange(self):
+        urgentText = self.ui.urgentComboBox.currentText()
+        #print(f"urgentText: {urgentText}")
+        if re.match("^Urgent$", urgentText):
+            self.urgent = True
+        elif re.match("^Not Urgent$", urgentText):
+            self.urgent = False
+
+    def onImportantChange(self):
+        importantText = self.ui.importantComboBox.currentText()
+        #print(f"importantText: {importantText}")
+        if importantText == "Important":
+            self.important = True
+        elif importantText == "Not Important":
+            self.important = False
+
     def save(self) -> None:
         """Saves the card to the table."""
         if self.title_txt == "":
@@ -291,8 +314,9 @@ class CardDescription(QMainWindow):
             )
             self.title = self.card.title
             return None
-        card_old = Card(self.card.title, self.card.date,
-                        self.card.time, self.card.description)
+        card_old = Card(self.card.title, self.card.date, self.card.time,
+                        self.card.urgent, self.card.important,
+                        self.card.description)
         if card_old.title != self.title_txt:
             for board in Table.get_instance().boards:
                 for panel in board.panels:
@@ -320,7 +344,8 @@ class CardDescription(QMainWindow):
         print(timestamp)
         # Output example: 2026-08-11_1316   
 
-        self.ui.textEdit_description.append(f"{timestamp}\n\n")
+        self.ui.textEdit_description.append(r'-------------------------')
+        self.ui.textEdit_description.append(f"{timestamp}\n")
 
     def prependTimestamp(self):
         print("Prepending timestamp")
@@ -330,7 +355,9 @@ class CardDescription(QMainWindow):
 
         cursor = QTextCursor(self.ui.textEdit_description.document())
         cursor.setPosition(0)
-        cursor.insertText(f"\n{timestamp}\n")
+        cursor.insertText("-------------------------\n")
+        cursor.insertText(f"{timestamp}\n")
+        cursor.insertText("\n")
 
     @property
     def title(self) -> str:
@@ -348,6 +375,30 @@ class CardDescription(QMainWindow):
     def description(self) -> str:
         return self.ui.textEdit_description.toPlainText()
 
+    @property
+    def urgent(self) -> bool:
+        urgentVal = None
+        textValue = self.ui.urgentComboBox.currentText()
+        if textValue == "Not Urgent":
+            urgentVal = False
+        elif textValue == "Urgent":
+            urgentVal = True
+        else:
+            raise ValueError("Invalid Urgent state")
+        return urgentVal
+
+    @property
+    def important(self) -> bool:
+        importantVal = None
+        textValue = self.ui.importantComboBox.currentText()
+        if textValue == "Not Important":
+            importantVal = False
+        elif textValue == "Important":
+            importantVal = True
+        else:
+            raise ValueError("Invalid Important state")
+        return importantVal
+
     @title.setter
     def title(self, title: str) -> None:
         self.ui.lineEdit_title.setText(title)
@@ -356,6 +407,30 @@ class CardDescription(QMainWindow):
     def date(self, date: str) -> None:
         self.ui.calendarWidget.setSelectedDate(
             QDate.fromString(date, "dd-MM-yyyy"))
+
+    @time.setter
+    def time(self, time: str) -> None:
+        self.ui.timeEdit.setTime(QTime.fromString(time, "hh:mm"))
+
+    @urgent.setter
+    def urgent(self, urgent: bool) -> None:
+        if urgent is True:
+            self.ui.urgentComboBox.setCurrentIndex(0)
+        elif urgent is False:
+            self.ui.urgentComboBox.setCurrentIndex(1)
+        else:
+            self.ui.urgentComboBox.setCurrentIndex(0)
+            #raise ValueError("Invalid value for Urgent Combobox")
+
+    @important.setter
+    def important(self, important: bool) -> None:
+        if important is True:
+            self.ui.importantComboBox.setCurrentIndex(0)
+        elif important is False:
+            self.ui.importantComboBox.setCurrentIndex(1)
+        else:
+            self.ui.importantComboBox.setCurrentIndex(0)
+            #raise ValueError("Invalid value for Important Combobox")
 
     @time.setter
     def time(self, time: str) -> None:

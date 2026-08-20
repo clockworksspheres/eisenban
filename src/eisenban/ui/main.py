@@ -1065,6 +1065,8 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
                                 "_Board__panels").append({
                                     "_Card__title": text,
                                     "_Card__description": "",
+                                    "_Card__urgent": True,
+                                    "_Card__important": True,
                                     "_Card__date": datetime.date.today()
                                     .strftime("%Y-%m-%d"),
                                     "_Card__time": datetime.datetime.now()
@@ -1077,6 +1079,8 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
                                 [{
                                     "_Card__title": text,
                                     "_Card__description": "",
+                                    "_Card__urgent": True,
+                                    "_Card__important": True,
                                     "_Card__date": datetime.date.today()
                                     .strftime("%Y-%m-%d"),
                                     "_Card__time": datetime.datetime.now()

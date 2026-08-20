@@ -15,16 +15,18 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCalendarWidget, QFrame, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QSpacerItem, QTextEdit, QTimeEdit,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QCalendarWidget, QComboBox, QFrame,
+    QGridLayout, QHBoxLayout, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QTextEdit, QTimeEdit, QVBoxLayout, QWidget)
+import resources_rc
+import resources_rc
 
 class Ui_CardWindow(object):
     def setupUi(self, CardWindow):
         if not CardWindow.objectName():
             CardWindow.setObjectName(u"CardWindow")
-        CardWindow.resize(679, 686)
+        CardWindow.resize(730, 765)
         icon = QIcon()
         icon.addFile(u":/img/resources/img/icon.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         CardWindow.setWindowIcon(icon)
@@ -64,21 +66,189 @@ class Ui_CardWindow(object):
         self.widget1.setObjectName(u"widget1")
         self.widget1.setStyleSheet(u"background-color: #f4f5f7;\n"
 "border-radius: 5px;")
-        self.verticalLayout = QVBoxLayout(self.widget1)
-        self.verticalLayout.setSpacing(12)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(10, 10, 10, 10)
-        self.label_title = QLabel(self.widget1)
-        self.label_title.setObjectName(u"label_title")
+        self.gridLayout = QGridLayout(self.widget1)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(10, 10, 10, 10)
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.prependPushButton = QPushButton(self.widget1)
+        self.prependPushButton.setObjectName(u"prependPushButton")
+        self.prependPushButton.setMinimumSize(QSize(140, 30))
+        palette = QPalette()
+        brush = QBrush(QColor(255, 255, 255, 255))
+        brush.setStyle(Qt.BrushStyle.SolidPattern)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.WindowText, brush)
+        brush1 = QBrush(QColor(107, 173, 238, 255))
+        brush1.setStyle(Qt.BrushStyle.SolidPattern)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Button, brush1)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Text, brush)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.ButtonText, brush)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Base, brush1)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Window, brush1)
+        brush2 = QBrush(QColor(39, 191, 115, 255))
+        brush2.setStyle(Qt.BrushStyle.SolidPattern)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Highlight, brush2)
+        brush3 = QBrush(QColor(255, 255, 255, 128))
+        brush3.setStyle(Qt.BrushStyle.SolidPattern)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.PlaceholderText, brush3)
+#endif
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.WindowText, brush)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Button, brush1)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Text, brush)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.ButtonText, brush)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Base, brush1)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Window, brush1)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Highlight, brush2)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.PlaceholderText, brush3)
+#endif
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.WindowText, brush)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Button, brush1)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Text, brush)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.ButtonText, brush)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Base, brush1)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Window, brush1)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Highlight, brush2)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.PlaceholderText, brush3)
+#endif
+        self.prependPushButton.setPalette(palette)
+        self.prependPushButton.setAutoFillBackground(False)
+        self.prependPushButton.setStyleSheet(u"QPushButton {\n"
+"	background-color: #6badee;\n"
+"	color: #ffffff;\n"
+"	border-radius: 5px\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #5487bb;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border-color: #000000;\n"
+"	border-width: 1.5px;\n"
+"	border-style: solid;\n"
+"}\n"
+"")
+
+        self.horizontalLayout.addWidget(self.prependPushButton)
+
+        self.appendPushButton = QPushButton(self.widget1)
+        self.appendPushButton.setObjectName(u"appendPushButton")
+        self.appendPushButton.setMinimumSize(QSize(140, 30))
+        self.appendPushButton.setStyleSheet(u"QPushButton {\n"
+"	background-color: #6badee;\n"
+"	color: #ffffff;\n"
+"	border-radius: 5px\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #5487bb;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border-color: #000000;\n"
+"	border-width: 1.5px;\n"
+"	border-style: solid;\n"
+"}\n"
+"")
+
+        self.horizontalLayout.addWidget(self.appendPushButton)
+
+        self.btn_delete = QPushButton(self.widget1)
+        self.btn_delete.setObjectName(u"btn_delete")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
+        self.btn_delete.setSizePolicy(sizePolicy1)
+        self.btn_delete.setMinimumSize(QSize(140, 30))
         font1 = QFont()
         font1.setFamilies([u"Arimo"])
-        font1.setPointSize(14)
-        font1.setBold(False)
-        self.label_title.setFont(font1)
-        self.label_title.setStyleSheet(u"color: #282c33;")
-        self.label_title.setWordWrap(True)
+        font1.setPointSize(12)
+        self.btn_delete.setFont(font1)
+        self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_delete.setFocusPolicy(Qt.FocusPolicy.TabFocus)
+        self.btn_delete.setStyleSheet(u"QPushButton {\n"
+"	background-color: #d63a3e;\n"
+"	color: #ffffff;\n"
+"	border-radius: 5px\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #9e2a2a;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border-color: #000000;\n"
+"	border-width: 1.5px;\n"
+"	border-style: solid;\n"
+"}\n"
+"")
 
-        self.verticalLayout.addWidget(self.label_title)
+        self.horizontalLayout.addWidget(self.btn_delete)
+
+        self.horizontalSpacer = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.btn_cancel = QPushButton(self.widget1)
+        self.btn_cancel.setObjectName(u"btn_cancel")
+        sizePolicy1.setHeightForWidth(self.btn_cancel.sizePolicy().hasHeightForWidth())
+        self.btn_cancel.setSizePolicy(sizePolicy1)
+        self.btn_cancel.setMinimumSize(QSize(100, 30))
+        self.btn_cancel.setFont(font1)
+        self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_cancel.setFocusPolicy(Qt.FocusPolicy.TabFocus)
+        self.btn_cancel.setStyleSheet(u"QPushButton {\n"
+"	background-color: #acb2bf;\n"
+"	color: #ffffff;\n"
+"	border-radius: 5px\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #7e828c;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border-color: #000000;\n"
+"	border-width: 1.5px;\n"
+"	border-style: solid;\n"
+"}\n"
+"")
+
+        self.horizontalLayout.addWidget(self.btn_cancel)
+
+        self.btn_save = QPushButton(self.widget1)
+        self.btn_save.setObjectName(u"btn_save")
+        sizePolicy1.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
+        self.btn_save.setSizePolicy(sizePolicy1)
+        self.btn_save.setMinimumSize(QSize(100, 30))
+        self.btn_save.setFont(font1)
+        self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_save.setFocusPolicy(Qt.FocusPolicy.TabFocus)
+        self.btn_save.setStyleSheet(u"QPushButton {\n"
+"	background-color: #6badee;\n"
+"	color: #ffffff;\n"
+"	border-radius: 5px\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #5487bb;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border-color: #000000;\n"
+"	border-width: 1.5px;\n"
+"	border-style: solid;\n"
+"}\n"
+"")
+
+        self.horizontalLayout.addWidget(self.btn_save)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout, 7, 0, 1, 1)
 
         self.lineEdit_title = QLineEdit(self.widget1)
         self.lineEdit_title.setObjectName(u"lineEdit_title")
@@ -109,7 +279,19 @@ class Ui_CardWindow(object):
 "")
         self.lineEdit_title.setReadOnly(False)
 
-        self.verticalLayout.addWidget(self.lineEdit_title)
+        self.gridLayout.addWidget(self.lineEdit_title, 1, 0, 1, 1)
+
+        self.label_title = QLabel(self.widget1)
+        self.label_title.setObjectName(u"label_title")
+        font3 = QFont()
+        font3.setFamilies([u"Arimo"])
+        font3.setPointSize(14)
+        font3.setBold(False)
+        self.label_title.setFont(font3)
+        self.label_title.setStyleSheet(u"color: #282c33;")
+        self.label_title.setWordWrap(True)
+
+        self.gridLayout.addWidget(self.label_title, 0, 0, 1, 1)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -117,7 +299,7 @@ class Ui_CardWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_date = QLabel(self.widget1)
         self.label_date.setObjectName(u"label_date")
-        self.label_date.setFont(font1)
+        self.label_date.setFont(font3)
         self.label_date.setStyleSheet(u"color: #282c33;")
         self.label_date.setWordWrap(True)
 
@@ -217,7 +399,7 @@ class Ui_CardWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.label_time = QLabel(self.widget1)
         self.label_time.setObjectName(u"label_time")
-        self.label_time.setFont(font1)
+        self.label_time.setFont(font3)
         self.label_time.setStyleSheet(u"color: #282c33;")
         self.label_time.setWordWrap(True)
 
@@ -226,11 +408,11 @@ class Ui_CardWindow(object):
         self.timeEdit = QTimeEdit(self.widget1)
         self.timeEdit.setObjectName(u"timeEdit")
         self.timeEdit.setMinimumSize(QSize(0, 40))
-        font3 = QFont()
-        font3.setFamilies([u"Noto Sans"])
-        font3.setPointSize(16)
-        font3.setBold(True)
-        self.timeEdit.setFont(font3)
+        font4 = QFont()
+        font4.setFamilies([u"Noto Sans"])
+        font4.setPointSize(16)
+        font4.setBold(True)
+        self.timeEdit.setFont(font4)
         self.timeEdit.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.timeEdit.setStyleSheet(u"QTimeEdit {\n"
 "	background-color: #6badee;\n"
@@ -277,6 +459,204 @@ class Ui_CardWindow(object):
 
         self.verticalLayout_2.addItem(self.horizontalSpacer_2)
 
+        self.urgentComboBox = QComboBox(self.widget1)
+        self.urgentComboBox.addItem("")
+        self.urgentComboBox.addItem("")
+        self.urgentComboBox.setObjectName(u"urgentComboBox")
+        self.urgentComboBox.setStyleSheet(u"/* Base style */\n"
+"QComboBox {\n"
+"    background-color: #6badee;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid transparent;\n"
+"    border-radius: 5px;\n"
+"    padding: 4px 8px;\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"/* Hover */\n"
+"QComboBox:hover {\n"
+"    background-color: #5487bb;\n"
+"}\n"
+"\n"
+"/* Focus */\n"
+"QComboBox:focus {\n"
+"    border: 1.5px solid #000000;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* Disabled */\n"
+"QComboBox:disabled {\n"
+"    background-color: #a0c4e8;\n"
+"    color: #e0e0e0;\n"
+"}\n"
+"\n"
+"/* Drop-down button */\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 24px;\n"
+"    border-left: 1px solid rgba(255, 255, 255, 0.3);\n"
+"    border-top-right-radius: 5px;\n"
+"    border-bottom-right-radius: 5px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"/* Drop-down button hover */\n"
+"QComboBox::drop-down:hover {\n"
+"    background-color: rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"/* Arrow */\n"
+"QComboBox::down-"
+                        "arrow {\n"
+"    image: none;\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"    border-left: 4px solid transparent;\n"
+"    border-right: 4px solid transparent;\n"
+"    border-top: 6px solid #ffffff;\n"
+"}\n"
+"\n"
+"/* Popup list container */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #6badee;          /* same blue as the combobox */\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #5487bb;\n"
+"    border-radius: 5px;\n"
+"    outline: none;\n"
+"    selection-background-color: #5487bb;\n"
+"    selection-color: #ffffff;\n"
+"}\n"
+"\n"
+"/* All items in the list */\n"
+"QComboBox QAbstractItemView::item {\n"
+"    background-color: #6badee;          /* base color */\n"
+"    color: #ffffff;\n"
+"    padding: 6px 10px;\n"
+"    min-height: 24px;\n"
+"    border-radius: 3px;                 /* optional, looks nicer */\n"
+"}\n"
+"\n"
+"/* Hovered item */\n"
+"QComboBox QAbstractItemView::item:hover {\n"
+"    background-color: #5487bb;          /* same as combobox hover */\n"
+"    color: #ffffff;\n"
+"}\n"
+"\n"
+""
+                        "/* Selected / current item */\n"
+"QComboBox QAbstractItemView::item:selected {\n"
+"    background-color: #5487bb;\n"
+"    color: #ffffff;\n"
+"}\n"
+"\n"
+"/* Disabled items (if any) */\n"
+"QComboBox QAbstractItemView::item:disabled {\n"
+"    background-color: #a0c4e8;\n"
+"    color: #e0e0e0;\n"
+"}")
+
+        self.verticalLayout_2.addWidget(self.urgentComboBox)
+
+        self.importantComboBox = QComboBox(self.widget1)
+        self.importantComboBox.addItem("")
+        self.importantComboBox.addItem("")
+        self.importantComboBox.setObjectName(u"importantComboBox")
+        self.importantComboBox.setStyleSheet(u"/* Base style */\n"
+"QComboBox {\n"
+"    background-color: #6badee;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid transparent;\n"
+"    border-radius: 5px;\n"
+"    padding: 4px 8px;\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"/* Hover */\n"
+"QComboBox:hover {\n"
+"    background-color: #5487bb;\n"
+"}\n"
+"\n"
+"/* Focus */\n"
+"QComboBox:focus {\n"
+"    border: 1.5px solid #000000;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* Disabled */\n"
+"QComboBox:disabled {\n"
+"    background-color: #a0c4e8;\n"
+"    color: #e0e0e0;\n"
+"}\n"
+"\n"
+"/* Drop-down button */\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 24px;\n"
+"    border-left: 1px solid rgba(255, 255, 255, 0.3);\n"
+"    border-top-right-radius: 5px;\n"
+"    border-bottom-right-radius: 5px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"/* Drop-down button hover */\n"
+"QComboBox::drop-down:hover {\n"
+"    background-color: rgba(0, 0, 0, 0.1);\n"
+"}\n"
+"\n"
+"/* Arrow */\n"
+"QComboBox::down-"
+                        "arrow {\n"
+"    image: none;\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"    border-left: 4px solid transparent;\n"
+"    border-right: 4px solid transparent;\n"
+"    border-top: 6px solid #ffffff;\n"
+"}\n"
+"\n"
+"/* Popup list container */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #6badee;          /* same blue as the combobox */\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #5487bb;\n"
+"    border-radius: 5px;\n"
+"    outline: none;\n"
+"    selection-background-color: #5487bb;\n"
+"    selection-color: #ffffff;\n"
+"}\n"
+"\n"
+"/* All items in the list */\n"
+"QComboBox QAbstractItemView::item {\n"
+"    background-color: #6badee;          /* base color */\n"
+"    color: #ffffff;\n"
+"    padding: 6px 10px;\n"
+"    min-height: 24px;\n"
+"    border-radius: 3px;                 /* optional, looks nicer */\n"
+"}\n"
+"\n"
+"/* Hovered item */\n"
+"QComboBox QAbstractItemView::item:hover {\n"
+"    background-color: #5487bb;          /* same as combobox hover */\n"
+"    color: #ffffff;\n"
+"}\n"
+"\n"
+""
+                        "/* Selected / current item */\n"
+"QComboBox QAbstractItemView::item:selected {\n"
+"    background-color: #5487bb;\n"
+"    color: #ffffff;\n"
+"}\n"
+"\n"
+"/* Disabled items (if any) */\n"
+"QComboBox QAbstractItemView::item:disabled {\n"
+"    background-color: #a0c4e8;\n"
+"    color: #e0e0e0;\n"
+"}")
+
+        self.verticalLayout_2.addWidget(self.importantComboBox)
+
         self.verticalSpacer = QSpacerItem(20, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
@@ -285,23 +665,15 @@ class Ui_CardWindow(object):
         self.horizontalLayout_2.addLayout(self.verticalLayout_2)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
-
-        self.label_description = QLabel(self.widget1)
-        self.label_description.setObjectName(u"label_description")
-        self.label_description.setFont(font1)
-        self.label_description.setStyleSheet(u"color: #282c33;")
-        self.label_description.setWordWrap(True)
-
-        self.verticalLayout.addWidget(self.label_description)
+        self.gridLayout.addLayout(self.horizontalLayout_2, 2, 0, 1, 1)
 
         self.textEdit_description = QTextEdit(self.widget1)
         self.textEdit_description.setObjectName(u"textEdit_description")
-        font4 = QFont()
-        font4.setFamilies([u"Noto Sans"])
-        font4.setPointSize(12)
-        font4.setBold(False)
-        self.textEdit_description.setFont(font4)
+        font5 = QFont()
+        font5.setFamilies([u"Noto Sans"])
+        font5.setPointSize(12)
+        font5.setBold(False)
+        self.textEdit_description.setFont(font5)
         self.textEdit_description.setStyleSheet(u"QTextEdit {\n"
 "	background-color: #ebecf0;\n"
 "	color: #282c33;\n"
@@ -344,188 +716,15 @@ class Ui_CardWindow(object):
         self.textEdit_description.setAcceptRichText(False)
         self.textEdit_description.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByKeyboard|Qt.TextInteractionFlag.LinksAccessibleByMouse|Qt.TextInteractionFlag.TextBrowserInteraction|Qt.TextInteractionFlag.TextEditable|Qt.TextInteractionFlag.TextEditorInteraction|Qt.TextInteractionFlag.TextSelectableByKeyboard|Qt.TextInteractionFlag.TextSelectableByMouse)
 
-        self.verticalLayout.addWidget(self.textEdit_description)
+        self.gridLayout.addWidget(self.textEdit_description, 6, 0, 1, 1)
 
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.prependPushButton = QPushButton(self.widget1)
-        self.prependPushButton.setObjectName(u"prependPushButton")
-        self.prependPushButton.setMinimumSize(QSize(140, 30))
-        palette = QPalette()
-        brush = QBrush(QColor(255, 255, 255, 255))
-        brush.setStyle(Qt.BrushStyle.SolidPattern)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.WindowText, brush)
-        brush1 = QBrush(QColor(107, 173, 238, 255))
-        brush1.setStyle(Qt.BrushStyle.SolidPattern)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Button, brush1)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Text, brush)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.ButtonText, brush)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Base, brush1)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Window, brush1)
-        brush2 = QBrush(QColor(39, 191, 115, 255))
-        brush2.setStyle(Qt.BrushStyle.SolidPattern)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.Highlight, brush2)
-        brush3 = QBrush(QColor(255, 255, 255, 128))
-        brush3.setStyle(Qt.BrushStyle.SolidPattern)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.ColorGroup.Active, QPalette.ColorRole.PlaceholderText, brush3)
-#endif
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.WindowText, brush)
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Button, brush1)
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Text, brush)
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.ButtonText, brush)
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Base, brush1)
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Window, brush1)
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.Highlight, brush2)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.ColorGroup.Inactive, QPalette.ColorRole.PlaceholderText, brush3)
-#endif
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.WindowText, brush)
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Button, brush1)
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Text, brush)
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.ButtonText, brush)
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Base, brush1)
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Window, brush1)
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.Highlight, brush2)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.ColorGroup.Disabled, QPalette.ColorRole.PlaceholderText, brush3)
-#endif
-        self.prependPushButton.setPalette(palette)
-        self.prependPushButton.setAutoFillBackground(False)
-        self.prependPushButton.setStyleSheet(u"QPushButton {\n"
-"	background-color: #6badee;\n"
-"	color: #ffffff;\n"
-"	border-radius: 5px\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #5487bb;\n"
-"}\n"
-"\n"
-"QPushButton:focus {\n"
-"	border-color: #000000;\n"
-"	border-width: 1.5px;\n"
-"	border-style: solid;\n"
-"}\n"
-"")
+        self.label_description = QLabel(self.widget1)
+        self.label_description.setObjectName(u"label_description")
+        self.label_description.setFont(font3)
+        self.label_description.setStyleSheet(u"color: #282c33;")
+        self.label_description.setWordWrap(True)
 
-        self.horizontalLayout.addWidget(self.prependPushButton)
-
-        self.appendPushButton = QPushButton(self.widget1)
-        self.appendPushButton.setObjectName(u"appendPushButton")
-        self.appendPushButton.setMinimumSize(QSize(140, 30))
-        self.appendPushButton.setStyleSheet(u"QPushButton {\n"
-"	background-color: #6badee;\n"
-"	color: #ffffff;\n"
-"	border-radius: 5px\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #5487bb;\n"
-"}\n"
-"\n"
-"QPushButton:focus {\n"
-"	border-color: #000000;\n"
-"	border-width: 1.5px;\n"
-"	border-style: solid;\n"
-"}\n"
-"")
-
-        self.horizontalLayout.addWidget(self.appendPushButton)
-
-        self.btn_delete = QPushButton(self.widget1)
-        self.btn_delete.setObjectName(u"btn_delete")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.btn_delete.sizePolicy().hasHeightForWidth())
-        self.btn_delete.setSizePolicy(sizePolicy1)
-        self.btn_delete.setMinimumSize(QSize(140, 30))
-        font5 = QFont()
-        font5.setFamilies([u"Arimo"])
-        font5.setPointSize(12)
-        self.btn_delete.setFont(font5)
-        self.btn_delete.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_delete.setFocusPolicy(Qt.FocusPolicy.TabFocus)
-        self.btn_delete.setStyleSheet(u"QPushButton {\n"
-"	background-color: #d63a3e;\n"
-"	color: #ffffff;\n"
-"	border-radius: 5px\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #9e2a2a;\n"
-"}\n"
-"\n"
-"QPushButton:focus {\n"
-"	border-color: #000000;\n"
-"	border-width: 1.5px;\n"
-"	border-style: solid;\n"
-"}\n"
-"")
-
-        self.horizontalLayout.addWidget(self.btn_delete)
-
-        self.horizontalSpacer = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout.addItem(self.horizontalSpacer)
-
-        self.btn_cancel = QPushButton(self.widget1)
-        self.btn_cancel.setObjectName(u"btn_cancel")
-        sizePolicy1.setHeightForWidth(self.btn_cancel.sizePolicy().hasHeightForWidth())
-        self.btn_cancel.setSizePolicy(sizePolicy1)
-        self.btn_cancel.setMinimumSize(QSize(100, 30))
-        self.btn_cancel.setFont(font5)
-        self.btn_cancel.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_cancel.setFocusPolicy(Qt.FocusPolicy.TabFocus)
-        self.btn_cancel.setStyleSheet(u"QPushButton {\n"
-"	background-color: #acb2bf;\n"
-"	color: #ffffff;\n"
-"	border-radius: 5px\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #7e828c;\n"
-"}\n"
-"\n"
-"QPushButton:focus {\n"
-"	border-color: #000000;\n"
-"	border-width: 1.5px;\n"
-"	border-style: solid;\n"
-"}\n"
-"")
-
-        self.horizontalLayout.addWidget(self.btn_cancel)
-
-        self.btn_save = QPushButton(self.widget1)
-        self.btn_save.setObjectName(u"btn_save")
-        sizePolicy1.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
-        self.btn_save.setSizePolicy(sizePolicy1)
-        self.btn_save.setMinimumSize(QSize(100, 30))
-        self.btn_save.setFont(font5)
-        self.btn_save.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_save.setFocusPolicy(Qt.FocusPolicy.TabFocus)
-        self.btn_save.setStyleSheet(u"QPushButton {\n"
-"	background-color: #6badee;\n"
-"	color: #ffffff;\n"
-"	border-radius: 5px\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #5487bb;\n"
-"}\n"
-"\n"
-"QPushButton:focus {\n"
-"	border-color: #000000;\n"
-"	border-width: 1.5px;\n"
-"	border-style: solid;\n"
-"}\n"
-"")
-
-        self.horizontalLayout.addWidget(self.btn_save)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.gridLayout.addWidget(self.label_description, 3, 0, 1, 1)
 
 
         self.verticalLayout_7.addWidget(self.widget1)
@@ -549,12 +748,22 @@ class Ui_CardWindow(object):
     def retranslateUi(self, CardWindow):
         CardWindow.setWindowTitle(QCoreApplication.translate("CardWindow", u"Card Description", None))
         self.label_card_desc.setText(QCoreApplication.translate("CardWindow", u"Card Description", None))
-        self.label_title.setText(QCoreApplication.translate("CardWindow", u"Title", None))
+        self.prependPushButton.setText(QCoreApplication.translate("CardWindow", u"prepend timestamp", None))
+        self.appendPushButton.setText(QCoreApplication.translate("CardWindow", u"append timestamp", None))
+        self.btn_delete.setText(QCoreApplication.translate("CardWindow", u"Delete Card", None))
+        self.btn_cancel.setText(QCoreApplication.translate("CardWindow", u"Cancel", None))
+        self.btn_save.setText(QCoreApplication.translate("CardWindow", u"Save", None))
         self.lineEdit_title.setText("")
         self.lineEdit_title.setPlaceholderText(QCoreApplication.translate("CardWindow", u"Add a card title...", None))
+        self.label_title.setText(QCoreApplication.translate("CardWindow", u"Title", None))
         self.label_date.setText(QCoreApplication.translate("CardWindow", u"Date", None))
         self.label_time.setText(QCoreApplication.translate("CardWindow", u"Time", None))
-        self.label_description.setText(QCoreApplication.translate("CardWindow", u"Description", None))
+        self.urgentComboBox.setItemText(0, QCoreApplication.translate("CardWindow", u"Urgent", None))
+        self.urgentComboBox.setItemText(1, QCoreApplication.translate("CardWindow", u"Not Urgent", None))
+
+        self.importantComboBox.setItemText(0, QCoreApplication.translate("CardWindow", u"Important", None))
+        self.importantComboBox.setItemText(1, QCoreApplication.translate("CardWindow", u"Not Important", None))
+
         self.textEdit_description.setHtml(QCoreApplication.translate("CardWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -564,10 +773,6 @@ class Ui_CardWindow(object):
 "</style></head><body style=\" font-family:'Noto Sans'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Torus Pro';\"><br /></p></body></html>", None))
         self.textEdit_description.setPlaceholderText(QCoreApplication.translate("CardWindow", u"Add a more detailed description...", None))
-        self.prependPushButton.setText(QCoreApplication.translate("CardWindow", u"prepend timestamp", None))
-        self.appendPushButton.setText(QCoreApplication.translate("CardWindow", u"append timestamp", None))
-        self.btn_delete.setText(QCoreApplication.translate("CardWindow", u"Delete Card", None))
-        self.btn_cancel.setText(QCoreApplication.translate("CardWindow", u"Cancel", None))
-        self.btn_save.setText(QCoreApplication.translate("CardWindow", u"Save", None))
+        self.label_description.setText(QCoreApplication.translate("CardWindow", u"Description", None))
     # retranslateUi
 
