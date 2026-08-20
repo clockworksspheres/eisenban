@@ -51,7 +51,7 @@ pipeline {
                 stage('macOS Pipeline') {
                     agent { label 'macos' }
                     environment {
-                        VENV = "../../packenv"
+                        VENV = "../../projEnv"
                         QT_QPA_PLATFORM = "offscreen"
                     }
                     stages {
@@ -74,7 +74,7 @@ pipeline {
                 stage('Rocky 10 Pipeline') {
                     agent { label 'rocky10' }
                     environment {
-                        VENV = "../../packenv"
+                        VENV = "../../projEnv"
                         QT_QPA_PLATFORM = "offscreen"
                     }
                     stages {
@@ -97,7 +97,7 @@ pipeline {
                 stage('Debian Pipeline') {
                     agent { label 'debian' }
                     environment {
-                        VENV = "../../packenv"
+                        VENV = "../../projEnv"
                         QT_QPA_PLATFORM = "offscreen"
                     }
                     stages {
