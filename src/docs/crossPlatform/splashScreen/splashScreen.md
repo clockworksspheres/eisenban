@@ -1,5 +1,7 @@
 # Cross Platform Splash Screen
 
+__NOTE:__ macOS cannot do a splash screen with pyinstaller & tk before bootloading a pyside6 app.
+
 Grock prompt:
 
 # Can I do a tk splash screen cross platform?
