@@ -35,8 +35,6 @@ class CardDescription(QMainWindow):
         self.ui.btn_save.clicked.connect(self.save)
         self.ui.appendPushButton.clicked.connect(self.appendTimestamp)
         self.ui.prependPushButton.clicked.connect(self.prependTimestamp)
-        #self.ui.urgentComboBox.currentIndexChanged.connect(self.onUrgentChange)
-        #self.ui.importantComboBox.currentIndexChanged.connect(self.onImportantChange)
 
         self.ui.btn_save.setDefault(True)
 
@@ -286,22 +284,6 @@ class CardDescription(QMainWindow):
         self.ui.appendPushButton.setStyleSheet(stylesheet)
 
         self.setup_font()
-
-    def onUrgentChange(self):
-        urgentText = self.ui.urgentComboBox.currentText()
-        #print(f"urgentText: {urgentText}")
-        if re.match("^Urgent$", urgentText):
-            self.urgent = True
-        elif re.match("^Not Urgent$", urgentText):
-            self.urgent = False
-
-    def onImportantChange(self):
-        importantText = self.ui.importantComboBox.currentText()
-        #print(f"importantText: {importantText}")
-        if importantText == "Important":
-            self.important = True
-        elif importantText == "Not Important":
-            self.important = False
 
     def save(self) -> None:
         """Saves the card to the table."""
