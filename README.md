@@ -8,7 +8,7 @@ A Kanban-style, list-making project management application that helps you organi
 
 Eisenban is a re-branded version of Kanbaru, as the Kanbaru project is frozen and no longer developed.
 
-Eisenban is short for ___Eisen___hower method Kan___ban___ board.
+Eisenban is short for EISENhower method KanBAN board.
 
 
 
