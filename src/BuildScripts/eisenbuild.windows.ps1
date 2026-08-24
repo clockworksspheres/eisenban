@@ -4,7 +4,7 @@
 # https://pyinstaller.org/en/stable/
 
 # before script is run:
-# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 # powershell -File ".\eisenbuild.windows.ps1"
 
 pushd ..
