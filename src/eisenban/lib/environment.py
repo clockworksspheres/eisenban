@@ -109,7 +109,7 @@ class Environment(object):
         self.installmode = False
         self.verbosemode = False
         self.debugmode = False
-        datestamp = datetime.utcnow()
+        datestamp = datetime.now()
         self.runtime = datestamp.strftime("%Y-%m-%d_%H-%M-%S")
         self.systemfismacat = 'low'
         self.determinefismacat()
