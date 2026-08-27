@@ -56,7 +56,8 @@ class test_run_commands(unittest.TestCase):
         command = ['/bin/ls', 1, '.']
         self.assertRaises(SetCommandTypeError,
                           self.rw.setCommand, [command])
-
+    
+    @unittest.skipIf(sys.platform.lower().startswith("win"), "doesn't work on Windows, need to write windows specific tests")
     def test_communicate(self):
         """
         """
@@ -78,6 +79,7 @@ class test_run_commands(unittest.TestCase):
 
         self.logger.log(lp.DEBUG, "=============== Ending test_communicate...")
 
+    @unittest.skipIf(sys.platform.lower().startswith("win"), "doesn't work on Windows, need to write windows specific tests")
     def test_wait(self):
         """
         """
@@ -163,7 +165,8 @@ class test_run_commands(unittest.TestCase):
         """
         """
         self.rw.__init__(self.logger)
-
+        
+        elapsed = 0
         tracemalloc.start(25)
 
         if os.path.exists("/sbin/ping"):
@@ -172,6 +175,8 @@ class test_run_commands(unittest.TestCase):
             ping = "/bin/ping"
         elif os.path.exists("C:\\WINDOWS\\system32\\PING.EXE"):
             ping = "C:\\WINDOWS\\system32\\PING.EXE"
+        else:
+            ping = ''
 
         self.rw.setCommand([ping, '-c', '12', '8.8.8.8'])
         try:
