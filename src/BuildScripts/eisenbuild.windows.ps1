@@ -15,9 +15,9 @@ if (!(Test-Path -Path $directory -PathType Container)) {
    #if (!(Test-Path -Path ".\packenv" -PathType Container)) {
    
    python -m venv $directory
-   powershell -File $actfile
 
-   #pip install --upgrade pip
+   .\projenv\Scripts\Activate.ps1
+
    pip install -r requirements.txt
 } else {
    powershell -File $actfile
