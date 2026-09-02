@@ -23,7 +23,7 @@ if (!(Test-Path -Path $directory -PathType Container)) {
    powershell -File $actfile
 }
 
-cp BuildScripts/eisenbuild.windows11.onefile.spec eisenban
+cp BuildScripts/build.windows11.onefile.spec eisenban
 
 pushd eisenban
 
@@ -32,10 +32,10 @@ pushd eisenban
 # proper license can be found
 cp .\resources\icons\Barkerbaggies-Bag-O-Tiles-E.ico .\resources\icons\E.ico
 
-pyinstaller --clean -y eisenbuild.windows11.onefile.spec
-pyinstaller -y eisenbuild.windows11.onefile.spec
+pyinstaller --clean -y build.windows11.onefile.spec
+pyinstaller -y build.windows11.onefile.spec
 
-rm eisenbuild.windows11.onefile.spec
+rm build.windows11.onefile.spec
 
 popd
 popd

@@ -44,6 +44,18 @@ pipeline {
                         }
                     }
                 }
+                stage('Windows Pipeline') {
+                    agent { label 'windows' }
+                    stages {
+                        stage('windows Build') { 
+                            steps {
+                                dir('src/BuildScripts') {
+                                    powershell './build.windows.ps1' 
+                                } 
+                            }
+                        }
+                    }
+                }
             }
         }
         stage('Parallel test pipelines') {
@@ -109,6 +121,28 @@ pipeline {
                                         ls -l
                                         . ${VENV}/bin/activate
                                         ${VENV}/bin/python -m pytest -v --junit-xml test-reports/results.xml
+                                    """
+                                    echo '----------=====### Finished Tests ###=====----------'
+                                    junit 'test-reports/results.xml'
+                                }
+                            }
+                        }
+                    }
+                }
+                stage('Windows Pipeline') {
+                    agent { label 'windows' }
+                    environment {
+                        VENV = "../../projEnv"
+                    }
+                    stages {
+                        stage('Windows Test') { 
+                            steps {
+                                dir('src/eisenban/tests') {
+                                    echo '----------=====### Starting Tests ###=====----------'
+                                    powershell """
+                                        ls
+                                        ${VENV}/Scripts/activate
+                                        ${VENV}/Scripts/python -m pytest -v --junit-xml test-reports/results.xml
                                     """
                                     echo '----------=====### Finished Tests ###=====----------'
                                     junit 'test-reports/results.xml'
