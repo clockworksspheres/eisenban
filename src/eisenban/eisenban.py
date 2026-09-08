@@ -101,16 +101,16 @@ class Eisenban(QMainWindow):
             )
         
         else:
-            if sys.platform == "win32":
+            if sys.platform.lower().startswith("win"):
                 logging.info("Windows OS detected")
                 self.tb_path = os.path.join(
                     os.path.expanduser(
-                        "~"), "Documents", "Eisenban.newproject", "Table.pickle"
+                        "~"), "Documents", "Eisenban", "Table.pickle"
                 )
             else:
                 logging.info("Unix OS detected")
                 self.tb_path = os.path.join(
-                    os.path.expanduser("~"), "Eisenban.newproject", "Table.pickle"
+                    os.path.expanduser("~"), "Eisenban", "Table.pickle"
                 )
         tb = Table.get_instance()
         tb.set_path(self.tb_path)
