@@ -49,8 +49,8 @@ echo "===== end pyinstaller -y eisenbuild.macos.spec ====="
 ### DOES NOT WORK... need to figure out why...
 cp -a resources dist/eisenban.app/Contents/Resources
 cp -a resources dist/eisenban.app/Contents
-cp -a dist/eisenban.app ~/Desktop
-open ~/Desktop/eisenban.app
+#cp -a dist/eisenban.app ~/Desktop
+#open ~/Desktop/eisenban.app
 
 popd
 popd
