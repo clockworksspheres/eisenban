@@ -181,6 +181,7 @@ if __name__ == "__main__":
     if opts.table:
         tb_path = opts.table
 
+    
     if tb_path:
         logging.info("dbdir detected")
         tb_path = os.path.join(
@@ -188,18 +189,19 @@ if __name__ == "__main__":
         )
         
     else:
-        if sys.platform == "win32":
+        if sys.platform.lower().startswith("win32"):
             logging.info("Windows OS detected")
             tb_path = os.path.join(
                 os.path.expanduser(
-                    "~"), "Documents", "Eisenban.newproject", "Table.pickle"
+                    "~"), "Documents", "Eisenban", "Table.pickle"
             )
         else:
             logging.info("Unix OS detected")
             tb_path = os.path.join(
-                os.path.expanduser("~"), "Eisenban.newproject", "Table.pickle"
+                os.path.expanduser("~"), "Eisenban", "Table.pickle"
             )
     # tb = Table.get_instance()
+    
     tb = Table()
     tb.set_path(tb_path)
     tb.read()
