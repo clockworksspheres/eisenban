@@ -285,7 +285,7 @@ class CardDescription(QMainWindow):
 
         self.setup_font()
 
-    def save(self) -> None:
+    def save(self, close=True) -> None:
         """Saves the card to the table."""
         if self.title_txt == "":
             dialog_factory(
@@ -313,10 +313,12 @@ class CardDescription(QMainWindow):
                             return None
         if card_old != self:
             Table.get_instance().update_card(card_old, self)
-        self.close()
+        if close:
+            self.close()
 
     def delete(self, event: QEvent) -> None:
         """Deletes the card from the table."""
+        self.save(False)
         Table.get_instance().delete_card(self)
         self.close()
 
