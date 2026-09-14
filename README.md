@@ -12,7 +12,9 @@ Eisenban is short for EISENhower method KanBAN board.
 
 
 
-A kanban board for this project can be found by running ```eisenban -t src/eisenban/eisenboard``` ie. on the src/eisenban/eisenboard directory. 
+The default location for the kanban board database when eisenban is called without any arguments is in ```~/Documents/Eisenban``` in all OS's.
+
+A kanban board for this project can be found by running ```src/eisenban/eisenban.py -t src/eisenban/eisenBoard``` ie. on the ```src/eisenbanBoard``` directory, after the ```src/projEnv/bin/activate``` has been sourced, or on windows, the ```src\projEnv\Scripts\Activate.ps1``` script has been run.  If there is no ```src/projEnv``` directory, please create it using the appropriate build script for the current operating system in src/BuildScripts.
 
 A [clockworksspheres](https://clockworksspheres.github.io/) project.
 
