@@ -99,19 +99,9 @@ class Eisenban(QMainWindow):
             self.tb_path = os.path.join(
                 dbdir, "Table.pickle"
             )
-        
         else:
-            if sys.platform.lower().startswith("win"):
-                logging.info("Windows OS detected")
-                self.tb_path = os.path.join(
-                    os.path.expanduser(
-                        "~"), "Documents", "Eisenban", "Table.pickle"
-                )
-            else:
-                logging.info("Unix OS detected")
-                self.tb_path = os.path.join(
-                    os.path.expanduser("~"), "Eisenban", "Table.pickle"
-                )
+            raise ValueError("Didn't receive an applicable dbdir string")
+
         tb = Table.get_instance()
         tb.set_path(self.tb_path)
         tb.read()
