@@ -188,7 +188,7 @@ if __name__ == "__main__":
         else:
             logging.info("Unix OS detected")
             tb_path = os.path.join(
-                os.path.expanduser("~"), "Eisenban", "Table.pickle"
+                os.path.expanduser("~"), "Documents", "Eisenban", "Table.pickle"
             )
     # tb = Table.get_instance()
     
