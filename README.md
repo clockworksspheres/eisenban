@@ -10,7 +10,7 @@ Eisenban is a re-branded version of Kanbaru, as the Kanbaru project is frozen an
 
 Eisenban is short for EISENhower method KanBAN board.
 
-
+Eisenban works on Linux, macOS and Linux.
 
 The default location for the kanban board database when eisenban is called without any arguments is in ```~/Documents/Eisenban``` in all OS's.
 
