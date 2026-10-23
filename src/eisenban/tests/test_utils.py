@@ -11,176 +11,174 @@ from pathlib import Path
 parent_dir = Path(__file__).parent.parent
 sys.path.append(str(parent_dir))
 
-if sys.platform.lower().startswith("darwin"):
-    sys.exit(0)
-else:
+if not sys.platform.lower().startswith("darwin"):
     import utils
 
 
-# -------------------------------------------------
-# Helpers
-# -------------------------------------------------
-def make_key_event(key):
-    return QKeyEvent(QKeyEvent.KeyPress, key, Qt.NoModifier)
+    # -------------------------------------------------
+    # Helpers
+    # -------------------------------------------------
+    def make_key_event(key):
+        return QKeyEvent(QKeyEvent.KeyPress, key, Qt.NoModifier)
 
 
-# -------------------------------------------------
-# Tests
-# -------------------------------------------------
-class TestUtils(unittest.TestCase):
+    # -------------------------------------------------
+    # Tests
+    # -------------------------------------------------
+    class TestUtils(unittest.TestCase):
 
-    # -------------------------
-    # overrides()
-    # -------------------------
-    def test_overrides_success(self):
-        class Base:
-            def foo(self): pass
+        # -------------------------
+        # overrides()
+        # -------------------------
+        def test_overrides_success(self):
+            class Base:
+                def foo(self): pass
 
-        @utils.overrides(Base)
-        def foo():
-            return "ok"
-
-        self.assertEqual(foo(), "ok")
-
-    def test_overrides_failure(self):
-        class Base:
-            def foo(self): pass
-
-        with self.assertRaises(AssertionError):
             @utils.overrides(Base)
-            def bar():
-                pass
+            def foo():
+                return "ok"
 
-    # -------------------------
-    # hex_to_rgba()
-    # -------------------------
-    def test_hex_to_rgba(self):
-        self.assertEqual(
-            utils.hex_to_rgba("rgb(1,2,3)"),
-            "rgba(1,2,3, 255)"
-        )
+            self.assertEqual(foo(), "ok")
 
-    def test_hex_to_rgba_multiple(self):
-        self.assertEqual(
-            utils.hex_to_rgba("rgb(10,20,30)"),
-            "rgba(10,20,30, 255)"
-        )
+        def test_overrides_failure(self):
+            class Base:
+                def foo(self): pass
 
-    # -------------------------
-    # modify_hex_color()
-    # -------------------------
-    def test_modify_hex_color_lighten(self):
-        self.assertEqual(
-            utils.modify_hex_color("#000000", 30),
-            "#1e1e1e"
-        )
+            with self.assertRaises(AssertionError):
+                @utils.overrides(Base)
+                def bar():
+                    pass
 
-    def test_modify_hex_color_clamp_upper(self):
-        self.assertEqual(
-            utils.modify_hex_color("#ffffff", 30),
-            "#ffffff"
-        )
+        # -------------------------
+        # hex_to_rgba()
+        # -------------------------
+        def test_hex_to_rgba(self):
+            self.assertEqual(
+                utils.hex_to_rgba("rgb(1,2,3)"),
+                "rgba(1,2,3, 255)"
+            )
 
-    def test_modify_hex_color_clamp_lower(self):
-        self.assertEqual(
-            utils.modify_hex_color("#101010", -20),
-            "#000000"
-        )
+        def test_hex_to_rgba_multiple(self):
+            self.assertEqual(
+                utils.hex_to_rgba("rgb(10,20,30)"),
+                "rgba(10,20,30, 255)"
+            )
 
-    def test_modify_hex_color_mid(self):
-        self.assertEqual(
-            utils.modify_hex_color("#112233", 10),
-            "#1b2c3d"
-        )
+        # -------------------------
+        # modify_hex_color()
+        # -------------------------
+        def test_modify_hex_color_lighten(self):
+            self.assertEqual(
+                utils.modify_hex_color("#000000", 30),
+                "#1e1e1e"
+            )
 
-    # -------------------------
-    # get_current_directory()
-    # -------------------------
-    @patch.object(sys, "frozen", False, create=True)
-    def test_get_current_directory_normal(self):
-        path = utils.get_current_directory()
-        self.assertTrue(os.path.isabs(path))
+        def test_modify_hex_color_clamp_upper(self):
+            self.assertEqual(
+                utils.modify_hex_color("#ffffff", 30),
+                "#ffffff"
+            )
 
-    @patch.object(sys, "frozen", True, create=True)
-    @patch.object(sys, "_MEIPASS", "/tmp/testpath", create=True)
-    def test_get_current_directory_frozen(self):
-        path = utils.get_current_directory()
-        self.assertEqual(path, "/tmp/testpath")
+        def test_modify_hex_color_clamp_lower(self):
+            self.assertEqual(
+                utils.modify_hex_color("#101010", -20),
+                "#000000"
+            )
 
-    # -------------------------
-    # setup_font_db()
-    # -------------------------
-    @patch("utils.QFontDatabase")
-    @patch("utils.get_current_directory", return_value="/base")
-    def test_setup_font_db_success(self, mock_base, mock_qfont):
-        mock_qfont.addApplicationFont.return_value = 1
-        mock_qfont.applicationFontFamilies.return_value = ["Arial"]
+        def test_modify_hex_color_mid(self):
+            self.assertEqual(
+                utils.modify_hex_color("#112233", 10),
+                "#1b2c3d"
+            )
 
-        result = utils.setup_font_db("font.ttf")
+        # -------------------------
+        # get_current_directory()
+        # -------------------------
+        @patch.object(sys, "frozen", False, create=True)
+        def test_get_current_directory_normal(self):
+            path = utils.get_current_directory()
+            self.assertTrue(os.path.isabs(path))
 
-        self.assertEqual(result, ["Arial"])
-        mock_qfont.addApplicationFont.assert_called_once()
+        @patch.object(sys, "frozen", True, create=True)
+        @patch.object(sys, "_MEIPASS", "/tmp/testpath", create=True)
+        def test_get_current_directory_frozen(self):
+            path = utils.get_current_directory()
+            self.assertEqual(path, "/tmp/testpath")
 
-    @patch("utils.QFontDatabase")
-    @patch("utils.get_current_directory", return_value="/base")
-    def test_setup_font_db_failure(self, mock_base, mock_qfont):
-        mock_qfont.addApplicationFont.return_value = -1
+        # -------------------------
+        # setup_font_db()
+        # -------------------------
+        @patch("utils.QFontDatabase")
+        @patch("utils.get_current_directory", return_value="/base")
+        def test_setup_font_db_success(self, mock_base, mock_qfont):
+            mock_qfont.addApplicationFont.return_value = 1
+            mock_qfont.applicationFontFamilies.return_value = ["Arial"]
 
-        with self.assertRaises(Exception):
-            utils.setup_font_db("font.ttf")
+            result = utils.setup_font_db("font.ttf")
 
-    # -------------------------
-    # keyPressEvent()
-    # -------------------------
-    def test_keypress_enter_with_parent(self):
-        func = MagicMock()
-        parent = MagicMock()
+            self.assertEqual(result, ["Arial"])
+            mock_qfont.addApplicationFont.assert_called_once()
 
-        event = make_key_event(Qt.Key_Return)
+        @patch("utils.QFontDatabase")
+        @patch("utils.get_current_directory", return_value="/base")
+        def test_setup_font_db_failure(self, mock_base, mock_qfont):
+            mock_qfont.addApplicationFont.return_value = -1
 
-        utils.keyPressEvent(event, parent, func)
+            with self.assertRaises(Exception):
+                utils.setup_font_db("font.ttf")
 
-        func.assert_called_once_with(parent)
+        # -------------------------
+        # keyPressEvent()
+        # -------------------------
+        def test_keypress_enter_with_parent(self):
+            func = MagicMock()
+            parent = MagicMock()
 
-    def test_keypress_enter_without_parent(self):
-        func = MagicMock()
+            event = make_key_event(Qt.Key_Return)
 
-        event = make_key_event(Qt.Key_Return)
+            utils.keyPressEvent(event, parent, func)
 
-        utils.keyPressEvent(event, None, func)
+            func.assert_called_once_with(parent)
 
-        func.assert_called_once_with()
+        def test_keypress_enter_without_parent(self):
+            func = MagicMock()
 
-    def test_keypress_enter_no_function(self):
-        event = make_key_event(Qt.Key_Return)
+            event = make_key_event(Qt.Key_Return)
 
-        result = utils.keyPressEvent(event, None, None)
+            utils.keyPressEvent(event, None, func)
 
-        self.assertIsNone(result)
+            func.assert_called_once_with()
 
-    def test_keypress_other_key(self):
-        func = MagicMock()
+        def test_keypress_enter_no_function(self):
+            event = make_key_event(Qt.Key_Return)
 
-        event = make_key_event(Qt.Key_A)
+            result = utils.keyPressEvent(event, None, None)
 
-        result = utils.keyPressEvent(event, None, func)
+            self.assertIsNone(result)
 
-        func.assert_not_called()
-        self.assertIsNone(result)
+        def test_keypress_other_key(self):
+            func = MagicMock()
 
-    def test_keypress_key_enter_variant(self):
-        func = MagicMock()
+            event = make_key_event(Qt.Key_A)
 
-        event = make_key_event(Qt.Key_Enter)
+            result = utils.keyPressEvent(event, None, func)
 
-        utils.keyPressEvent(event, None, func)
+            func.assert_not_called()
+            self.assertIsNone(result)
 
-        func.assert_called_once()
+        def test_keypress_key_enter_variant(self):
+            func = MagicMock()
+
+            event = make_key_event(Qt.Key_Enter)
+
+            utils.keyPressEvent(event, None, func)
+
+            func.assert_called_once()
 
 
-# -------------------------------------------------
-# Run
-# -------------------------------------------------
-if __name__ == "__main__":
-    unittest.main()
+    # -------------------------------------------------
+    # Run
+    # -------------------------------------------------
+    if __name__ == "__main__":
+        unittest.main()
 
