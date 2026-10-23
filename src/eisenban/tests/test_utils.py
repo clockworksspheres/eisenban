@@ -11,7 +11,10 @@ from pathlib import Path
 parent_dir = Path(__file__).parent.parent
 sys.path.append(str(parent_dir))
 
-import utils
+if sys.platform.lower().startswith("darwin"):
+    sys.exit(0)
+else:
+    import utils
 
 
 # -------------------------------------------------
