@@ -48,4 +48,8 @@ app = BUNDLE(
     name='eisenban.app',
     icon='E.icns',
     bundle_identifier='org.clockworksspheres.eisenban',
+    info_plist={
+        'LSBackgroundOnly': False,
+        'NSPrincipalClass': 'NSApplication',
+    }
 )
