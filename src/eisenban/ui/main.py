@@ -22,6 +22,7 @@ from utils import (hex_to_rgba, keyPressEvent, modify_hex_color, overrides,
                    setup_font_db)
 from lib.qsingleton import QSingleton
 
+
 class CustomListWidget(QListWidget):
     """Custom QListWidget class"""
 
@@ -851,6 +852,10 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
         parent : Ui_MainWindow
             The main window
         """
+        #####
+        # NOTE: FIX TO OLD BUG
+        self.update_whole_page()
+        #####
         self.board_settings = BoardSettings(self.current_board)
         index = Table.get_instance().boards.index(self.current_board)
         self.board_settings.setWindowModality(Qt.ApplicationModal)
