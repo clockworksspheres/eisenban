@@ -196,66 +196,93 @@ class CustomListWidget(QListWidget):
     @Slot()
     @overrides(QListWidget)
     def dropEvent(self, event: QDropEvent) -> None:
-        """Override the dropEvent method to customize the drop event
-        - Check if the item to be dropped has the qabstractitemmodeldatalist
-        format
-        - Get the source widget and the destination widget at the current mouse
-        position
-        - Get the items that are being dragged
-        - Remove those items from the source widget
-        - Add those items to the destination widget at the mouse position
-        - Log the move and update the table
-
-        Parameters
-        ----------
-        event : QDropEvent
-            The drop even
-        """
-
+        """Move selected cards to the drop target and update the model."""
         if event.keyboardModifiers() == Qt.ControlModifier:
-            return event.ignore()
+            event.ignore()
+            return
+
         if not event.mimeData().hasFormat(
-                'application/x-qabstractitemmodeldatalist'):
-            return event.ignore()
+                "application/x-qabstractitemmodeldatalist"):
+            event.ignore()
+            return
+
         source_widget = event.source()
-        dest_widget = QApplication.widgetAt(QCursor().pos()).parent()
-        items = source_widget.selectedItems()
+        if not isinstance(source_widget, CustomListWidget):
+            event.ignore()
+            return
+
+        # Prefer the list that received the drop; fall back to widget under cursor
+        dest_widget = self
+        under_cursor = QApplication.widgetAt(QCursor.pos())
+        while under_cursor is not None and not isinstance(
+                under_cursor, CustomListWidget):
+            under_cursor = under_cursor.parent()
+        if isinstance(under_cursor, CustomListWidget):
+            dest_widget = under_cursor
+
+        if not hasattr(dest_widget, "data") or not hasattr(source_widget, "data"):
+            event.ignore()
+            return
+
+        items = list(source_widget.selectedItems())
+        if not items:
+            event.ignore()
+            return
+
+        # Drop position in dest_widget coordinates (Qt6 / Qt5)
+        try:
+            pos = event.position().toPoint()
+        except AttributeError:
+            pos = event.pos()
+
+        base_index = dest_widget.row(dest_widget.itemAt(pos))
+        if base_index < 0:
+            base_index = dest_widget.count()
+
+        same_list = source_widget is dest_widget
 
         logging.info(
-            f'Moving {len(items)} Card{"s" if len(items) > 0 else ""} '
-            f'({[item.data(Qt.UserRole).title for item in items]}) '
-            f'from panel "{source_widget.data.title}" to panel '
-            f'"{dest_widget.data.title}"')
+            'Moving %d card%s (%s) from "%s" to "%s"',
+            len(items),
+            "s" if len(items) != 1 else "",
+            [item.data(Qt.UserRole).title for item in items
+             if item.data(Qt.UserRole) is not None],
+            source_widget.data.title,
+            dest_widget.data.title,
+        )
 
-        for i, item in enumerate(items):
-
-
-            index = dest_widget.row(dest_widget.itemAt(event.pos()))
-            if index < 0:
-                index = dest_widget.count()
-
-            if source_widget == dest_widget:
+        # When reordering inside the same list, account for rows removed above
+        # the insertion point so the final order matches the drop position.
+        if same_list:
+            remove_rows = sorted(
+                (source_widget.row(item) for item in items), reverse=True
+            )
+            for row in remove_rows:
+                if row < base_index:
+                    base_index -= 1
+            for row in remove_rows:
+                source_widget.takeItem(row)
+        else:
+            for item in items:
                 source_widget.takeItem(source_widget.row(item))
 
-            index += i
-            if source_widget == dest_widget:
-                if len(items) > 1:
-                    index -= 1
-                dest_widget.insertItem(index, item)
+        main = MainScreen()
+        for offset, item in enumerate(items):
+            card = item.data(Qt.UserRole)
+            if card is None:
+                logging.warning("Skipping list item with no Card in UserRole")
+                continue
+            index = base_index + offset
+            dest_widget.insertItem(index, item)
 
-            logging.info(
-                f'Moved card "{item.data(Qt.UserRole).title}" to {index=}')
-            
-            MainScreen.change_card(self.parent, self.board, source_widget, dest_widget,
-                                   item.data(Qt.UserRole), index)
-            if source_widget != dest_widget:
-                source_widget.takeItem(source_widget.row(item))
-            
-            Table.get_instance().write()
+            logging.info('Moved card "%s" to index=%s', card.title, index)
+            main.change_card(
+                self.board, source_widget, dest_widget, card, index
+            )
 
+        Table.get_instance().write()
         event.accept()
-
-        super().dropEvent(event)
+        # Do not call super().dropEvent(event) — items were moved manually
 
 
 class MainScreen(QMainWindow, metaclass=QSingleton):
@@ -676,8 +703,7 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
         self.ui.btn_add_card.clicked.connect(
             lambda: self.add_card(panel))
 
-        new_name = f"{self.ui.listWidget.__class__.__name__}_"
-        f"{id(self.ui.listWidget)}"
+        new_name = f"{self.ui.listWidget.__class__.__name__}_{id(self.ui.listWidget)}"
         setattr(self.ui, new_name, self.ui.listWidget)
         listWidget = getattr(self.ui, new_name)
         listWidget.setObjectName(new_name)
@@ -711,51 +737,23 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
 
         return self.ui.panel
 
-    def card_factory(self, qlistwidget: QListWidget, card: Card, font: str, index: int) -> QListWidgetItem:
-        """Create a card item at the given QListWidget index
-        - Create a new name for the card with its class name and id
-        - Set the new name as an attribute of the parent UI and as the
-          object name of the card
-        - Delete the old name attribute from the parent UI
-        - Set the card flags
-        - Set the card data as the Card class object
-
-        Parameters
-        ----------
-        qlistwidget : QListWidget
-            The QListWidget to add the card item to
-        parent : Ui_MainWindow
-            The parent UI
-        card : Card
-            The card to add to the panel
-        font : str
-            The font to use
-        index : int
-            The index to add the card item to
-
-        Returns
-        -------
-        QListWidgetItem
-            The card item
-        """
-        self.ui.qlistwidgetitem = QListWidgetItem(qlistwidget)
-        new_name = f"{self.ui.qlistwidgetitem.__class__.__name__}_"
-        f"{id(self.ui.qlistwidgetitem)}"
-        setattr(self.ui, new_name, self.ui.qlistwidgetitem)
-        list_widget_item = getattr(self.ui, new_name)
-        delattr(self.ui, "qlistwidgetitem")
-        list_widget_item.setFlags(
-            Qt.ItemIsSelectable | Qt.ItemIsDragEnabled | Qt.ItemIsUserCheckable
-            | Qt.ItemIsEnabled)
-        list_widget_item = qlistwidget.item(index)
-        list_widget_item.setData(Qt.UserRole, card)
-        list_widget_item.setText(
+    def card_factory(self, qlistwidget: QListWidget, card: Card, font: str,
+                     index: int) -> QListWidgetItem:
+        """Create a card list item (caller is responsible for addItem/insertItem)."""
+        item = QListWidgetItem()  # no parent — do not auto-insert
+        item.setFlags(
+            Qt.ItemIsSelectable
+            | Qt.ItemIsDragEnabled
+            | Qt.ItemIsUserCheckable
+            | Qt.ItemIsEnabled
+        )
+        item.setData(Qt.UserRole, card)
+        item.setText(
             QCoreApplication.translate("MainWindow", card.title, None)
         )
         font_tb = setup_font_db(font)[0]
-        list_widget_item.setFont(QFont(font_tb, 12))
-
-        return list_widget_item
+        item.setFont(QFont(font_tb, 12))
+        return item
 
     def add_panel_button(self, board: Board, font: str) -> None:
         """Add a button to add a new panel
@@ -867,18 +865,19 @@ class MainScreen(QMainWindow, metaclass=QSingleton):
         self.change_board(Table.get_instance().boards[index])
 
     def show_card_description(self, event: QEvent, list_widget: QListWidget, color: str) -> None:
-        """Show the card description window
+        """Show the card description window."""
+        item = list_widget.item(event.row())
+        if item is None:
+            return
+        card = item.data(Qt.UserRole)
+        if card is None:
+            logging.warning(
+                "Clicked list item has no Card in UserRole (row=%s text=%r)",
+                event.row(),
+                item.text(),
+            )
+            return
 
-        Parameters
-        ----------
-        list_widget
-        color
-        event : QMouseEvent
-            The mouse event
-        parent : QListWidget
-            The parent QListWidget
-        """
-        card = list_widget.item(event.row()).data(Qt.UserRole)
         card_description = CardDescription(card, color)
         card_description.setWindowModality(Qt.ApplicationModal)
         card_description.show()
