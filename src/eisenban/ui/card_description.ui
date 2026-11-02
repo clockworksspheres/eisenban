@@ -883,32 +883,6 @@ QComboBox:disabled {
     color: #e0e0e0;
 }
 
-/* Drop-down button */
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 24px;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: transparent;
-}
-
-/* Drop-down button hover */
-QComboBox::drop-down:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Arrow */
-QComboBox::down-arrow {
-    image: none;
-    width: 12px;
-    height: 12px;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 6px solid #ffffff;
-}
-
 /* Popup list container */
 QComboBox QAbstractItemView {
     background-color: #6badee;          /* same blue as the combobox */
@@ -987,32 +961,6 @@ QComboBox:focus {
 QComboBox:disabled {
     background-color: #a0c4e8;
     color: #e0e0e0;
-}
-
-/* Drop-down button */
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 24px;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: transparent;
-}
-
-/* Drop-down button hover */
-QComboBox::drop-down:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Arrow */
-QComboBox::down-arrow {
-    image: none;
-    width: 12px;
-    height: 12px;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 6px solid #ffffff;
 }
 
 /* Popup list container */

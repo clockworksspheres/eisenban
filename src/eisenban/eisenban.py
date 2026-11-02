@@ -154,6 +154,8 @@ if __name__ == "__main__":
 
     app = QApplication(sys.argv)
 
+    app.setStyle("Fusion")
+
     # Set up event logger
     init_event_logger(
         os.path.join(get_current_directory(), "event.log"),
